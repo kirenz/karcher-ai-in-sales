@@ -10,7 +10,7 @@ a { color: inherit; }
 
 .top-nav {
   background: #1a1a1a;
-  border-bottom: 4px solid #ffe000;
+  border-bottom: 4px solid #ffde00;
   padding: 14px 24px;
   display: flex;
   flex-wrap: wrap;
@@ -31,12 +31,12 @@ a { color: inherit; }
 
 .top-nav a:hover,
 .top-nav a.is-active {
-  background: #ffe000;
+  background: #ffde00;
   color: #1a1a1a;
 }
 
 .hero {
-  background: linear-gradient(180deg, #ffe000 0%, #ffd400 100%);
+  background: #ffde00;
   padding: 48px 32px 42px;
 }
 
@@ -77,7 +77,7 @@ a { color: inherit; }
 }
 
 .page-header__eyebrow {
-  color: #ffe000;
+  color: #ffde00;
 }
 
 .page-header__title {
@@ -95,7 +95,7 @@ a { color: inherit; }
   width: 54px;
   height: 4px;
   border-radius: 2px;
-  background: #ffe000;
+  background: #ffde00;
   margin-top: 14px;
 }
 
@@ -207,7 +207,7 @@ a { color: inherit; }
 .btn {
   display: inline-block;
   padding: 9px 18px;
-  background: #ffe000;
+  background: #ffde00;
   color: #1a1a1a;
   text-decoration: none;
   font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
@@ -219,7 +219,7 @@ a { color: inherit; }
 }
 
 .btn:hover {
-  background: #f0d000;
+  background: #ebcc00;
 }
 
 .btn--ghost {
@@ -255,7 +255,7 @@ a { color: inherit; }
   text-transform: uppercase;
   color: #1a1a1a;
   text-decoration: none;
-  border-bottom: 2px solid #ffe000;
+  border-bottom: 2px solid #ffde00;
   padding-bottom: 2px;
 }
 
@@ -319,7 +319,7 @@ a { color: inherit; }
   height: 30px;
   border-radius: 50%;
   background: #1a1a1a;
-  color: #ffe000;
+  color: #ffde00;
   font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
   font-size: 16px;
   font-weight: 700;
@@ -343,7 +343,7 @@ a { color: inherit; }
   color: inherit;
   background: #fff;
   border: 1px solid #e2e2e2;
-  border-left: 6px solid #ffe000;
+  border-left: 6px solid #ffde00;
   border-radius: 6px;
   padding: 18px 22px;
   margin: 26px 0 8px;
@@ -366,14 +366,14 @@ a { color: inherit; }
   font-size: 14px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  background: #ffe000;
+  background: #ffde00;
   color: #1a1a1a;
   padding: 9px 18px;
   border-radius: 3px;
   white-space: nowrap;
 }
 
-.precycle-card:hover .precycle-card__cta { background: #f0d000; }
+.precycle-card:hover .precycle-card__cta { background: #ebcc00; }
 
 @media (max-width: 640px) {
   .precycle-card { flex-direction: column; align-items: flex-start; }
@@ -389,7 +389,7 @@ a { color: inherit; }
 .cluster-card {
   background: #fff;
   border: 1px solid #e2e2e2;
-  border-left: 6px solid #ffe000;
+  border-left: 6px solid #ffde00;
   border-radius: 6px;
   padding: 22px;
   display: flex;
@@ -416,7 +416,7 @@ a { color: inherit; }
 }
 
 .badge--optional {
-  background: #ffe000;
+  background: #ffde00;
   color: #1a1a1a;
 }
 
@@ -492,7 +492,7 @@ a { color: inherit; }
 }
 
 .disclosure--start {
-  border-left: 5px solid #ffe000;
+  border-left: 5px solid #ffde00;
 }
 
 .disclosure__summary {
@@ -542,7 +542,7 @@ a { color: inherit; }
 .workflow {
   background: #fff;
   border: 1px solid #e2e2e2;
-  border-left: 5px solid #ffe000;
+  border-left: 5px solid #ffde00;
   border-radius: 6px;
   overflow: hidden;
   margin: 0 0 22px;
@@ -600,7 +600,7 @@ a { color: inherit; }
 .keypoints {
   background: #fff8bf;
   border: 1px solid #ead779;
-  border-left: 6px solid #ffe000;
+  border-left: 6px solid #ffde00;
   border-radius: 6px;
   padding: 16px 20px 16px 22px;
   margin: 0 0 22px;
