@@ -334,54 +334,49 @@ a { color: inherit; }
   text-transform: uppercase;
 }
 
-/* Compact "before the cycle" bar (Pipeline Analysis) above the cycle strip */
-.precycle {
+/* Prominent "before the cycle" card (Pipeline Analysis) above the cycle strip */
+.precycle-card {
   display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 4px 14px;
+  align-items: center;
+  gap: 18px;
   text-decoration: none;
-  color: #1a1a1a;
+  color: inherit;
   background: #fff;
   border: 1px solid #e2e2e2;
-  border-left: 5px solid #ffe000;
+  border-left: 6px solid #ffe000;
   border-radius: 6px;
-  padding: 11px 18px;
+  padding: 18px 22px;
   margin: 26px 0 8px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
 }
 
-.precycle:hover {
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
-  transform: translateY(-1px);
+.precycle-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
 }
 
-.precycle__kicker {
+.precycle-card__body { flex: 1; min-width: 0; }
+.precycle-card__body .card-kicker { margin: 0 0 4px; }
+.precycle-card__body .card-title { margin: 0 0 6px; }
+.precycle-card__body .card-text { margin: 0; }
+
+.precycle-card__cta {
   font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #8a8a8a;
-}
-
-.precycle__title {
-  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #1a1a1a;
-}
-
-.precycle__text {
   font-size: 14px;
-  color: #575757;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: #ffe000;
+  color: #1a1a1a;
+  padding: 9px 18px;
+  border-radius: 3px;
+  white-space: nowrap;
 }
 
-.precycle__arrow {
-  margin-left: auto;
-  font-weight: 700;
-  color: #1a1a1a;
+.precycle-card:hover .precycle-card__cta { background: #f0d000; }
+
+@media (max-width: 640px) {
+  .precycle-card { flex-direction: column; align-items: flex-start; }
 }
 
 /* Cluster split */
