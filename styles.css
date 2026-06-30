@@ -334,6 +334,56 @@ a { color: inherit; }
   text-transform: uppercase;
 }
 
+/* Compact "before the cycle" bar (Pipeline Analysis) above the cycle strip */
+.precycle {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  text-decoration: none;
+  color: #1a1a1a;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-left: 5px solid #ffe000;
+  border-radius: 6px;
+  padding: 11px 18px;
+  margin: 26px 0 8px;
+}
+
+.precycle:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+  transform: translateY(-1px);
+}
+
+.precycle__kicker {
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8a8a8a;
+}
+
+.precycle__title {
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+}
+
+.precycle__text {
+  font-size: 14px;
+  color: #575757;
+}
+
+.precycle__arrow {
+  margin-left: auto;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
 /* Cluster split */
 .cluster-grid {
   display: grid;
