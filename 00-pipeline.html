@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Working with Your Data</title>
+  <title>Pipeline Analysis</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -19,28 +19,66 @@
   </nav>
   <header class="page-header">
     <p class="page-header__eyebrow">Before the cycle · Data</p>
-    <h1 class="page-header__title">Working with Your Data</h1>
+    <h1 class="page-header__title">Pipeline Analysis</h1>
     <p class="page-header__sub">Before you walk one account through the Sales Cycle, decide which accounts deserve your week. A simple account Sheet is enough.</p>
     <div class="page-header__bar"></div>
   </header>
   <main class="page">
     <div class="note">Your pipeline is real customer data inside approved Kärcher Workspace tools. The Gem ranks and explains; you verify and decide.</div>
 
+    <p class="handbook-link"><a href="handbook/00-pipeline.html" target="_blank" rel="noopener">Read the full chapter in the handbook &#8599;</a></p>
+
     <p class="section-heading">Do this step</p>
     <section class="workflow">
+      <p class="workflow__title">Recipe 1 · Build your account sheet</p>
       <div class="workflow__row">
         <p class="workflow__label">Goal</p>
         <div class="workflow__value">
-        <p class="workflow__text">Decide where this week&#x27;s selling time pays off, and flag the accounts that are quietly leaking.</p>
+        <p class="workflow__text">One clean account Sheet (account, segment, stage, value, last-contact date, next step, note), built from documents you already have.</p>
         </div>
       </div>
       <div class="workflow__row">
         <p class="workflow__label">Inputs</p>
         <div class="workflow__value">
-        <p class="workflow__text">An account Sheet with stage, last contact, and next step. Copy the example and replace the rows with your real accounts.</p>
+        <p class="workflow__text">Your account documents (proposals, notes, exports). No sheet yet is the normal start, not a reason to wait; or copy the example.</p>
         <div class="btn-row">
-          <a class="btn btn--doc" href="https://docs.google.com/spreadsheets/d/1zsaybxnvpHXxRP7c23J2YSe5H50s_h76RZmlIi-2wUM/edit?usp=sharing" target="_blank" rel="noopener">Open the example account Sheet</a>
+          <a class="btn btn--doc" href="https://docs.google.com/spreadsheets/d/1zsaybxnvpHXxRP7c23J2YSe5H50s_h76RZmlIi-2wUM/edit?usp=sharing" target="_blank" rel="noopener">Copy the example Sheet</a>
         </div>
+        </div>
+      </div>
+      <div class="workflow__row">
+        <p class="workflow__label">Open Gem</p>
+        <div class="workflow__value">
+        <div class="btn-row">
+          <a class="btn" href="https://notebooklm.google.com" target="_blank" rel="noopener">Open NotebookLM</a>
+        </div>
+        </div>
+      </div>
+      <div class="workflow__row">
+        <p class="workflow__label">Output</p>
+        <div class="workflow__value">
+        <p class="workflow__text">A seven-column account Sheet in your Workspace, the cockpit Recipe 2 runs on.</p>
+        </div>
+      </div>
+      <div class="workflow__row workflow__row--check">
+        <p class="workflow__label">Check before use</p>
+        <div class="workflow__value">
+        <p class="workflow__text">Keep two fields honest above all: last-contact date and next step.</p>
+        </div>
+      </div>
+    </section>
+    <section class="workflow">
+      <p class="workflow__title">Recipe 2 · Prioritise your week</p>
+      <div class="workflow__row">
+        <p class="workflow__label">Goal</p>
+        <div class="workflow__value">
+        <p class="workflow__text">A short ranked shortlist of your accounts, who to push, who is stalling, who has no next step, for the week ahead.</p>
+        </div>
+      </div>
+      <div class="workflow__row">
+        <p class="workflow__label">Inputs</p>
+        <div class="workflow__value">
+        <p class="workflow__text">Your account Sheet from Recipe 1.</p>
         </div>
       </div>
       <div class="workflow__row">
@@ -60,29 +98,20 @@
       <div class="workflow__row workflow__row--check">
         <p class="workflow__label">Check before use</p>
         <div class="workflow__value">
-        <p class="workflow__text">The ranking is a hypothesis. Check it against the Sheet and what you know before you act on it.</p>
+        <p class="workflow__text">AI sorts and surfaces; you decide. Check the ranking against the Sheet before you act.</p>
         </div>
       </div>
     </section>
 
-    <p class="section-heading">Why it matters</p>
-    <div class="card-grid card-grid--3">
-      <article class="card">
-        <p class="card-kicker">Question</p>
-        <h3 class="card-title">Where does this week go?</h3>
-        <p class="card-text">Point the Gem at the Sheet and ask for the accounts that deserve attention now.</p>
-      </article>
-      <article class="card">
-        <p class="card-kicker">Signals</p>
-        <h3 class="card-title">Stage · Last contact · Next step</h3>
-        <p class="card-text">A deal with no recent contact and no next step is not lost; it is forgotten, and it leaks revenue quietly.</p>
-      </article>
-      <article class="card">
-        <p class="card-kicker">Rule</p>
-        <h3 class="card-title">AI ranks, you decide</h3>
-        <p class="card-text">The ranking is a starting point, not a verdict. You own the call on where the time goes.</p>
-      </article>
-    </div>
+    <section class="keypoints">
+      <p class="keypoints__label">Chapter highlights</p>
+      <ul class="keypoints__list">
+        <li>One weekly question: which of your accounts get your time this week?</li>
+        <li>The move has two steps: get your accounts into one Google Sheet, then point a Gem at it and ask, in plain words, where the week should go. No sheet yet? Build one in minutes, let NotebookLM assemble it from documents you already have.</li>
+        <li>Watch two fields above all, last contact and next step: an account missing both is not lost, just forgotten, and forgotten accounts quietly cost you deals.</li>
+        <li>AI sorts and surfaces; you decide. Your pipeline is real customer data in an approved tool, so analyze it directly, then check the ranking against the sheet before you act.</li>
+      </ul>
+    </section>
   </main>
   <nav class="pager">
     <span></span>
