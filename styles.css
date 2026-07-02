@@ -35,6 +35,15 @@ a { color: inherit; }
   color: #1a1a1a;
 }
 
+.site-announcement {
+  background: #ffffff;
+  border-bottom: 4px solid #ffde00;
+  padding: 14px 24px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #1a1a1a;
+}
+
 .hero {
   background: #ffde00;
   padding: 48px 32px 42px;
