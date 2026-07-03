@@ -161,3 +161,23 @@ p.lead{color:var(--ink);font-size:18px}
 .stepcard__meta{font-size:13px;color:var(--ink-55);margin-top:auto}
 .stepcard--soon{opacity:.6;cursor:default;pointer-events:none}
 .stepcard--soon .stepcard__num{background:#e6e6e2;color:#a6a6a1}
+
+/* --- two-door start page (interactive vs read) --- */
+.doorgrid{max-width:600px;margin:0 auto;padding:24px 18px 0;display:grid;
+  grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:560px){.doorgrid{grid-template-columns:1fr}}
+.door{display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid var(--line);
+  border-radius:12px;padding:24px 22px;min-height:220px;text-decoration:none;
+  transition:transform .1s,box-shadow .12s}
+.door:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.09)}
+.door--primary{border:2px solid var(--ink)}
+.door__kicker{font-family:var(--cond);text-transform:uppercase;letter-spacing:.16em;
+  font-weight:700;font-size:12px;color:var(--ink-55);margin:0}
+.door__title{font-family:var(--cond);text-transform:uppercase;letter-spacing:.02em;
+  font-weight:700;font-size:30px;line-height:1;margin:0;color:var(--ink)}
+.door__text{font-size:15px;color:var(--ink-70);margin:0;flex:1}
+.door__cta{font-family:var(--cond);text-transform:uppercase;letter-spacing:.08em;
+  font-weight:700;font-size:15px;color:var(--ink);display:inline-flex;align-items:center;gap:6px}
+.door__badge{align-self:flex-start;background:var(--yellow);color:var(--ink);font-weight:700;
+  font-size:12px;font-family:var(--cond);text-transform:uppercase;letter-spacing:.08em;
+  padding:3px 9px;border-radius:4px}
