@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Florian Wagner, Patrick Bucher, Jan Kirenz">
 
-<title>AI in International Sales at Kärcher</title>
+<title>10&nbsp; A prompt that works – AI in International Sales at Kärcher</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./introduction.html" rel="next">
+<link href="./00-basics-gmail.html" rel="next">
+<link href="./00-toolkit-studio.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -89,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-toolkit.html">AI Toolkit</a></li><li class="breadcrumb-item"><a href="./00-prompting.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Prompt Basics</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
@@ -203,7 +203,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00-prompting.html" class="sidebar-item-text sidebar-link">
+  <a href="./00-prompting.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Prompt Basics</span></span></a>
   </div>
 </li>
@@ -413,29 +413,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
+  <li><a href="#the-five-part-guide" id="toc-the-five-part-guide" class="nav-link active" data-scroll-target="#the-five-part-guide"><span class="header-section-number">10.1</span> The five-part guide</a></li>
+  <li><a href="#a-prompt-example" id="toc-a-prompt-example" class="nav-link" data-scroll-target="#a-prompt-example"><span class="header-section-number">10.2</span> A prompt example</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-toolkit.html">AI Toolkit</a></li><li class="breadcrumb-item"><a href="./00-prompting.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Prompt Basics</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">AI in International Sales at Kärcher</h1>
-<p class="subtitle lead">A companion to the Kärcher Sales-Cycle workshop</p>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">A prompt that works</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Florian Wagner, Patrick Bucher, Jan Kirenz </p>
-          </div>
-  </div>
     
   
     
@@ -446,21 +440,95 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome</h1>
-<p>This is the reading companion to the <strong>AI in International Sales at Kärcher</strong> workshop.</p>
-<p>It follows the <strong>Kärcher Sales Cycle</strong> from end to end, from acquisition to follow-up, and treats AI not as a drawer of disconnected tool demos but as support for one continuous sales process.</p>
-<div class="callout callout-style-simple callout-tip callout-titled" title="Ho to use this book">
+<p>One skill sits under every AI step in this training: writing a prompt that gives you something useful back. It is learnable, and it is mostly about the two things people skip. This page gives you the guide, then shows it in action on a real request.</p>
+<div class="tldr">
+<ul>
+<li>Weak output usually comes from <strong>missing information (context) and a missing check</strong>, not missing magic words.</li>
+<li>A simple guide fixes most of it: <strong>Role · Task · Context · Format · Check</strong>.</li>
+<li>The two that matter most are <strong>Context</strong> (what only you know) and <strong>Check</strong> (what to verify).</li>
+</ul>
+</div>
+<div class="recipe-card">
+<p><span class="recipe-title">Recipe · Sharpen any prompt with the Prompt Optimizer</span></p>
+<dl>
+<dt>Makes</dt>
+<dd>
+a stronger version of any prompt. You also get a short note on what changed and a list of anything you still need to fill in.
+</dd>
+<dt>Open</dt>
+<dd>
+<a href="https://gemini.google.com/gem/1ua3jvPuZNSqdr4anGmHMsV6ji7F9bB9c?usp=sharing">Prompt Optimizer ↗</a> to do the work.
+</dd>
+<dt>Do</dt>
+<dd>
+Paste the prompt you want to improve, and it rewrites it, shows what changed, and flags any facts you still need to add.
+</dd>
+<dt>Prompt</dt>
+<dd>
+<code>Improve this prompt: give me tips for handling price objections.</code>
+</dd>
+<dt>Then</dt>
+<dd>
+copy the rewritten prompt and run it in the Gem. Once you trust a prompt you use often, save it as your own Gem.
+</dd>
+</dl>
+</div>
+<section id="the-five-part-guide" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="the-five-part-guide"><span class="header-section-number">10.1</span> The five-part guide</h2>
+<p>It helps to picture the AI model as a capable junior assistant. A new assistant does good work only when you brief them well: a vague one-liner gets a generic reply, while a clear task with the background only you have gets something you can use. The model is no different. It cannot read your mind, only your brief, so the better the task description you give it, the better the job it can do.</p>
+<p>Most weak output does not come from missing the right magic words. It comes from a missing context and a missing check. A simple five-part guide fixes most of that. Use it as a helpful starting point, not as a form you have to complete every time:</p>
+<ul>
+<li><strong>Role</strong> — the perspective the AI should write from.</li>
+<li><strong>Task</strong> — the one concrete output you want.</li>
+<li><strong>Context</strong> — the facts only you know, which the model cannot, so you supply them.</li>
+<li><strong>Format</strong> — the length, structure, and tone of the output.</li>
+<li><strong>Check</strong> — an instruction to list its assumptions, so you know what to verify.</li>
+</ul>
+<p>You do not need a perfect prompt on day one. Write it, review the output, tighten the next round. The guide is a helper, not a rulebook. The value is not in filling every label, it is in making the request clear enough that the next answer is more useful than the first.</p>
+<p>The two parts people skip are exactly the two that matter most. <strong>Context</strong> is what makes the output specific to your account rather than generic, and <strong>Check</strong> is what keeps you honest about what the model assumed versus what it knew. Leave those out and you get a fluent, confident, forgettable draft.</p>
+</section>
+<section id="a-prompt-example" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="a-prompt-example"><span class="header-section-number">10.2</span> A prompt example</h2>
+<p>The five parts above are just labels; what matters is what you write under each one. The clearest way to see that is to watch the same request go from weak to strong, with every part filled in.</p>
+<p>Take a simple, everyday case. <strong>Martin Bauer</strong>, a Kärcher sales professional based in Germany, wants to figure out where AI could actually save him time, so he asks Gemini for an overview of ways to use it in his daily sales work. Here is the prompt he might reach for first:</p>
+<blockquote class="blockquote">
+<p>“How can I use AI in my sales job?”</p>
+</blockquote>
+<p>It is a fair question, but it gives the model almost nothing to work with: no clear role, no concrete output, no context about who Martin is or what his week looks like, no format, and no check at the end. So Gemini returns a generic, tool-brochure list that could apply to anyone in any industry, and Martin still has to do the real thinking himself.</p>
+<p>Here is the same request rebuilt with the prompt guide:</p>
+<div class="callout callout-style-simple callout-tip callout-titled" title="The same request, rebuilt with the prompt guide">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Ho to use this book
+<span class="screen-reader-only">Tip</span>The same request, rebuilt with the prompt guide
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Each chapter matches one workshop slide deck, in the same order and with the same number. Read it cover to cover to follow the whole cycle, or jump straight to the step you need.</p>
+<p><strong>Role:</strong> You are an AI-productivity coach for B2B field sales who knows which everyday sales tasks AI genuinely helps with and which it does not.</p>
+<p><strong>Task:</strong> Give me a short, prioritized overview of concrete use cases for using Gemini in my daily sales work, so I know where it is worth starting.</p>
+<p><strong>Context:</strong> I am Martin Bauer, a Kärcher Professional sales professional based in Germany. I sell professional cleaning equipment and services to B2B accounts (industry, logistics, building services). My week is mostly account research, preparing for customer meetings, writing follow-up emails, and drafting proposals. I am new to AI and use Gemini in our Kärcher Workspace.</p>
+<p><strong>Format:</strong> A compact table, one row per use case — <em>task · how Gemini helps · what to watch out for</em> — about eight rows, ordered by how much everyday time each one saves. Plain business English.</p>
+<p><strong>Check:</strong> List the assumptions you made about my role and my tasks that I should verify, and flag any use case where AI is likely to mislead me if I do not check its output.</p>
+</div>
+</div>
+<p>Read the two side by side and the jump is obvious. The stronger version gives the AI a useful coaching perspective, the exact output Martin wants, the context only he knows (his job, his market, his weekly tasks), a usable format, and a check, so what comes back is a prioritized shortlist he can act on rather than a generic brochure.</p>
+<div class="research-note callout callout-style-simple callout-note callout-titled" title="What the research says">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What the research says
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><em>Optional background, not a workshop step. It is here for anyone who wants the evidence behind the approach this page takes.</em></p>
+<p><strong>A structured prompt beats a vague one, and it is a learnable technique.</strong> Reusable prompt patterns, such as giving the model a persona, a clear task, a context block, and an explicit output format, map directly onto Role · Task · Context · Format · Check (White et al.&nbsp;2023), and the wider field of prompt engineering is now catalogued as a discipline in its own right rather than a bag of tricks (Schulhoff et al.&nbsp;2024). The takeaway is the one above: structure, not magic words, and a better second draft.</p>
+</div>
 </div>
 </div>
 
@@ -870,10 +938,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./00-toolkit-studio.html" class="pagination-link" aria-label="Workspace Studio">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Workspace Studio</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./introduction.html" class="pagination-link" aria-label="Course Intro">
-        <span class="nav-page-text">Course Intro</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./00-basics-gmail.html" class="pagination-link" aria-label="Gmail">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Gmail</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

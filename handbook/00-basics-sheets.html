@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Florian Wagner, Patrick Bucher, Jan Kirenz">
 
-<title>AI in International Sales at Kärcher</title>
+<title>14&nbsp; Google Sheets – AI in International Sales at Kärcher</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./introduction.html" rel="next">
+<link href="./00-basics-slides.html" rel="next">
+<link href="./00-basics-docs.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -89,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-basics-gmail.html">Workspace Basics</a></li><li class="breadcrumb-item"><a href="./00-basics-sheets.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Google Sheets</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
@@ -238,7 +238,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00-basics-sheets.html" class="sidebar-item-text sidebar-link">
+  <a href="./00-basics-sheets.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Google Sheets</span></span></a>
   </div>
 </li>
@@ -413,29 +413,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
+  <li><a href="#get-the-table-built" id="toc-get-the-table-built" class="nav-link active" data-scroll-target="#get-the-table-built"><span class="header-section-number">14.1</span> Get the table built</a></li>
+  <li><a href="#then-ask-your-data-a-question" id="toc-then-ask-your-data-a-question" class="nav-link" data-scroll-target="#then-ask-your-data-a-question"><span class="header-section-number">14.2</span> Then ask your data a question</a></li>
+  <li><a href="#bring-in-a-ready-made-gem" id="toc-bring-in-a-ready-made-gem" class="nav-link" data-scroll-target="#bring-in-a-ready-made-gem"><span class="header-section-number">14.3</span> Bring in a ready-made Gem</a></li>
+  <li><a href="#ai-sorts-you-decide" id="toc-ai-sorts-you-decide" class="nav-link" data-scroll-target="#ai-sorts-you-decide"><span class="header-section-number">14.4</span> AI sorts, you decide</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-basics-gmail.html">Workspace Basics</a></li><li class="breadcrumb-item"><a href="./00-basics-sheets.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Google Sheets</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">AI in International Sales at Kärcher</h1>
-<p class="subtitle lead">A companion to the Kärcher Sales-Cycle workshop</p>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Google Sheets</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Florian Wagner, Patrick Bucher, Jan Kirenz </p>
-          </div>
-  </div>
     
   
     
@@ -446,23 +442,87 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome</h1>
-<p>This is the reading companion to the <strong>AI in International Sales at Kärcher</strong> workshop.</p>
-<p>It follows the <strong>Kärcher Sales Cycle</strong> from end to end, from acquisition to follow-up, and treats AI not as a drawer of disconnected tool demos but as support for one continuous sales process.</p>
-<div class="callout callout-style-simple callout-tip callout-titled" title="Ho to use this book">
+<p>A spreadsheet looks technical, but a Sheet is just a <strong>table</strong>: your information in rows and columns. For sales it is the simplest place to keep your accounts — no setup, just a tab you can open in seconds. And like Docs, Gemini sits inside it, so the things people avoid in spreadsheets — building the table, writing formulas, and making sense of the numbers — are now things you can ask for in plain words.</p>
+<div class="tldr">
+<ul>
+<li>A Sheet is just a <strong>table of your data</strong>; it is the lightweight home for your own book of accounts.</li>
+<li>Gemini in Sheets can <strong>build a starter table</strong>, <strong>write a formula from a plain-language request</strong>, and <strong>tidy</strong> what is already there.</li>
+<li>Once your data is in, the real move is <strong>data analysis</strong>: ask the sheet a <strong>plain question</strong> instead of building a formula — then <strong>verify before you act</strong> (<a href="./00-quality-gate.html">quality gate</a>).</li>
+<li>You can also open a <strong>ready-made Gem</strong> right beside your table; it reads the open sheet automatically, with nothing to paste.</li>
+</ul>
+</div>
+<section id="get-the-table-built" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="get-the-table-built"><span class="header-section-number">14.1</span> Get the table built</h2>
+<p>You do not need to know formulas to start — you need about ten rows. Three things remove the friction:</p>
+<ul>
+<li><strong>Build a starter table.</strong> Ask for the structure instead of designing it. <em>“Create a simple account tracker with columns: account, segment, stage, value, last-contact date, next step, note.”</em> You get the headers ready to fill.</li>
+<li><strong>Write a formula in plain words.</strong> This is the part most people dread, and it is the easiest to hand over. <em>“Write a formula that counts how many accounts are in the ‘Proposal’ stage.”</em> It returns the formula and where to put it.</li>
+<li><strong>Tidy what is messy.</strong> <em>“Clean up this column so the dates are all in the same format.”</em></li>
+</ul>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Build your account tracker">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Ho to use this book
+<span class="screen-reader-only">Tip</span>Build your account tracker
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Each chapter matches one workshop slide deck, in the same order and with the same number. Read it cover to cover to follow the whole cycle, or jump straight to the step you need.</p>
+<pre><code>Create a simple account tracker with these columns: account, segment, stage, value, last-contact date, next step, note. Add three example rows so I can see the format.</code></pre>
 </div>
 </div>
+</section>
+<section id="then-ask-your-data-a-question" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="then-ask-your-data-a-question"><span class="header-section-number">14.2</span> Then ask your data a question</h2>
+<p>This is where “data analysis” stops sounding like a job for someone else. With your data in a table, you do not calculate — you <strong>ask</strong>. Give Gemini the sheet and ask in normal words, the same way you would ask a colleague <em>“which of these deals hasn’t moved in a month?”</em>:</p>
+<ul>
+<li><em>“Which accounts have had no contact in the last three weeks?”</em></li>
+<li><em>“What is my pipeline value by segment?”</em></li>
+<li><em>“Which deals have been stuck in the same stage the longest?”</em></li>
+</ul>
+<p>You did not write a formula. You asked a question and got a readable answer — the same one you would have dug out by hand, in a fraction of the time. The phrase <strong>“use only what is in the sheet”</strong> keeps the answer grounded in your data instead of a confident guess.</p>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Ask your data a plain question">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Ask your data a plain question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<pre><code>Here is my account sheet. Which accounts have had no contact in the last three weeks and have no defined next step? Use only what is in the sheet.</code></pre>
+</div>
+</div>
+</section>
+<section id="bring-in-a-ready-made-gem" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="bring-in-a-ready-made-gem"><span class="header-section-number">14.3</span> Bring in a ready-made Gem</h2>
+<p>Asking freely is one way to work; the other is to open a <strong>ready-made Gem</strong> right beside your table. A Gem is Gemini with fixed instructions for one recurring job (you met these on the <a href="./00-toolkit-gemini.html">Gems</a> page), and a Gem built for spreadsheets reads the sheet you have open.</p>
+<p><strong>The first time, add the Gem to your account.</strong> Open its shared link and ask it one throwaway question to get going — <em>“What is your purpose?”</em> is enough. That first use is what makes it appear in your own <strong>Gems</strong> list; you only do this once per Gem.</p>
+<p>After that, you reach it straight from any Sheet:</p>
+<ol type="1">
+<li>Click <strong>Ask Gemini</strong> (top right) to open the Gemini panel.</li>
+<li>Open <strong>More options</strong> (the menu icon, top left of the panel).</li>
+<li>Under <strong>Gems</strong>, click <strong>View all</strong> and pick the Gem you want.</li>
+<li>Type your prompt — it works on the open sheet automatically, with nothing to attach or paste.</li>
+</ol>
+</section>
+<section id="ai-sorts-you-decide" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="ai-sorts-you-decide"><span class="header-section-number">14.4</span> AI sorts, you decide</h2>
+<p>This is the part where trust matters most, because a wrong answer sends your attention to the wrong place. Treat every answer as a <strong>hypothesis you confirm</strong>, not a verdict you accept: does it match what you know? did it flag the gaps instead of inventing values? Gemini does the reading and sorting in seconds — the judgment about what to do next stays yours.</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>The sales version of this — ranking your own accounts to decide where the week goes — is <a href="./00-pipeline.html">Working with Your Data</a>.</p>
+</div>
+</div>
+</div>
+<hr>
+<p><em>Sales Enablement | AI in International Sales at Kärcher</em></p>
 
 
 </section>
@@ -870,10 +930,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./00-basics-docs.html" class="pagination-link" aria-label="Google Docs">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Google Docs</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./introduction.html" class="pagination-link" aria-label="Course Intro">
-        <span class="nav-page-text">Course Intro</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./00-basics-slides.html" class="pagination-link" aria-label="Google Slides">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Google Slides</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

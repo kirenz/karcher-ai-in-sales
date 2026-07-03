@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Florian Wagner, Patrick Bucher, Jan Kirenz">
 
-<title>AI in International Sales at Kärcher</title>
+<title>7&nbsp; Deep Research – AI in International Sales at Kärcher</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./introduction.html" rel="next">
+<link href="./00-toolkit-notebooklm.html" rel="next">
+<link href="./00-toolkit-gemini.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -89,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-toolkit.html">AI Toolkit</a></li><li class="breadcrumb-item"><a href="./00-toolkit-deep-research.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Deep Research</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
@@ -185,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00-toolkit-deep-research.html" class="sidebar-item-text sidebar-link">
+  <a href="./00-toolkit-deep-research.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Deep Research</span></span></a>
   </div>
 </li>
@@ -413,29 +413,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
+  <li><a href="#what-it-is" id="toc-what-it-is" class="nav-link active" data-scroll-target="#what-it-is"><span class="header-section-number">7.1</span> What it is</a></li>
+  <li><a href="#where-you-meet-it" id="toc-where-you-meet-it" class="nav-link" data-scroll-target="#where-you-meet-it"><span class="header-section-number">7.2</span> Where you meet it</a></li>
+  <li><a href="#how-a-run-goes" id="toc-how-a-run-goes" class="nav-link" data-scroll-target="#how-a-run-goes"><span class="header-section-number">7.3</span> How a run goes</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-toolkit.html">AI Toolkit</a></li><li class="breadcrumb-item"><a href="./00-toolkit-deep-research.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Deep Research</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">AI in International Sales at Kärcher</h1>
-<p class="subtitle lead">A companion to the Kärcher Sales-Cycle workshop</p>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Deep Research</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Florian Wagner, Patrick Bucher, Jan Kirenz </p>
-          </div>
-  </div>
     
   
     
@@ -446,21 +441,83 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome</h1>
-<p>This is the reading companion to the <strong>AI in International Sales at Kärcher</strong> workshop.</p>
-<p>It follows the <strong>Kärcher Sales Cycle</strong> from end to end, from acquisition to follow-up, and treats AI not as a drawer of disconnected tool demos but as support for one continuous sales process.</p>
-<div class="callout callout-style-simple callout-tip callout-titled" title="Ho to use this book">
+<p>Several of your Gems do their best work by going out and <em>researching</em> before they answer — pulling current facts from across the public web and citing them. The mode that does that is <strong>Deep Research</strong>. You rarely switch it on yourself; it comes already on inside the Gems whose job is to find things out. This page explains what is happening when a Recipe Card says “Deep Research is on”, and the rhythm of using it well.</p>
+<div class="tldr">
+<ul>
+<li>Deep Research is a <strong>mode inside Gemini</strong>, not a separate tool: instead of answering in one shot, it <strong>plans, searches many public sources, reads them, and writes a structured, cited report</strong>.</li>
+<li>It takes <strong>minutes, not seconds</strong> — it works in the background while you get on with something else.</li>
+<li>You usually meet it <strong>already switched on inside a Gem</strong> (Account-Briefing, Industry-Research, Lead-Finder), so you drive the Gem, not the raw mode.</li>
+<li>It can be <strong>confidently wrong</strong>, so every central claim is cited — <strong>click the sources that matter and verify before you rely on it</strong>.</li>
+</ul>
+</div>
+<section id="what-it-is" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="what-it-is"><span class="header-section-number">7.1</span> What it is</h2>
+<p>A normal Gemini chat answers from what the model already knows, in seconds. <strong>Deep Research</strong> does something different: it goes and researches. It breaks your request into a short plan, runs many searches across public sources, reads the pages it finds, and writes them up into one long, structured report — with <strong>inline citations</strong> you can click to reach the original source.</p>
+<p>The closest everyday picture is handing a brief to a research analyst. You do not get an instant verbal answer; you get a sourced memo back a little later, organised into sections, with its references attached so you can check the parts that matter. That trade — slower, but broad and traceable — is the whole point of the mode.</p>
+</section>
+<section id="where-you-meet-it" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="where-you-meet-it"><span class="header-section-number">7.2</span> Where you meet it</h2>
+<p>In this training you almost never open Deep Research from a blank page. It is the <strong>engine inside several prepared Gems</strong> — the ones whose job is to gather current, public facts:</p>
+<ul>
+<li>the <strong>Account-Briefing Gem</strong> in <a href="./02-research.html">Research &amp; Qualification</a>, which turns a company name and website into a sourced eight-part briefing;</li>
+<li>the <strong>Industry-Research</strong> and <strong>Lead-Finder</strong> Gems in <a href="./01-acquisition.html">Acquisition</a>, which draft an industry knowledge base and a ranked, sourced shortlist of accounts.</li>
+</ul>
+<p>So when a Recipe Card notes that “Deep Research is on”, it means that Gem will run this mode for you. You do not set it up or learn its controls — you give the Gem the specifics it asks for and let the mode do the finding. Understanding the rhythm below is enough.</p>
+</section>
+<section id="how-a-run-goes" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="how-a-run-goes"><span class="header-section-number">7.3</span> How a run goes</h2>
+<ol type="1">
+<li><strong>You give it the specifics.</strong> The Gem already holds the structure and the Kärcher context; you add what only this case needs — the account and its website, or the industry and region.</li>
+<li><strong>It plans first.</strong> It turns your brief into a short research plan: what to search for and from which angles. This is why a good brief matters — the plan is only as aimed as the request behind it.</li>
+<li><strong>It searches and reads.</strong> It runs many searches across public sources and reads the pages. This is the part that takes <strong>minutes</strong> — a normal chat answers in seconds because it is not going anywhere; Deep Research is deliberately slower because it is actually out reading.</li>
+<li><strong>You can step away.</strong> It works in the background. Start the run, go prepare something else, and come back to a finished report rather than watching a spinner.</li>
+<li><strong>It returns a structured, cited report.</strong> Long, sectioned, with citations on the central claims. Each citation links to the page it came from.</li>
+<li><strong>You verify, then decide.</strong> Deep Research can be fluent and wrong. Click the sources behind the two or three claims that actually carry a decision, mark what is verified versus still to-verify, and only then act on it. The finding is the Gem’s job; the judgement is yours.</li>
+</ol>
+<div class="callout callout-style-simple callout-note callout-titled" title="📸 Screenshot">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Ho to use this book
+<span class="screen-reader-only">Note</span>📸 Screenshot
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Each chapter matches one workshop slide deck, in the same order and with the same number. Read it cover to cover to follow the whole cycle, or jump straight to the step you need.</p>
+<p><em>Add a screenshot here: a Deep Research run inside a Gem — the short research plan visible, the run in progress, and the report building up with citation chips.</em></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled" title="Deep Research vs NotebookLM">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Deep Research vs NotebookLM
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Both give you sourced answers, but from opposite places. <strong>Deep Research</strong> goes out to the <strong>live public web</strong> and brings sources back. <strong><a href="./00-toolkit-notebooklm.html">NotebookLM</a></strong> stays strictly <strong>inside the documents you uploaded</strong> and never leaves them. Use Deep Research to <em>find</em> what is out there; use NotebookLM to <em>work within</em> what you already have.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Common stumbles">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Common stumbles
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Expecting a quick answer.</strong> It is built to take minutes. For a one-line answer, a normal Gemini chat is the right tool — Deep Research is overkill.</li>
+<li><strong>Feeding it confidential data.</strong> It researches the <em>public</em> web, so keep internal or customer-specific material out of the brief; that belongs in a Gem’s knowledge or in NotebookLM, not in an open-web search.</li>
+<li><strong>Trusting it unchecked.</strong> A confident, well-cited report can still be wrong. The citations are there so you click them — verify the claims that carry a decision.</li>
+</ul>
 </div>
 </div>
 
@@ -870,10 +927,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./00-toolkit-gemini.html" class="pagination-link" aria-label="Gems">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Gems</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./introduction.html" class="pagination-link" aria-label="Course Intro">
-        <span class="nav-page-text">Course Intro</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./00-toolkit-notebooklm.html" class="pagination-link" aria-label="NotebookLM">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">NotebookLM</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

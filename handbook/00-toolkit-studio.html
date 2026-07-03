@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Florian Wagner, Patrick Bucher, Jan Kirenz">
 
-<title>AI in International Sales at Kärcher</title>
+<title>9&nbsp; Workspace Studio – AI in International Sales at Kärcher</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./introduction.html" rel="next">
+<link href="./00-prompting.html" rel="next">
+<link href="./00-toolkit-notebooklm.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -89,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-toolkit.html">AI Toolkit</a></li><li class="breadcrumb-item"><a href="./00-toolkit-studio.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Workspace Studio</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
@@ -197,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00-toolkit-studio.html" class="sidebar-item-text sidebar-link">
+  <a href="./00-toolkit-studio.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Workspace Studio</span></span></a>
   </div>
 </li>
@@ -413,29 +413,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
+  <li><a href="#the-shape-of-a-flow" id="toc-the-shape-of-a-flow" class="nav-link active" data-scroll-target="#the-shape-of-a-flow"><span class="header-section-number">9.1</span> The shape of a flow</a></li>
+  <li><a href="#set-up-your-first-flow" id="toc-set-up-your-first-flow" class="nav-link" data-scroll-target="#set-up-your-first-flow"><span class="header-section-number">9.2</span> Set up your first flow</a></li>
+  <li><a href="#one-rule-before-you-automate-anything" id="toc-one-rule-before-you-automate-anything" class="nav-link" data-scroll-target="#one-rule-before-you-automate-anything"><span class="header-section-number">9.3</span> One rule before you automate anything</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-toolkit.html">AI Toolkit</a></li><li class="breadcrumb-item"><a href="./00-toolkit-studio.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Workspace Studio</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">AI in International Sales at Kärcher</h1>
-<p class="subtitle lead">A companion to the Kärcher Sales-Cycle workshop</p>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Workspace Studio</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Florian Wagner, Patrick Bucher, Jan Kirenz </p>
-          </div>
-  </div>
     
   
     
@@ -446,21 +441,65 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome</h1>
-<p>This is the reading companion to the <strong>AI in International Sales at Kärcher</strong> workshop.</p>
-<p>It follows the <strong>Kärcher Sales Cycle</strong> from end to end, from acquisition to follow-up, and treats AI not as a drawer of disconnected tool demos but as support for one continuous sales process.</p>
-<div class="callout callout-style-simple callout-tip callout-titled" title="Ho to use this book">
+<p>This is the one tool you will not touch on day one. Workspace Studio sets up a <strong>standing routine that runs on a trigger</strong> — “when an email from X about Y arrives, do Z” — so a repeatable task happens without you starting it by hand. You meet it for real at the end of the cycle, in the <a href="./11-transfer.html">action plan</a>, once the manual steps it replaces are already a habit. This page is here for that moment: the shape of a flow and the few clicks to set one up.</p>
+<div class="tldr">
+<ul>
+<li>Workspace Studio is <strong>no-code</strong>: you describe the trigger and the action in plain language.</li>
+<li>Every flow has three parts: a <strong>trigger</strong>, an <strong>action</strong>, and <strong>your approval</strong> before anything sends.</li>
+<li>The order rule is firm: <strong>automate after the habit, not before it</strong> — a clean manual workflow first.</li>
+<li>You build your first flow in the <a href="./11-transfer.html">action plan</a>, not today.</li>
+</ul>
+</div>
+<section id="the-shape-of-a-flow" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="the-shape-of-a-flow"><span class="header-section-number">9.1</span> The shape of a flow</h2>
+<p>Before any clicks, hold the three parts in mind — they are all a flow is:</p>
+<ul>
+<li><strong>The trigger</strong> — the incoming pattern that starts it: an email from a specific contact, or about a specific subject.</li>
+<li><strong>The action</strong> — the repeatable step you would otherwise do yourself: summarise the message, draft a standard reply, file it to the right place.</li>
+<li><strong>The approval</strong> — the result waits for <em>your</em> decision rather than going out on its own. The human check never leaves you.</li>
+</ul>
+</section>
+<section id="set-up-your-first-flow" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="set-up-your-first-flow"><span class="header-section-number">9.2</span> Set up your first flow</h2>
+<ol type="1">
+<li>Open <strong>Workspace Studio</strong> from your Kärcher Workspace and start a new flow.</li>
+<li>Set the <strong>trigger</strong> in plain language — for example, <em>“a new email arrives from a customer about a quote.”</em></li>
+<li>Add the <strong>action</strong> the same way — <em>“summarise it and draft a reply using my standard structure.”</em></li>
+<li>Set the result to <strong>wait for my approval</strong> before it sends, never to send automatically.</li>
+<li><strong>Test it on one real example</strong>, then turn it on.</li>
+</ol>
+<div class="callout callout-style-simple callout-note callout-titled" title="📸 Screenshot">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Ho to use this book
+<span class="screen-reader-only">Note</span>📸 Screenshot
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Each chapter matches one workshop slide deck, in the same order and with the same number. Read it cover to cover to follow the whole cycle, or jump straight to the step you need.</p>
+<p><em>Add a screenshot here: a simple flow with the trigger, the action, and the “wait for approval” setting visible.</em></p>
+</div>
+</div>
+</section>
+<section id="one-rule-before-you-automate-anything" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="one-rule-before-you-automate-anything"><span class="header-section-number">9.3</span> One rule before you automate anything</h2>
+<p>Standing automation comes <strong>after</strong> the habit, not before it. First make the manual workflow clean and reliable by hand, for a few weeks. Only once a task has proven itself genuinely repetitive and stable does it earn a trigger. Automating a messy process just makes the mess faster — so the habit comes first, always, and the standing flow is the reward you unlock later.</p>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Common stumbles">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Common stumbles
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Automating too early.</strong> If the manual version is not yet clean and repeatable, a flow just speeds up the mess. Earn it first.</li>
+<li><strong>Letting it send on its own.</strong> Always keep the approval step. The flow drafts; you decide.</li>
+<li><strong>Reaching for it for one-off mail.</strong> A single message stays in Gemini in Gmail. Workspace Studio is only for the same routine that repeats.</li>
+</ul>
 </div>
 </div>
 
@@ -870,10 +909,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./00-toolkit-notebooklm.html" class="pagination-link" aria-label="NotebookLM">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">NotebookLM</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./introduction.html" class="pagination-link" aria-label="Course Intro">
-        <span class="nav-page-text">Course Intro</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./00-prompting.html" class="pagination-link" aria-label="Prompt Basics">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Prompt Basics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

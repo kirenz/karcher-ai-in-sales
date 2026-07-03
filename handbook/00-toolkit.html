@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Florian Wagner, Patrick Bucher, Jan Kirenz">
 
-<title>AI in International Sales at Kärcher</title>
+<title>5&nbsp; Your AI toolkit: four tools – AI in International Sales at Kärcher</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./introduction.html" rel="next">
+<link href="./00-toolkit-gemini.html" rel="next">
+<link href="./00-quality-gate.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -89,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-toolkit.html">AI Toolkit</a></li><li class="breadcrumb-item"><a href="./00-toolkit.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">AI Toolkit</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
@@ -173,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00-toolkit.html" class="sidebar-item-text sidebar-link">
+  <a href="./00-toolkit.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">AI Toolkit</span></span></a>
   </div>
 </li>
@@ -413,29 +413,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
+  <li><a href="#gemini-and-gems" id="toc-gemini-and-gems" class="nav-link active" data-scroll-target="#gemini-and-gems"><span class="header-section-number">5.1</span> Gemini and Gems</a></li>
+  <li><a href="#notebooklm" id="toc-notebooklm" class="nav-link" data-scroll-target="#notebooklm"><span class="header-section-number">5.2</span> NotebookLM</a></li>
+  <li><a href="#workspace-studio" id="toc-workspace-studio" class="nav-link" data-scroll-target="#workspace-studio"><span class="header-section-number">5.3</span> Workspace Studio</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-toolkit.html">AI Toolkit</a></li><li class="breadcrumb-item"><a href="./00-toolkit.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">AI Toolkit</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">AI in International Sales at Kärcher</h1>
-<p class="subtitle lead">A companion to the Kärcher Sales-Cycle workshop</p>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Your AI toolkit: four tools</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Florian Wagner, Patrick Bucher, Jan Kirenz </p>
-          </div>
-  </div>
     
   
     
@@ -446,23 +441,52 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome</h1>
-<p>This is the reading companion to the <strong>AI in International Sales at Kärcher</strong> workshop.</p>
-<p>It follows the <strong>Kärcher Sales Cycle</strong> from end to end, from acquisition to follow-up, and treats AI not as a drawer of disconnected tool demos but as support for one continuous sales process.</p>
-<div class="callout callout-style-simple callout-tip callout-titled" title="Ho to use this book">
-<div class="callout-header d-flex align-content-center">
+<p>Four tools sit behind this whole training. We introduce each tool one at a time below, and you meet it again later at the exact point in the cycle where it is first needed.</p>
+<div class="tldr">
+<ul>
+<li><strong>Gemini</strong> drafts from scratch; a <strong>Gem</strong> is Gemini after one good briefing (you get one ready-made per step).</li>
+<li>Some Gems run on <strong>Deep Research</strong> — Gemini’s mode for going out, searching public sources, and citing them — so they research before they draft.</li>
+<li><strong>NotebookLM</strong> works only from the sources you give it and shows the source — it can answer, summarise, or build a table or briefing you can trace back to the page.</li>
+<li><strong>Workspace Studio</strong> turns a task you keep repeating into a standing routine — <em>when X arrives, do Z</em> — that still waits for your approval before anything sends.</li>
+<li>You feed a Gem by <strong>attaching a Google Doc</strong>, then export its answer as a new Doc, a chain across the cycle.</li>
+</ul>
+</div>
+<section id="gemini-and-gems" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="gemini-and-gems"><span class="header-section-number">5.1</span> Gemini and Gems</h2>
+<p><strong>Gemini</strong> is the general-purpose assistant: you type a request and get a draft back. Think of it as a new colleague, fast and capable, who knows nothing about your work, so you brief them from scratch every time.</p>
+<p>A <strong>Gem</strong> is that same colleague after one good briefing. You load in your best instructions and a few reference documents once, and it sticks: from then on you just name the account and it already knows how we work. You do not build these yourself; you receive one ready-made Gem for each step of the cycle.</p>
+<p>Some of those Gems do their best work by <strong>researching first</strong> — going out to the public web, pulling current facts, and citing them — before they draft. The mode that does that is <strong>Deep Research</strong>, and because we lean on it so often it has its own page.</p>
+<p>→ Learn more about Gemini and Gems on the <a href="./00-toolkit-gemini.html">Gems page</a>.</p>
+<p>→ The research mode several of these Gems run on has its own page: <a href="./00-toolkit-deep-research.html">Deep Research</a>.</p>
+</section>
+<section id="notebooklm" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="notebooklm"><span class="header-section-number">5.2</span> NotebookLM</h2>
+<p><strong>NotebookLM</strong> works only from the documents you give it, and nothing else. Think of it as an expert who has read exactly those sources. Ask a question and the answer comes straight from those pages, with the source shown.</p>
+<p>And it does more than answer: from the same sources it can summarise them, pull the facts into a table, or draft a briefing or even a presentation, each grounded in what you uploaded.</p>
+<p>That source-anchoring is what makes it the natural home for the reliability questions from the survey: you get outputs you can trace back to the page, not confident guesses.</p>
+<p>→ Learn more about NotebookLM on the <a href="./00-toolkit-notebooklm.html">NotebookLM page</a>.</p>
+<div class="callout callout-style-simple callout-note callout-titled" title="Gem vs NotebookLM">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Ho to use this book
+<span class="screen-reader-only">Note</span>Gem vs NotebookLM
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>Each chapter matches one workshop slide deck, in the same order and with the same number. Read it cover to cover to follow the whole cycle, or jump straight to the step you need.</p>
+<p>A <strong>Gem</strong> works from everything it knows, while <strong>NotebookLM</strong> stays inside the documents you give it and shows its source.</p>
 </div>
 </div>
+</div>
+</section>
+<section id="workspace-studio" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="workspace-studio"><span class="header-section-number">5.3</span> Workspace Studio</h2>
+<p><strong>Workspace Studio</strong> turns a task you keep repeating into a <strong>standing routine that runs on a trigger</strong> — <em>when an email from X about Y arrives, do Z</em> — so the work happens without you starting it by hand.</p>
+<p>It is <strong>no-code</strong>: you describe the trigger and the action in plain language, and the result still waits for your approval before anything sends.</p>
+<p>→ Learn more about Workspace Studio on the <a href="./00-toolkit-studio.html">Workspace Studio page</a>.</p>
 
 
 </section>
@@ -870,10 +894,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./00-quality-gate.html" class="pagination-link" aria-label="Quality Gate">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quality Gate</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./introduction.html" class="pagination-link" aria-label="Course Intro">
-        <span class="nav-page-text">Course Intro</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./00-toolkit-gemini.html" class="pagination-link" aria-label="Gems">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Gems</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
