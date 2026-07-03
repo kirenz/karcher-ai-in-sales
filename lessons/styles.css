@@ -181,3 +181,10 @@ p.lead{color:var(--ink);font-size:18px}
 .door__badge{align-self:flex-start;background:var(--yellow);color:var(--ink);font-weight:700;
   font-size:12px;font-family:var(--cond);text-transform:uppercase;letter-spacing:.08em;
   padding:3px 9px;border-radius:4px}
+
+/* --- generated-lesson extras --- */
+.topbar{text-decoration:none}
+.points{margin:2px 0 14px;padding-left:18px}
+.points li{font-size:15px;color:var(--ink-70);margin:0 0 7px}
+.recipe__title{font-family:var(--cond);text-transform:uppercase;letter-spacing:.04em;
+  font-weight:700;font-size:17px;margin:16px 0 6px;color:var(--ink)}
