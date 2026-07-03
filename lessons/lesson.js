@@ -29,6 +29,12 @@
   var total = screens.length;
   var cur = 0;
 
+  var audioEl = null, playBtn = null;
+  function stopAudio() {
+    if (audioEl) { audioEl.pause(); audioEl = null; }
+    if (playBtn) { playBtn.textContent = '► Listen'; playBtn.classList.remove('playing'); playBtn = null; }
+  }
+
   var dotWrap = document.getElementById('dots');
   var dotEls = [];
   if (dotWrap) {
@@ -43,6 +49,7 @@
     });
   }
   function go(n) {
+    stopAudio();
     cur = Math.max(0, Math.min(total - 1, n));
     render();
     var card = document.querySelector('.card');
@@ -76,6 +83,19 @@
         if (fb) { fb.className = 'fb miss'; fb.textContent = missMsg; }
       }
     });
+  });
+
+  document.addEventListener('click', function (ev) {
+    var b = ev.target.closest('.listen');
+    if (!b) return;
+    if (playBtn === b) { stopAudio(); return; }
+    stopAudio();
+    audioEl = new Audio(b.getAttribute('data-audio'));
+    playBtn = b;
+    b.textContent = '❚❚ Playing';
+    b.classList.add('playing');
+    audioEl.play();
+    audioEl.onended = stopAudio;
   });
 
   render();
