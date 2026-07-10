@@ -514,11 +514,22 @@
     ]
   },
   {
-    "objectID": "q-translate.html#let-gemini-interview-you",
-    "href": "q-translate.html#let-gemini-interview-you",
+    "objectID": "q-translate.html#a-whole-doc-one-click-in-docs",
+    "href": "q-translate.html#a-whole-doc-one-click-in-docs",
     "title": "13  Translate Sales Material for Your Market",
     "section": "",
-    "text": "TipThe translation brief\n\n\n\nRole: You are a translator for B2B sales material.\nTask: Help me adapt a sales text for another market. First ask me to paste the text, and ask which language and market it is for. Then translate it.\nContext: I work in sales at Kärcher, the cleaning-technology company. Keep all product names and model designations exactly as they are.\nFormat: The translated text, ready to use: natural for the market, professional in tone, same structure as the original.\nCheck: List anything that did not translate cleanly — idioms, units, legal or price wording — so I can review it. Change no facts, numbers, or product names.",
+    "text": "Open the Doc, then Tools → Translate document.\nName the copy, pick the target language, click Translate.\nA translated copy opens as a new file — your original stays untouched. Remember: this is raw machine translation, so the check below matters all the more.",
+    "crumbs": [
+      "Quick Help",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Translate for Your Market</span>"
+    ]
+  },
+  {
+    "objectID": "q-translate.html#short-text-let-gemini-adapt-it",
+    "href": "q-translate.html#short-text-let-gemini-adapt-it",
+    "title": "13  Translate Sales Material for Your Market",
+    "section": "13.2 Short text: let Gemini adapt it",
+    "text": "13.2 Short text: let Gemini adapt it\nPaste and run:\n\n\n\n\n\n\nTipThe translation brief\n\n\n\nRole: You are a translator for B2B sales material.\nTask: Help me adapt a sales text for another market. First ask me to paste the text, and ask which language and market it is for. Then translate it.\nContext: I work in sales at Kärcher, the cleaning-technology company. Keep all product names and model designations exactly as they are.\nFormat: The translated text, ready to use: natural for the market, professional in tone, same structure as the original.\nCheck: List anything that did not translate cleanly — idioms, units, legal or price wording — so I can review it. Change no facts, numbers, or product names.\n\n\nNo text at hand? Take the practice email from Reply to a Customer Email and translate it into your market’s language.",
     "crumbs": [
       "Quick Help",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Translate for Your Market</span>"
@@ -2142,8 +2153,8 @@
     ]
   },
   {
-    "objectID": "08-closing.html#the-close-is-a-step-not-a-trick",
-    "href": "08-closing.html#the-close-is-a-step-not-a-trick",
+    "objectID": "08-closing.html#the-right-next-step-at-the-right-moment",
+    "href": "08-closing.html#the-right-next-step-at-the-right-moment",
     "title": "39  Closing",
     "section": "",
     "text": "Read the buying signal the customer is already giving you.\nChoose a closing path — gentle or direct — that matches how strong that signal is.\nCapture the agreed next step in a short summary.",
@@ -3294,39 +3305,6 @@
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>NorthStar Worked Example: The Documents</span>"
-    ]
-  },
-  {
-    "objectID": "08-closing.html#the-right-next-step-at-the-right-moment",
-    "href": "08-closing.html#the-right-next-step-at-the-right-moment",
-    "title": "39  Closing",
-    "section": "",
-    "text": "Read the buying signal the customer is already giving you.\nChoose a closing path — gentle or direct — that matches how strong that signal is.\nCapture the agreed next step in a short summary.",
-    "crumbs": [
-      "Sales Cycle",
-      "<span class='chapter-number'>39</span>  <span class='chapter-title'>Closing</span>"
-    ]
-  },
-  {
-    "objectID": "q-translate.html#a-whole-doc-one-click-in-docs",
-    "href": "q-translate.html#a-whole-doc-one-click-in-docs",
-    "title": "13  Translate Sales Material for Your Market",
-    "section": "",
-    "text": "Open the Doc, then Tools → Translate document.\nName the copy, pick the target language, click Translate.\nA translated copy opens as a new file — your original stays untouched. Remember: this is raw machine translation, so the check below matters all the more.",
-    "crumbs": [
-      "Quick Help",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Translate for Your Market</span>"
-    ]
-  },
-  {
-    "objectID": "q-translate.html#short-text-let-gemini-adapt-it",
-    "href": "q-translate.html#short-text-let-gemini-adapt-it",
-    "title": "13  Translate Sales Material for Your Market",
-    "section": "13.2 Short text: let Gemini adapt it",
-    "text": "13.2 Short text: let Gemini adapt it\nPaste and run:\n\n\n\n\n\n\nTipThe translation brief\n\n\n\nRole: You are a translator for B2B sales material.\nTask: Help me adapt a sales text for another market. First ask me to paste the text, and ask which language and market it is for. Then translate it.\nContext: I work in sales at Kärcher, the cleaning-technology company. Keep all product names and model designations exactly as they are.\nFormat: The translated text, ready to use: natural for the market, professional in tone, same structure as the original.\nCheck: List anything that did not translate cleanly — idioms, units, legal or price wording — so I can review it. Change no facts, numbers, or product names.\n\n\nNo text at hand? Take the practice email from Reply to a Customer Email and translate it into your market’s language.",
-    "crumbs": [
-      "Quick Help",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Translate for Your Market</span>"
     ]
   }
 ]
