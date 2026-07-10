@@ -98,5 +98,39 @@
     audioEl.onended = stopAudio;
   });
 
+  // Copy-to-clipboard: .copy[data-copy="#selector"] copies that element's textContent.
+  // Scoped to .copy buttons, so pages without one are unaffected.
+  function legacyCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed'; ta.style.left = '-9999px';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch (e) { }
+    document.body.removeChild(ta);
+  }
+  document.addEventListener('click', function (ev) {
+    var b = ev.target.closest('.copy');
+    if (!b) return;
+    // data-copy is an "#id" selector. Use getElementById so ids that start with a
+    // digit work — document.querySelector('#01-acquisition-r2') throws a SyntaxError
+    // (a CSS id selector cannot start with a digit), which is why Copy silently
+    // failed on the numbered step lessons but worked on the g-prefixed foundations.
+    var sel = b.getAttribute('data-copy') || '';
+    var src = /^#[\w-]+$/.test(sel) ? document.getElementById(sel.slice(1)) : null;
+    if (!src && sel) { try { src = document.querySelector(sel); } catch (e) { src = null; } }
+    if (!src) return;
+    var text = src.textContent, label = b.textContent;
+    function flash() {
+      b.textContent = 'Copied ✓';
+      b.classList.add('copied');
+      setTimeout(function () { b.textContent = label; b.classList.remove('copied'); }, 1800);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(flash, function () { legacyCopy(text); flash(); });
+    } else {
+      legacyCopy(text); flash();
+    }
+  });
+
   render();
 })();

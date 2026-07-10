@@ -74,6 +74,7 @@ p.lead{color:var(--ink);font-size:18px}
   padding:13px 15px;margin:2px 0 18px;font-size:15px;color:var(--ink)}
 .inputbox b{font-family:var(--cond);text-transform:uppercase;letter-spacing:.09em;
   font-size:12px;color:var(--ink-55);display:block;margin-bottom:3px}
+.inputlinks{display:inline-block;margin-top:8px}
 
 /* --- buttons --- */
 .btn{font-family:var(--cond);text-transform:uppercase;letter-spacing:.09em;
@@ -85,6 +86,7 @@ p.lead{color:var(--ink);font-size:18px}
 .btn.dark{background:var(--ink);color:#fff}
 .btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
 .btn.block{width:100%;justify-content:center}
+.btn.soon{opacity:.45;cursor:default;pointer-events:none}
 .btn:focus-visible{outline:3px solid #7aa7ff;outline-offset:2px}
 
 /* --- quiz (yellow = right, gray = retry; no traffic-light colours) --- */
@@ -161,6 +163,8 @@ p.lead{color:var(--ink);font-size:18px}
 .stepcard__meta{font-size:13px;color:var(--ink-55);margin-top:auto}
 .stepcard--soon{opacity:.6;cursor:default;pointer-events:none}
 .stepcard--soon .stepcard__num{background:#e6e6e2;color:#a6a6a1}
+/* foundations cards: anthracite number, so the basics read as their own band, not a 10th–15th cycle step */
+.stepcard--found .stepcard__num{background:var(--ink);color:#fff}
 
 /* --- two-door start page (interactive vs read) --- */
 .doorgrid{max-width:600px;margin:0 auto;padding:24px 18px 0;display:grid;
@@ -182,6 +186,23 @@ p.lead{color:var(--ink);font-size:18px}
   font-size:12px;font-family:var(--cond);text-transform:uppercase;letter-spacing:.08em;
   padding:3px 9px;border-radius:4px}
 
+/* --- quick-help + hub extras: full-width door band, landing tiles, done links --- */
+.door--wide{grid-column:1/-1;min-height:auto}
+.stepcard--help .stepcard__num{border-radius:9px}
+.stepcard--help .stepcard__num svg{width:17px;height:17px}
+.stepcard__sub{font-size:13.5px;color:var(--ink-70);line-height:1.45}
+.quietlinks{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+.quietlinks .deeper{margin-top:0}
+
+/* --- studio flow mock (quick-help automation): trigger → classify → notify → decide --- */
+.flowmock{margin:2px 0 10px;max-width:380px}
+.flowmock__step{display:flex;align-items:center;gap:11px;border:1px solid var(--line);
+  border-radius:10px;padding:11px 13px;background:#fff;font-size:14.5px;color:var(--ink)}
+.flowmock__step svg{width:19px;height:19px;color:var(--ink-55);flex:none}
+.flowmock__step--hi{background:var(--yellow-tint);border-color:var(--ink);font-weight:700}
+.flowmock__step--hi svg{color:var(--ink)}
+.flowmock__arrow{width:2px;height:13px;background:#cfcfca;margin:2px 0 2px 24px}
+
 /* --- generated-lesson extras --- */
 .topbar{text-decoration:none}
 .points{margin:2px 0 14px;padding-left:18px}
@@ -196,3 +217,127 @@ p.lead{color:var(--ink);font-size:18px}
   font-size:12px;color:var(--ink-55);margin:0 0 14px}
 .listen:hover{border-color:var(--ink);color:var(--ink)}
 .listen.playing{background:var(--yellow);border-color:var(--ink);color:var(--ink)}
+
+/* --- worked prompt example (foundations g2: weak brief vs. briefed) --- */
+.ex-weak,.ex-strong{border:1px solid var(--line);border-radius:9px;padding:13px 15px;margin:0 0 12px}
+.ex-strong{border-color:var(--ink)}
+.ex-tag{font-family:var(--cond);text-transform:uppercase;letter-spacing:.09em;font-weight:700;
+  font-size:12px;background:var(--yellow);color:var(--ink);padding:3px 9px;border-radius:3px;
+  display:inline-block;margin:0 0 9px}
+.ex-tag--out{background:#ececE8;color:var(--ink-55)}
+.ex-prompt{font-size:16px;color:var(--ink);font-style:italic;margin:0 0 6px}
+.ex-note{font-size:13.5px;color:var(--ink-55);margin:6px 0 0}
+.ex-strong .recipe .row{grid-template-columns:84px 1fr;padding:8px 0}
+.ex-win{background:var(--yellow-tint);border-radius:6px;padding:8px 12px;margin:10px 0 0;
+  font-size:14px;color:var(--ink);font-weight:700}
+
+/* --- "your turn" action block: copy the prompt, open Gemini --- */
+.tryit{background:var(--yellow-tint);border-radius:9px;padding:14px 16px;margin:2px 0 0}
+.tryit__label{font-family:var(--cond);text-transform:uppercase;letter-spacing:.12em;font-weight:700;
+  font-size:12px;color:var(--ink);margin:0 0 5px}
+.tryit__text{font-size:14px;color:var(--ink-70);margin:0 0 12px}
+.tryit__actions{display:flex;flex-wrap:wrap;gap:10px}
+.copysrc{display:none}
+.copy.copied{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* --- per-card identity icon (foundations intro) --- */
+.foundicon{width:52px;height:52px;border-radius:13px;background:var(--yellow);color:var(--ink);
+  display:flex;align-items:center;justify-content:center;margin:0 0 18px}
+.foundicon svg{width:28px;height:28px}
+
+/* --- built UI mock (e.g. Gemini's attach menu) --- */
+.uimock{margin:2px 0 6px}
+.uimock__cue{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;font-size:14px;color:var(--ink-70);margin:0 0 11px}
+.uimock__plus{width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;font-weight:700;
+  font-size:20px;line-height:1;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.uimock__plus svg{width:17px;height:17px}
+.uimock__chip{display:inline-flex;align-items:center;gap:6px;background:var(--ink);color:#fff;border-radius:15px;
+  padding:4px 11px;font-family:var(--cond);text-transform:uppercase;letter-spacing:.04em;font-weight:700;font-size:12px}
+.uimock__chip svg{width:14px;height:14px}
+.uimock__menu{border:1px solid var(--line);border-radius:10px;overflow:hidden;max-width:330px;
+  box-shadow:0 6px 18px rgba(0,0,0,.07)}
+.uimock__item{display:flex;align-items:center;gap:12px;padding:12px 14px;font-size:15px;color:var(--ink);
+  border-top:1px solid var(--line)}
+.uimock__item:first-child{border-top:none}
+.uimock__item svg{width:20px;height:20px;color:var(--ink-55);flex:none}
+.uimock__item--hi{background:var(--yellow-tint);font-weight:700}
+.uimock__item--hi svg{color:var(--ink)}
+
+/* --- visible copyable prompt (shows what "Copy" copies) --- */
+.promptbox{display:flex;flex-wrap:wrap;align-items:center;gap:10px;background:#fff;
+  border:1px solid var(--line);border-radius:8px;padding:9px 10px 9px 13px;margin:0 0 11px}
+.promptbox__text{flex:1 1 52%;min-width:150px;font-size:14px;color:var(--ink);margin:0}
+.promptbox .copy{flex:none;padding:9px 15px;font-size:13px}
+
+/* --- numbered how-to steps (e.g. optional "build your own"), with copyable fields --- */
+.steps{list-style:none;margin:2px 0 8px;padding:0}
+.steps li{display:flex;gap:11px;align-items:flex-start;margin:0 0 13px}
+.steps__n{flex:none;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;font-weight:700;
+  font-size:13px;line-height:1;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+.steps__body{flex:1;min-width:0}
+.steps__text{margin:0;font-size:15px;color:var(--ink-70)}
+.copyfield{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:8px 0 0}
+.copyfield__top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 5px}
+.copyfield__label{font-family:var(--cond);text-transform:uppercase;letter-spacing:.08em;font-weight:700;
+  font-size:11px;color:var(--ink-55)}
+.copyfield__text{margin:0;font-size:13px;color:var(--ink);white-space:pre-wrap;line-height:1.5}
+.copyfield .copy{flex:none;padding:6px 12px;font-size:12px}
+
+/* --- lesson image + caption (e.g. the NorthStar homepage) --- */
+.lesson-img{margin:8px 0 4px}
+.lesson-img img{width:100%;max-width:100%;border:1px solid var(--line);border-radius:9px;display:block}
+.lesson-img__cap{font-size:13px;color:var(--ink-55);margin:7px 0 0}
+
+/* --- cast / people with portraits (e.g. the buying center) --- */
+.cast{display:flex;flex-direction:column;gap:14px;margin:4px 0 4px}
+.cast__person{display:flex;gap:13px;align-items:flex-start}
+.cast__portrait{width:54px;height:54px;border-radius:50%;object-fit:cover;flex:none;background:var(--page);border:1px solid var(--line)}
+.cast__info{flex:1;min-width:0}
+.cast__name{font-family:var(--cond);text-transform:uppercase;letter-spacing:.03em;font-weight:700;font-size:16px;color:var(--ink);margin:0}
+.cast__role{font-family:var(--cond);text-transform:uppercase;letter-spacing:.04em;font-weight:700;font-size:12px;color:var(--ink-55);margin:2px 0 0}
+.cast__cares{font-size:14px;color:var(--ink-70);margin:4px 0 0}
+
+/* --- doc chain: save the output as a Google Doc, and what it feeds next --- */
+.docchain{background:var(--yellow-tint);border-radius:8px;padding:11px 14px;margin:12px 0 0;
+  font-size:14px;color:var(--ink);line-height:1.5}
+.docchain b{font-family:var(--cond);text-transform:uppercase;letter-spacing:.04em;font-size:12px;color:var(--ink)}
+
+/* --- recipe action rows: colour-coded icon badges so a step scans without reading.
+   Attach a Drive Doc = dark badge; type info in = light badge; create an artifact
+   (Doc / Slides / Gmail draft) = yellow badge on the yellow-tint chain block. --- */
+.actionrow{display:flex;gap:12px;align-items:flex-start;border-radius:8px;padding:12px 14px;margin:2px 0 12px}
+.actionrow__ico{flex:none;width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center}
+.actionrow__ico svg{width:19px;height:19px}
+.actionrow__body{flex:1;min-width:0;font-size:14.5px;color:var(--ink);line-height:1.5}
+.actionrow__label{font-family:var(--cond);text-transform:uppercase;letter-spacing:.08em;
+  font-weight:700;font-size:11.5px;display:block;margin:0 0 2px}
+.actionrow__then{display:block;margin-top:7px;color:var(--ink-70);font-size:13.5px}
+.actionrow__then::before{content:"\2192  ";font-weight:700;color:var(--ink)}
+.actionrow--attach,.actionrow--type{background:var(--page);border:1px dashed #cfcfca}
+.actionrow--attach .actionrow__ico{background:var(--ink);color:#fff}
+.actionrow--type .actionrow__ico{background:#e2e2dd;color:var(--ink)}
+.actionrow--attach .actionrow__label,.actionrow--type .actionrow__label{color:var(--ink-55)}
+.actionrow--make{background:var(--yellow-tint)}
+.actionrow--make .actionrow__ico{background:var(--yellow);color:var(--ink)}
+.actionrow--make .actionrow__label{color:var(--ink)}
+
+/* gem glyph inside the dark "Open the … Gem" button (the .btn gap handles spacing) */
+.btnico{display:inline-flex;align-items:center}
+.btnico svg{width:18px;height:18px}
+
+/* "see the example" link on a concept/intro screen */
+.introlinks{margin-top:12px}
+
+/* email-thread mock on a "connect with X" card — the first-contact exchange */
+.mailthread{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:12px 0 2px}
+.mailthread__head{display:flex;align-items:center;gap:8px;background:var(--ink);color:#fff;
+  padding:9px 13px;font-family:var(--cond);text-transform:uppercase;letter-spacing:.06em;font-weight:700;font-size:12px}
+.mailthread__ico{display:inline-flex}
+.mailthread__ico svg{width:16px;height:16px}
+.mailmsg{padding:11px 14px;border-top:1px solid var(--line)}
+.mailmsg--in{background:var(--yellow-tint)}
+.mailmsg--out{background:#fff}
+.mailmsg__meta{font-family:var(--cond);text-transform:uppercase;letter-spacing:.06em;font-weight:700;
+  font-size:11px;color:var(--ink-55);margin:0 0 4px}
+.mailmsg__when{font-weight:400;text-transform:none;letter-spacing:0}
+.mailmsg__body{font-size:14px;color:var(--ink);margin:0;line-height:1.5}
