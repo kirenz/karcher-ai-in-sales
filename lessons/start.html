@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <title>AI in Sales — Start</title>
-  <link rel="stylesheet" href="styles.css?v=a06f6d4a">
+  <link rel="stylesheet" href="styles.css?v=dcd1ca5b">
 </head>
 <body>
   <div class="topbar"><b>Kärcher</b><span>AI in Sales</span></div>
@@ -16,8 +16,25 @@
     <p class="hero__sub">Get help with the task in front of you, learn the basics or the sales cycle, or read the full guide. Switch whenever you like.</p>
   </header>
 
+  <div class="tour" id="tour">
+    <svg class="tour__spark" width="86" height="94" viewBox="0 0 110 120" fill="none" aria-hidden="true">
+      <g class="antenna"><line x1="55" y1="22" x2="55" y2="8" stroke="#1a1a1a" stroke-width="3"/><circle cx="55" cy="6" r="5" fill="#1a1a1a"/></g>
+      <rect x="15" y="22" width="80" height="66" rx="16" fill="#ffde00" stroke="#1a1a1a" stroke-width="3"/>
+      <g class="eye"><circle cx="41" cy="50" r="5.5" fill="#1a1a1a"/></g>
+      <g class="eye"><circle cx="69" cy="50" r="5.5" fill="#1a1a1a"/></g>
+      <path d="M42 66q13 10 26 0" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+      <path d="M30 88l-6 14M80 88l6 14" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+    <div class="tour__bubble">
+      <span id="tour-text">New here? I can show you around.</span><br>
+      <button type="button" class="btn tour__go" id="tour-start">▶ Show me around</button>
+      <button type="button" class="tour__skip" id="tour-skip" hidden>Skip the tour</button>
+    </div>
+  </div>
+  <script type="application/json" id="tour-data">{"lang": "en", "beats": [{"text": "Welcome! This is your AI-in-sales toolkit. Four doors — let me show you, in thirty seconds."}, {"target": "door-help", "text": "Got a task in front of you right now — an email, a sheet, a deck? Quick help hands you the prompt. Done in minutes."}, {"target": "door-basics", "text": "New to Gemini and the tools? AI Basics teaches them in seven short lessons."}, {"target": "door-course", "text": "Want the full method? The course walks the nine steps of the sales cycle on one example customer."}, {"target": "door-guide", "text": "And the guide is the full handbook behind everything — for looking things up."}, {"text": "Start anywhere — you can switch doors any time."}], "done": "That's it — pick your door. Enjoy!"}</script>
+
   <div class="doorgrid">
-    <a class="door door--primary door--wide" href="help.html">
+    <a class="door door--primary door--wide" id="door-help" href="help.html">
       <span class="door__badge">Right now</span>
       <p class="door__kicker">Quick help</p>
       <h2 class="door__title">Get help with a task</h2>
@@ -25,7 +42,7 @@
       <span class="door__cta">Get help now →</span>
     </a>
 
-    <a class="door" href="basics.html">
+    <a class="door" id="door-basics" href="basics.html">
       <span class="door__badge" style="background:#ececE8">New here?</span>
       <p class="door__kicker">AI Basics</p>
       <h2 class="door__title">Learn the tools</h2>
@@ -33,7 +50,7 @@
       <span class="door__cta">Start with the basics →</span>
     </a>
 
-    <a class="door" href="index.html">
+    <a class="door" id="door-course" href="index.html">
       <span class="door__badge" style="background:#ececE8">Hands-on</span>
       <p class="door__kicker">Interactive lessons</p>
       <h2 class="door__title">Learn the sales cycle</h2>
@@ -41,7 +58,7 @@
       <span class="door__cta">Start the course →</span>
     </a>
 
-    <a class="door door--wide" href="../handbook/index.html" target="_blank" rel="noopener">
+    <a class="door door--wide" id="door-guide" href="../handbook/index.html" target="_blank" rel="noopener">
       <span class="door__badge" style="background:#ececE8">Reference</span>
       <p class="door__kicker">The guide</p>
       <h2 class="door__title">Read the guide</h2>
@@ -54,5 +71,7 @@
     <p class="note-sm">In a hurry? Get help with the task in front of you. New here? Start with the AI basics. Ready to sell with it? Take the sales-cycle course. Prefer reading? Open the guide.</p>
     <p class="foot">Kärcher · AI in Sales · self-paced</p>
   </div>
+
+  <script src="tour.js?v=50facfb5"></script>
 </body>
 </html>
