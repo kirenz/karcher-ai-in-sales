@@ -507,7 +507,7 @@
     "href": "q-translate.html",
     "title": "13  Translate Sales Material for Your Market",
     "section": "",
-    "text": "13.1 Let Gemini interview you\nAn email, a product description, a slide’s text — written in one language, needed in another. Gemini translates for the market, not word-for-word: natural tone, same structure, and facts, numbers, and product names untouched.\nPaste and run:\nNo text at hand? Take the practice email from Reply to a Customer Email and translate it into your market’s language.",
+    "text": "13.1 A whole Doc: one click in Docs\nA sales text written in one language, needed in another. For a whole Google Doc, one click does it: Tools → Translate document creates a translated copy with the formatting kept. For short text that should sound natural in the market — an email, a slide’s text — Gemini adapts instead of translating word-for-word.",
     "crumbs": [
       "Quick Help",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Translate for Your Market</span>"
@@ -528,8 +528,8 @@
     "objectID": "q-translate.html#read-it-like-a-local",
     "href": "q-translate.html#read-it-like-a-local",
     "title": "13  Translate Sales Material for Your Market",
-    "section": "13.2 Read it like a local",
-    "text": "13.2 Read it like a local\n\nNumbers, units, and product names: unchanged? The list Gemini gives you is where to look first.\nDoes it sound like something you would say in that market — or like a translation?\nCustomer-facing? Have a native-speaking colleague glance over it before it goes out.\n\n\nSales Enablement | AI in International Sales at Kärcher",
+    "section": "13.3 Read it like a local",
+    "text": "13.3 Read it like a local\n\nNumbers, units, and product names: unchanged? The list Gemini gives you is where to look first.\nDoes it sound like something you would say in that market — or like a translation?\nCustomer-facing? Have a native-speaking colleague glance over it before it goes out.\n\n\nSales Enablement | AI in International Sales at Kärcher",
     "crumbs": [
       "Quick Help",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Translate for Your Market</span>"
@@ -3305,6 +3305,28 @@
     "crumbs": [
       "Sales Cycle",
       "<span class='chapter-number'>39</span>  <span class='chapter-title'>Closing</span>"
+    ]
+  },
+  {
+    "objectID": "q-translate.html#a-whole-doc-one-click-in-docs",
+    "href": "q-translate.html#a-whole-doc-one-click-in-docs",
+    "title": "13  Translate Sales Material for Your Market",
+    "section": "",
+    "text": "Open the Doc, then Tools → Translate document.\nName the copy, pick the target language, click Translate.\nA translated copy opens as a new file — your original stays untouched. Remember: this is raw machine translation, so the check below matters all the more.",
+    "crumbs": [
+      "Quick Help",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Translate for Your Market</span>"
+    ]
+  },
+  {
+    "objectID": "q-translate.html#short-text-let-gemini-adapt-it",
+    "href": "q-translate.html#short-text-let-gemini-adapt-it",
+    "title": "13  Translate Sales Material for Your Market",
+    "section": "13.2 Short text: let Gemini adapt it",
+    "text": "13.2 Short text: let Gemini adapt it\nPaste and run:\n\n\n\n\n\n\nTipThe translation brief\n\n\n\nRole: You are a translator for B2B sales material.\nTask: Help me adapt a sales text for another market. First ask me to paste the text, and ask which language and market it is for. Then translate it.\nContext: I work in sales at Kärcher, the cleaning-technology company. Keep all product names and model designations exactly as they are.\nFormat: The translated text, ready to use: natural for the market, professional in tone, same structure as the original.\nCheck: List anything that did not translate cleanly — idioms, units, legal or price wording — so I can review it. Change no facts, numbers, or product names.\n\n\nNo text at hand? Take the practice email from Reply to a Customer Email and translate it into your market’s language.",
+    "crumbs": [
+      "Quick Help",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Translate for Your Market</span>"
     ]
   }
 ]
