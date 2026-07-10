@@ -4,11 +4,24 @@
    Pages load with <html data-gate> (body hidden via inline style); this script
    reveals the page after a successful check. Handbook pages load this same
    file via ../lessons/gate.js. */
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+// Local preview (make lessons + http.server) stays ungated — the gate is for the hosted site.
+if (["localhost", "127.0.0.1"].includes(location.hostname)) {
+  document.body.style.visibility = "visible";
+} else {
+  main();
+}
+
+async function main() {
+const { initializeApp } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
+const {
+  getAuth, onAuthStateChanged, signInWithPopup, signInWithRedirect,
+  GoogleAuthProvider, signOut
+} = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js");
+/* import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {
   getAuth, onAuthStateChanged, signInWithPopup, signInWithRedirect,
   GoogleAuthProvider, signOut
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"; */
 
 const ALLOWED_DOMAIN = "karcher.com";
 const ALLOWED_EMAILS = ["j.kirenz@gmail.com", "jan.kirenz@kirenz.de"];
@@ -65,3 +78,4 @@ onAuthStateChanged(auth, function (user) {
   if (g) g.remove();
   document.body.style.visibility = "visible";
 });
+}
