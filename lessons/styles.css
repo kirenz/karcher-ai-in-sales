@@ -341,3 +341,7 @@ p.lead{color:var(--ink);font-size:18px}
   font-size:11px;color:var(--ink-55);margin:0 0 4px}
 .mailmsg__when{font-weight:400;text-transform:none;letter-spacing:0}
 .mailmsg__body{font-size:14px;color:var(--ink);margin:0;line-height:1.5}
+
+/* lessonbar breadcrumb: the position label links back to its overview (help/index) */
+.where a{color:inherit;text-decoration:none}
+.where a:hover{text-decoration:underline}
