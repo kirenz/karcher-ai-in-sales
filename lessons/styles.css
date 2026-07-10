@@ -189,7 +189,7 @@ p.lead{color:var(--ink);font-size:18px}
 /* --- quick-help + hub extras: full-width door band, landing tiles, done links --- */
 .door--wide{grid-column:1/-1;min-height:auto}
 .stepcard--help .stepcard__num{border-radius:9px}
-.stepcard--help .stepcard__num svg{width:17px;height:17px}
+.stepcard--help .stepcard__num svg,.stepcard--found .stepcard__num svg{width:17px;height:17px}
 .stepcard__sub{font-size:13.5px;color:var(--ink-70);line-height:1.45}
 .quietlinks{margin-top:14px;display:flex;flex-direction:column;gap:8px}
 .quietlinks .deeper{margin-top:0}
