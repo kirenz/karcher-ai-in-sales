@@ -2135,7 +2135,7 @@
     "href": "08-closing.html",
     "title": "39  Closing",
     "section": "",
-    "text": "39.1 The close is a step, not a trick\nOn the map above, this is the Decision moment: the customer is ready to commit if the next step is clear. You read the signal and agree the step together.\nThis is Step 8 of the sales cycle, and it is optional by design: it stays short, self-contained, and easy to drop or add depending on the audience. It picks up directly from the presentation and demonstration step: its input is the customer-specific pitch and value story you built for Lars Meijer (Operations) and Sophie Verbeek (Procurement). Its output is modest on purpose — one chosen closing path for NorthStar and a draft post-meeting summary — the direct input for follow-up. This is also where objection handling lives, because in practice objections and the close arrive together, so it belongs next to the moment it serves.\nThe first idea to settle is what closing actually is. It is not a clever line or a pressure tactic; it is choosing the right next step at the right moment, and then capturing it so it does not evaporate. That gives you the three moves that carry this whole chapter:\nClosing becomes weak when it feels disconnected from the conversation that came before it. The seller pushes toward commitment because it is time to ask, not because the customer is ready to move, and that usually creates resistance. The better rule runs through the whole module: closing should follow the signal, not pressure. You do not choose the technique first; you read the conversation first. This matters more for NorthStar because it is not a simple transactional close — the customer is weighing service scope, rollout logic, commercial clarity, and operational continuity at once, so the closing moment depends on whether those issues are becoming clearer, not only on whether the product was presented well.",
+    "text": "39.1 The right next step, at the right moment\nOn the map above, this is the Decision moment: the customer is ready to commit if the next step is clear. You read the signal and agree the step together.\nThis is Step 8 of the sales cycle, and it is optional by design: it stays short, self-contained, and easy to drop or add depending on the audience. It picks up directly from the presentation and demonstration step: its input is the customer-specific pitch and value story you built for Lars Meijer (Operations) and Sophie Verbeek (Procurement). Its output is modest on purpose — one chosen closing path for NorthStar and a draft post-meeting summary — the direct input for follow-up. This is also where objection handling lives, because in practice objections and the close arrive together, so it belongs next to the moment it serves.\nThe first idea to settle is what closing actually is: choosing the right next step at the right moment, and then capturing it so it does not evaporate. That gives you the three moves that carry this whole chapter:\nClosing becomes weak when it feels disconnected from the conversation that came before it. The seller pushes toward commitment because it is time to ask, not because the customer is ready to move, and that usually creates resistance. The better rule runs through the whole module: closing should follow the signal, not pressure. You do not choose the technique first; you read the conversation first. This matters more for NorthStar because it is not a simple transactional close — the customer is weighing service scope, rollout logic, commercial clarity, and operational continuity at once, so the closing moment depends on whether those issues are becoming clearer, not only on whether the product was presented well.",
     "crumbs": [
       "Sales Cycle",
       "<span class='chapter-number'>39</span>  <span class='chapter-title'>Closing</span>"
@@ -3294,6 +3294,17 @@
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>NorthStar Worked Example: The Documents</span>"
+    ]
+  },
+  {
+    "objectID": "08-closing.html#the-right-next-step-at-the-right-moment",
+    "href": "08-closing.html#the-right-next-step-at-the-right-moment",
+    "title": "39  Closing",
+    "section": "",
+    "text": "Read the buying signal the customer is already giving you.\nChoose a closing path — gentle or direct — that matches how strong that signal is.\nCapture the agreed next step in a short summary.",
+    "crumbs": [
+      "Sales Cycle",
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>Closing</span>"
     ]
   }
 ]
