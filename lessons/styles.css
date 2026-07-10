@@ -1,6 +1,6 @@
 :root{
   --ink:#1a1a1a; --ink-70:rgba(26,26,26,.7); --ink-55:rgba(26,26,26,.55);
-  --yellow:#ffde00; --yellow-tint:#fff7cc; --page:#f4f4f4; --card:#fff; --line:#e3e3e0;
+  --yellow:#ffed00; --yellow-tint:#fff7cc; --page:#f4f4f4; --card:#fff; --line:#e3e3e0;
   --cond:Arial,'Helvetica Neue',Helvetica,sans-serif;
   --body:Arial,'Helvetica Neue',Helvetica,sans-serif;
 }
