@@ -9,12 +9,12 @@
   var textEl = document.getElementById('tour-text');
   var startBtn = document.getElementById('tour-start');
   var skipBtn = document.getElementById('tour-skip');
-  var lang = cfg.lang || 'en';
+  var audioBase = cfg.audioBase || ('tour-' + (cfg.lang || 'en') + '-');
   var beats = cfg.beats || [];
   var i = -1, audio = null, timer = null, running = false;
 
   function glow(target) {
-    document.querySelectorAll('.door').forEach(function (d) { d.classList.remove('tour-glow'); });
+    document.querySelectorAll('.tour-glow').forEach(function (d) { d.classList.remove('tour-glow'); });
     if (target) {
       var el = document.getElementById(target);
       if (el) {
@@ -34,7 +34,7 @@
     textEl.textContent = b.text;
     glow(b.target || null);
     stopAudio();
-    audio = new Audio('audio/tour-' + lang + '-' + i + '.mp3');
+    audio = new Audio('audio/' + audioBase + i + '.mp3');
     audio.onended = step;
     audio.onerror = function () { timer = setTimeout(step, 4500); };
     audio.play().catch(function () { timer = setTimeout(step, 4500); });

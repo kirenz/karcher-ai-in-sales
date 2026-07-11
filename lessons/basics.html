@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <title>AI in Sales — AI Basics</title>
-  <link rel="stylesheet" href="styles.css?v=c8665b83">
+  <link rel="stylesheet" href="styles.css?v=7829f051">
   <style>body{visibility:hidden}</style>
-  <script type="module" src="gate.js?v=0f2fcc4b"></script>
+  <script type="module" src="gate.js?v=0ff002ae"></script>
 </head>
 <body>
   <a class="topbar" href="start.html"><b>Kärcher</b><span>AI in Sales</span></a>
@@ -18,9 +18,27 @@
     <p class="hero__sub">Seven short lessons on the things you meet everywhere: what AI is for, how to brief it, and the tools — Gemini, Gems, Deep Research, NotebookLM, Workspace Studio — plus the data rules. A few minutes each, in any order.</p>
   </header>
 
+  <div class="tour" id="tour">
+    <svg class="tour__spark" width="86" height="94" viewBox="0 0 110 120" fill="none" aria-hidden="true">
+      <g class="antenna"><line x1="55" y1="22" x2="55" y2="8" stroke="#1a1a1a" stroke-width="3"/><circle cx="55" cy="6" r="5" fill="#1a1a1a"/></g>
+      <rect x="15" y="22" width="80" height="66" rx="16" fill="#ffed00" stroke="#1a1a1a" stroke-width="3"/>
+      <g class="eye"><circle cx="41" cy="50" r="5.5" fill="#1a1a1a"/></g>
+      <g class="eye"><circle cx="69" cy="50" r="5.5" fill="#1a1a1a"/></g>
+      <path d="M42 66q13 10 26 0" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+      <path d="M30 88l-6 14M80 88l6 14" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+    <div class="tour__bubble">
+      <span id="tour-text">New to the tools? Start here.</span><br>
+      <button type="button" class="btn tour__go" id="tour-start">▶ Show me around</button>
+      <button type="button" class="tour__skip" id="tour-skip" hidden>Skip the tour</button>
+    </div>
+  </div>
+  <script type="application/json" id="tour-data">{"audioBase": "tour-en-basics-", "beats": [{"text": "Seven short lessons on the things you meet everywhere: what AI is for, how to brief it, and the tools."}, {"target": "basics-grid", "text": "A few minutes each, in any order. When you are done, the sales-cycle course applies all of it to real selling."}], "done": "Pick a basic — any order works."}</script>
+
+
   <div class="wrap">
     <p class="section-heading">Pick a basic</p>
-    <div class="stepgrid">
+    <div class="stepgrid" id="basics-grid">
       <a class="stepcard stepcard--found" href="g1-role-split.html"><span class="stepcard__num">1</span><span class="stepcard__label">What AI is for</span><span class="stepcard__meta">~3 min</span></a>
       <a class="stepcard stepcard--found" href="g2-prompting.html"><span class="stepcard__num">2</span><span class="stepcard__label">Prompting</span><span class="stepcard__meta">~3 min</span></a>
       <a class="stepcard stepcard--found" href="g3-gemini-gems.html"><span class="stepcard__num">3</span><span class="stepcard__label">Gemini &amp; Gems</span><span class="stepcard__meta">~3 min</span></a>
@@ -32,5 +50,7 @@
     <p class="note-sm" style="margin-top:18px">Done with the basics? The sales-cycle course applies all of this to real selling, worked through on one example customer.</p>
     <p class="foot"><a href="start.html" style="color:var(--ink-55)">← Back to start</a> · <a href="index.html" style="color:var(--ink-55)">the sales-cycle course</a></p>
   </div>
+
+  <script src="tour.js?v=152eac77"></script>
 </body>
 </html>

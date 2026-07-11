@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <title>AI in Sales — Interactive lessons</title>
-  <link rel="stylesheet" href="styles.css?v=c8665b83">
+  <link rel="stylesheet" href="styles.css?v=7829f051">
   <style>body{visibility:hidden}</style>
-  <script type="module" src="gate.js?v=0f2fcc4b"></script>
+  <script type="module" src="gate.js?v=0ff002ae"></script>
 </head>
 <body>
   <a class="topbar" href="start.html"><b>Kärcher</b><span>AI in Sales</span></a>
@@ -18,6 +18,23 @@
     <p class="hero__sub">Meet the example customer, then work the nine steps of the cycle on it. A few minutes each: learn one idea, try it, and keep it. Go at your own pace.</p>
   </header>
 
+  <div class="tour" id="tour">
+    <svg class="tour__spark" width="86" height="94" viewBox="0 0 110 120" fill="none" aria-hidden="true">
+      <g class="antenna"><line x1="55" y1="22" x2="55" y2="8" stroke="#1a1a1a" stroke-width="3"/><circle cx="55" cy="6" r="5" fill="#1a1a1a"/></g>
+      <rect x="15" y="22" width="80" height="66" rx="16" fill="#ffed00" stroke="#1a1a1a" stroke-width="3"/>
+      <g class="eye"><circle cx="41" cy="50" r="5.5" fill="#1a1a1a"/></g>
+      <g class="eye"><circle cx="69" cy="50" r="5.5" fill="#1a1a1a"/></g>
+      <path d="M42 66q13 10 26 0" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+      <path d="M30 88l-6 14M80 88l6 14" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+    <div class="tour__bubble">
+      <span id="tour-text">The course, in ten seconds?</span><br>
+      <button type="button" class="btn tour__go" id="tour-start">▶ Show me around</button>
+      <button type="button" class="tour__skip" id="tour-skip" hidden>Skip the tour</button>
+    </div>
+  </div>
+  <script type="application/json" id="tour-data">{"audioBase": "tour-en-index-", "beats": [{"text": "This is the course: the full sales cycle, worked end to end on one example customer."}, {"target": "example-band", "text": "Meet the example first — NorthStar, a fictional facility-services customer, and the machine in the deal."}, {"target": "steps-band", "text": "Then the nine steps, from finding a lead to the follow-up. Learn one idea, try it in Gemini, keep the recipe."}], "done": "Meet the example, then take Step 1."}</script>
+
   <div class="how">
     <div class="how__item"><b>Learn one idea</b><p>A single concept per step, not the whole chapter.</p></div>
     <div class="how__item"><b>Do it in Gemini</b><p>Open the prepared Gem and produce something real.</p></div>
@@ -27,14 +44,14 @@
   <div class="wrap">
     <p class="section-heading">Start here · Meet the example</p>
     <p class="note-sm" style="margin:-6px 0 14px">Every step works on one running example: NorthStar, a fictional facility-services customer, and the BR 45/22, the machine in the deal. Meet both first. New to the tools themselves? Start with the <a href="basics.html" style="text-decoration:underline">AI Basics</a>.</p>
-    <div class="stepgrid">
+    <div class="stepgrid" id="example-band">
       <a class="stepcard stepcard--found" href="g7-northstar.html"><span class="stepcard__num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span><span class="stepcard__label">NorthStar example</span><span class="stepcard__meta">~3 min</span></a>
       <a class="stepcard stepcard--found" href="g8-br4522.html"><span class="stepcard__num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></span><span class="stepcard__label">BR 45/22 pilot</span><span class="stepcard__meta">~3 min</span></a>
     </div>
 
     <p class="section-heading">The nine steps</p>
     <p class="note-sm" style="margin:-6px 0 14px">The Kärcher sales cycle, step by step, from finding a lead to the follow-up. Each step takes a few minutes: learn the one idea, open the prepared Gem, and produce something real, worked through on the NorthStar example.</p>
-    <div class="stepgrid">
+    <div class="stepgrid" id="steps-band">
       <a class="stepcard" href="01-acquisition.html"><span class="stepcard__num">1</span><span class="stepcard__label">Acquisition</span><span class="stepcard__meta">~4 min</span></a>
       <a class="stepcard" href="02-research.html"><span class="stepcard__num">2</span><span class="stepcard__label">Lead Research</span><span class="stepcard__meta">~4 min</span></a>
       <a class="stepcard" href="03-buying-center.html"><span class="stepcard__num">3</span><span class="stepcard__label">First Contact</span><span class="stepcard__meta">~4 min</span></a>
@@ -48,5 +65,7 @@
     <p class="note-sm" style="margin-top:18px">Prefer to learn the basics as you go? Each step also links the chapter behind it, and the <a href="basics.html" style="text-decoration:underline">AI Basics</a> are one click away whenever a step needs them.</p>
     <p class="foot"><a href="start.html" style="color:var(--ink-55)">← Back to start</a> · self-paced course · the example + nine steps</p>
   </div>
+
+  <script src="tour.js?v=152eac77"></script>
 </body>
 </html>
