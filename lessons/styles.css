@@ -367,3 +367,9 @@ p.lead{color:var(--ink);font-size:18px}
 
 /* tour glow on card grids (subpage tours): outline, no layout shift */
 .stepgrid.tour-glow{outline:2.5px solid var(--ink);outline-offset:7px;border-radius:6px;box-shadow:0 10px 26px rgba(0,0,0,.12)}
+
+/* back-to-overview link under each lesson card */
+.backline{display:block;text-align:center;margin-top:18px;font-family:var(--cond);
+  text-transform:uppercase;letter-spacing:.08em;font-weight:700;font-size:13px;
+  color:var(--ink-55);text-decoration:none}
+.backline:hover{color:var(--ink);text-decoration:underline}
