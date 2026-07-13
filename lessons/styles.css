@@ -12,16 +12,15 @@ body{background:var(--page);color:var(--ink);font-family:var(--body);
   font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 
-/* --- shared top bar --- */
-.topbar{background:var(--ink);border-bottom:4px solid var(--yellow);
-  padding:13px 22px;display:flex;align-items:center;gap:10px}
+/* --- shared top bar: white header like kaercher.com, logo directly on white
+   (brand rule: the wordmark+bar logo lives on white, never boxed on dark/yellow) --- */
+.topbar{background:#fff;border-bottom:1px solid var(--line);
+  padding:12px 22px;display:flex;align-items:center;gap:14px}
 .topbar b{font-family:var(--cond);letter-spacing:.14em;text-transform:uppercase;
-  font-size:15px;color:#fff;font-weight:700}
+  font-size:15px;color:var(--ink);font-weight:700}
 .topbar span{font-family:var(--cond);letter-spacing:.1em;text-transform:uppercase;
-  font-size:13px;color:var(--yellow);font-weight:700}
-/* official logo is black-on-white: white rectangular plate (CI: no rounded corners) */
-.topbar__logo{height:30px;width:auto;display:block;background:#fff;
-  padding:5px 8px;box-sizing:border-box}
+  font-size:13px;color:var(--ink);font-weight:700}
+.topbar__logo{height:32px;width:auto;display:block}
 
 .wrap{max-width:600px;margin:0 auto;padding:22px 18px 60px}
 
