@@ -13,14 +13,27 @@ body{background:var(--page);color:var(--ink);font-family:var(--body);
 a{color:inherit}
 
 /* --- shared top bar: white header like kaercher.com, logo directly on white
-   (brand rule: the wordmark+bar logo lives on white, never boxed on dark/yellow) --- */
+   (brand rule: the wordmark+bar logo lives on white, never boxed on dark/yellow),
+   plus the section menu with the active area underlined in Kärcher yellow --- */
 .topbar{background:#fff;border-bottom:1px solid var(--line);
-  padding:12px 22px;display:flex;align-items:center;gap:14px}
-.topbar b{font-family:var(--cond);letter-spacing:.14em;text-transform:uppercase;
-  font-size:15px;color:var(--ink);font-weight:700}
+  padding:12px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.topbar__brand{display:flex;align-items:center;gap:12px;text-decoration:none}
 .topbar span{font-family:var(--cond);letter-spacing:.1em;text-transform:uppercase;
   font-size:13px;color:var(--ink);font-weight:700}
 .topbar__logo{height:32px;width:auto;display:block}
+.topbar__nav{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap}
+.topbar__item{font-family:var(--cond);text-transform:uppercase;letter-spacing:.06em;
+  font-weight:700;font-size:13px;color:var(--ink);text-decoration:none;
+  padding:4px 0 2px;border-bottom:3px solid transparent}
+.topbar__item:hover{border-bottom-color:var(--ink)}
+.topbar__item.on{border-bottom-color:var(--yellow)}
+@media (max-width:640px){
+  .topbar{gap:10px;padding:10px 16px}
+  .topbar__brand span{display:none}
+  .topbar__logo{height:24px}
+  .topbar__nav{margin-left:0;gap:10px}
+  .topbar__item{font-size:11.5px;letter-spacing:.04em;border-bottom-width:2px}
+}
 
 .wrap{max-width:600px;margin:0 auto;padding:22px 18px 60px}
 
