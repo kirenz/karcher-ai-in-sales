@@ -6,12 +6,12 @@
   <meta name="robots" content="noindex, nofollow">
   <title>AI in Sales — Quick help</title>
   <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="styles.css?v=c2daf48b">
+  <link rel="stylesheet" href="styles.css?v=b9fcf504">
   <style>body{visibility:hidden}</style>
   <script type="module" src="gate.js?v=82dd1d52"></script>
 </head>
 <body>
-  <a class="topbar" href="start.html"><b>Kärcher</b><span>AI in Sales</span></a>
+  <a class="topbar" href="start.html"><img class="topbar__logo" src="img/karcher-logo.png" alt="Kärcher"><span>AI in Sales</span></a>
 
   <header class="hero">
     <p class="hero__eyebrow">Kärcher · AI in Sales</p>
@@ -34,7 +34,7 @@
       <button type="button" class="tour__skip" id="tour-skip" hidden>Skip the tour</button>
     </div>
   </div>
-  <script type="application/json" id="tour-data">{"audioBase": "tour-en-help-", "beats": [{"text": "This is Quick help: pick the task in front of you. Each card is one copied prompt, about five minutes."}, {"target": "group-your-data", "text": "The cards are grouped by the kind of work — emails, customers, your data, presentations, translation, automation."}, {"text": "And every card brings its own practice material, so you can try it without a real case at hand."}], "done": "Grab a card — five minutes, done."}</script>
+  <script type="application/json" id="tour-data">{"audioBase": "tour-en-help-", "beats": [{"text": "This is Quick help: pick the task in front of you. Each card is one copied prompt, about five minutes."}, {"target": "group-your-data", "text": "The cards are grouped by the kind of work — emails, prospects and customers, sales coaching, your data, presentations, translation, automation."}, {"text": "And every card brings its own practice material, so you can try it without a real case at hand."}], "done": "Grab a card — five minutes, done."}</script>
 
 
   <div class="wrap">
@@ -44,11 +44,17 @@
       <a class="stepcard stepcard--help" href="q-email.html"><span class="stepcard__num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.6 7.2l8.4 5.8 8.4-5.8"/></svg></span><span class="stepcard__label">Reply to a customer email</span><span class="stepcard__sub">From blank reply box to a draft you just check.</span><span class="stepcard__meta">~5 min · Gmail</span></a>
       <a class="stepcard stepcard--help" href="q-thread.html"><span class="stepcard__num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/><line x1="8" y1="8.5" x2="17" y2="8.5"/><line x1="8" y1="12" x2="14" y2="12"/></svg></span><span class="stepcard__label">Catch up on a long email thread</span><span class="stepcard__sub">What&#x27;s decided, what&#x27;s open, who owes what.</span><span class="stepcard__meta">~3 min · Gmail</span></a>
     </div>
-    <p class="section-heading">Customers</p>
-    <div class="stepgrid" id="group-customers">
+    <p class="section-heading">Prospects &amp; Customers</p>
+    <div class="stepgrid" id="group-prospects-customers">
       <a class="stepcard stepcard--help" href="q-research.html"><span class="stepcard__num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg></span><span class="stepcard__label">Research a customer</span><span class="stepcard__sub">From company name to account briefing.</span><span class="stepcard__meta">~5 min · Deep Research</span></a>
       <a class="stepcard stepcard--help" href="q-meeting.html"><span class="stepcard__num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg></span><span class="stepcard__label">Get ready for a customer meeting</span><span class="stepcard__sub">Five likely topics, five good questions.</span><span class="stepcard__meta">~5 min · Gemini</span></a>
+      <a class="stepcard stepcard--help" href="q-solution.html"><span class="stepcard__num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/><path d="M9.5 13.5l2 2 3.5-3.5"/></svg></span><span class="stepcard__label">Find a solution to any cleaning problem</span><span class="stepcard__sub">From cleaning challenge to product solution.</span><span class="stepcard__meta">~3 min · NotebookLM</span></a>
       <a class="stepcard stepcard--help" href="q-notes.html"><span class="stepcard__num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg></span><span class="stepcard__label">Turn meeting notes into a follow-up</span><span class="stepcard__sub">Rough notes become a ready-to-send follow-up.</span><span class="stepcard__meta">~5 min · Gemini</span></a>
+    </div>
+    <p class="section-heading">Sales Coaching &amp; Practice</p>
+    <div class="stepgrid" id="group-sales-coaching-practice">
+      <a class="stepcard stepcard--help" href="q-coach.html"><span class="stepcard__num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polygon points="15.5 8.5 13.2 13.2 8.5 15.5 10.8 10.8"/></svg></span><span class="stepcard__label">Be guided to further sales success</span><span class="stepcard__sub">Your personal sales coach, in your language.</span><span class="stepcard__meta">~5 min · Gem</span></a>
+      <a class="stepcard stepcard--help" href="q-roleplay.html"><span class="stepcard__num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4H5a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h1v3l3-3h2a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><path d="M15 9h4a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-1v3l-3-3h-1a2 2 0 0 1-2-2v-1"/></svg></span><span class="stepcard__label">Test &amp; simulate your own customer negotiation</span><span class="stepcard__sub">A safe sparring partner for the hard conversations.</span><span class="stepcard__meta">~5 min · Gem</span></a>
     </div>
     <p class="section-heading">Your data</p>
     <div class="stepgrid" id="group-your-data">

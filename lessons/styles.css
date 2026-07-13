@@ -19,6 +19,9 @@ a{color:inherit}
   font-size:15px;color:#fff;font-weight:700}
 .topbar span{font-family:var(--cond);letter-spacing:.1em;text-transform:uppercase;
   font-size:13px;color:var(--yellow);font-weight:700}
+/* official logo is black-on-white: white rectangular plate (CI: no rounded corners) */
+.topbar__logo{height:30px;width:auto;display:block;background:#fff;
+  padding:5px 8px;box-sizing:border-box}
 
 .wrap{max-width:600px;margin:0 auto;padding:22px 18px 60px}
 
