@@ -365,23 +365,18 @@ p.lead{color:var(--ink);font-size:18px}
 .where a{color:inherit;text-decoration:none}
 .where a:hover{text-decoration:underline}
 
-/* --- start-page tour helper (Spark): bob/blink/wiggle + speech bubble + door glow --- */
-.tour{max-width:600px;margin:0 auto;padding:22px 18px 0;display:flex;gap:14px;align-items:flex-end}
-.tour__spark{flex:none;animation:bob 2.6s ease-in-out infinite}
-.tour__spark .eye{transform-origin:center;animation:blink 4.2s infinite}
-.tour__spark .antenna{transform-origin:bottom center;animation:wiggle 3.4s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.08)}}
-@keyframes wiggle{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(8deg)}}
-@media (prefers-reduced-motion:reduce){.tour__spark,.tour__spark .eye,.tour__spark .antenna{animation:none}}
-.tour__bubble{position:relative;flex:1;background:#fff;border:1.5px solid var(--ink);border-radius:10px;
-  padding:12px 14px;font-size:15px;color:var(--ink)}
-.tour__bubble::after{content:"";position:absolute;left:-8px;bottom:20px;width:13px;height:13px;
-  background:#fff;border-left:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);transform:rotate(45deg)}
+/* --- tour entry: AI-generated guide portrait + sharp anthracite panel (Kärcher
+   decision 2026-07-17, replaces the playful Spark robot; no animations) --- */
+.tour{max-width:600px;margin:0 auto;padding:22px 18px 0;display:flex;gap:14px;align-items:center}
+.tour__photo{flex:none;width:84px;border:3px solid var(--ink);border-bottom:8px solid var(--yellow);
+  display:block;align-self:flex-start}
+.tour__photo img{display:block;width:100%;height:auto}
+.tour__bubble{position:relative;flex:1;background:var(--ink);border:1.5px solid var(--ink);
+  padding:14px 16px;font-size:15px;color:#fff}
 .tour__go{margin-top:10px;font-size:14px;padding:9px 15px}
 .tour__skip{background:none;border:none;font-family:var(--cond);text-transform:uppercase;letter-spacing:.08em;
-  font-weight:700;font-size:12px;color:var(--ink-55);cursor:pointer;margin-top:8px;padding:4px;display:block}
-.tour__skip:hover{color:var(--ink)}
+  font-weight:700;font-size:12px;color:#b5b5b5;cursor:pointer;margin-top:8px;padding:4px;display:block}
+.tour__skip:hover{color:#fff}
 .door.tour-glow{border:2px solid var(--ink);box-shadow:0 10px 26px rgba(0,0,0,.14);transform:translateY(-2px)}
 
 /* tour glow on card grids (subpage tours): outline, no layout shift */
