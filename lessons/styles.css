@@ -103,6 +103,7 @@ p.lead{color:var(--ink);font-size:18px}
 .btn.dark{background:var(--ink);color:#fff}
 .btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
 .btn.block{width:100%;justify-content:center}
+.btn.block+.btn.block{margin-top:10px}
 .btn.soon{opacity:.45;cursor:default;pointer-events:none}
 .btn:focus-visible{outline:3px solid #7aa7ff;outline-offset:2px}
 
