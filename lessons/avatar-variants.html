@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Demo: Avatar- und Tour-Block-Varianten</title>
+  <title>Demo: Tour-Einstieg — nüchterne Varianten</title>
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="styles.css">
   <style>
@@ -19,277 +19,158 @@
       text-transform:uppercase;letter-spacing:.1em;font-weight:700;font-size:12px;padding:3px 9px}
     .variant__why{font-size:13.5px;color:var(--ink-70);margin:8px 0 0}
     .mockband{border:1px dashed #bbb;background:#fff;padding:4px 0 22px;margin-top:10px}
-    /* B variants: the tour row itself restyled (sharp corners on purpose, Kärcher CI) */
-    .tour--dark .tour__bubble{background:var(--ink);color:#fff;border-radius:0;border-color:var(--ink)}
-    .tour--dark .tour__bubble::after{background:var(--ink);border-color:var(--ink)}
-    .tour--dark .tour__skip{color:#bbb}
-    .tour--yellow .tour__bubble{background:var(--yellow);border-radius:0;border-color:var(--ink)}
-    .tour--yellow .tour__bubble::after{background:var(--yellow)}
-    .tour--yellow .tour__go{background:var(--ink);color:#fff}
-    .tour--bar .tour__bubble{border-radius:0;border-left:8px solid var(--yellow)}
-    .tour--bar .tour__bubble::after{display:none}
+    /* Sober treatment: no bobbing, no speech-bubble tail, sharp corners (Kärcher CI). */
+    .tour--sober{align-items:center}
+    .tour--sober .tour__spark{animation:none}
+    .tour--sober .tour__bubble{border-radius:0}
+    .tour--sober .tour__bubble::after{display:none}
+    .tour--dark .tour__bubble{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .tour--yellowedge .tour__bubble{border-left:8px solid var(--yellow)}
+    .tour--band{max-width:600px;margin:0 auto;padding:22px 18px 0}
+    .tour--band .bandinner{background:var(--ink);color:#fff;padding:20px 22px;display:flex;
+      align-items:center;gap:18px;flex-wrap:wrap}
+    .tour--band .bandtext{flex:1;min-width:220px}
+    .tour--band .bandkicker{font-family:var(--cond);text-transform:uppercase;letter-spacing:.14em;
+      font-weight:700;font-size:12px;color:var(--yellow);margin:0 0 3px}
+    .tour--band .bandline{font-size:15px;margin:0}
   </style>
 </head>
 <body>
   <header class="topbar"><a class="topbar__brand" href="start.html"><img class="topbar__logo" src="img/karcher-logo.png" alt="Kärcher"><span>AI in Sales</span></a><nav class="topbar__nav"><span class="topbar__item on">Interne Demo</span></nav></header>
 
   <header class="hero">
-    <p class="hero__eyebrow">Interne Demo · nicht verlinkt · Rev 2</p>
-    <h1 class="hero__title">Avatar &amp; Tour-Block</h1>
-    <p class="hero__sub">Varianten zur Auswahl: Wie könnte die Tour-Figur aussehen, und wie kann sich der „Show me around“-Block von den Themen-Kästchen abheben?</p>
+    <p class="hero__eyebrow">Interne Demo · nicht verlinkt · Rev 3</p>
+    <h1 class="hero__title">Der Tour-Einstieg</h1>
+    <p class="hero__sub">Nüchterne Varianten für die Zielgruppe erfahrener Vertriebsprofis: kein Maskottchen, keine Comic-Optik. Ein glaubwürdiger Mensch oder ein rein funktionales Element.</p>
   </header>
 
-  <p class="demo-note">Jede Zeile ist ein klickloser 1:1-Nachbau der Tour-Zeile der Startseite. Figur (A) und Block-Gestaltung (B) sind unabhängig kombinierbar. Der bisherige Roboter ist bekannt und wird hier nicht mehr gezeigt.</p>
+  <p class="demo-note">Jede Zeile ist ein klickloser Nachbau der Tour-Zeile der Startseite. Auch die Sprache ist bewusst sachlicher gefasst („Get the 30-second overview“ statt „I can show you around“); Hüpf- und Blinzel-Animationen entfallen in allen Varianten.</p>
 
   <div class="demo-h">
-    <h2>A · Die Figur</h2>
-    <p>A1–A4 sind gezeichnete Varianten und sofort umsetzbar. A5 (echtes Foto) ist die authentischste Lösung und passt am besten zu den Kärcher-GenAI-Regeln, braucht aber ein Foto samt Einverständnis. Eine KI-generierte fotorealistische Person raten wir ab (kollidiert mit „authentic only“).</p>
+    <h2>A · Mit Mensch</h2>
+    <p>Die stärkste Ansprache für diese Zielgruppe: eine echte, glaubwürdige Person — jemand wie sie selbst. Keine Illustration.</p>
   </div>
 
   <div class="variant">
-    <span class="variant__tag">A1 · Person mit Headset</span>
+    <span class="variant__tag">A1 · Foto eines Kollegen</span>
     <div class="mockband">
-      <div class="tour">
-        <svg class="tour__spark" width="92" height="94" viewBox="0 0 130 132" fill="none" aria-hidden="true">
-          <path d="M25 132v-12c0-19 17-30 40-30s40 11 40 30v12z" fill="#FFED00"/>
-          <path d="M65 90c23 0 40 11 40 30v12H91v-12c0-14-11-24-26-27z" fill="#EFDF00" opacity=".7"/>
-          <rect x="58" y="74" width="14" height="20" rx="6" fill="#E8B48B"/>
-          <path d="M53 92l12 13 12-13c-4-4-8-6-12-6s-8 2-12 6z" fill="#1A1A1A"/>
-          <circle cx="38" cy="52" r="6" fill="#F2C9A0"/>
-          <circle cx="92" cy="52" r="6" fill="#F2C9A0"/>
-          <circle cx="65" cy="50" r="27" fill="#F7CFA4"/>
-          <path d="M38 54c-2-22 11-34 27-34s29 12 27 34l-3 1c0-11-4-18-9-21-7 5-24 5-31 0-5 3-9 10-8 21z" fill="#2E2A28"/>
-          <path d="M48 44q5-3 10 0" stroke="#2E2A28" stroke-width="3" stroke-linecap="round"/>
-          <path d="M72 44q5-3 10 0" stroke="#2E2A28" stroke-width="3" stroke-linecap="round"/>
-          <g class="eye"><circle cx="53" cy="53" r="3.4" fill="#26221F"/></g>
-          <g class="eye"><circle cx="77" cy="53" r="3.4" fill="#26221F"/></g>
-          <circle cx="46" cy="61" r="4.5" fill="#F0A987" opacity=".55"/>
-          <circle cx="84" cy="61" r="4.5" fill="#F0A987" opacity=".55"/>
-          <path d="M56 64q9 8 18 0" stroke="#B4715A" stroke-width="3.2" stroke-linecap="round"/>
-          <path d="M36 46a29 29 0 0 1 58 0" stroke="#1A1A1A" stroke-width="4.5"/>
-          <rect x="31" y="46" width="10" height="17" rx="5" fill="#1A1A1A"/>
-          <path d="M37 63q3 13 17 15" stroke="#1A1A1A" stroke-width="3.2"/>
-          <circle cx="56" cy="79" r="4" fill="#FFED00" stroke="#1A1A1A" stroke-width="2.5"/>
+      <div class="tour tour--sober">
+        <svg class="tour__spark" width="82" height="94" viewBox="0 0 110 126" fill="none" aria-hidden="true">
+          <rect x="15" y="10" width="80" height="100" fill="#e6e6e6" stroke="#1a1a1a" stroke-width="3"/>
+          <circle cx="55" cy="48" r="17" fill="#c9c9c9"/>
+          <path d="M28 102q7-26 27-26t27 26" fill="#c9c9c9"/>
+          <rect x="15" y="102" width="80" height="8" fill="#ffed00"/>
         </svg>
-        <div class="tour__bubble"><span>New here? I can show you around.</span><br>
-          <span class="btn tour__go">▶ Show me around</span></div>
+        <div class="tour__bubble"><span>First time here? Get the 30-second overview.</span><br>
+          <span class="btn tour__go">▶ Start the tour</span></div>
       </div>
     </div>
-    <p class="variant__why">Ausgearbeitete flache Illustration: Kärcher-gelbes Polo, Headset mit gelbem Mikro („euer Guide“), winkend. Detailgrad deutlich über der ersten Skizze (Ohren, Brauen, Schattierung), bleibt aber flächig und markentauglich.</p>
+    <p class="variant__why">Platzhalter für das Foto einer echten Person mit Standing in der Zielgruppe: erfahrene:r Vertriebskolleg:in oder Trainer:in, sachliches Porträt, rechteckig mit gelber Kante. Wirkt wie „ein Kollege zeigt mir das“, nicht wie ein Maskottchen. Die Tour-Stimme (Audio) passt dann zur Person. Braucht: ein Foto + Einverständnis.</p>
+  </div>
+
+  <div class="demo-h">
+    <h2>B · Ohne Mensch, rein funktional</h2>
+    <p>Kärcher ist eine technische Marke: Das Tour-Element als sachliches Werkzeug in Gelb/Anthrazit, im Stil technischer Beschilderung. Keine Gesichter, keine Verspieltheit.</p>
   </div>
 
   <div class="variant">
-    <span class="variant__tag">A2 · Person mit Brille</span>
+    <span class="variant__tag">B1 · Piktogramm</span>
     <div class="mockband">
-      <div class="tour">
-        <svg class="tour__spark" width="92" height="94" viewBox="0 0 130 132" fill="none" aria-hidden="true">
-          <path d="M92 24c11-7 20-2 18 9-2 10-11 17-18 13z" fill="#4A3325"/>
-          <path d="M25 132v-12c0-19 17-30 40-30s40 11 40 30v12z" fill="#FFED00"/>
-          <path d="M65 90c23 0 40 11 40 30v12H91v-12c0-14-11-24-26-27z" fill="#EFDF00" opacity=".7"/>
-          <rect x="58" y="74" width="14" height="20" rx="6" fill="#E8B48B"/>
-          <path d="M52 90a13 8 0 0 0 26 0c-4-3-8-4-13-4s-9 1-13 4z" fill="#1A1A1A"/>
-          <circle cx="38" cy="52" r="6" fill="#F2C9A0"/>
-          <circle cx="92" cy="52" r="6" fill="#F2C9A0"/>
-          <circle cx="38" cy="52" r="2.5" fill="#FFED00"/>
-          <circle cx="92" cy="52" r="2.5" fill="#FFED00"/>
-          <circle cx="65" cy="50" r="27" fill="#F7CFA4"/>
-          <path d="M37 56c-3-24 11-36 28-36s31 12 28 36c-1 5-3 8-3 8 1-13-3-21-8-24-7 5-27 5-34 0-5 3-9 11-8 24 0 0-2-3-3-8z" fill="#4A3325"/>
-          <circle cx="53" cy="53" r="7.5" stroke="#26221F" stroke-width="2.6"/>
-          <circle cx="77" cy="53" r="7.5" stroke="#26221F" stroke-width="2.6"/>
-          <path d="M60.5 53h9" stroke="#26221F" stroke-width="2.6"/>
-          <g class="eye"><circle cx="53" cy="53" r="3" fill="#26221F"/></g>
-          <g class="eye"><circle cx="77" cy="53" r="3" fill="#26221F"/></g>
-          <circle cx="45" cy="62" r="4.5" fill="#F0A987" opacity=".55"/>
-          <circle cx="85" cy="62" r="4.5" fill="#F0A987" opacity=".55"/>
-          <path d="M56 65q9 8 18 0" stroke="#B4715A" stroke-width="3.2" stroke-linecap="round"/>
-        </svg>
-        <div class="tour__bubble"><span>New here? I can show you around.</span><br>
-          <span class="btn tour__go">▶ Show me around</span></div>
-      </div>
-    </div>
-    <p class="variant__why">Zweiter Look derselben Machart: Brille, Zopf, gelbe Ohrringe, andere Frisurfarbe. Zeigt, dass Frisur, Geschlecht, Hautton und Accessoires frei wählbar sind — auch mehrere Figuren (z.&nbsp;B. wechselnd pro Bereich) wären möglich.</p>
-  </div>
-
-  <div class="variant">
-    <span class="variant__tag">A3 · Porträt-Kachel</span>
-    <div class="mockband">
-      <div class="tour">
-        <svg class="tour__spark" width="90" height="96" viewBox="0 0 120 128" fill="none" aria-hidden="true" style="animation:none">
-          <defs><clipPath id="tileclip"><rect x="9" y="9" width="102" height="110"/></clipPath></defs>
-          <rect x="6" y="6" width="108" height="116" fill="#F4F4F2" stroke="#1A1A1A" stroke-width="3"/>
-          <g clip-path="url(#tileclip)">
-            <path d="M14 128v-8c0-18 15-28 36-28s36 10 36 28v8z" fill="#FFED00"/>
-            <path d="M42 94l8 10 8-10c-3-4-5-5-8-5s-5 1-8 5z" fill="#1A1A1A"/>
-            <rect x="45" y="74" width="10" height="22" rx="4.5" fill="#E8B48B"/>
-            <circle cx="27" cy="57" r="5" fill="#F2C9A0"/>
-            <circle cx="73" cy="57" r="5" fill="#F2C9A0"/>
-            <circle cx="50" cy="55" r="24" fill="#F7CFA4"/>
-            <path d="M26 59c-2-20 10-31 24-31s26 11 24 31l-3 1c0-10-3-16-8-19-6 5-21 5-27 0-5 3-8 9-8 19z" fill="#2E2A28"/>
-            <path d="M37 51q4.5-3 9 0M54 51q4.5-3 9 0" stroke="#2E2A28" stroke-width="2.6" stroke-linecap="round"/>
-            <g class="eye"><circle cx="42" cy="58" r="3" fill="#26221F"/></g>
-            <g class="eye"><circle cx="58" cy="58" r="3" fill="#26221F"/></g>
-            <path d="M42 67q8 7 16 0" stroke="#B4715A" stroke-width="3" stroke-linecap="round"/>
-          </g>
-          <rect x="6" y="6" width="108" height="9" fill="#FFED00"/>
-          <rect x="80" y="100" width="30" height="18" fill="#1A1A1A"/>
-          <path d="M89 105l10 4-10 4z" fill="#FFED00"/>
-        </svg>
-        <div class="tour__bubble"><span>New here? I can show you around.</span><br>
-          <span class="btn tour__go">▶ Show me around</span></div>
-      </div>
-    </div>
-    <p class="variant__why">Illustration im Video-Call-Rahmen (gelbe Leiste, Play-Chip): wirkt wie ein persönlicher Ansprechpartner statt Maskottchen. Guter Zwischenschritt zu A5 — der Rahmen bleibt, später wird nur die Zeichnung gegen das Foto getauscht.</p>
-  </div>
-
-  <div class="variant">
-    <span class="variant__tag">A4 · Line-Art</span>
-    <div class="mockband">
-      <div class="tour">
-        <svg class="tour__spark" width="84" height="84" viewBox="0 0 100 100" fill="none" aria-hidden="true" style="animation:none">
+      <div class="tour tour--sober">
+        <svg class="tour__spark" width="78" height="78" viewBox="0 0 100 100" fill="none" aria-hidden="true">
           <rect width="100" height="100" fill="#FFED00"/>
-          <path d="M33 76c-8-9-11-24-5-35 6-12 20-17 32-12 12 5 18 19 13 31-4 10-13 16-23 16 6 3 14 3 21 0" stroke="#1A1A1A" stroke-width="3.5" stroke-linecap="round"/>
-          <path d="M40 47q4-3 8 0M56 47q4-3 8 0" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"/>
-          <path d="M44 58q8 7 16 0" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="34" cy="28" r="9" fill="#1A1A1A"/>
+          <path d="M20 78v-20c0-9 6-15 14-15s14 6 14 15v20z" fill="#1A1A1A"/>
+          <path d="M45 50l17-9" stroke="#1A1A1A" stroke-width="7" stroke-linecap="round"/>
+          <rect x="64" y="30" width="22" height="6" fill="#1A1A1A"/>
+          <rect x="64" y="44" width="22" height="6" fill="#1A1A1A"/>
+          <rect x="64" y="58" width="22" height="6" fill="#1A1A1A"/>
         </svg>
-        <div class="tour__bubble"><span>New here? I can show you around.</span><br>
-          <span class="btn tour__go">▶ Show me around</span></div>
+        <div class="tour__bubble"><span>First time here? Get the 30-second overview.</span><br>
+          <span class="btn tour__go">▶ Start the tour</span></div>
       </div>
     </div>
-    <p class="variant__why">Reduzierte Ein-Linien-Zeichnung auf gelbem Quadrat: am abstraktesten und gestalterisch am „erwachsensten“. Keine Debatte über Aussehen der Figur, bleibt aber menschlich. Passt gut, wenn der Auftritt insgesamt ruhiger werden soll.</p>
+    <p class="variant__why">Reduziertes Piktogramm im Stil technischer Beschilderung (DIN/ISO-Anmutung): eine Figur zeigt auf die Inhalte. Kein Gesicht, keine Emotion — reine Funktion „hier wird Ihnen etwas gezeigt“. Passt nahtlos zur Marke.</p>
   </div>
 
   <div class="variant">
-    <span class="variant__tag">A5 · Echtes Foto</span>
+    <span class="variant__tag">B2 · Rundgang-Route</span>
     <div class="mockband">
-      <div class="tour">
-        <svg class="tour__spark" width="86" height="94" viewBox="0 0 110 120" fill="none" aria-hidden="true" style="animation:none">
-          <rect x="15" y="14" width="80" height="92" fill="#e6e6e6" stroke="#1a1a1a" stroke-width="3"/>
-          <circle cx="55" cy="48" r="16" fill="#c9c9c9"/>
-          <path d="M29 98q6-24 26-24t26 24" fill="#c9c9c9"/>
-          <rect x="15" y="98" width="80" height="8" fill="#ffed00"/>
+      <div class="tour tour--sober">
+        <svg class="tour__spark" width="78" height="78" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="96" height="96" fill="#fff" stroke="#1A1A1A" stroke-width="3"/>
+          <path d="M20 80C34 66 38 62 50 50S70 32 82 20" stroke="#1A1A1A" stroke-width="3"/>
+          <rect x="13" y="73" width="14" height="14" fill="#FFED00" stroke="#1A1A1A" stroke-width="3"/>
+          <rect x="43" y="43" width="14" height="14" fill="#FFED00" stroke="#1A1A1A" stroke-width="3"/>
+          <rect x="73" y="13" width="14" height="14" fill="#FFED00" stroke="#1A1A1A" stroke-width="3"/>
         </svg>
-        <div class="tour__bubble"><span>New here? I can show you around.</span><br>
-          <span class="btn tour__go">▶ Show me around</span></div>
+        <div class="tour__bubble"><span>First time here? Get the 30-second overview.</span><br>
+          <span class="btn tour__go">▶ Start the tour</span></div>
       </div>
     </div>
-    <p class="variant__why">Platzhalter: Hier stünde das Foto einer echten Person (z.&nbsp;B. Trainer:in oder Kolleg:in aus dem Vertrieb). Die authentischste Variante, ganz im Sinne der Kärcher-GenAI-Regeln. Braucht: ein Foto + Einverständnis. Tour-Ablauf und Audio bleiben identisch.</p>
+    <p class="variant__why">Die Tour als das, was sie ist: ein kurzer Rundgang über die Stationen der Seite. Sachlich, technisch, ohne jede Figur. Funktioniert auch als wiederkehrendes Symbol für „Orientierung“ im ganzen Auftritt.</p>
   </div>
 
   <div class="variant">
-    <span class="variant__tag">A6 · Ohne Figur</span>
+    <span class="variant__tag">B3 · Nur Text, dunkles Band</span>
     <div class="mockband">
-      <div class="tour">
-        <svg class="tour__spark" width="70" height="70" viewBox="0 0 70 70" fill="none" aria-hidden="true" style="animation:none">
-          <rect x="2" y="2" width="66" height="66" fill="#ffed00" stroke="#1a1a1a" stroke-width="3"/>
-          <path d="M28 22l20 13-20 13z" fill="#1a1a1a"/>
-        </svg>
-        <div class="tour__bubble"><span>New here? Take the 30-second tour.</span><br>
-          <span class="btn tour__go">▶ Show me around</span></div>
+      <div class="tour--band">
+        <div class="bandinner">
+          <div class="bandtext">
+            <p class="bandkicker">Orientation</p>
+            <p class="bandline">First time here? Get the 30-second overview.</p>
+          </div>
+          <span class="btn tour__go" style="margin:0">▶ Start the tour</span>
+        </div>
       </div>
     </div>
-    <p class="variant__why">Ganz ohne Figur: nur ein gelbes Play-Element. Am nüchternsten, dafür weniger Persönlichkeit; die Audio-Stimme der Tour bleibt.</p>
+    <p class="variant__why">Die nüchternste Lösung: gar kein Bildelement. Ein scharfkantiges Anthrazit-Band mit gelbem Kicker und Button — hebt sich klar von den weißen Kästchen ab und behandelt die Tour wie eine Funktion des Produkts. Die Audio-Stimme bleibt.</p>
   </div>
 
   <div class="demo-h">
-    <h2>B · Der Block</h2>
-    <p>Damit sich „Show me around“ von den weißen, abgerundeten Themen-Kästchen abhebt: andere Farbe und bewusst scharfe Ecken (entspricht der Kärcher-CI-Regel „rechteckige Flächen“). Figur jeweils nur beispielhaft eingesetzt.</p>
+    <h2>C · Blockgestaltung</h2>
+    <p>Unabhängig von der Bild-Entscheidung: der Block scharfkantig (Kärcher-CI „rechteckige Flächen“) und farblich von den weißen, abgerundeten Themen-Kästchen abgesetzt.</p>
   </div>
 
   <div class="variant">
-    <span class="variant__tag">B1 · Anthrazit-Band</span>
+    <span class="variant__tag">C1 · Anthrazit + Piktogramm</span>
     <div class="mockband">
-      <div class="tour tour--dark">
-        <svg class="tour__spark" width="92" height="94" viewBox="0 0 130 132" fill="none" aria-hidden="true">
-          <path d="M25 132v-12c0-19 17-30 40-30s40 11 40 30v12z" fill="#FFED00"/>
-          <path d="M65 90c23 0 40 11 40 30v12H91v-12c0-14-11-24-26-27z" fill="#EFDF00" opacity=".7"/>
-          <rect x="58" y="74" width="14" height="20" rx="6" fill="#E8B48B"/>
-          <path d="M53 92l12 13 12-13c-4-4-8-6-12-6s-8 2-12 6z" fill="#1A1A1A"/>
-          <circle cx="38" cy="52" r="6" fill="#F2C9A0"/>
-          <circle cx="92" cy="52" r="6" fill="#F2C9A0"/>
-          <circle cx="65" cy="50" r="27" fill="#F7CFA4"/>
-          <path d="M38 54c-2-22 11-34 27-34s29 12 27 34l-3 1c0-11-4-18-9-21-7 5-24 5-31 0-5 3-9 10-8 21z" fill="#2E2A28"/>
-          <path d="M48 44q5-3 10 0" stroke="#2E2A28" stroke-width="3" stroke-linecap="round"/>
-          <path d="M72 44q5-3 10 0" stroke="#2E2A28" stroke-width="3" stroke-linecap="round"/>
-          <g class="eye"><circle cx="53" cy="53" r="3.4" fill="#26221F"/></g>
-          <g class="eye"><circle cx="77" cy="53" r="3.4" fill="#26221F"/></g>
-          <circle cx="46" cy="61" r="4.5" fill="#F0A987" opacity=".55"/>
-          <circle cx="84" cy="61" r="4.5" fill="#F0A987" opacity=".55"/>
-          <path d="M56 64q9 8 18 0" stroke="#B4715A" stroke-width="3.2" stroke-linecap="round"/>
-          <path d="M36 46a29 29 0 0 1 58 0" stroke="#1A1A1A" stroke-width="4.5"/>
-          <rect x="31" y="46" width="10" height="17" rx="5" fill="#1A1A1A"/>
-          <path d="M37 63q3 13 17 15" stroke="#1A1A1A" stroke-width="3.2"/>
-          <circle cx="56" cy="79" r="4" fill="#FFED00" stroke="#1A1A1A" stroke-width="2.5"/>
+      <div class="tour tour--sober tour--dark">
+        <svg class="tour__spark" width="78" height="78" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <rect width="100" height="100" fill="#FFED00"/>
+          <circle cx="34" cy="28" r="9" fill="#1A1A1A"/>
+          <path d="M20 78v-20c0-9 6-15 14-15s14 6 14 15v20z" fill="#1A1A1A"/>
+          <path d="M45 50l17-9" stroke="#1A1A1A" stroke-width="7" stroke-linecap="round"/>
+          <rect x="64" y="30" width="22" height="6" fill="#1A1A1A"/>
+          <rect x="64" y="44" width="22" height="6" fill="#1A1A1A"/>
+          <rect x="64" y="58" width="22" height="6" fill="#1A1A1A"/>
         </svg>
-        <div class="tour__bubble"><span>New here? I can show you around.</span><br>
-          <span class="btn tour__go">▶ Show me around</span></div>
+        <div class="tour__bubble"><span>First time here? Get the 30-second overview.</span><br>
+          <span class="btn tour__go">▶ Start the tour</span></div>
       </div>
     </div>
-    <p class="variant__why">Dunkler Block mit gelbem Button: maximaler Kontrast zu den weißen Kästchen, wirkt wie eine eigene Ebene „Assistenz“ über den Inhalten.</p>
+    <p class="variant__why">Dunkler, scharfkantiger Block mit gelbem Piktogramm-Quadrat und gelbem Button: maximaler Kontrast zu den Kästchen, komplett im Marken-Duktus.</p>
   </div>
 
   <div class="variant">
-    <span class="variant__tag">B2 · Kärcher-Gelb</span>
+    <span class="variant__tag">C2 · Weiß mit gelber Kante + Foto</span>
     <div class="mockband">
-      <div class="tour tour--yellow">
-        <svg class="tour__spark" width="92" height="94" viewBox="0 0 130 132" fill="none" aria-hidden="true">
-          <path d="M92 24c11-7 20-2 18 9-2 10-11 17-18 13z" fill="#4A3325"/>
-          <path d="M25 132v-12c0-19 17-30 40-30s40 11 40 30v12z" fill="#FFED00"/>
-          <path d="M65 90c23 0 40 11 40 30v12H91v-12c0-14-11-24-26-27z" fill="#EFDF00" opacity=".7"/>
-          <rect x="58" y="74" width="14" height="20" rx="6" fill="#E8B48B"/>
-          <path d="M52 90a13 8 0 0 0 26 0c-4-3-8-4-13-4s-9 1-13 4z" fill="#1A1A1A"/>
-          <circle cx="38" cy="52" r="6" fill="#F2C9A0"/>
-          <circle cx="92" cy="52" r="6" fill="#F2C9A0"/>
-          <circle cx="38" cy="52" r="2.5" fill="#FFED00"/>
-          <circle cx="92" cy="52" r="2.5" fill="#FFED00"/>
-          <circle cx="65" cy="50" r="27" fill="#F7CFA4"/>
-          <path d="M37 56c-3-24 11-36 28-36s31 12 28 36c-1 5-3 8-3 8 1-13-3-21-8-24-7 5-27 5-34 0-5 3-9 11-8 24 0 0-2-3-3-8z" fill="#4A3325"/>
-          <circle cx="53" cy="53" r="7.5" stroke="#26221F" stroke-width="2.6"/>
-          <circle cx="77" cy="53" r="7.5" stroke="#26221F" stroke-width="2.6"/>
-          <path d="M60.5 53h9" stroke="#26221F" stroke-width="2.6"/>
-          <g class="eye"><circle cx="53" cy="53" r="3" fill="#26221F"/></g>
-          <g class="eye"><circle cx="77" cy="53" r="3" fill="#26221F"/></g>
-          <path d="M56 65q9 8 18 0" stroke="#B4715A" stroke-width="3.2" stroke-linecap="round"/>
+      <div class="tour tour--sober tour--yellowedge">
+        <svg class="tour__spark" width="82" height="94" viewBox="0 0 110 126" fill="none" aria-hidden="true">
+          <rect x="15" y="10" width="80" height="100" fill="#e6e6e6" stroke="#1a1a1a" stroke-width="3"/>
+          <circle cx="55" cy="48" r="17" fill="#c9c9c9"/>
+          <path d="M28 102q7-26 27-26t27 26" fill="#c9c9c9"/>
+          <rect x="15" y="102" width="80" height="8" fill="#ffed00"/>
         </svg>
-        <div class="tour__bubble"><span>New here? I can show you around.</span><br>
-          <span class="btn tour__go" style="background:#1a1a1a;color:#fff">▶ Show me around</span></div>
+        <div class="tour__bubble"><span>First time here? Get the 30-second overview.</span><br>
+          <span class="btn tour__go">▶ Start the tour</span></div>
       </div>
     </div>
-    <p class="variant__why">Gelber Block mit dunklem Button: greift das Hero-Gelb auf, hebt sich klar von den Kästchen ab. Achtung: Direkt unter dem gelben Hero kann es ineinanderfließen.</p>
-  </div>
-
-  <div class="variant">
-    <span class="variant__tag">B3 · Gelbe Kante</span>
-    <div class="mockband">
-      <div class="tour tour--bar">
-        <svg class="tour__spark" width="90" height="96" viewBox="0 0 120 128" fill="none" aria-hidden="true" style="animation:none">
-          <defs><clipPath id="tileclip2"><rect x="9" y="9" width="102" height="110"/></clipPath></defs>
-          <rect x="6" y="6" width="108" height="116" fill="#F4F4F2" stroke="#1A1A1A" stroke-width="3"/>
-          <g clip-path="url(#tileclip2)">
-            <path d="M14 128v-8c0-18 15-28 36-28s36 10 36 28v8z" fill="#FFED00"/>
-            <path d="M42 94l8 10 8-10c-3-4-5-5-8-5s-5 1-8 5z" fill="#1A1A1A"/>
-            <rect x="45" y="74" width="10" height="22" rx="4.5" fill="#E8B48B"/>
-            <circle cx="27" cy="57" r="5" fill="#F2C9A0"/>
-            <circle cx="73" cy="57" r="5" fill="#F2C9A0"/>
-            <circle cx="50" cy="55" r="24" fill="#F7CFA4"/>
-            <path d="M26 59c-2-20 10-31 24-31s26 11 24 31l-3 1c0-10-3-16-8-19-6 5-21 5-27 0-5 3-8 9-8 19z" fill="#2E2A28"/>
-            <path d="M37 51q4.5-3 9 0M54 51q4.5-3 9 0" stroke="#2E2A28" stroke-width="2.6" stroke-linecap="round"/>
-            <g class="eye"><circle cx="42" cy="58" r="3" fill="#26221F"/></g>
-            <g class="eye"><circle cx="58" cy="58" r="3" fill="#26221F"/></g>
-            <path d="M42 67q8 7 16 0" stroke="#B4715A" stroke-width="3" stroke-linecap="round"/>
-          </g>
-          <rect x="6" y="6" width="108" height="9" fill="#FFED00"/>
-          <rect x="80" y="100" width="30" height="18" fill="#1A1A1A"/>
-          <path d="M89 105l10 4-10 4z" fill="#FFED00"/>
-        </svg>
-        <div class="tour__bubble"><span>New here? I can show you around.</span><br>
-          <span class="btn tour__go">▶ Show me around</span></div>
-      </div>
-    </div>
-    <p class="variant__why">Dezenteste Variante: weiß, aber scharfkantig mit kräftiger gelber Kante links, ohne Sprechblasen-Pfeil. Unterscheidet sich in Form und Akzent, bleibt aber ruhig.</p>
+    <p class="variant__why">Ruhigere Alternative: weißer, scharfkantiger Block mit kräftiger gelber Kante, kombiniert mit dem Kollegen-Foto. Seriös und persönlich zugleich.</p>
   </div>
 
   <div class="wrap" style="padding-top:26px">
-    <p class="note-sm">Empfehlung: kurzfristig <strong>A1 + B1</strong> (Person mit Headset im dunklen Band), mittelfristig optional A5, sobald ein echtes Foto samt Freigabe vorliegt — A3 wäre dafür der passende Rahmen.</p>
+    <p class="note-sm">Empfehlung für diese Zielgruppe: <strong>A1</strong> (Foto einer glaubwürdigen Person), sobald Foto + Freigabe vorliegen — bis dahin <strong>B1 oder B3</strong> mit <strong>C1</strong>-Blockgestaltung. Dazu durchgängig die sachlichere Formulierung und keine Animationen.</p>
     <p class="foot">Interne Demo · wird nicht verlinkt</p>
   </div>
 </body>
