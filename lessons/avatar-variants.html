@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Demo: Tour-Einstieg — Foto &amp; einfache Icons</title>
+  <title>Demo: KI-Porträts für den Tour-Einstieg</title>
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Demo-only page: not linked from the site, shown to Kärcher to pick a direction. */
+    /* Demo-only page: not linked from the site, shown to Kärcher to pick a portrait. */
     .demo-note{max-width:600px;margin:0 auto;padding:20px 18px 0;font-size:14px;color:var(--ink-70)}
     .demo-h{max-width:600px;margin:34px auto 0;padding:0 18px}
     .demo-h h2{font-family:var(--cond);text-transform:uppercase;letter-spacing:.04em;
@@ -21,163 +21,103 @@
     .mockband{border:1px dashed #bbb;background:#fff;padding:4px 0 22px;margin-top:10px}
     /* Sober treatment: no bobbing, no speech-bubble tail, sharp corners (Kärcher CI). */
     .tour--sober{align-items:center}
-    .tour--sober .tour__spark{animation:none}
     .tour--sober .tour__bubble{border-radius:0}
     .tour--sober .tour__bubble::after{display:none}
     .tour--dark .tour__bubble{background:var(--ink);color:#fff;border-color:var(--ink)}
-    /* photo chip inside the bubble (compact variant) */
-    .bubblerow{display:flex;align-items:center;gap:14px}
-    .bubblerow svg{flex:none}
+    .phototile{flex:none;width:84px;border:3px solid var(--ink);border-bottom:8px solid var(--yellow);
+      display:block}
+    .phototile img{display:block;width:100%;height:auto}
   </style>
 </head>
 <body>
   <header class="topbar"><a class="topbar__brand" href="start.html"><img class="topbar__logo" src="img/karcher-logo.png" alt="Kärcher"><span>AI in Sales</span></a><nav class="topbar__nav"><span class="topbar__item on">Interne Demo</span></nav></header>
 
   <header class="hero">
-    <p class="hero__eyebrow">Interne Demo · nicht verlinkt · Rev 4</p>
-    <h1 class="hero__title">Foto &amp; einfache Icons</h1>
-    <p class="hero__sub">Die Foto-Idee ausgebaut (drei Einsatzformen) plus schlichte Icon-Alternativen für den Tour-Einstieg. Nüchtern, scharfkantig, ohne Figuren.</p>
+    <p class="hero__eyebrow">Interne Demo · nicht verlinkt · Rev 5</p>
+    <h1 class="hero__title">KI-Porträts zur Auswahl</h1>
+    <p class="hero__sub">Vier KI-generierte Beispiel-Porträts für den Tour-Einstieg, jeweils im Live-Layout (rechteckige Kachel, gelbe Kante, sachliche Ansprache).</p>
   </header>
 
-  <p class="demo-note">Jede Zeile ist ein klickloser Nachbau der Tour-Zeile der Startseite. Sprache sachlich („Get the 30-second overview“), keine Animationen. Das graue Porträt ist Platzhalter — dort stünde das echte Foto.</p>
+  <p class="demo-note">Alle Bilder sind KI-generiert (fiktive Personen, keine realen Vorbilder) und würden intern entsprechend als KI-generiert gekennzeichnet. Zur Stimme: Die Tour spricht aktuell mit der ElevenLabs-Stimme „Matilda“ — beschrieben als <strong>weiblich, mittleren Alters</strong>, professionell-zugewandt, warme Alt-Lage, amerikanisches Englisch. Die beiden Frauen-Porträts passen dazu unmittelbar; bei einem Männer-Porträt würde die Tour-Stimme auf eine männliche ElevenLabs-Stimme umgestellt (geringer Aufwand, einmalige Neugenerierung der Audios).</p>
 
   <div class="demo-h">
-    <h2>A · Das Kollegen-Foto, drei Einsatzformen</h2>
-    <p>Ein sachliches Porträt einer glaubwürdigen Person (erfahrene:r Kolleg:in oder Trainer:in). Braucht ein Foto + Einverständnis; die Tour-Stimme passt dann zur Person.</p>
+    <h2>A · Passend zur aktuellen Stimme</h2>
+    <p>Frauen mittleren Alters, professionell und zugänglich — deckungsgleich mit der Matilda-Stimme.</p>
   </div>
 
   <div class="variant">
-    <span class="variant__tag">A1 · Porträt-Kachel</span>
+    <span class="variant__tag">A1 · Frau, Ende 40, Blazer</span>
     <div class="mockband">
       <div class="tour tour--sober">
-        <svg class="tour__spark" width="82" height="96" viewBox="0 0 110 128" fill="none" aria-hidden="true">
-          <rect x="15" y="10" width="80" height="102" fill="#E9E9E7" stroke="#1a1a1a" stroke-width="3"/>
-          <circle cx="55" cy="47" r="16" fill="#C2C2C2"/>
-          <path d="M27 104q5-25 28-25t28 25z" fill="#9E9E9E"/>
-          <path d="M48 82l7 8 7-8" stroke="#E9E9E7" stroke-width="3" fill="none"/>
-          <rect x="15" y="104" width="80" height="8" fill="#ffed00"/>
-        </svg>
+        <span class="phototile"><img src="img/guide-w1.jpg" alt="KI-generiertes Porträt, Frau Ende 40"></span>
         <div class="tour__bubble"><span>First time here? Get the 30-second overview.</span><br>
           <span class="btn tour__go">▶ Start the tour</span></div>
       </div>
     </div>
-    <p class="variant__why">Die Basisform: rechteckiges Porträt mit gelber Kante, neben der Einladung. Ruhig und persönlich — „ein Kollege zeigt mir das“.</p>
+    <p class="variant__why">Weiße Bluse, dunkler Blazer: klassisch-professionell, warmes Lächeln. Die naheliegendste Besetzung zur Stimme.</p>
   </div>
 
   <div class="variant">
-    <span class="variant__tag">A2 · Foto im Anthrazit-Block</span>
+    <span class="variant__tag">A2 · Frau, Anfang 50, Brille</span>
+    <div class="mockband">
+      <div class="tour tour--sober">
+        <span class="phototile"><img src="img/guide-w2.jpg" alt="KI-generiertes Porträt, Frau Anfang 50"></span>
+        <div class="tour__bubble"><span>First time here? Get the 30-second overview.</span><br>
+          <span class="btn tour__go">▶ Start the tour</span></div>
+      </div>
+    </div>
+    <p class="variant__why">Brille, natürliche graue Strähnen, Strick statt Blazer: nahbarer, „Kollegin aus dem Team“ statt Management. Sehr glaubwürdig für die Zielgruppe.</p>
+  </div>
+
+  <div class="demo-h">
+    <h2>B · Männlich (Stimmwechsel nötig)</h2>
+    <p>Auf Augenhöhe mit der Zielgruppe. Dazu würde die Tour auf eine männliche Stimme umgestellt.</p>
+  </div>
+
+  <div class="variant">
+    <span class="variant__tag">B1 · Mann, Anfang 50, Polo</span>
+    <div class="mockband">
+      <div class="tour tour--sober">
+        <span class="phototile"><img src="img/guide-m1.jpg" alt="KI-generiertes Porträt, Mann Anfang 50"></span>
+        <div class="tour__bubble"><span>First time here? Get the 30-second overview.</span><br>
+          <span class="btn tour__go">▶ Start the tour</span></div>
+      </div>
+    </div>
+    <p class="variant__why">Graues Haar, anthrazitfarbenes Polo: wirkt wie der erfahrene Vertriebskollege — die stärkste Peer-Wirkung für „50-jährige Vertriebler“.</p>
+  </div>
+
+  <div class="variant">
+    <span class="variant__tag">B2 · Mann, Mitte 40, Hemd</span>
+    <div class="mockband">
+      <div class="tour tour--sober">
+        <span class="phototile"><img src="img/guide-m2.jpg" alt="KI-generiertes Porträt, Mann Mitte 40"></span>
+        <div class="tour__bubble"><span>First time here? Get the 30-second overview.</span><br>
+          <span class="btn tour__go">▶ Start the tour</span></div>
+      </div>
+    </div>
+    <p class="variant__why">Etwas jünger, Bart, weißes Hemd: moderner Auftritt, immer noch seriös.</p>
+  </div>
+
+  <div class="demo-h">
+    <h2>Vorschau im dunklen Block</h2>
+    <p>Zur Einordnung: das favorisierte Porträt einmal in der abgesetzten Blockgestaltung.</p>
+  </div>
+
+  <div class="variant">
+    <span class="variant__tag">A1 im Anthrazit-Block</span>
     <div class="mockband">
       <div class="tour tour--sober tour--dark">
-        <svg class="tour__spark" width="82" height="96" viewBox="0 0 110 128" fill="none" aria-hidden="true">
-          <rect x="15" y="10" width="80" height="102" fill="#E9E9E7" stroke="#1a1a1a" stroke-width="3"/>
-          <circle cx="55" cy="47" r="16" fill="#C2C2C2"/>
-          <path d="M27 104q5-25 28-25t28 25z" fill="#9E9E9E"/>
-          <path d="M48 82l7 8 7-8" stroke="#E9E9E7" stroke-width="3" fill="none"/>
-          <rect x="15" y="104" width="80" height="8" fill="#ffed00"/>
-        </svg>
+        <span class="phototile"><img src="img/guide-w1.jpg" alt="KI-generiertes Porträt im dunklen Block"></span>
         <div class="tour__bubble"><span>First time here? Get the 30-second overview.</span><br>
           <span class="btn tour__go">▶ Start the tour</span></div>
       </div>
     </div>
-    <p class="variant__why">Dasselbe Foto vor dem dunklen, scharfkantigen Block: hebt den Tour-Einstieg maximal von den weißen Themen-Kästchen ab und rahmt das Porträt kräftig.</p>
-  </div>
-
-  <div class="variant">
-    <span class="variant__tag">A3 · Kompakt: Foto in der Zeile</span>
-    <div class="mockband">
-      <div class="tour tour--sober">
-        <div class="tour__bubble" style="flex:1">
-          <div class="bubblerow">
-            <svg width="52" height="60" viewBox="0 0 110 126" fill="none" aria-hidden="true">
-              <rect x="15" y="10" width="80" height="100" fill="#E9E9E7" stroke="#1a1a1a" stroke-width="4"/>
-              <circle cx="55" cy="46" r="17" fill="#C2C2C2"/>
-              <path d="M26 102q6-26 29-26t29 26z" fill="#9E9E9E"/>
-              <rect x="15" y="102" width="80" height="8" fill="#ffed00"/>
-            </svg>
-            <div><span>First time here? Get the 30-second overview.</span><br>
-              <span class="btn tour__go">▶ Start the tour</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p class="variant__why">Die platzsparendste Form: kleines Foto als Chip direkt in der Zeile, keine separate Figur daneben. Wirkt wie eine persönliche Notiz des Ansprechpartners.</p>
-  </div>
-
-  <div class="demo-h">
-    <h2>B · Einfache Icons statt Figur</h2>
-    <p>Falls (noch) kein Foto: ein schlichtes, sofort verständliches Zeichen in Gelb/Anthrazit. Alle scharfkantig nach CI.</p>
-  </div>
-
-  <div class="variant">
-    <span class="variant__tag">B1 · Sprechblase</span>
-    <div class="mockband">
-      <div class="tour tour--sober">
-        <svg class="tour__spark" width="76" height="76" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-          <rect x="5" y="14" width="90" height="54" fill="#FFED00" stroke="#1A1A1A" stroke-width="3"/>
-          <path d="M26 68v18l18-18z" fill="#FFED00" stroke="#1A1A1A" stroke-width="3" stroke-linejoin="round"/>
-          <path d="M41 28l22 13-22 13z" fill="#1A1A1A"/>
-        </svg>
-        <div class="tour__bubble"><span>First time here? Get the 30-second overview.</span><br>
-          <span class="btn tour__go">▶ Start the tour</span></div>
-      </div>
-    </div>
-    <p class="variant__why">Gelbe Sprechblase mit Play: „hier spricht jemand zu mir, auf Knopfdruck“. Einfach, freundlich ohne verspielt zu sein, und ehrlich — die Tour ist ja tatsächlich eine gesprochene Führung.</p>
-  </div>
-
-  <div class="variant">
-    <span class="variant__tag">B2 · Sprechblase mit Stimme</span>
-    <div class="mockband">
-      <div class="tour tour--sober">
-        <svg class="tour__spark" width="76" height="76" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-          <rect x="5" y="14" width="90" height="54" fill="#FFED00" stroke="#1A1A1A" stroke-width="3"/>
-          <path d="M26 68v18l18-18z" fill="#FFED00" stroke="#1A1A1A" stroke-width="3" stroke-linejoin="round"/>
-          <rect x="33" y="36" width="7" height="12" fill="#1A1A1A"/>
-          <rect x="46" y="28" width="7" height="27" fill="#1A1A1A"/>
-          <rect x="59" y="36" width="7" height="12" fill="#1A1A1A"/>
-        </svg>
-        <div class="tour__bubble"><span>First time here? Get the 30-second overview.</span><br>
-          <span class="btn tour__go">▶ Start the tour</span></div>
-      </div>
-    </div>
-    <p class="variant__why">Variante mit Pegel-Balken statt Play: betont die Stimme (Audio-Führung). Gleiches Prinzip, etwas technischer.</p>
-  </div>
-
-  <div class="variant">
-    <span class="variant__tag">B3 · Lautsprecher</span>
-    <div class="mockband">
-      <div class="tour tour--sober">
-        <svg class="tour__spark" width="76" height="76" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-          <rect x="2" y="2" width="96" height="96" fill="#FFED00" stroke="#1A1A1A" stroke-width="3"/>
-          <path d="M26 42h12l16-14v44L38 58H26z" fill="#1A1A1A"/>
-          <path d="M62 38a17 17 0 0 1 0 24" stroke="#1A1A1A" stroke-width="4.5" stroke-linecap="round"/>
-          <path d="M71 30a29 29 0 0 1 0 40" stroke="#1A1A1A" stroke-width="4.5" stroke-linecap="round"/>
-        </svg>
-        <div class="tour__bubble"><span>First time here? Get the 30-second overview.</span><br>
-          <span class="btn tour__go">▶ Start the tour</span></div>
-      </div>
-    </div>
-    <p class="variant__why">Klassisches Audio-Zeichen im gelben Quadrat: sofort verständlich als „hier wird etwas angesagt“. Am technisch-nüchternsten.</p>
-  </div>
-
-  <div class="variant">
-    <span class="variant__tag">B4 · Info</span>
-    <div class="mockband">
-      <div class="tour tour--sober">
-        <svg class="tour__spark" width="76" height="76" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-          <rect x="2" y="2" width="96" height="96" fill="#FFED00" stroke="#1A1A1A" stroke-width="3"/>
-          <circle cx="50" cy="30" r="7" fill="#1A1A1A"/>
-          <rect x="44" y="44" width="12" height="32" fill="#1A1A1A"/>
-        </svg>
-        <div class="tour__bubble"><span>First time here? Get the 30-second overview.</span><br>
-          <span class="btn tour__go">▶ Start the tour</span></div>
-      </div>
-    </div>
-    <p class="variant__why">Das universelle Info-Zeichen: seriös und jedem vertraut. Sagt allerdings nur „Information“, nicht „geführte Tour“ — dafür null Erklärungsbedarf.</p>
+    <p class="variant__why">Scharfkantiger dunkler Block + Porträt: persönlich und klar abgesetzt von den Themen-Kästchen.</p>
   </div>
 
   <div class="wrap" style="padding-top:26px">
-    <p class="note-sm">Empfehlung: <strong>A1 oder A2</strong>, sobald Foto + Freigabe vorliegen. Bis dahin <strong>B1</strong> (Sprechblase mit Play) — sie kommt der Sache am nächsten: Auf Knopfdruck führt eine Stimme über die Seite.</p>
-    <p class="foot">Interne Demo · wird nicht verlinkt</p>
+    <p class="note-sm">Empfehlung: <strong>A1 oder A2</strong> (passen ohne weiteren Aufwand zur vorhandenen Tour-Stimme). Bei B1/B2 zusätzlich: männliche ElevenLabs-Stimme wählen und die Tour-Audios einmalig neu generieren. Weitere Varianten (Alter, Look, Kleidung) sind jederzeit schnell nachproduziert.</p>
+    <p class="foot">Interne Demo · wird nicht verlinkt · Porträts KI-generiert</p>
   </div>
 </body>
 </html>
