@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>AI in Sales — Trainer hub</title>
+  <link rel="icon" href="../lessons/favicon.ico">
+  <link rel="stylesheet" href="../lessons/styles.css">
+  <style>body{visibility:hidden}</style>
+  <style>
+.art{max-width:760px;margin:0 auto;padding:8px 0 40px}
+.art h2{font-size:1.35rem;margin:34px 0 10px;border-left:6px solid var(--yellow);padding-left:12px}
+.art h3{font-size:1.05rem;margin:22px 0 6px}
+.art p,.art li{line-height:1.55}
+.art ul{padding-left:22px}
+.say{background:var(--yellow-tint,#fdf6c9);border-left:6px solid var(--yellow);padding:12px 16px;margin:14px 0}
+.say b{display:block;margin-bottom:4px}
+.check{list-style:none;padding-left:0}
+.check li{padding:7px 0 7px 30px;position:relative;border-bottom:1px solid var(--line,#e5e5e0)}
+.check li::before{content:"";position:absolute;left:0;top:11px;width:14px;height:14px;border:2px solid var(--ink,#1a1a1a);background:#fff}
+.tmpl{background:#f4f4f1;border:1px solid var(--line,#ddd);padding:14px 16px;font-family:ui-monospace,Menlo,monospace;font-size:.86rem;white-space:pre-wrap;margin:12px 0}
+.matgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:12px 0 26px}
+.mat{background:#fff;border:1px solid var(--line,#ddd);padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.mat--gem{background:var(--yellow)}
+.mat b{font-size:.98rem}
+.mat span{font-size:.85rem;color:var(--ink-55,#555);line-height:1.4}
+.mat a.btn{margin-top:auto;align-self:flex-start}
+.faq details{border:1px solid var(--line,#ddd);background:#fff;margin:0 0 10px;padding:0 16px}
+.faq summary{cursor:pointer;font-weight:700;padding:13px 0;list-style:none}
+.faq summary::before{content:"+";display:inline-block;width:22px;font-weight:700}
+.faq details[open] summary::before{content:"–"}
+.faq .a{padding:0 0 14px 22px;line-height:1.55}
+.crumb{font-size:.85rem;margin:14px 0 0;color:var(--ink-55,#555)}
+.crumb a{color:inherit}
+</style>
+  <script type="module" src="../lessons/gate.js"></script>
+</head>
+<body>
+  <header class="topbar"><a class="topbar__brand" href="index.html"><img class="topbar__logo" src="../lessons/img/karcher-logo.png" alt="Kärcher"><span>AI in Sales · Trainer hub</span></a><nav class="topbar__nav"><a class="topbar__item on" href="index.html">Home</a><a class="topbar__item" href="faq.html">FAQ</a><a class="topbar__item" href="materials.html">Materials</a><a class="topbar__item" href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">The platform</a></nav></header>
+
+  <header class="hero">
+    <p class="hero__eyebrow">Kärcher · Train-the-Trainer</p>
+    <h1 class="hero__title">Run the rollout in your market</h1>
+    <p class="hero__sub">Your teams learn on the platform. This site is your side of it: how to start AI use in your own sales organization, keep it alive, and show what it changes.</p>
+  </header>
+
+  <div class="wrap">
+
+    <div class="doorgrid">
+      <a class="door door--primary door--wide" href="weeks.html">
+        <h2 class="door__title">Your first four weeks</h2>
+        <p class="door__sub">The rollout plan</p>
+        <p class="door__text">From the pre-survey to your first sessions to the first progress note, week by week, with the material for each move linked in place.</p>
+        <span class="door__cta">Start the plan →</span>
+      </a>
+
+      <a class="door" href="resistance.html">
+        <h2 class="door__title">When leadership pushes back</h2>
+        <p class="door__sub">"We have no time for this"</p>
+        <p class="door__text">How to win a sales leader who sees no room for training: small asks, their own numbers, and one artifact that argues for you.</p>
+        <span class="door__cta">Read the moves →</span>
+      </a>
+
+      <a class="door" href="quiet.html">
+        <h2 class="door__title">When usage goes quiet</h2>
+        <p class="door__sub">After the first weeks</p>
+        <p class="door__text">Usage dipping after the start is normal, not failure. The routine that keeps AI in the weekly rhythm, and how to restart it when it sleeps.</p>
+        <span class="door__cta">Wake it up →</span>
+      </a>
+
+      <a class="door" href="progress.html">
+        <h2 class="door__title">Show your progress</h2>
+        <p class="door__sub">Report back to the Academy</p>
+        <p class="door__text">What to count, what to collect, and the short monthly note that keeps the Academy informed without becoming reporting work.</p>
+        <span class="door__cta">Make it visible →</span>
+      </a>
+
+      <a class="door" href="faq.html">
+        <h2 class="door__title">What do I say when …</h2>
+        <p class="door__sub">FAQ &amp; objections</p>
+        <p class="door__text">Ready answers to the ten objections you will actually hear, from data safety to "we already had an AI training from IT".</p>
+        <span class="door__cta">Open the answers →</span>
+      </a>
+
+      <a class="door" href="materials.html">
+        <h2 class="door__title">Your materials</h2>
+        <p class="door__sub">Decks, playbook, tools</p>
+        <p class="door__text">Every deck, the playbook, the pre-survey, the planning Gem and the Trainer Notebook, in one place with a one-line "use it when" each.</p>
+        <span class="door__cta">Open the shelf →</span>
+      </a>
+    </div>
+
+    <p class="note-sm" style="margin-top:22px">The <a href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener" style="text-decoration:underline">learning platform</a> answers what AI does in sales; your teams learn there. This site answers the question after it: how you get that use going in your own sales team, and how you keep it going.</p>
+
+  </div>
+</body>
+</html>
