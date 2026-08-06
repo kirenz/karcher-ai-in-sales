@@ -20,7 +20,7 @@
 .check li{padding:7px 0 7px 30px;position:relative;border-bottom:1px solid var(--line,#e5e5e0)}
 .check li::before{content:"";position:absolute;left:0;top:11px;width:14px;height:14px;border:2px solid var(--ink,#1a1a1a);background:#fff}
 .tmpl{background:#f4f4f1;border:1px solid var(--line,#ddd);padding:14px 16px;font-family:ui-monospace,Menlo,monospace;font-size:.86rem;white-space:pre-wrap;margin:12px 0}
-.matgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:12px 0 26px}
+.matgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:12px 0 26px}
 .mat{background:#fff;border:1px solid var(--line,#ddd);padding:14px 16px;display:flex;flex-direction:column;gap:6px}
 .mat--gem{background:var(--yellow)}
 .mat b{font-size:.98rem}
@@ -42,44 +42,40 @@
   <header class="hero">
     <p class="hero__eyebrow">Kärcher · Train-the-Trainer</p>
     <h1 class="hero__title">Your materials, ready to use</h1>
-    <p class="hero__sub">Everything here is finished: decks to present, decks to learn from, and the tools that plan your session. Below the shelf: your first four weeks.</p>
+    <p class="hero__sub">Everything here is finished: decks to present, decks to learn from, and the tools that plan your session. Pick a tile.</p>
   </header>
 
   <div class="wrap">
 
-    <p class="section-heading" id="present">Present: the session decks</p>
-    <p class="note-sm" style="margin:-6px 0 14px">Ready sessions for your teams, with the full spoken script in the notes and exercises on the slides. Download, open in Google Slides, pick by the slot you have.</p>
-    <div class="matgrid">
-      <div class="mat"><b>First look · 15 min</b><span>One card live in an existing team meeting. The safest first run; creates demand for the real session.</span><a class="btn" href="decks/ttt-8-team-meeting-intro.en.pptx" download>Download deck</a></div>
-      <div class="mat"><b>Basics session · 60 min</b><span>The tools, prompting, the data rules, one card hands-on. Your one-hour standard session.</span><a class="btn" href="decks/ttt-7-basics-session.en.pptx" download>Download deck</a></div>
-      <div class="mat"><b>Sales Cycle Sprint</b><span>The nine steps hands-on on the practice case. Use two or three steps for a two-hour session; hide the rest.</span><a class="btn" href="decks/ttt-9-course-sprint.en.pptx" download>Download deck</a></div>
-    </div>
+    <div class="doorgrid">
+      <a class="door door--primary door--wide" href="present.html">
+        <h2 class="door__title">Present</h2>
+        <p class="door__sub">The session decks</p>
+        <p class="door__text">Three ready sessions for your teams, from the fifteen-minute first look to the Sales Cycle Sprint. Full scripts in the notes, exercises on the slides.</p>
+        <span class="door__cta">Open the decks →</span>
+      </a>
 
-    <p class="section-heading" id="selflearn">Learn it yourself: the deck family</p>
-    <p class="note-sm" style="margin:-6px 0 14px">Your own preparation, one deck per door of the platform. Read them in order once; return by door later.</p>
-    <div class="matgrid">
-      <div class="mat"><b>Start here</b><span>The frame and the platform: what exists, how it fits together, how to read the rest.</span><a class="btn" href="decks/ttt-1-start-here.en.pptx" download>Download deck</a></div>
-      <div class="mat"><b>Door one: Quick help</b><span>Every quick-help card, one by one, with the screens your teams will see.</span><a class="btn" href="decks/ttt-2-quick-help.en.pptx" download>Download deck</a></div>
-      <div class="mat"><b>Door two: AI Basics</b><span>The tool lessons behind the basics door, explained for a first-time reader.</span><a class="btn" href="decks/ttt-3-ai-basics.en.pptx" download>Download deck</a></div>
-      <div class="mat"><b>Door three: Sales Cycle</b><span>The nine-step course on the NorthStar case, step by step.</span><a class="btn" href="decks/ttt-4-sales-cycle.en.pptx" download>Download deck</a></div>
-      <div class="mat"><b>Guide &amp; Notebook</b><span>The handbook and the knowledge base behind the last two doors.</span><a class="btn" href="decks/ttt-5-guide-notebook.en.pptx" download>Download deck</a></div>
-      <div class="mat"><b>Run it in your region</b><span>Your rollout part: the survey, the reading rules, session sizes, and the planning helpers.</span><a class="btn" href="decks/ttt-6-run-your-region.en.pptx" download>Download deck</a></div>
-    </div>
+      <a class="door" href="selflearn.html">
+        <h2 class="door__title">Learn it yourself</h2>
+        <p class="door__sub">The deck family</p>
+        <p class="door__text">Your own preparation: one deck per door of the platform, from Start here to Run it in your region.</p>
+        <span class="door__cta">Start reading →</span>
+      </a>
 
-    <p class="section-heading" id="plan">Plan with: survey, Gem, notebook</p>
-    <div class="matgrid">
-      <div class="mat"><b>The pre-survey</b><span>Copy it once, then send your copy's link; the answers belong to you. Five minutes per participant.</span><a class="btn" href="https://docs.google.com/forms/d/1H_6NGj_kTyR38cX9Zxu0v7fDMzElwIhInTca3RgM054/copy" target="_blank" rel="noopener">Copy the form</a></div>
-      <div class="mat mat--gem"><b>Session-Planner Gem</b><span>Attach your survey response sheet, name your session length; it drafts the plan, opening quotes, and skip list.</span><a class="btn" href="https://gemini.google.com/gem/1ohX4W7tp9NqhLVb6z2vVjTUcyRZr9lBo?usp=sharing" target="_blank" rel="noopener">Open the Gem</a></div>
-      <div class="mat"><b>Trainer Notebook</b><span>Ask questions about the training materials themselves; answers come with citations.</span><a class="btn" href="https://notebooklm.google.com/notebook/18c93186-1d03-4d9f-a803-8c163c9fcf68" target="_blank" rel="noopener">Open the notebook</a></div>
-      <div class="mat"><b>Trainer Playbook</b><span>The manual behind it all: content selection, run sheets, methods, FAQ background, checklists.</span><a class="btn" href="playbook.html" target="_blank" rel="noopener">Read the playbook</a></div>
+      <a class="door" href="plan.html">
+        <h2 class="door__title">Plan your session</h2>
+        <p class="door__sub">Survey, Gem, notebook</p>
+        <p class="door__text">The pre-survey reads your group, the planning Gem drafts your agenda, the notebook and playbook answer the rest.</p>
+        <span class="door__cta">Open the tools →</span>
+      </a>
     </div>
 
     <p class="section-heading" style="margin-top:34px">Then: bring it into your market</p>
     <div class="doorgrid">
-      <a class="door door--primary door--wide" href="weeks.html">
+      <a class="door" href="weeks.html">
         <h2 class="door__title">Your first four weeks</h2>
         <p class="door__sub">The rollout plan</p>
-        <p class="door__text">From the pre-survey to your first sessions to the first progress note, week by week, with the material for each move linked in place.</p>
+        <p class="door__text">From the pre-survey to your first sessions to the first progress note, week by week.</p>
         <span class="door__cta">Start the plan →</span>
       </a>
 
