@@ -39,6 +39,17 @@
 .pptxlink{font-size:.78rem;color:var(--ink-55,#666);text-decoration:underline;margin-top:6px;display:inline-block}
 .art pre.mermaid{background:#fff;border:1px solid var(--line,#ddd);padding:14px;overflow-x:auto;text-align:center}
 .art pre.mermaid svg{width:100%;height:auto;display:inline-block}
+.tablewrap{overflow-x:auto;margin:14px 0 24px}
+@media (min-width:1040px){.tablewrap{width:calc(100% + 180px);margin-left:-90px}}
+.art table{border-collapse:collapse;width:100%;background:#fff;font-size:.92rem;table-layout:fixed}
+.art th:first-child,.art td:first-child{width:26%}
+.art thead th{background:var(--ink,#1a1a1a);color:#fff;text-align:left;font-weight:700;
+  padding:10px 14px;vertical-align:bottom}
+.art tbody td{padding:10px 14px;vertical-align:top;border-bottom:1px solid var(--line,#e5e5e0);line-height:1.45}
+.art tbody tr:nth-child(even) td{background:#fafaf8}
+.art tbody td:first-child{font-weight:700}
+.art tbody td:last-child{color:var(--ink-55,#666)}
+@media (max-width:700px){.art table{font-size:.86rem}}
 </style>
   <script type="module" src="../lessons/gate.js"></script>
 </head>
@@ -169,12 +180,8 @@ is invented and cannot be researched, live research is demonstrated on
 <strong>ISS</strong> (issworld.com), a real, public facility-services
 company that stands in for a NorthStar-type account.</p>
 <h3 id="the-content-map">The content map</h3>
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
+<div class="tablewrap"><table>
+
 <thead>
 <tr>
 <th>Area</th>
@@ -236,7 +243,7 @@ clean-up</td>
 <td>Look-up and FAQ; leadership track lives here</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>Deliberately light: closing and objection handling.</strong>
 It scored lowest in the needs survey (2.9). Step 8 covers it calmly
 (read the signal, classify the objection, no pressure); offer more only
@@ -244,12 +251,8 @@ if a group asks.</p>
 <h3 id="session-sizes">Session sizes</h3>
 <p>Your live sessions realistically come in three sizes — plan in these,
 each backed by a ready session deck:</p>
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
+<div class="tablewrap"><table>
+
 <thead>
 <tr>
 <th>Size</th>
@@ -277,7 +280,7 @@ NorthStar</td>
 <td>Basics session + Sprint (steps hidden)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>Two smaller shapes exist around these: the <strong>team-meeting
 intro</strong> (15 minutes in an existing meeting, one card — creates
 demand; own deck ready) and <strong>card of the week</strong> (no
@@ -354,11 +357,8 @@ you already know where to spend time.</li>
 </ul>
 <h3 id="step-3-pick-the-content">Step 3 — Pick the content</h3>
 <p>Four patterns cover most groups:</p>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
+<div class="tablewrap"><table>
+
 <thead>
 <tr>
 <th>Signal in the results</th>
@@ -386,7 +386,7 @@ argument</td>
 chapters in the guide, and the routine moves (card of the week)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>Then pour it into one of the three session formats (Section 2).
 Concerns from the survey get addressed openly at the start — the
 data-safety Basic answers most of them.</p>
@@ -977,7 +977,17 @@ session.</li>
     </div>
     <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
-    mermaid.initialize({ startOnLoad: true, theme: "neutral" });
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "base",
+      themeVariables: {
+        fontFamily: "Arial, Helvetica, sans-serif",
+        primaryColor: "#ffffff", primaryTextColor: "#1a1a1a",
+        primaryBorderColor: "#1a1a1a", lineColor: "#1a1a1a",
+        tertiaryColor: "#ffed00"
+      },
+      flowchart: { useMaxWidth: true, curve: "linear" }
+    });
     </script>
 
   </div>

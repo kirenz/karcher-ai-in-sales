@@ -39,6 +39,17 @@
 .pptxlink{font-size:.78rem;color:var(--ink-55,#666);text-decoration:underline;margin-top:6px;display:inline-block}
 .art pre.mermaid{background:#fff;border:1px solid var(--line,#ddd);padding:14px;overflow-x:auto;text-align:center}
 .art pre.mermaid svg{width:100%;height:auto;display:inline-block}
+.tablewrap{overflow-x:auto;margin:14px 0 24px}
+@media (min-width:1040px){.tablewrap{width:calc(100% + 180px);margin-left:-90px}}
+.art table{border-collapse:collapse;width:100%;background:#fff;font-size:.92rem;table-layout:fixed}
+.art th:first-child,.art td:first-child{width:26%}
+.art thead th{background:var(--ink,#1a1a1a);color:#fff;text-align:left;font-weight:700;
+  padding:10px 14px;vertical-align:bottom}
+.art tbody td{padding:10px 14px;vertical-align:top;border-bottom:1px solid var(--line,#e5e5e0);line-height:1.45}
+.art tbody tr:nth-child(even) td{background:#fafaf8}
+.art tbody td:first-child{font-weight:700}
+.art tbody td:last-child{color:var(--ink-55,#666)}
+@media (max-width:700px){.art table{font-size:.86rem}}
 </style>
   <script type="module" src="../lessons/gate.js"></script>
 </head>
