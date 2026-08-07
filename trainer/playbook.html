@@ -38,7 +38,7 @@
 .langsel{border:1px solid var(--ink,#1a1a1a);background:#fff;font:inherit;font-size:.85rem;padding:6px 8px;max-width:130px}
 .pptxlink{font-size:.78rem;color:var(--ink-55,#666);text-decoration:underline;margin-top:6px;display:inline-block}
 .art pre.mermaid{background:#fff;border:1px solid var(--line,#ddd);padding:14px;overflow-x:auto;text-align:center}
-.art pre.mermaid svg{max-width:100% !important;height:auto}
+.art pre.mermaid svg{width:100%;height:auto;display:inline-block}
 </style>
   <script type="module" src="../lessons/gate.js"></script>
 </head>
@@ -74,9 +74,10 @@ Intermediate</strong> with AI (91% in our survey). That is good news:
 you are not competing with experts. You are showing busy salespeople a
 few concrete moves that save them time this week.</p>
 <h3 id="what-you-deliver-from">What you deliver from</h3>
-<p>Everything lives on the <strong>learning platform</strong>:
-<strong>karcher-ai-sales.web.app</strong>, sign-in with the Kärcher
-Google account. You do not rebuild content; you open it.</p>
+<p>Everything lives on the <strong>learning platform</strong>: <a
+href="https://karcher-ai-sales.web.app/lessons/start.html">karcher-ai-sales.web.app</a>,
+sign-in with the Kärcher Google account. You do not rebuild content; you
+open it.</p>
 <p>The platform has five doors:</p>
 <ul>
 <li><strong>Quick help</strong> — one task card per everyday job, sorted
@@ -102,8 +103,11 @@ the platform by itself — click “Start the tour” on the start page.</p>
 <p>On top of the platform you have six things of your own:</p>
 <ul>
 <li><strong>The pre-survey</strong> (Google Forms) — your selection
-instrument, live at <a href="https://forms.gle/eCzis3SKNrLfQfj47"
-class="uri">https://forms.gle/eCzis3SKNrLfQfj47</a>; Section 3.</li>
+instrument: <a
+href="https://docs.google.com/forms/d/1H_6NGj_kTyR38cX9Zxu0v7fDMzElwIhInTca3RgM054/copy">make
+your own copy of the form</a>, then send <strong>your copy’s</strong>
+link, so the answers land in your own response Sheet. Section 3 explains
+how to read them.</li>
 <li><strong>The Train-the-Trainer catalog deck</strong> — the slide
 catalog you received at the workshop: every door, card, lesson screen,
 and example output as a slide. Use it as your flip-book and projector
@@ -120,17 +124,15 @@ market.</li>
 <li><strong>The Session-Planner Gem</strong> — attach the response Sheet
 of your pre-survey copy, tell it the session size, and it drafts your
 plan with the program’s reading rules: blocks, material, opening quotes,
-what to skip. Open it at <a
-href="https://gemini.google.com/gem/1ohX4W7tp9NqhLVb6z2vVjTUcyRZr9lBo?usp=sharing"
-class="uri">https://gemini.google.com/gem/1ohX4W7tp9NqhLVb6z2vVjTUcyRZr9lBo?usp=sharing</a></li>
+what to skip. <a
+href="https://gemini.google.com/gem/1ohX4W7tp9NqhLVb6z2vVjTUcyRZr9lBo?usp=sharing">Open
+the Session-Planner Gem</a>.</li>
 <li><strong>The Trainer Notebook</strong> (NotebookLM) — this playbook,
 the catalog deck, and the pre-survey as a knowledge base. Tell it your
 time budget, group, and focus topics, and it drafts a session plan you
-shape; it answers only from these materials, with citations. Open it at
-<a
-href="https://notebooklm.google.com/notebook/18c93186-1d03-4d9f-a803-8c163c9fcf68"
-class="uri">https://notebooklm.google.com/notebook/18c93186-1d03-4d9f-a803-8c163c9fcf68</a>
-(public link, no sign-in needed).</li>
+shape; it answers only from these materials, with citations. <a
+href="https://notebooklm.google.com/notebook/18c93186-1d03-4d9f-a803-8c163c9fcf68">Open
+the Trainer Notebook</a> (public link, no sign-in needed).</li>
 <li><strong>This playbook.</strong></li>
 </ul>
 <h3 id="the-one-habit-that-carries-everything">The one habit that
@@ -149,7 +151,7 @@ the third door, follows the <strong>Kärcher sales cycle</strong> as one
 continuous flow, from acquisition all the way to follow-up. The sales
 cycle itself is the structure, and each step’s output becomes the next
 step’s input.</p>
-<pre class="mermaid"><code>flowchart TD
+<pre class="mermaid">flowchart TD
     A[&quot;1 · Acquisition&quot;] --&gt; B[&quot;2 · Research &amp; Qualification&quot;]
     B --&gt; C[&quot;3 · First Contact&quot;]
     C --&gt; D[&quot;4 · Conversation Preparation&quot;]
@@ -157,7 +159,7 @@ step’s input.</p>
     E --&gt; F[&quot;6 · Value Argumentation&quot;]
     F --&gt; G[&quot;7 · Presentation &amp; Demonstration&quot;]
     G --&gt; H[&quot;8 · Closing&quot;]
-    H --&gt; I[&quot;9 · Follow-up &amp; Steering&quot;]</code></pre>
+    H --&gt; I[&quot;9 · Follow-up &amp; Steering&quot;]</pre>
 <p>One fictional customer, <strong>NorthStar Facility Services
 Benelux</strong>, travels through every step — with its own website, a
 named buying center (Lars Meijer, Sophie Verbeek, Milan Bakker, Eva van
@@ -299,11 +301,16 @@ fixed agenda for everyone. A single training cannot be optimal for a Key
 Account Manager and a Sales Director at the same time, so you assemble
 the right one in minutes.</p>
 <h3 id="step-1-send-the-pre-survey">Step 1 — Send the pre-survey</h3>
-<p>Send the <strong>pre-survey</strong> (Google Forms, <a
-href="https://forms.gle/eCzis3SKNrLfQfj47"
-class="uri">https://forms.gle/eCzis3SKNrLfQfj47</a>) to participants a
-few days before the session — the same form you answered at the
-Train-the-Trainer workshop. It takes about five minutes and asks:</p>
+<p>First, <a
+href="https://docs.google.com/forms/d/1H_6NGj_kTyR38cX9Zxu0v7fDMzElwIhInTca3RgM054/copy">make
+your own copy of the pre-survey</a> — one click, and the copy is yours.
+Send <strong>that copy’s</strong> link to participants a few days before
+the session; it is the same form you answered at the Train-the-Trainer
+workshop. Copying matters: only the owner of a form sees its responses,
+so your own copy is what puts your group’s answers into your hands (in
+Forms, the Responses tab creates the Sheet you attach to the
+Session-Planner Gem). It takes participants about five minutes and
+asks:</p>
 <ol type="1">
 <li><strong>Focus</strong> — the cluster question: <em>“Do you mainly
 sell yourself (own accounts and deals) or mainly steer a team (pipeline,
@@ -913,9 +920,9 @@ at least half the responses in.</label></li>
 <li><label><input type="checkbox" />Accounts confirmed: every
 participant can sign in to Google Workspace with Gemini, Deep Research,
 Gems, and NotebookLM — the same sign-in opens the platform.</label></li>
-<li><label><input type="checkbox" />Platform smoke test in the room:
-karcher-ai-sales.web.app loads, the tour plays, one card
-opens.</label></li>
+<li><label><input type="checkbox" />Platform smoke test in the room: <a
+href="https://karcher-ai-sales.web.app/lessons/start.html">the
+platform</a> loads, the tour plays, one card opens.</label></li>
 <li><label><input type="checkbox" />ISS Deep Research pre-run as a
 fallback for step 2; the catalog deck at hand as the screenshot
 fallback.</label></li>
@@ -951,9 +958,10 @@ out) to ask “what did you actually use?”</label></li>
 </ul>
 <h3 id="where-to-get-help">Where to get help</h3>
 <ul>
-<li><strong>The content itself:</strong> the platform
-(karcher-ai-sales.web.app) — the guide holds the depth, the notebook
-answers questions with citations.</li>
+<li><strong>The content itself:</strong> <a
+href="https://karcher-ai-sales.web.app/lessons/start.html">the
+platform</a> — the guide holds the depth, the notebook answers questions
+with citations.</li>
 <li><strong>Selection logic and the pre-survey:</strong> Section 3 of
 this playbook; the form comes from Sales Enablement.</li>
 <li><strong>Your own preparation:</strong> the Train-the-Trainer catalog
