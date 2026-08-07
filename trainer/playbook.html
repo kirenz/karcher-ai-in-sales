@@ -37,6 +37,8 @@
 .langrow .btn{align-self:auto}
 .langsel{border:1px solid var(--ink,#1a1a1a);background:#fff;font:inherit;font-size:.85rem;padding:6px 8px;max-width:130px}
 .pptxlink{font-size:.78rem;color:var(--ink-55,#666);text-decoration:underline;margin-top:6px;display:inline-block}
+.art pre.mermaid{background:#fff;border:1px solid var(--line,#ddd);padding:14px;overflow-x:auto;text-align:center}
+.art pre.mermaid svg{max-width:100% !important;height:auto}
 </style>
   <script type="module" src="../lessons/gate.js"></script>
 </head>
@@ -100,7 +102,8 @@ the platform by itself — click “Start the tour” on the start page.</p>
 <p>On top of the platform you have six things of your own:</p>
 <ul>
 <li><strong>The pre-survey</strong> (Google Forms) — your selection
-instrument, live at https://forms.gle/eCzis3SKNrLfQfj47; Section 3.</li>
+instrument, live at <a href="https://forms.gle/eCzis3SKNrLfQfj47"
+class="uri">https://forms.gle/eCzis3SKNrLfQfj47</a>; Section 3.</li>
 <li><strong>The Train-the-Trainer catalog deck</strong> — the slide
 catalog you received at the workshop: every door, card, lesson screen,
 and example output as a slide. Use it as your flip-book and projector
@@ -117,13 +120,16 @@ market.</li>
 <li><strong>The Session-Planner Gem</strong> — attach the response Sheet
 of your pre-survey copy, tell it the session size, and it drafts your
 plan with the program’s reading rules: blocks, material, opening quotes,
-what to skip. Open it at
-https://gemini.google.com/gem/1ohX4W7tp9NqhLVb6z2vVjTUcyRZr9lBo?usp=sharing</li>
+what to skip. Open it at <a
+href="https://gemini.google.com/gem/1ohX4W7tp9NqhLVb6z2vVjTUcyRZr9lBo?usp=sharing"
+class="uri">https://gemini.google.com/gem/1ohX4W7tp9NqhLVb6z2vVjTUcyRZr9lBo?usp=sharing</a></li>
 <li><strong>The Trainer Notebook</strong> (NotebookLM) — this playbook,
 the catalog deck, and the pre-survey as a knowledge base. Tell it your
 time budget, group, and focus topics, and it drafts a session plan you
 shape; it answers only from these materials, with citations. Open it at
-https://notebooklm.google.com/notebook/18c93186-1d03-4d9f-a803-8c163c9fcf68
+<a
+href="https://notebooklm.google.com/notebook/18c93186-1d03-4d9f-a803-8c163c9fcf68"
+class="uri">https://notebooklm.google.com/notebook/18c93186-1d03-4d9f-a803-8c163c9fcf68</a>
 (public link, no sign-in needed).</li>
 <li><strong>This playbook.</strong></li>
 </ul>
@@ -293,10 +299,11 @@ fixed agenda for everyone. A single training cannot be optimal for a Key
 Account Manager and a Sales Director at the same time, so you assemble
 the right one in minutes.</p>
 <h3 id="step-1-send-the-pre-survey">Step 1 — Send the pre-survey</h3>
-<p>Send the <strong>pre-survey</strong> (Google Forms,
-https://forms.gle/eCzis3SKNrLfQfj47) to participants a few days before
-the session — the same form you answered at the Train-the-Trainer
-workshop. It takes about five minutes and asks:</p>
+<p>Send the <strong>pre-survey</strong> (Google Forms, <a
+href="https://forms.gle/eCzis3SKNrLfQfj47"
+class="uri">https://forms.gle/eCzis3SKNrLfQfj47</a>) to participants a
+few days before the session — the same form you answered at the
+Train-the-Trainer workshop. It takes about five minutes and asks:</p>
 <ol type="1">
 <li><strong>Focus</strong> — the cluster question: <em>“Do you mainly
 sell yourself (own accounts and deals) or mainly steer a team (pipeline,
@@ -960,6 +967,10 @@ session.</li>
 <hr />
 
     </div>
+    <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true, theme: "neutral" });
+    </script>
 
   </div>
 </body>
