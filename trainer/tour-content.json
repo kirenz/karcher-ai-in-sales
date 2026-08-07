@@ -1,0 +1,65 @@
+{
+ "_comment": "Guided tours for the Trainer hub, one per overview page. Same contract as lessons/tour-content.json: beats highlight element ids via .tour-glow, audio per beat is optional (the tour falls back to a timer). Audio names: tour-<lang>-<page>-<n>.mp3 in trainer/audio/. The guide figure is never given a name. Built with scripts/site/build_trainer_tour.py.",
+ "en": {
+  "start": "▶ Start the tour",
+  "pages": {
+   "index": {
+    "idle": "First time here? Get the 30-second overview.",
+    "done": "That's the hub. Start with Present, and pick the session that fits your slot.",
+    "beats": [
+     {
+      "text": "Welcome to your trainer hub. Everything you need to run this training in your own market sits on this one page. Thirty seconds, and you will know where."
+     },
+     {
+      "target": "tile-present",
+      "text": "Present. Three ready sessions, from a fifteen-minute first look to a full sprint. One click opens a deck as your own copy in Google Slides, with the spoken script in the notes."
+     },
+     {
+      "target": "tile-selflearn",
+      "text": "Learn it yourself. One deck per door of the platform, so you know exactly what your teams will see before you stand in front of them."
+     },
+     {
+      "target": "tile-plan",
+      "text": "Plan your session. Your group answers a five-minute survey, and the planning Gem turns their answers into an agenda you shape. Planning becomes selection, not creation."
+     },
+     {
+      "target": "tile-weeks",
+      "text": "And when you are ready to roll out: four small moves in four weeks, written down, with the material for each move linked in place."
+     }
+    ]
+   },
+   "present": {
+    "idle": "New to the decks? Thirty seconds on how to pick one.",
+    "done": "Pick by the slot you have, and hide what your group does not need.",
+    "beats": [
+     {
+      "text": "These are your three sessions. Pick by the slot you have, not by the topic; the content follows from your group's survey answers."
+     },
+     {
+      "target": "decks-grid",
+      "text": "Fifteen minutes inside an existing team meeting is the safest first run, and it creates demand for the real session. One hour is your standard. Two hours adds sales-cycle steps."
+     },
+     {
+      "target": "scripts-grid",
+      "text": "Prefer to read? Every session also exists as a script page: each slide with its spoken text underneath, and your browser translates the whole thing in one right-click."
+     }
+    ]
+   },
+   "weeks": {
+    "idle": "Not sure where to start? Take the 30-second version.",
+    "done": "Four small moves. Start by copying the survey.",
+    "beats": [
+     {
+      "text": "You do not need a launch event. You need four small moves in four weeks, each on material that already exists."
+     },
+     {
+      "text": "Before week one, copy the pre-survey and send your own copy, so the answers belong to you. Then book two slots: fifteen minutes in an existing meeting, and one hour for a real session."
+     },
+     {
+      "text": "Week one is the first look. Week two reads the survey and plans. Week three is the real session. And week four turns it into a routine, plus one short note back to the Academy."
+     }
+    ]
+   }
+  }
+ }
+}

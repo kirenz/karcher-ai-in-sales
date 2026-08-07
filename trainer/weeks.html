@@ -62,6 +62,16 @@
     <p class="hero__sub">Four small moves on material that already exists. No launch event needed.</p>
   </header>
 
+  <div class="tour" id="tour">
+    <span class="tour__photo"><img src="../lessons/img/guide-w1.jpg" alt="Your guide (AI-generated portrait)"></span>
+    <div class="tour__bubble">
+      <span id="tour-text">Not sure where to start? Take the 30-second version.</span><br>
+      <button type="button" class="btn tour__go" id="tour-start">&#9654; Start the tour</button>
+      <button type="button" class="tour__skip" id="tour-skip" hidden>Skip the tour</button>
+    </div>
+  </div>
+  <script type="application/json" id="tour-data">{"audioBase": "tour-en-weeks-", "beats": [{"text": "You do not need a launch event. You need four small moves in four weeks, each on material that already exists."}, {"text": "Before week one, copy the pre-survey and send your own copy, so the answers belong to you. Then book two slots: fifteen minutes in an existing meeting, and one hour for a real session."}, {"text": "Week one is the first look. Week two reads the survey and plans. Week three is the real session. And week four turns it into a routine, plus one short note back to the Academy."}], "done": "Four small moves. Start by copying the survey."}</script>
+
   <div class="wrap">
 
     <div class="art">
@@ -112,5 +122,6 @@
     </div>
 
   </div>
+  <script src="../lessons/tour.js"></script>
 </body>
 </html>

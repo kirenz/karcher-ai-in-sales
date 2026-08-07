@@ -62,12 +62,22 @@
     <p class="hero__sub">Ready to present: scripts in the notes, exercises on the slides.</p>
   </header>
 
+  <div class="tour" id="tour">
+    <span class="tour__photo"><img src="../lessons/img/guide-w1.jpg" alt="Your guide (AI-generated portrait)"></span>
+    <div class="tour__bubble">
+      <span id="tour-text">New to the decks? Thirty seconds on how to pick one.</span><br>
+      <button type="button" class="btn tour__go" id="tour-start">&#9654; Start the tour</button>
+      <button type="button" class="tour__skip" id="tour-skip" hidden>Skip the tour</button>
+    </div>
+  </div>
+  <script type="application/json" id="tour-data">{"audioBase": "tour-en-present-", "beats": [{"text": "These are your three sessions. Pick by the slot you have, not by the topic; the content follows from your group's survey answers."}, {"target": "decks-grid", "text": "Fifteen minutes inside an existing team meeting is the safest first run, and it creates demand for the real session. One hour is your standard. Two hours adds sales-cycle steps."}, {"target": "scripts-grid", "text": "Prefer to read? Every session also exists as a script page: each slide with its spoken text underneath, and your browser translates the whole thing in one right-click."}], "done": "Pick by the slot you have, and hide what your group does not need."}</script>
+
   <div class="wrap">
 
     <div class="art">
       <p class="crumb"><a href="index.html">← Trainer hub</a></p>
       <p>Three ready sessions, each with the complete spoken script in the notes and exercises with click paths on the slides. Download, open in Google Slides, pick by the slot you have. You hide slides; you never build any.</p>
-      <div class="matgrid">
+      <div class="matgrid" id="decks-grid">
       <div class="mat"><b>First look · 15 min</b><span>One card live in an existing team meeting. The safest first run; creates demand for the real session.</span><div class="langrow" data-links='{"en": {"slides": "https://docs.google.com/presentation/d/1AzBaCMPn-IqwkliXW4ooDwUhlu6YMbDixyQl4koIkLU/copy", "pptx": "decks/ttt-8-team-meeting-intro.en.pptx"}}'><select class="langsel" data-base="decks/ttt-8-team-meeting-intro" aria-label="Deck language"><option value="en">English</option><option value="de" disabled>Deutsch</option><option value="fr" disabled>Français</option><option value="ru" disabled>Русский</option><option value="es" disabled>Español</option><option value="ja" disabled>日本語</option><option value="zh" disabled>中文</option><option value="nl" disabled>Nederlands</option><option value="pl" disabled>Polski</option><option value="it" disabled>Italiano</option><option value="pt" disabled>Português</option><option value="tr" disabled>Türkçe</option></select><a class="btn" href="https://docs.google.com/presentation/d/1AzBaCMPn-IqwkliXW4ooDwUhlu6YMbDixyQl4koIkLU/copy" target="_blank" rel="noopener">Open in Google Slides</a></div><a class="pptxlink" href="decks/ttt-8-team-meeting-intro.en.pptx" download>PowerPoint file (.pptx)</a></div>
       <div class="mat"><b>Basics session · 60 min</b><span>The tools, prompting, the data rules, one card hands-on. Your one-hour standard session.</span><div class="langrow" data-links='{"en": {"slides": "https://docs.google.com/presentation/d/10sO4XgT1AxxNhSk4vx_2_EYwcbKn93acbAvS0arcLRg/copy", "pptx": "decks/ttt-7-basics-session.en.pptx"}}'><select class="langsel" data-base="decks/ttt-7-basics-session" aria-label="Deck language"><option value="en">English</option><option value="de" disabled>Deutsch</option><option value="fr" disabled>Français</option><option value="ru" disabled>Русский</option><option value="es" disabled>Español</option><option value="ja" disabled>日本語</option><option value="zh" disabled>中文</option><option value="nl" disabled>Nederlands</option><option value="pl" disabled>Polski</option><option value="it" disabled>Italiano</option><option value="pt" disabled>Português</option><option value="tr" disabled>Türkçe</option></select><a class="btn" href="https://docs.google.com/presentation/d/10sO4XgT1AxxNhSk4vx_2_EYwcbKn93acbAvS0arcLRg/copy" target="_blank" rel="noopener">Open in Google Slides</a></div><a class="pptxlink" href="decks/ttt-7-basics-session.en.pptx" download>PowerPoint file (.pptx)</a></div>
       <div class="mat"><b>Sales Cycle Sprint</b><span>The nine steps hands-on on the practice case. Use two or three steps for a two-hour session; hide the rest.</span><div class="langrow" data-links='{"en": {"slides": "https://docs.google.com/presentation/d/1XiHbJBIq0ulhIkdKNPaOZkHrLWiOqaeJ46slVCiW7rg/copy", "pptx": "decks/ttt-9-course-sprint.en.pptx"}}'><select class="langsel" data-base="decks/ttt-9-course-sprint" aria-label="Deck language"><option value="en">English</option><option value="de" disabled>Deutsch</option><option value="fr" disabled>Français</option><option value="ru" disabled>Русский</option><option value="es" disabled>Español</option><option value="ja" disabled>日本語</option><option value="zh" disabled>中文</option><option value="nl" disabled>Nederlands</option><option value="pl" disabled>Polski</option><option value="it" disabled>Italiano</option><option value="pt" disabled>Português</option><option value="tr" disabled>Türkçe</option></select><a class="btn" href="https://docs.google.com/presentation/d/1XiHbJBIq0ulhIkdKNPaOZkHrLWiOqaeJ46slVCiW7rg/copy" target="_blank" rel="noopener">Open in Google Slides</a></div><a class="pptxlink" href="decks/ttt-9-course-sprint.en.pptx" download>PowerPoint file (.pptx)</a></div>
@@ -76,7 +86,7 @@
       <p>Every session deck also exists as a plain page: each slide with its spoken text underneath.
       Use it to prepare, to look up one slide, or to read the whole session in your own language,
       because a browser translates a page in one right-click and a slide deck it cannot.</p>
-      <div class="matgrid">
+      <div class="matgrid" id="scripts-grid">
         <div class="mat"><b>First look &middot; 15 min</b><span>The full script, slide by slide.</span>
           <a class="btn" href="script-ttt-8-team-meeting-intro.html">Read the script</a></div>
         <div class="mat"><b>Basics session &middot; 60 min</b><span>The full script, slide by slide.</span>
@@ -113,5 +123,6 @@
     });
     </script>
   </div>
+  <script src="../lessons/tour.js"></script>
 </body>
 </html>

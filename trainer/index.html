@@ -62,26 +62,36 @@
     <p class="hero__sub">Everything here is finished: decks to present, decks to learn from, and the tools that plan your session. Pick a tile.</p>
   </header>
 
+  <div class="tour" id="tour">
+    <span class="tour__photo"><img src="../lessons/img/guide-w1.jpg" alt="Your guide (AI-generated portrait)"></span>
+    <div class="tour__bubble">
+      <span id="tour-text">First time here? Get the 30-second overview.</span><br>
+      <button type="button" class="btn tour__go" id="tour-start">&#9654; Start the tour</button>
+      <button type="button" class="tour__skip" id="tour-skip" hidden>Skip the tour</button>
+    </div>
+  </div>
+  <script type="application/json" id="tour-data">{"audioBase": "tour-en-index-", "beats": [{"text": "Welcome to your trainer hub. Everything you need to run this training in your own market sits on this one page. Thirty seconds, and you will know where."}, {"target": "tile-present", "text": "Present. Three ready sessions, from a fifteen-minute first look to a full sprint. One click opens a deck as your own copy in Google Slides, with the spoken script in the notes."}, {"target": "tile-selflearn", "text": "Learn it yourself. One deck per door of the platform, so you know exactly what your teams will see before you stand in front of them."}, {"target": "tile-plan", "text": "Plan your session. Your group answers a five-minute survey, and the planning Gem turns their answers into an agenda you shape. Planning becomes selection, not creation."}, {"target": "tile-weeks", "text": "And when you are ready to roll out: four small moves in four weeks, written down, with the material for each move linked in place."}], "done": "That's the hub. Start with Present, and pick the session that fits your slot."}</script>
+
   <div class="wrap">
 
     <a class="langchip" href="language.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.4 3.8 5.6 3.8 9s-1.3 6.6-3.8 9c-2.5-2.4-3.8-5.6-3.8-9S9.5 5.4 12 3z"/></svg><span><b>Not a native English speaker?</b> This hub and the whole platform read in your language, in your browser. And the AI answers in your language too.</span><span class="langchip__cta">Show me how &rarr;</span></a>
 
     <div class="doorgrid">
-      <a class="door door--primary door--wide" href="present.html">
+      <a class="door door--primary door--wide" id="tile-present" href="present.html">
         <h2 class="door__title">Present</h2>
         <p class="door__sub">The session decks</p>
         <p class="door__text">Three ready sessions for your teams, from the fifteen-minute first look to the Sales Cycle Sprint. Full scripts in the notes, exercises on the slides.</p>
         <span class="door__cta">Open the decks →</span>
       </a>
 
-      <a class="door" href="selflearn.html">
+      <a class="door" id="tile-selflearn" href="selflearn.html">
         <h2 class="door__title">Learn it yourself</h2>
         <p class="door__sub">The deck family</p>
         <p class="door__text">Your own preparation: one deck per door of the platform, from Start here to Run it in your region.</p>
         <span class="door__cta">Start reading →</span>
       </a>
 
-      <a class="door" href="plan.html">
+      <a class="door" id="tile-plan" href="plan.html">
         <h2 class="door__title">Plan your session</h2>
         <p class="door__sub">Survey, Gem, notebook</p>
         <p class="door__text">The pre-survey reads your group, the planning Gem drafts your agenda, the notebook and playbook answer the rest.</p>
@@ -91,7 +101,7 @@
 
     <p class="section-heading" style="margin-top:34px">Then: bring it into your market</p>
     <div class="doorgrid">
-      <a class="door" href="weeks.html">
+      <a class="door" id="tile-weeks" href="weeks.html">
         <h2 class="door__title">Your first four weeks</h2>
         <p class="door__sub">The rollout plan</p>
         <p class="door__text">From the pre-survey to your first sessions to the first progress note, week by week.</p>
@@ -109,5 +119,6 @@
     <p class="note-sm" style="margin-top:22px">More rollout guidance, when you need it: <a href="resistance.html" style="text-decoration:underline">when leadership pushes back</a> · <a href="quiet.html" style="text-decoration:underline">when usage goes quiet</a> · <a href="progress.html" style="text-decoration:underline">show your progress</a>. And the <a href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener" style="text-decoration:underline">learning platform</a> itself, where your teams learn.</p>
 
   </div>
+  <script src="../lessons/tour.js"></script>
 </body>
 </html>
