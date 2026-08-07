@@ -62,10 +62,19 @@
     <p class="hero__sub">Ready answers to the ten objections you will actually hear.</p>
   </header>
 
+  <div class="tour" id="tour">
+    <span class="tour__photo"><img src="../lessons/img/guide-w1.jpg" alt="Your guide (AI-generated portrait)"></span>
+    <div class="tour__bubble">
+      <span id="tour-text">Worried about the hard questions? Thirty seconds.</span><br>
+      <button type="button" class="btn tour__go" id="tour-start">&#9654; Start the tour</button>
+      <button type="button" class="tour__skip" id="tour-skip" hidden>Skip the tour</button>
+    </div>
+  </div>
+  <script type="application/json" id="tour-data">{"audioBase": "tour-en-faq-", "beats": [{"text": "These are the objections you will actually hear, collected from the sales survey and the first trainings, roughly in the order they come up."}, {"target": "faq-list", "text": "Every answer stands on the same two feet: the data rules are built into the lessons, and a person checks before anything reaches a customer. Say that early, not as a disclaimer at the end."}], "done": "Open the one you expect to hear. The answers are yours to use as they are."}</script>
 
   <div class="wrap">
 
-    <div class="art faq">
+    <div class="art faq" id="faq-list">
       <p class="crumb"><a href="index.html">← Trainer hub</a></p>
       <p>The objections below are the real ones, collected from the sales survey and the first trainings, roughly in the order you will hear them. Every answer stands on the same two feet: the data rules are built in, and a person checks before anything reaches a customer.</p>
       <details open>
@@ -112,5 +121,6 @@
     </div>
 
   </div>
+  <script src="../lessons/tour.js"></script>
 </body>
 </html>

@@ -62,13 +62,22 @@
     <p class="hero__sub">One deck per door of the platform, for your own preparation.</p>
   </header>
 
+  <div class="tour" id="tour">
+    <span class="tour__photo"><img src="../lessons/img/guide-w1.jpg" alt="Your guide (AI-generated portrait)"></span>
+    <div class="tour__bubble">
+      <span id="tour-text">Not sure which deck to read first? Thirty seconds.</span><br>
+      <button type="button" class="btn tour__go" id="tour-start">&#9654; Start the tour</button>
+      <button type="button" class="tour__skip" id="tour-skip" hidden>Skip the tour</button>
+    </div>
+  </div>
+  <script type="application/json" id="tour-data">{"audioBase": "tour-en-selflearn-", "beats": [{"text": "These decks are not for presenting. They are for you, so you know exactly what your teams will see before you stand in front of them."}, {"target": "learn-grid", "text": "Start here explains the frame. Then one deck per door of the platform: quick help, the basics, the sales-cycle course, and the guide with its notebook."}, {"text": "Run it in your region is the last one, and the most practical: the survey, the reading rules, and how to size a session."}], "done": "Read Start here first. The rest you can take door by door."}</script>
 
   <div class="wrap">
 
     <div class="art">
       <p class="crumb"><a href="index.html">← Trainer hub</a></p>
       <p>Your own preparation, one deck per door of the platform. Read them in order once; return by door later. Nobody presents these; they make you confident in what your teams will see.</p>
-      <div class="matgrid">
+      <div class="matgrid" id="learn-grid">
       <div class="mat"><b>Start here</b><span>The frame and the platform: what exists, how it fits together, how to read the rest.</span><div class="langrow" data-links='{"en": {"slides": "https://docs.google.com/presentation/d/14OIDae_SfvgMifhzL1EIg85_KaHmCJlhGCTGsFa2VEs/copy", "pptx": "decks/ttt-1-start-here.en.pptx"}}'><select class="langsel" data-base="decks/ttt-1-start-here" aria-label="Deck language"><option value="en">English</option><option value="de" disabled>Deutsch</option><option value="fr" disabled>Français</option><option value="ru" disabled>Русский</option><option value="es" disabled>Español</option><option value="ja" disabled>日本語</option><option value="zh" disabled>中文</option><option value="nl" disabled>Nederlands</option><option value="pl" disabled>Polski</option><option value="it" disabled>Italiano</option><option value="pt" disabled>Português</option><option value="tr" disabled>Türkçe</option></select><a class="btn" href="https://docs.google.com/presentation/d/14OIDae_SfvgMifhzL1EIg85_KaHmCJlhGCTGsFa2VEs/copy" target="_blank" rel="noopener">Open in Google Slides</a></div><a class="pptxlink" href="decks/ttt-1-start-here.en.pptx" download>PowerPoint file (.pptx)</a></div>
       <div class="mat"><b>Door one: Quick help</b><span>Every quick-help card, one by one, with the screens your teams will see.</span><div class="langrow" data-links='{"en": {"slides": "https://docs.google.com/presentation/d/1nDditTNZxBCvX3RHkRLKfpdOgh7_Bk1qUCKCoa_OnFg/copy", "pptx": "decks/ttt-2-quick-help.en.pptx"}}'><select class="langsel" data-base="decks/ttt-2-quick-help" aria-label="Deck language"><option value="en">English</option><option value="de" disabled>Deutsch</option><option value="fr" disabled>Français</option><option value="ru" disabled>Русский</option><option value="es" disabled>Español</option><option value="ja" disabled>日本語</option><option value="zh" disabled>中文</option><option value="nl" disabled>Nederlands</option><option value="pl" disabled>Polski</option><option value="it" disabled>Italiano</option><option value="pt" disabled>Português</option><option value="tr" disabled>Türkçe</option></select><a class="btn" href="https://docs.google.com/presentation/d/1nDditTNZxBCvX3RHkRLKfpdOgh7_Bk1qUCKCoa_OnFg/copy" target="_blank" rel="noopener">Open in Google Slides</a></div><a class="pptxlink" href="decks/ttt-2-quick-help.en.pptx" download>PowerPoint file (.pptx)</a></div>
       <div class="mat"><b>Door two: AI Basics</b><span>The tool lessons behind the basics door, explained for a first-time reader.</span><div class="langrow" data-links='{"en": {"slides": "https://docs.google.com/presentation/d/17imZvLwEqo_d1Xtl35_2w0-WB4Mzj7DuJGZt8hrEDl8/copy", "pptx": "decks/ttt-3-ai-basics.en.pptx"}}'><select class="langsel" data-base="decks/ttt-3-ai-basics" aria-label="Deck language"><option value="en">English</option><option value="de" disabled>Deutsch</option><option value="fr" disabled>Français</option><option value="ru" disabled>Русский</option><option value="es" disabled>Español</option><option value="ja" disabled>日本語</option><option value="zh" disabled>中文</option><option value="nl" disabled>Nederlands</option><option value="pl" disabled>Polski</option><option value="it" disabled>Italiano</option><option value="pt" disabled>Português</option><option value="tr" disabled>Türkçe</option></select><a class="btn" href="https://docs.google.com/presentation/d/17imZvLwEqo_d1Xtl35_2w0-WB4Mzj7DuJGZt8hrEDl8/copy" target="_blank" rel="noopener">Open in Google Slides</a></div><a class="pptxlink" href="decks/ttt-3-ai-basics.en.pptx" download>PowerPoint file (.pptx)</a></div>
@@ -97,5 +106,6 @@
     });
     </script>
   </div>
+  <script src="../lessons/tour.js"></script>
 </body>
 </html>

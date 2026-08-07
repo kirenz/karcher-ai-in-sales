@@ -62,13 +62,22 @@
     <p class="hero__sub">The tools that turn your group's answers into a session plan.</p>
   </header>
 
+  <div class="tour" id="tour">
+    <span class="tour__photo"><img src="../lessons/img/guide-w1.jpg" alt="Your guide (AI-generated portrait)"></span>
+    <div class="tour__bubble">
+      <span id="tour-text">First session to plan? Thirty seconds on the tools.</span><br>
+      <button type="button" class="btn tour__go" id="tour-start">&#9654; Start the tour</button>
+      <button type="button" class="tour__skip" id="tour-skip" hidden>Skip the tour</button>
+    </div>
+  </div>
+  <script type="application/json" id="tour-data">{"audioBase": "tour-en-plan-", "beats": [{"text": "Planning a session here is selection, not creation. These four tools do the sorting; you stay the judge."}, {"target": "plan-grid", "text": "First the pre-survey. Copy it once, send your own copy, and the answers belong to you. Five minutes for each participant."}, {"text": "Then attach those answers to the planning Gem and name your session length. It drafts the blocks, the material, opening quotes from the group's own wishes, and what to skip. The notebook and the playbook answer everything else."}], "done": "Copy the survey first. Everything else follows from the answers."}</script>
 
   <div class="wrap">
 
     <div class="art">
       <p class="crumb"><a href="index.html">← Trainer hub</a></p>
       <p>Planning a session is selection, not creation: your group answers a short survey, and these tools turn the answers into an agenda you shape.</p>
-      <div class="matgrid">
+      <div class="matgrid" id="plan-grid">
       <div class="mat"><b>The pre-survey</b><span>Copy it once, then send your copy's link; the answers belong to you. Five minutes per participant.</span><a class="btn" href="https://docs.google.com/forms/d/1H_6NGj_kTyR38cX9Zxu0v7fDMzElwIhInTca3RgM054/copy" target="_blank" rel="noopener">Copy the form</a></div>
       <div class="mat mat--gem"><b>Session-Planner Gem</b><span>Attach your survey response sheet, name your session length; it drafts the plan, opening quotes, and skip list.</span><a class="btn" href="https://gemini.google.com/gem/1ohX4W7tp9NqhLVb6z2vVjTUcyRZr9lBo?usp=sharing" target="_blank" rel="noopener">Open the Gem</a></div>
       <div class="mat"><b>Trainer Notebook</b><span>Ask questions about the training materials themselves; answers come with citations.</span><a class="btn" href="https://notebooklm.google.com/notebook/18c93186-1d03-4d9f-a803-8c163c9fcf68" target="_blank" rel="noopener">Open the notebook</a></div>
@@ -78,5 +87,6 @@
     </div>
 
   </div>
+  <script src="../lessons/tour.js"></script>
 </body>
 </html>

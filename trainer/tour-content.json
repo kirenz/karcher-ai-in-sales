@@ -59,6 +59,159 @@
       "text": "Week one is the first look. Week two reads the survey and plans. Week three is the real session. And week four turns it into a routine, plus one short note back to the Academy."
      }
     ]
+   },
+   "selflearn": {
+    "idle": "Not sure which deck to read first? Thirty seconds.",
+    "done": "Read Start here first. The rest you can take door by door.",
+    "beats": [
+     {
+      "text": "These decks are not for presenting. They are for you, so you know exactly what your teams will see before you stand in front of them."
+     },
+     {
+      "target": "learn-grid",
+      "text": "Start here explains the frame. Then one deck per door of the platform: quick help, the basics, the sales-cycle course, and the guide with its notebook."
+     },
+     {
+      "text": "Run it in your region is the last one, and the most practical: the survey, the reading rules, and how to size a session."
+     }
+    ]
+   },
+   "plan": {
+    "idle": "First session to plan? Thirty seconds on the tools.",
+    "done": "Copy the survey first. Everything else follows from the answers.",
+    "beats": [
+     {
+      "text": "Planning a session here is selection, not creation. These four tools do the sorting; you stay the judge."
+     },
+     {
+      "target": "plan-grid",
+      "text": "First the pre-survey. Copy it once, send your own copy, and the answers belong to you. Five minutes for each participant."
+     },
+     {
+      "text": "Then attach those answers to the planning Gem and name your session length. It drafts the blocks, the material, opening quotes from the group's own wishes, and what to skip. The notebook and the playbook answer everything else."
+     }
+    ]
+   },
+   "faq": {
+    "idle": "Worried about the hard questions? Thirty seconds.",
+    "done": "Open the one you expect to hear. The answers are yours to use as they are.",
+    "beats": [
+     {
+      "text": "These are the objections you will actually hear, collected from the sales survey and the first trainings, roughly in the order they come up."
+     },
+     {
+      "target": "faq-list",
+      "text": "Every answer stands on the same two feet: the data rules are built into the lessons, and a person checks before anything reaches a customer. Say that early, not as a disclaimer at the end."
+     }
+    ]
+   },
+   "resistance": {
+    "idle": "Leadership says no time? Thirty seconds.",
+    "done": "Make the ask small, and bring their own numbers.",
+    "beats": [
+     {
+      "text": "The most common blocker is not a skeptical seller. It is a sales leader whose calendar is full of revenue, and you are asking for a slice of it."
+     },
+     {
+      "text": "So make the ask small: fifteen minutes inside a meeting that already exists. There is no calendar cost, so there is nothing to refuse."
+     },
+     {
+      "text": "And argue with their own numbers. You have their team's survey answers; that turns an initiative from the Academy into what their people said last week."
+     }
+    ]
+   },
+   "quiet": {
+    "idle": "Usage fading after the start? Thirty seconds.",
+    "done": "Small and regular beats big and rare.",
+    "beats": [
+     {
+      "text": "Every rollout dips after the first weeks. Expect it, and treat it as maintenance, not failure."
+     },
+     {
+      "text": "Usage survives on rhythm: the link stays in the meeting notes, one card of the week, and one question, what did you try and what did it save."
+     },
+     {
+      "text": "And when it has gone quiet, restart small. A fifteen-minute refresher with one card, or a colleague showing their own win. Never answer a dip with a bigger training."
+     }
+    ]
+   },
+   "progress": {
+    "idle": "What should you report? Thirty seconds.",
+    "done": "Three numbers, one win, one blocker. Ten minutes a month.",
+    "beats": [
+     {
+      "text": "Progress nobody sees does not exist, for your leadership or for the Academy. So keep the tracking light enough to survive a busy month."
+     },
+     {
+      "text": "Count three things: sessions and people, the content you ran, and the survey again after about eight weeks, so you can compare."
+     },
+     {
+      "text": "Then one short mail a month, always the same shape. The blocker line matters most; that is how the Academy learns where trainers need backup."
+     }
+    ]
+   },
+   "language": {
+    "idle": "Worried about English? Thirty seconds.",
+    "done": "Translate the pages, and let the AI answer in your language.",
+    "beats": [
+     {
+      "text": "Everything here is written in English, but nobody has to wait for a translation. Your browser translates any page in one right-click, and it remembers your choice."
+     },
+     {
+      "text": "More importantly, the AI itself speaks your language. Write to Gemini and to the prepared Gems in your language and they answer in it, so coaching, negotiation practice and customer emails all happen locally."
+     },
+     {
+      "text": "One caveat worth saying in a session: the browser decides how it words a translated label, so a card can read slightly differently on your participants' screens than on your slide. Point at the position, and name the English original once."
+     }
+    ]
+   },
+   "playbook": {
+    "idle": "New to the playbook? Thirty seconds.",
+    "done": "Read it once, then come back by section.",
+    "beats": [
+     {
+      "text": "This is the manual behind everything else. It does not re-teach the AI content; the platform carries that."
+     },
+     {
+      "text": "It shows you how to read a group, pick the right content, run a session with it, answer the hard questions, and roll out with confidence. Section three is the one you will use before every session."
+     }
+    ]
+   },
+   "script-ttt-8-team-meeting-intro": {
+    "idle": "How to use this script? Twenty seconds.",
+    "done": "Read it to prepare, and present from the deck itself.",
+    "beats": [
+     {
+      "text": "This is the complete spoken script of the first look deck, slide by slide, exactly as it sits in the deck's speaker notes."
+     },
+     {
+      "text": "Read it end to end once to prepare, or look up a single slide before you run it. And right-click anywhere to read the whole script in your own language."
+     }
+    ]
+   },
+   "script-ttt-7-basics-session": {
+    "idle": "How to use this script? Twenty seconds.",
+    "done": "Read it to prepare, and present from the deck itself.",
+    "beats": [
+     {
+      "text": "This is the complete spoken script of the basics session deck, slide by slide, exactly as it sits in the deck's speaker notes."
+     },
+     {
+      "text": "Read it end to end once to prepare, or look up a single slide before you run it. And right-click anywhere to read the whole script in your own language."
+     }
+    ]
+   },
+   "script-ttt-9-course-sprint": {
+    "idle": "How to use this script? Twenty seconds.",
+    "done": "Read it to prepare, and present from the deck itself.",
+    "beats": [
+     {
+      "text": "This is the complete spoken script of the sales cycle sprint deck, slide by slide, exactly as it sits in the deck's speaker notes."
+     },
+     {
+      "text": "Read it end to end once to prepare, or look up a single slide before you run it. And right-click anywhere to read the whole script in your own language."
+     }
+    ]
    }
   }
  }

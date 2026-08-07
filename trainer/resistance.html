@@ -62,6 +62,15 @@
     <p class="hero__sub">Small asks, their own numbers, and one artifact that argues for you.</p>
   </header>
 
+  <div class="tour" id="tour">
+    <span class="tour__photo"><img src="../lessons/img/guide-w1.jpg" alt="Your guide (AI-generated portrait)"></span>
+    <div class="tour__bubble">
+      <span id="tour-text">Leadership says no time? Thirty seconds.</span><br>
+      <button type="button" class="btn tour__go" id="tour-start">&#9654; Start the tour</button>
+      <button type="button" class="tour__skip" id="tour-skip" hidden>Skip the tour</button>
+    </div>
+  </div>
+  <script type="application/json" id="tour-data">{"audioBase": "tour-en-resistance-", "beats": [{"text": "The most common blocker is not a skeptical seller. It is a sales leader whose calendar is full of revenue, and you are asking for a slice of it."}, {"text": "So make the ask small: fifteen minutes inside a meeting that already exists. There is no calendar cost, so there is nothing to refuse."}, {"text": "And argue with their own numbers. You have their team's survey answers; that turns an initiative from the Academy into what their people said last week."}], "done": "Make the ask small, and bring their own numbers."}</script>
 
   <div class="wrap">
 
@@ -92,5 +101,6 @@
     </div>
 
   </div>
+  <script src="../lessons/tour.js"></script>
 </body>
 </html>
