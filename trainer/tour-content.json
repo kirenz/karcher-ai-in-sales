@@ -212,6 +212,78 @@
       "text": "Read it end to end once to prepare, or look up a single slide before you run it. And right-click anywhere to read the whole script in your own language."
      }
     ]
+   },
+   "script-ttt-1-start-here": {
+    "idle": "How to use this script? Twenty seconds.",
+    "done": "Read it in your own time, and translate it if that helps.",
+    "beats": [
+     {
+      "text": "This is the start here deck as a plain page: every slide with the text that goes with it, so you can read it instead of clicking through slides."
+     },
+     {
+      "text": "Nobody presents this one; it is for your own preparation. Right-click anywhere to read it in your language, and use your browser's search to find a topic."
+     }
+    ]
+   },
+   "script-ttt-2-quick-help": {
+    "idle": "How to use this script? Twenty seconds.",
+    "done": "Read it in your own time, and translate it if that helps.",
+    "beats": [
+     {
+      "text": "This is the quick help deck as a plain page: every slide with the text that goes with it, so you can read it instead of clicking through slides."
+     },
+     {
+      "text": "Nobody presents this one; it is for your own preparation. Right-click anywhere to read it in your language, and use your browser's search to find a topic."
+     }
+    ]
+   },
+   "script-ttt-3-ai-basics": {
+    "idle": "How to use this script? Twenty seconds.",
+    "done": "Read it in your own time, and translate it if that helps.",
+    "beats": [
+     {
+      "text": "This is the AI basics deck as a plain page: every slide with the text that goes with it, so you can read it instead of clicking through slides."
+     },
+     {
+      "text": "Nobody presents this one; it is for your own preparation. Right-click anywhere to read it in your language, and use your browser's search to find a topic."
+     }
+    ]
+   },
+   "script-ttt-4-sales-cycle": {
+    "idle": "How to use this script? Twenty seconds.",
+    "done": "Read it in your own time, and translate it if that helps.",
+    "beats": [
+     {
+      "text": "This is the sales cycle deck as a plain page: every slide with the text that goes with it, so you can read it instead of clicking through slides."
+     },
+     {
+      "text": "Nobody presents this one; it is for your own preparation. Right-click anywhere to read it in your language, and use your browser's search to find a topic."
+     }
+    ]
+   },
+   "script-ttt-5-guide-notebook": {
+    "idle": "How to use this script? Twenty seconds.",
+    "done": "Read it in your own time, and translate it if that helps.",
+    "beats": [
+     {
+      "text": "This is the guide and notebook deck as a plain page: every slide with the text that goes with it, so you can read it instead of clicking through slides."
+     },
+     {
+      "text": "Nobody presents this one; it is for your own preparation. Right-click anywhere to read it in your language, and use your browser's search to find a topic."
+     }
+    ]
+   },
+   "script-ttt-6-run-your-region": {
+    "idle": "How to use this script? Twenty seconds.",
+    "done": "Read it in your own time, and translate it if that helps.",
+    "beats": [
+     {
+      "text": "This is the run it in your region deck as a plain page: every slide with the text that goes with it, so you can read it instead of clicking through slides."
+     },
+     {
+      "text": "Nobody presents this one; it is for your own preparation. Right-click anywhere to read it in your language, and use your browser's search to find a topic."
+     }
+    ]
    }
   }
  }
