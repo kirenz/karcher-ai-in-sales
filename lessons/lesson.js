@@ -48,10 +48,29 @@
       d.className = i < cur ? 'on' : (i === cur ? 'cur' : '');
     });
   }
-  function go(n) {
+
+  // Screens are deep-linkable as #s1 … #sN, so a slide, a card or a chat
+  // message can open the exact screen instead of the lesson's first one.
+  // Without this, "the Prompt Optimizer screen" costs six clicks on Next.
+  function screenFromHash() {
+    var m = /^#s(\d+)$/.exec(window.location.hash || '');
+    return m ? parseInt(m[1], 10) - 1 : null;
+  }
+  function writeHash() {
+    var h = '#s' + (cur + 1);
+    if (window.location.hash === h) return;
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(null, '', h);
+    } else {
+      window.location.hash = h;
+    }
+  }
+
+  function go(n, keepHash) {
     stopAudio();
     cur = Math.max(0, Math.min(total - 1, n));
     render();
+    if (!keepHash) writeHash();
     var card = document.querySelector('.card');
     if (card) card.scrollIntoView({ block: 'nearest' });
   }
@@ -62,6 +81,13 @@
     if (t.hasAttribute('data-next')) go(cur + 1);
     else if (t.hasAttribute('data-back')) go(cur - 1);
     else if (t.hasAttribute('data-restart')) go(0);
+  });
+
+  // A hash change is navigation the user asked for (back button, a second
+  // link), so follow it; `true` keeps us from rewriting the hash we just read.
+  window.addEventListener('hashchange', function () {
+    var n = screenFromHash();
+    if (n !== null && n !== cur) go(n, true);
   });
 
   // Any quiz: .quiz containing .opt[data-correct], feedback in the next .fb.
@@ -132,5 +158,9 @@
     }
   });
 
+  // Open on the screen the link asked for; a bare lesson URL still starts at
+  // the beginning, and the hash only starts moving once the reader navigates.
+  var start = screenFromHash();
+  if (start !== null) cur = Math.max(0, Math.min(total - 1, start));
   render();
 })();
