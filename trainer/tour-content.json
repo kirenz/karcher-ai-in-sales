@@ -164,13 +164,13 @@
    },
    "playbook": {
     "idle": "New to the playbook? Thirty seconds.",
-    "done": "Read it once, then come back by section.",
+    "done": "Read chapter one first. The rest is there when you need it.",
     "beats": [
      {
-      "text": "This is the manual behind everything else. It does not re-teach the AI content; the platform carries that."
+      "text": "This is the short companion to the hub. It does not re-teach the AI content; the platform carries that, and the session decks carry the scripts."
      },
      {
-      "text": "It shows you how to read a group, pick the right content, run a session with it, answer the hard questions, and roll out with confidence. Section three is the one you will use before every session."
+      "text": "Four short chapters: how to read a group and pick the content, the run sheet for a sprint day, two facilitation points, and the pre-session checklist. Chapter one is the one you will use before every session."
      }
     ]
    },
