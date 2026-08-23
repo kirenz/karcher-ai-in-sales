@@ -69,10 +69,7 @@
      },
      {
       "target": "learn-grid",
-      "text": "Start here explains the frame. Then one deck per door of the platform: quick help, the basics, the sales-cycle course, and the guide with its notebook."
-     },
-     {
-      "text": "Run it in your region is the last one, and the most practical: the survey, the reading rules, and how to size a session."
+      "text": "Start here explains the frame. Then one deck per door of the platform: quick help, the basics, the sales-cycle course, and the guide with its notebook. How you plan a session from these is its own deck, on the planning page."
      }
     ]
    },
@@ -81,7 +78,7 @@
     "done": "Copy the survey first. Everything else follows from the answers.",
     "beats": [
      {
-      "text": "Planning a session here is selection, not creation. These four tools do the sorting; you stay the judge."
+      "text": "Planning a session here is selection, not creation. One deck explains the method in fifteen slides; then four tools do the sorting, and you stay the judge."
      },
      {
       "target": "plan-grid",
