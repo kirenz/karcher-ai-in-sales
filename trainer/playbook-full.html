@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Trainer Playbook, full text — Trainer hub</title>
+  <link rel="icon" href="../lessons/favicon.ico">
+  <link rel="stylesheet" href="../lessons/styles.css">
+  <style>body{visibility:hidden}</style>
+  <style>
+.art{max-width:760px;margin:0 auto;padding:8px 0 40px}
+.art h2{font-size:1.35rem;margin:34px 0 10px;border-left:6px solid var(--yellow);padding-left:12px}
+.art h3{font-size:1.05rem;margin:22px 0 6px}
+.art p,.art li{line-height:1.55}
+.art ul{padding-left:22px}
+.say{background:var(--yellow-tint,#fdf6c9);border-left:6px solid var(--yellow);padding:12px 16px;margin:14px 0}
+.say b{display:block;margin-bottom:4px}
+.check{list-style:none;padding-left:0}
+.check li{padding:7px 0 7px 30px;position:relative;border-bottom:1px solid var(--line,#e5e5e0)}
+.check li::before{content:"";position:absolute;left:0;top:11px;width:14px;height:14px;border:2px solid var(--ink,#1a1a1a);background:#fff}
+.tmpl{background:#f4f4f1;border:1px solid var(--line,#ddd);padding:14px 16px;font-family:ui-monospace,Menlo,monospace;font-size:.86rem;white-space:pre-wrap;margin:12px 0}
+.matgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:12px 0 26px}
+.mat{background:#fff;border:1px solid var(--line,#ddd);padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.mat--gem{background:var(--yellow)}
+.mat b{font-size:.98rem}
+.mat span{font-size:.85rem;color:var(--ink-55,#555);line-height:1.4}
+.mat a.btn{margin-top:auto;align-self:flex-start}
+.faq details{border:1px solid var(--line,#ddd);background:#fff;margin:0 0 10px;padding:0 16px}
+.faq summary{cursor:pointer;font-weight:700;padding:13px 0;list-style:none}
+.faq summary::before{content:"+";display:inline-block;width:22px;font-weight:700}
+.faq details[open] summary::before{content:"–"}
+.faq .a{padding:0 0 14px 22px;line-height:1.55}
+.crumb{font-size:.85rem;margin:14px 0 0;color:var(--ink-55,#555)}
+.pbgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin:18px 0 26px}
+.pbcard{background:#fff;border:1px solid var(--line,#ddd);padding:16px 18px;display:flex;flex-direction:column;gap:6px;color:inherit;text-decoration:none}
+.pbcard:hover{border-color:var(--ink,#1a1a1a)}
+.pbcard .pbnum{font-family:var(--cond),Arial,sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-55,#666)}
+.pbcard b{font-size:1.02rem}
+.pbcard span{font-size:.88rem;color:var(--ink-55,#555);line-height:1.45}
+.pbcard .pbmeta{margin-top:auto;font-size:.78rem;color:var(--ink-55,#666)}
+.chapnav{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 22px}
+.chapnav a{font-family:var(--cond),Arial,sans-serif;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;color:var(--ink,#1a1a1a);border:1px solid var(--ink,#1a1a1a);padding:5px 10px;background:#fff}
+.chapnav a.on{background:var(--yellow);font-weight:700}
+.chapnav a:hover{background:var(--yellow-tint,#fdf6c9)}
+.pbprevnext{display:flex;justify-content:space-between;gap:12px;margin:34px 0 10px;border-top:1px solid var(--line,#ddd);padding-top:16px}
+.pbprevnext a{text-decoration:none;font-weight:700;color:var(--ink,#1a1a1a)}
+.art ul.task-list{list-style:none;padding-left:0}
+.art ul.task-list li{padding:8px 0 8px 34px;position:relative;border-bottom:1px solid var(--line,#e5e5e0);line-height:1.5}
+.art ul.task-list input[type=checkbox]{position:absolute;left:2px;top:11px;width:18px;height:18px;margin:0;accent-color:#1a1a1a;cursor:pointer}
+.art ul.task-list li.done{color:var(--ink-55,#666)}
+.pbprogress{font-size:.85rem;color:var(--ink-55,#666);margin:6px 0 18px;display:flex;gap:14px;align-items:center}
+.pbprogress button{font:inherit;font-size:.8rem;border:1px solid var(--ink,#1a1a1a);background:#fff;padding:3px 8px;cursor:pointer}
+.crumb a{color:inherit}
+.langrow{display:flex;gap:8px;margin-top:auto;align-items:stretch;flex-wrap:wrap}
+.langrow .btn{align-self:auto}
+.langsel{border:1px solid var(--ink,#1a1a1a);background:#fff;font:inherit;font-size:.85rem;padding:6px 8px;max-width:130px}
+.pptxlink{font-size:.78rem;color:var(--ink-55,#666);text-decoration:underline;margin-top:4px;display:inline-block}
+.deckalt{font-size:.82rem;font-weight:700;color:var(--ink,#1a1a1a);text-decoration:underline;
+  text-underline-offset:3px;margin-top:8px;display:inline-block}
+.stamp{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.68rem;color:var(--ink-55,#666)}
+.news{max-width:600px;margin:26px auto 0;background:#fff;border:1px solid var(--line,#ddd);padding:14px 18px}
+.news h2{font-size:.8rem;font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em;margin:0 0 8px;color:var(--ink-55,#666)}
+.news ul{padding:0;margin:0}
+.news li{font-size:.88rem;line-height:1.45;margin:0 0 6px;list-style:none}
+.news li b{font-family:var(--cond),Arial,sans-serif;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;margin-right:6px}
+.art pre.mermaid{background:#fff;border:1px solid var(--line,#ddd);padding:14px;overflow-x:auto;text-align:center}
+.art pre.mermaid svg{width:100%;height:auto;display:inline-block}
+.tablewrap{overflow-x:auto;margin:14px 0 24px}
+@media (min-width:1040px){.tablewrap{width:calc(100% + 180px);margin-left:-90px}}
+.art table{border-collapse:collapse;width:100%;background:#fff;font-size:.92rem;table-layout:fixed}
+.art th:first-child,.art td:first-child{width:26%}
+.art thead th{background:var(--ink,#1a1a1a);color:#fff;text-align:left;font-weight:700;
+  padding:10px 14px;vertical-align:bottom}
+.art tbody td{padding:10px 14px;vertical-align:top;border-bottom:1px solid var(--line,#e5e5e0);line-height:1.45}
+.art tbody tr:nth-child(even) td{background:#fafaf8}
+.art tbody td:first-child{font-weight:700}
+.art tbody td:last-child{color:var(--ink-55,#666)}
+@media (max-width:700px){.art table{font-size:.86rem}}
+</style>
+  <script type="module" src="../lessons/gate.js"></script>
+</head>
+<body>
+  <header class="topbar"><a class="topbar__brand" href="index.html"><img class="topbar__logo" src="../lessons/img/karcher-logo.png" alt="Kärcher"><span>AI in Sales · Trainer hub</span></a><nav class="topbar__nav"><a class="topbar__item" href="index.html">Home</a><a class="topbar__item" href="present.html">Present</a><a class="topbar__item" href="selflearn.html">Learn</a><a class="topbar__item on" href="plan.html">Plan</a><a class="topbar__item" href="weeks.html">Rollout</a><a class="topbar__item" href="faq.html">FAQ</a><a class="topbar__item" href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">The platform</a></nav></header>
+
+  <header class="hero">
+    <p class="hero__eyebrow">The manual · full text</p>
+    <h1 class="hero__title">The Trainer Playbook</h1>
+    <p class="hero__sub">All eight chapters on one page.</p>
+  </header>
+
+
+  <div class="wrap">
+
+    <div class="art">
+      <p class="crumb"><a href="playbook.html">← Trainer Playbook, by chapter</a></p>
+<nav class="chapnav"><a href="playbook.html" class="on">Overview</a><a href="playbook-1.html">1 · How to Use This Playbook</a><a href="playbook-2.html">2 · Program at a Glance</a><a href="playbook-3.html">3 · Select the Right Content per Group</a><a href="playbook-4.html">4 · Run Sheet / Regiebuch</a><a href="playbook-5.html">5 · Methods Guide</a><a href="playbook-6.html">6 · Exercise Instructions</a><a href="playbook-7.html">7 · FAQ & Objection Handling</a><a href="playbook-8.html">8 · Roll-out Checklist</a></nav>
+<p><em>Your ready-to-use kit for delivering the “AI in Sales” program to
+sales colleagues in your region. This playbook does not re-teach the AI
+content — the learning platform carries that. It shows you how to read a
+group, pick the right content from the platform, run a session with it,
+answer the hard questions, and roll out with confidence.</em></p>
+<hr />
+<h2 id="how-to-use-this-playbook">1. How to Use This Playbook</h2>
+<h3 id="who-this-is-for">Who this is for</h3>
+<p>You are an international Kärcher trainer who will deliver the AI in
+Sales program to sales colleagues in your country. You do not need to be
+an AI expert. You need to be a confident facilitator who can explain a
+clear structure, run a few hands-on moments, and handle questions
+honestly. This playbook assumes you have attended the Train-the-Trainer
+workshop, or will.</p>
+<p>The participants you will train are mostly <strong>Basic or
+Intermediate</strong> with AI (91% in our survey). That is good news:
+you are not competing with experts. You are showing busy salespeople a
+few concrete moves that save them time this week.</p>
+<h3 id="what-you-deliver-from">What you deliver from</h3>
+<p>Everything lives on the <strong>learning platform</strong>: <a
+href="https://karcher-ai-sales.web.app/lessons/start.html">karcher-ai-sales.web.app</a>,
+sign-in with the Kärcher Google account. You do not rebuild content; you
+open it.</p>
+<p>The platform has five doors:</p>
+<ul>
+<li><strong>Quick help</strong> — one task card per everyday job, sorted
+in groups from emails to coaching, each one a copied prompt and about
+five minutes, with ready-made practice material on the card. The newest
+group, Sales Coaching &amp; Practice, holds practice Gems from the
+trainer community.</li>
+<li><strong>AI Basics</strong> — short foundations (what AI is for,
+prompting, Gemini &amp; Gems, Deep Research, NotebookLM, Workspace
+Studio, data safety).</li>
+<li><strong>The sales-cycle course</strong> — the nine steps from
+acquisition to follow-up, worked end to end on one example customer
+(NorthStar), each step with an idea page, a quick check, and recipes:
+the exact prompt, what to attach, the Gem one click away, and a
+ready-made example Doc to compare with.</li>
+<li><strong>The guide</strong> — the full handbook behind everything,
+including the sales-leadership track.</li>
+<li><strong>The notebook</strong> — the same handbook as a knowledge
+base: ask in your own words, get answers with citations.</li>
+</ul>
+<p>Every lesson can also be listened to, and a guided tour introduces
+the platform by itself — click “Start the tour” on the start page.</p>
+<p>On top of the platform you have six things of your own:</p>
+<ul>
+<li><strong>The pre-survey</strong> (Google Forms) — your selection
+instrument: <a
+href="https://docs.google.com/forms/d/1H_6NGj_kTyR38cX9Zxu0v7fDMzElwIhInTca3RgM054/copy">make
+your own copy of the form</a>, then send <strong>your copy’s</strong>
+link, so the answers land in your own response Sheet. <a href="playbook-3.html">Section 3</a> explains
+how to read them.</li>
+<li><strong>The Train-the-Trainer catalog deck</strong> — the slide
+catalog you received at the workshop: every door, card, lesson screen,
+and example output as a slide. Use it as your flip-book and projector
+fallback; in the room, prefer showing the platform itself.</li>
+<li><strong>The session decks</strong> — ready-to-present decks for
+participants, one per session format, each with the complete spoken
+script in the notes and “Your turn” exercise slides that carry the click
+paths: the <strong>Basics session</strong> (the tools, prompting, the
+data gate), the <strong>team-meeting intro</strong> (fifteen minutes,
+everyone runs one card), and the <strong>course sprint</strong> (the
+nine steps, every document built by the group). Present them as they
+are, hide what your session does not need, or translate them for your
+market.</li>
+<li><strong>The Session-Planner Gem</strong> — attach the response Sheet
+of your pre-survey copy, tell it the session size, and it drafts your
+plan with the program’s reading rules: blocks, material, opening quotes,
+what to skip. <a
+href="https://gemini.google.com/gem/1ohX4W7tp9NqhLVb6z2vVjTUcyRZr9lBo?usp=sharing">Open
+the Session-Planner Gem</a>. To try it before you have a group, copy one
+of the two example result sheets on the hub’s planning page (<a
+href="https://docs.google.com/spreadsheets/d/1f_rcMn1yuIRTWUsDuSEuil3DoB4Wk1W8AoLa-RpdJqA/copy">seller
+group</a>, <a
+href="https://docs.google.com/spreadsheets/d/172hmBiq732b80d7xWq54X1QA-ojju5jEKoVSJp5d8YA/copy">leader
+group</a>; synthetic answers, no real people) and attach the copy.</li>
+<li><strong>The Trainer Notebook</strong> (NotebookLM) — this playbook,
+the catalog deck, and the pre-survey as a knowledge base. Ask it
+anything about the materials, which cards fit a leader group, what to
+say to an objection, which lesson explains the data gate; it answers
+only from these materials, with citations. Planning a session from
+survey results is the Session-Planner Gem’s job. <a
+href="https://notebooklm.google.com/notebook/18c93186-1d03-4d9f-a803-8c163c9fcf68">Open
+the Trainer Notebook</a> (public link, no sign-in needed).</li>
+<li><strong>This playbook.</strong></li>
+</ul>
+<h3 id="the-one-habit-that-carries-everything">The one habit that
+carries everything</h3>
+<p><strong>Select per group, then deliver.</strong> Do not walk every
+group through everything. Send the pre-survey first, read which cluster
+the group falls into and what they need most, pick the matching doors
+and lessons, then deliver with NorthStar as the one running example.
+Everything else in this playbook supports that single habit.</p>
+<hr />
+<h2 id="program-at-a-glance">2. Program at a Glance</h2>
+<h3 id="one-continuous-sales-cycle-flow">One continuous sales-cycle
+flow</h3>
+<p>The program is not a list of AI tricks. Its core, the course behind
+the third door, follows the <strong>Kärcher sales cycle</strong> as one
+continuous flow, from acquisition all the way to follow-up. The sales
+cycle itself is the structure, and each step’s output becomes the next
+step’s input.</p>
+<pre class="mermaid">flowchart TD
+    A[&quot;1 · Acquisition&quot;] --&gt; B[&quot;2 · Research &amp; Qualification&quot;]
+    B --&gt; C[&quot;3 · First Contact&quot;]
+    C --&gt; D[&quot;4 · Conversation Preparation&quot;]
+    D --&gt; E[&quot;5 · Needs Analysis&quot;]
+    E --&gt; F[&quot;6 · Value Argumentation&quot;]
+    F --&gt; G[&quot;7 · Presentation &amp; Demonstration&quot;]
+    G --&gt; H[&quot;8 · Closing&quot;]
+    H --&gt; I[&quot;9 · Follow-up &amp; Steering&quot;]</pre>
+<p>One fictional customer, <strong>NorthStar Facility Services
+Benelux</strong>, travels through every step — with its own website, a
+named buying center (Lars Meijer, Sophie Verbeek, Milan Bakker, Eva van
+Dijk), and a real product on the table (a pilot of three BR 45/22
+scrubber driers, specs from the internal YellowFile). Because NorthStar
+is invented and cannot be researched, live research is demonstrated on
+<strong>ISS</strong> (issworld.com), a real, public facility-services
+company that stands in for a NorthStar-type account.</p>
+<h3 id="the-content-map">The content map</h3>
+<div class="tablewrap"><table>
+
+<thead>
+<tr>
+<th>Area</th>
+<th>What is inside</th>
+<th>Typical use in a session</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quick help · Emails</td>
+<td>Reply to a customer email; catch up on a long thread</td>
+<td>15-minute bite, instant win</td>
+</tr>
+<tr>
+<td>Quick help · Prospects &amp; Customers</td>
+<td>Research a customer; meeting prep; find a solution to any cleaning
+problem (NotebookLM); notes to follow-up</td>
+<td>Bite or warm-up for the course</td>
+</tr>
+<tr>
+<td>Quick help · Your data</td>
+<td>Tracker, insights, pipeline at a glance, report, formula,
+clean-up</td>
+<td>The strongest openers — everyone leaves with a result</td>
+</tr>
+<tr>
+<td>Quick help · Presentations</td>
+<td>Improve an existing presentation</td>
+<td>Bite</td>
+</tr>
+<tr>
+<td>Quick help · Translation</td>
+<td>Translate sales material for your market</td>
+<td>Bite, international accent</td>
+</tr>
+<tr>
+<td>Quick help · Automation</td>
+<td>Classify incoming mails and notify in Chat</td>
+<td>Advanced bite</td>
+</tr>
+<tr>
+<td>Quick help · Sales Coaching &amp; Practice</td>
+<td>Sales Coach Gem; negotiation Role-Play Gem (both multilingual)</td>
+<td>Practice bite; strong closer for a session</td>
+</tr>
+<tr>
+<td>AI Basics</td>
+<td>Short foundations, ~3 min each</td>
+<td>Opening block for beginner-heavy groups</td>
+</tr>
+<tr>
+<td>The course</td>
+<td>9 steps on NorthStar, idea + quiz + recipes + example Docs</td>
+<td>The core of any half- or full-day session</td>
+</tr>
+<tr>
+<td>The guide + notebook</td>
+<td>The full handbook; Q&amp;A with citations</td>
+<td>Look-up and FAQ; leadership track lives here</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Deliberately light: closing and objection handling.</strong>
+It scored lowest in the needs survey (2.9). Step 8 covers it calmly
+(read the signal, classify the objection, no pressure); offer more only
+if a group asks.</p>
+<h3 id="session-sizes">Session sizes</h3>
+<p>Your live sessions realistically come in three sizes — plan in these,
+each backed by a ready session deck:</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr>
+<th>Size</th>
+<th>What fits inside</th>
+<th>Deck</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One hour</td>
+<td>The Basics session as it is: tools, prompting, data gate, one card
+hands-on</td>
+<td>Basics session</td>
+</tr>
+<tr>
+<td>Ninety minutes</td>
+<td>Basics, then a hands-on block: the cards the group’s answers put on
+top</td>
+<td>Basics session + cards</td>
+</tr>
+<tr>
+<td>Two hours</td>
+<td>Basics compact, then two or three sales-cycle steps on
+NorthStar</td>
+<td>Basics session + Sprint (steps hidden)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Two smaller shapes exist around these: the <strong>team-meeting
+intro</strong> (15 minutes in an existing meeting, one card — creates
+demand; own deck ready) and <strong>card of the week</strong> (no
+session: one Quick-Help card per week, compared in the Monday call). A
+<strong>half or full day</strong> runs the whole cycle for a group that
+asks for it (the Sprint deck in full). Times are a budget, not a
+script.</p>
+<h3 id="required-accounts">Required accounts</h3>
+<p>Google Workspace with <strong>Gemini</strong> (Sheets, Docs, Slides,
+Gmail), <strong>Deep Research</strong>, <strong>Gems</strong>, and
+<strong>NotebookLM</strong>, signed in with the Kärcher account — the
+same sign-in unlocks the platform. Confirm participants can sign in
+before the session. For data exercises, the <strong>practice
+tracker</strong> is linked right on the pipeline card, so nobody needs
+to bring real data.</p>
+<hr />
+<h2 id="select-the-right-content-per-group">3. Select the Right Content
+per Group</h2>
+<p>This is the part that makes the program fit, instead of being one
+fixed agenda for everyone. A single training cannot be optimal for a Key
+Account Manager and a Sales Director at the same time, so you assemble
+the right one in minutes.</p>
+<h3 id="step-1-send-the-pre-survey">Step 1 — Send the pre-survey</h3>
+<p>First, <a
+href="https://docs.google.com/forms/d/1H_6NGj_kTyR38cX9Zxu0v7fDMzElwIhInTca3RgM054/copy">make
+your own copy of the pre-survey</a> — one click, and the copy is yours.
+Send <strong>that copy’s</strong> link to participants a few days before
+the session; it is the same form you answered at the Train-the-Trainer
+workshop. Copying matters: only the owner of a form sees its responses,
+so your own copy is what puts your group’s answers into your hands (in
+Forms, the Responses tab creates the Sheet you attach to the
+Session-Planner Gem). It takes participants about five minutes and
+asks:</p>
+<ol type="1">
+<li><strong>Focus</strong> — the cluster question: <em>“Do you mainly
+sell yourself (own accounts and deals) or mainly steer a team (pipeline,
+coaching, strategy)?”</em> This single question separates Cluster A from
+Cluster B and resolves edge cases (an Online Director, for example,
+lands in B).</li>
+<li><strong>AI experience</strong> — Beginner / Basic / Intermediate /
+Advanced, plus tools used.</li>
+<li><strong>Time drains</strong> — which sales activities cost the most
+time (up to 3).</li>
+<li><strong>What the session should cover</strong> — a usefulness grid
+whose rows are worded like the platform on purpose: rows 1–6 are the six
+Quick-Help groups, row 7 is the course.</li>
+<li><strong>Expectations and concerns</strong> — free text; the concerns
+steer your opening.</li>
+</ol>
+<p>Aim for responses from at least half the group; a clear pattern
+usually appears quickly. Read everything in the Forms summary view.</p>
+<h3 id="step-2-read-the-result">Step 2 — Read the result</h3>
+<p>You are looking for three things:</p>
+<ul>
+<li><strong>Which cluster dominates</strong> (job to be done, not
+channel):
+<ul>
+<li><strong>Cluster A — Key Account &amp; Field Sales:</strong> KAMs,
+direct reps, business development. Complex consultative selling, several
+stakeholders, individual offers.</li>
+<li><strong>Cluster B — Sales Leadership &amp; Management:</strong>
+directors, area/national sales managers, center managers. Steering
+pipeline, coaching, strategy, reporting.</li>
+</ul></li>
+<li><strong>How much foundations time to plan.</strong> A Beginner/Basic
+majority means: open with the guided tour and one or two AI Basics
+(prompting and data safety first) before anything else.</li>
+<li><strong>Which content tops the grid.</strong> The top rows literally
+name what to open. From the original survey across 75 colleagues, the
+pattern is reliable: <strong>data &amp; pipeline</strong> is the
+number-one need, then <strong>meeting prep &amp; research</strong>, then
+<strong>proposals &amp; content</strong>. If your group mirrors this,
+you already know where to spend time.</li>
+</ul>
+<h3 id="step-3-pick-the-content">Step 3 — Pick the content</h3>
+<p>Four patterns cover most groups:</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr>
+<th>Signal in the results</th>
+<th>What you open</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beginners dominate</td>
+<td>The guided tour, then Basics: prompting + data safety</td>
+</tr>
+<tr>
+<td>Data &amp; pipeline on top</td>
+<td>The Your-data cards; <em>See your pipeline at a glance</em>
+first</td>
+</tr>
+<tr>
+<td>Sellers (Cluster A)</td>
+<td>The course: steps 1–9, full depth on research, needs analysis, value
+argument</td>
+</tr>
+<tr>
+<td>Leaders (Cluster B)</td>
+<td>Your-data cards, step 9 (follow-up &amp; steering), the leadership
+chapters in the guide, and the routine moves (card of the week)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Then pour it into one of the three session formats (<a href="playbook-2.html">Section 2</a>).
+Concerns from the survey get addressed openly at the start — the
+data-safety Basic answers most of them.</p>
+<h3 id="worked-example-two-groups-two-agendas">Worked example: two
+groups, two agendas</h3>
+<p><strong>Group A — twelve Key Account Managers, mostly Intermediate,
+top needs research and proposals.</strong> Their day-to-day is
+multi-stakeholder consultative selling, so they get a course sprint:</p>
+<blockquote>
+<p>Tour (2 min) → data-safety Basic → the course: step 2 Research
+(heavy, with the live ISS demo) → step 3 First contact → step 5 Needs
+analysis → <strong>step 6 Value argument</strong> → <strong>step 7
+Presentation &amp; demo</strong> → step 9 Follow-up → commitments. ~4
+hours. Accent: full lesson depth (idea → recipe → example Doc) on steps
+2, 5, and 6; the translation card as a side bite.</p>
+</blockquote>
+<p><strong>Group B — ten Area Sales Managers and Center Managers, top
+needs pipeline and reporting.</strong> They steer teams rather than run
+individual deals, so the agenda is shorter and tilts to oversight and
+enablement:</p>
+<blockquote>
+<p>Tour (2 min) → <em>See your pipeline at a glance</em> (everyone runs
+it on the practice tracker) → <em>Turn your sheet into a short
+report</em> → step 9 Follow-up &amp; steering → the leadership chapters
+in the guide (pipeline steering, coaching) → how to run “card of the
+week” with their own teams → commitments. ~3 hours. Accent: leaders
+leave with the routine they will install, not just their own skills.</p>
+</blockquote>
+<p>Same platform, same NorthStar example, two clearly different days.
+The pre-survey did the sorting; you made the call.</p>
+<hr />
+<h2 id="run-sheet-regiebuch">4. Run Sheet / Regiebuch</h2>
+<p>This is your facilitation guide per unit: the goal, the lead Gem, the
+key point, and the one thing not to skip. It does not reproduce the
+content — the lesson on the platform IS the content, with the exact
+prompt, the attachment, and the example Doc on screen. Keep the platform
+open; present from it.</p>
+<p><strong>How the chain works:</strong> every step hands its output to
+the next, all on NorthStar. Acquisition fills the funnel → research
+produces a briefing and a Go/No-Go → the buying-center map targets the
+first email → discovery produces a need profile → value produces an
+argument → presentation and demo turn it into a decision moment →
+follow-up closes the loop. Always name the hand-off out loud (“the
+briefing you just made is what you attach in the next step”). That
+continuity is what makes the day feel like one workflow, not a string of
+demos.</p>
+<p><strong>The value-hypothesis thread runs underneath it all.</strong>
+Name it when it appears: the first value hypothesis (why Kärcher might
+matter to this customer) forms in <strong>research (step 2)</strong>,
+feeds the <strong>first email (step 3)</strong> and the
+<strong>discovery questions (step 5)</strong>, is confirmed against the
+real need in discovery, and becomes the substantiated <strong>value
+argument (step 6)</strong>. Pointing to that thread is what keeps each
+output specific to NorthStar instead of generic.</p>
+<h3 id="opening-block-the-tour-the-gate-20-min">Opening block — the tour
++ the gate (~20 min)</h3>
+<ul>
+<li><strong>Goal:</strong> the platform introduces itself; the data
+green light and the two-step gate are installed before any tool
+use.</li>
+<li><strong>How:</strong> click “Show me around” (the tour speaks for
+itself), then open the <strong>data-safety Basic</strong> together.</li>
+<li><strong>Key points:</strong> in approved Workspace tools, signed in,
+real customer data is allowed — share only what the task needs, then
+verify; the gate is two steps, Prompt with the right context, Validate
+the output; formal proposals, pricing, and contract terms keep the
+normal sign-off.</li>
+<li><strong>The one thing not to skip:</strong> the green light paired
+with the human-in-the-loop rule. If you skip this, the data-security
+worry follows you all day.</li>
+</ul>
+<h3 id="step-1-acquisition-20-min-a">Step 1 — Acquisition (~20 min,
+A)</h3>
+<ul>
+<li><strong>Goal:</strong> two roads to a lead — inbound (industry
+briefing → posts, be the visible expert) and outbound (a sourced target
+shortlist).</li>
+<li><strong>Lead Gems:</strong> Industry-Research Gem, Post-Gem,
+Lead-Finder Gem.</li>
+<li><strong>Key point:</strong> the briefing is internal, never
+published; each post shares one insight and ends in a question, never a
+pitch.</li>
+<li><strong>Don’t skip:</strong> the hand-off — a reply to a post, or a
+shortlist name, is the lead that step 2 researches.</li>
+</ul>
+<h3 id="step-2-research-qualification-30-min-the-live-moment">Step 2 —
+Research &amp; Qualification (~30 min, the live moment)</h3>
+<ul>
+<li><strong>Goal:</strong> a company name becomes a sourced briefing and
+a clear decision: pursue or pass.</li>
+<li><strong>Lead Gem:</strong> Account-Briefing Gem with Deep Research —
+<strong>run it live on ISS</strong>; it is the most persuasive moment of
+the day (pre-run a fallback).</li>
+<li><strong>Key point:</strong> facts separated from hypotheses; the rep
+makes the Go/No-Go, never the AI. <strong>The value-hypothesis thread
+starts here.</strong></li>
+<li><strong>Don’t skip:</strong> verifying one claim against its source
+in front of the room.</li>
+</ul>
+<h3 id="step-3-first-contact-20-min-a">Step 3 — First Contact (~20 min,
+A)</h3>
+<ul>
+<li><strong>Goal:</strong> map the buying center from the briefing, then
+one role-fit first email that wins a meeting, not the deal.</li>
+<li><strong>Lead Gems:</strong> Buying-Center Gem, then the first-email
+recipe.</li>
+<li><strong>Key point:</strong> the four NorthStar personas and the role
+logic (decision-maker → impact, procurement → cost and risk, user →
+daily work); the email stays a Gmail draft until the rep sends it. A
+translation pass is the international accent.</li>
+<li><strong>Don’t skip:</strong> the map returns in steps 4 and 5 — say
+so.</li>
+</ul>
+<h3 id="step-4-conversation-preparation-10-min-a-light">Step 4 —
+Conversation Preparation (~10 min, A, light)</h3>
+<ul>
+<li><strong>Goal:</strong> prepare the human side — opener, what to
+listen for, a loose style read.</li>
+<li><strong>Lead Gem:</strong> Rapport Gem (map + the person’s actual
+reply go in).</li>
+<li><strong>Key point:</strong> the style read is a hypothesis to hold
+lightly, read live in the room, never an AI profile from public data.
+Prepare with AI, then put the tool down.</li>
+<li><strong>Don’t skip:</strong> the one line — the meeting itself stays
+human.</li>
+</ul>
+<h3 id="step-5-needs-analysis-25-min-the-middle-of-the-cycle">Step 5 —
+Needs Analysis (~25 min, the middle of the cycle)</h3>
+<ul>
+<li><strong>Goal:</strong> sharp questions in, a clear need profile
+out.</li>
+<li><strong>Lead Gem:</strong> Needs-Analysis Gem, two recipes: the
+question set before the meeting, tagging the notes after.</li>
+<li><strong>Key point:</strong> questions get the customer talking about
+their situation and needs — not pitching; the profile tags six
+dimensions with evidence, and a gap becomes a follow-up question, never
+a guess.</li>
+<li><strong>Don’t skip:</strong> the link that discovery must precede
+argumentation.</li>
+</ul>
+<h3 id="step-6-value-argumentation-25-min-core">Step 6 — Value
+Argumentation (~25 min, core)</h3>
+<ul>
+<li><strong>Goal:</strong> the confirmed need profile becomes a
+customer-specific value argument.</li>
+<li><strong>Lead Gem:</strong> Value-Argument Gem (need profile + BR
+45/22 YellowFile attached).</li>
+<li><strong>Key point:</strong> feature → advantage → benefit → check,
+ordered by confirmed needs, in two role variants (Lars operational,
+Sophie commercial/total-cost); every product fact from the YellowFile,
+prices never in customer-facing output.</li>
+<li><strong>Don’t skip:</strong> every benefit must trace back to a
+discovered need — cut what does not map.</li>
+</ul>
+<h3 id="step-7-presentation-demonstration-20-min-core">Step 7 —
+Presentation &amp; Demonstration (~20 min, core)</h3>
+<ul>
+<li><strong>Goal:</strong> a lean three-slide story (situation, fit,
+decision) and a demo storyboard that tell one story.</li>
+<li><strong>Lead Gems:</strong> the presentation recipe (Canvas → Slides
+draft, content only) and the Demo Gem.</li>
+<li><strong>Key point:</strong> the rep applies the Kärcher template and
+CI before anything goes out; every slide claim has a matching proof in
+the demo.</li>
+<li><strong>Don’t skip:</strong> the quality check before “sending” —
+substance, data, fit, next step.</li>
+</ul>
+<h3 id="step-8-closing-15-min-calm-by-design">Step 8 — Closing (~15 min,
+calm by design)</h3>
+<ul>
+<li><strong>Goal:</strong> read the buying signal, choose the right
+path, answer objections calmly, capture the result.</li>
+<li><strong>Lead Gem:</strong> the closing coach (value block + short
+meeting notes in).</li>
+<li><strong>Key point:</strong> in the worked example the signal is weak
+and the coach recommends clarifying value first — an honest
+recommendation, not a pushy one; the price objection gets a three-move
+answer (understand, reframe to cost-over-time, concrete next step).</li>
+<li><strong>Don’t skip:</strong> the summary keeps agreed and open
+points separate, with no invented commitments.</li>
+</ul>
+<h3 id="step-9-follow-up-steering-20-min">Step 9 — Follow-up &amp;
+Steering (~20 min)</h3>
+<ul>
+<li><strong>Goal:</strong> the meeting summary becomes a follow-up
+email, a four-line handover, one owned next step, and a light account
+segment.</li>
+<li><strong>Lead Gem:</strong> Follow-up &amp; Handover Gem.</li>
+<li><strong>Key point:</strong> sent within twenty-four hours; where no
+date was agreed, the output says “to verify” instead of inventing one —
+the AI marks the gap, the rep closes it.</li>
+<li><strong>Don’t skip:</strong> one concrete next step with a named
+owner — it is what makes the loop real.</li>
+</ul>
+<h3 id="leadership-block-cluster-b-30-min">Leadership block (Cluster B,
+~30 min)</h3>
+<ul>
+<li><strong>Goal:</strong> leaders steer with the same tools — pipeline
+reading, coaching cues, team routine.</li>
+<li><strong>Material:</strong> the Your-data cards (pipeline at a
+glance, sheet to report) run on the practice tracker; the leadership
+chapters in the guide (pipeline steering, forecast, coaching); the
+Pipeline-Steering and Coaching &amp; Steering Gems.</li>
+<li><strong>Key point:</strong> AI sorts the list, the leader decides
+which account deserves the team’s week; the leader’s strongest move is
+installing the routine — the link in the team meeting, the card of the
+week, one question in the meeting after.</li>
+<li><strong>Don’t skip:</strong> leaders leave with the routine they
+will install, not just their own skills.</li>
+</ul>
+<hr />
+<h2 id="methods-guide">5. Methods Guide</h2>
+<h3 id="teaching-ai-to-a-mixed-experience-sales-room">Teaching AI to a
+mixed-experience sales room</h3>
+<p>Most of your room is Basic or Intermediate. Three principles keep
+them with you:</p>
+<ul>
+<li><strong>Lead with the pain, not the technology.</strong> Open each
+unit with the work problem (“a busy week that moved nothing”), then show
+AI as the relief. Never open with “let me explain how large language
+models work.”</li>
+<li><strong>One concrete win per unit.</strong> Aim for each person to
+leave each block with something they could use Monday: a ranked list, a
+briefing, a three-slide outline. Concrete beats comprehensive.</li>
+<li><strong>Show, then hand over.</strong> Demonstrate the move on
+NorthStar, then immediately have them repeat it — the lessons are built
+for exactly this, every recipe has the prompt to copy and the example
+Doc to compare with. The “now do it with your own account” handoff
+(<a href="playbook-6.html">Section 6</a>) is where learning sticks.</li>
+</ul>
+<p>Keep frameworks in the background. The need dimensions and value
+chains are useful logic underneath the lessons, but they are tools, not
+subjects. Say “better discovery questions,” not an acronym. And let the
+platform do its share of the talking: the tour introduces the structure,
+the Listen buttons read lessons aloud, the quizzes lock ideas in — you
+facilitate, you do not lecture.</p>
+<h3 id="demoing-tools-live-without-losing-the-room">Demoing tools live
+without losing the room</h3>
+<p>Live demos are powerful and risky. Protect yourself:</p>
+<ul>
+<li><strong>Have a fallback.</strong> Keep a screenshot or a pre-run
+result of each demo (especially the ISS Deep Research run, which can
+take minutes). The Train-the-Trainer catalog deck carries every screen
+and real output as a slide — it is your ready-made fallback. If the live
+run stalls, show the slide and narrate.</li>
+<li><strong>Narrate the prompt, not the typing.</strong> Read the
+recipe’s prompt aloud as you copy it so people learn the thinking, not
+the keystrokes.</li>
+<li><strong>Pre-run the slow ones.</strong> Deep Research takes time.
+Start the live ISS run, then talk through the buying center while it
+works, and return to the result.</li>
+<li><strong>Use the side panel where it lives.</strong> For
+presentations, work in Google Slides with Gemini in the side panel so
+people see the real workflow, not a separate chat window.</li>
+<li><strong>Keep accounts ready.</strong> Confirm sign-ins before you
+start. Nothing kills momentum like ten people stuck at a login
+screen.</li>
+</ul>
+<h3 id="making-the-gate-a-habit-not-a-lecture">Making the gate a habit,
+not a lecture</h3>
+<ul>
+<li><strong>The quality gate (Prompt · Validate):</strong> do not
+deliver it as a compliance lecture. Make it a reflex you model. Every
+time you prompt, narrate the green light out loud (“NorthStar is
+fictional, so I prompt freely; with a real account in an approved tool I
+would still share only the fields the task needs”). Every time AI
+returns numbers, pause and ask the room “would you send this to a
+customer as-is?” That two-second pause, repeated, is the lesson.</li>
+<li><strong>The green light, always visible:</strong> in approved tools,
+signed in, real customer data is allowed; the rep’s job is to share the
+fields the task needs and verify the output. In sessions we model this
+on NorthStar (fictional, so prompt freely) and ISS (real and public, so
+use it for live research and verify against the source).</li>
+<li><strong>The check lives in the recipes.</strong> Every lesson recipe
+ends with its own check line (ground every number, no invented
+commitments, trace benefits to needs). Point at it; you never have to
+carry the rules alone.</li>
+</ul>
+<h3 id="managing-energy-timing-and-group-dynamics">Managing energy,
+timing, and group dynamics</h3>
+<ul>
+<li><strong>Budget, don’t script.</strong> The unit times are a budget.
+If step 2 runs long because the ISS demo lands well, take it from a
+lighter unit, not from the opening gate.</li>
+<li><strong>Adapt depth to the room:</strong>
+<ul>
+<li><em>Skeptical group</em> — go slower on the gate and verification,
+lean on the worked example and the real result Docs, invite their
+worries early (<a href="playbook-7.html">Section 7</a>), and let one good result speak for itself. Do
+not oversell.</li>
+<li><em>Enthusiastic group</em> — move faster through demos, spend the
+saved time on “now do it with your own account,” and stretch into more
+cards.</li>
+</ul></li>
+<li><strong>Protect the hands-on time.</strong> When you are behind, cut
+your own talking, not the participants’ practice. The doing is the
+value.</li>
+<li><strong>Read the energy after lunch.</strong> A natural dip: reset
+it with a Quick-Help card everyone runs — a result in five minutes beats
+any energizer.</li>
+</ul>
+<hr />
+<h2 id="exercise-instructions">6. Exercise Instructions</h2>
+<p>Each interactive element follows the same rhythm: <strong>you demo on
+NorthStar → they do it on NorthStar → they redo it on their own
+account.</strong> The prompts live on the lesson screens (copy button);
+the ready-made NorthStar Docs are linked right on each recipe, so nobody
+types context by hand.</p>
+<h3 id="the-five-minute-pipeline-win-the-strongest-opener">The
+five-minute pipeline win (the strongest opener)</h3>
+<ol type="1">
+<li>Everyone opens Quick help → <em>See your pipeline at a
+glance</em>.</li>
+<li>They copy the practice tracker (one click on the card) — no real
+data needed.</li>
+<li>They copy the prompt, run it in Sheets, open the new tab.</li>
+<li>Compare totals across the room; verify one total by hand.</li>
+</ol>
+<ul>
+<li><strong>Good output:</strong> the pipeline-value pivot by stage and
+segment, on a new tab.</li>
+<li><strong>Feedback:</strong> the verification step is the lesson —
+“trust it, then check one number.”</li>
+</ul>
+<h3 id="the-prompt-rewrite-drill-basics-block">The prompt rewrite drill
+(Basics block)</h3>
+<ol type="1">
+<li>Show a weak one-line prompt (e.g. “write me an email to a
+customer”).</li>
+<li>Rebuild it live along the prompting Basic’s structure — say what you
+want, give the context, name the format, ask it to flag what it does not
+know.</li>
+<li>Pairs rewrite a second weak prompt for a NorthStar task.</li>
+<li>Two or three pairs read theirs out; the room decides Go / Revise /
+Stop on one AI output.</li>
+</ol>
+<ul>
+<li><strong>Good output:</strong> a prompt where the context and the
+wanted format are explicit and the check line asks AI to flag
+unsupported claims.</li>
+<li><strong>Feedback:</strong> praise specificity; push back gently on
+vague context (“what does the model actually need to know here?”).</li>
+</ul>
+<h3 id="live-iss-deep-research-demo-northstar-briefing-step-2">Live ISS
+Deep Research demo + NorthStar briefing (step 2)</h3>
+<ol type="1">
+<li><strong>You</strong> launch the Account-Briefing Gem on ISS live
+(pre-run fallback ready).</li>
+<li>While it runs, walk the room through the NorthStar buying center:
+Lars (ops), Sophie (procurement), Milan (site), Eva (HSE).</li>
+<li>When the result returns, verify one claim against its source in
+front of everyone.</li>
+<li>Participants read the ready-made ISS briefing Doc from the lesson
+and make the Go/No-Go call themselves.</li>
+</ol>
+<ul>
+<li><strong>Good output:</strong> a defended Go or No-Go, with the two
+or three to-verify claims named.</li>
+<li><strong>Feedback:</strong> flag any claim presented as fact that was
+actually a hypothesis — this is where verification matters most.</li>
+</ul>
+<h3 id="discovery-questions-and-the-need-profile-step-5">Discovery
+questions and the need profile (step 5)</h3>
+<ol type="1">
+<li>Participants run recipe 1 with the ready-made briefing and map
+attached: the question set.</li>
+<li>They compare it with the example Doc on the lesson.</li>
+<li>They run recipe 2 on the ready-made visit notes: the tagged need
+profile.</li>
+<li>They name the gaps and write one follow-up question per gap.</li>
+</ol>
+<ul>
+<li><strong>Good output:</strong> a question set that gets the customer
+talking (not pitching), and a profile where strong needs carry evidence
+and gaps are named, not guessed.</li>
+<li><strong>Feedback:</strong> check that questions are open and
+high-gain, not product pitches in disguise.</li>
+</ul>
+<h3 id="the-value-block-and-the-three-slide-pitch-steps-67">The value
+block and the three-slide pitch (steps 6–7)</h3>
+<ol type="1">
+<li>From the need profile and the YellowFile, participants run the
+value-argument recipe.</li>
+<li>They compare with the real example output (the NorthStar Value Block
+with the Lars and Sophie variants).</li>
+<li>They run the presentation recipe: three slides, situation → fit →
+decision, one idea per slide.</li>
+<li>They reframe for one stakeholder and run the quality check before
+“sending.”</li>
+</ol>
+<ul>
+<li><strong>Good output:</strong> every benefit traceable to a confirmed
+need; three slides, one message each; the role variant actually changes
+the argument, not just the wording.</li>
+<li><strong>Feedback:</strong> the most common miss is a fourth slide or
+a brochure tone. Push them to cut anything that does not move the
+decision.</li>
+</ul>
+<h3 id="the-now-do-it-with-your-own-account-handoff">The “now do it with
+your own account” handoff</h3>
+<p>This is the close of every exercise, and the real payoff. After the
+NorthStar round, say: <em>“NorthStar was the worked example. Now open
+one of your own live accounts and run the same recipe — in our approved
+tools, signed in, that is allowed; share what the task needs and verify
+the output.”</em> Give them two or three minutes. This converts a demo
+into a habit they own. Make time for it even when you are behind — it is
+the single most valuable minute in each block.</p>
+<hr />
+<h2 id="faq-objection-handling">7. FAQ &amp; Objection Handling</h2>
+<p>These are the real worries from the survey (n=75), in roughly the
+order they came up. The two biggest are <strong>data
+security/compliance</strong> and <strong>trust in AI numbers
+(hallucinations)</strong>. Closing/objection skill was the
+<em>lowest</em> need, so do not over-prepare for sales-technique
+pushback — prepare for these adoption worries instead. Every answer
+anchors in the gate and the human-in-the-loop rule.</p>
+<h3 id="is-this-safe-what-about-data-security-and-compliance">“Is this
+safe? What about data security and compliance?”</h3>
+<p>This is the number-one worry, so meet it head-on, early, with the
+gate — not as a disclaimer at the end.</p>
+<blockquote>
+<p><em>Reframe:</em> “Good news first: in our approved tools, signed in
+with your Kärcher account, you are allowed to work with real customer
+data — the Workspace contract keeps it confidential and the tools never
+train on it. Your part is light but real: share only the information the
+task actually needs, then verify the output. To rank a pipeline, AI
+needs stage, value, and dates, not a customer’s phone number. Less data
+is both safer and sharper. In the sessions we practise on NorthStar,
+which is fictional, so you can prompt freely, and on ISS, which is real
+and public, so you use it for live research and verify it.”</p>
+</blockquote>
+<p>Point to the Prompt · Validate gate from the data-safety Basic, and
+note that the normal sign-off still applies to formal proposals,
+pricing, and contract terms.</p>
+<h3 id="wont-ai-just-replace-me">“Won’t AI just replace me?”</h3>
+<blockquote>
+<p><em>Reframe:</em> “AI does the sorting, drafting, and structuring. It
+does not decide which account deserves your week, build the relationship
+in the room, or own the customer promise. The line is exact: <em>AI
+sorts the list, you decide which account deserves your week.</em> The
+reps who win are the ones who let AI take the busywork so they spend
+more time with customers, not less.”</p>
+</blockquote>
+<h3 id="how-can-i-trust-the-numbers-it-makes-things-up.">“How can I
+trust the numbers? It makes things up.”</h3>
+<p>This is the second-biggest worry, and a legitimate one.</p>
+<blockquote>
+<p><em>Reframe:</em> “You are right not to trust it blindly — that is
+the job, not a flaw in the training. Confident output is not verified
+output. So we build two reflexes: tell AI to <em>flag</em> missing data
+rather than invent it, and run the Validate step before anything
+customer-facing. The platform’s own outputs model this: in the real
+NorthStar follow-up, where no date was agreed, the document says ‘to
+verify’ instead of inventing one. AI drafts; you verify; and the normal
+sign-off still applies to anything formal that goes out.”</p>
+</blockquote>
+<h3 id="ill-lose-my-own-voice-and-style.">“I’ll lose my own voice and
+style.”</h3>
+<blockquote>
+<p><em>Reframe:</em> “AI gives you a fast first draft, not a final send.
+Your voice comes from the editing pass — the part you keep. The
+first-contact lesson is explicit: the email stays a Gmail draft until
+you have read it, edited it, and send it in your own words. A draft you
+reshape is still your voice; a blank page at 11pm is the real threat to
+it.”</p>
+</blockquote>
+<h3 id="the-output-isnt-in-kärcher-corporate-identity-our-brand.">“The
+output isn’t in Kärcher corporate identity / our brand.”</h3>
+<blockquote>
+<p><em>Reframe:</em> “Correct, and we don’t expect raw output to be
+customer-ready. AI gets you to a strong draft fast; you then apply the
+Kärcher template, the approved claims, and the CI before anything goes
+out. The presentation lesson builds this in: the draft exports as
+content only, the final deck is built in our templates — and for
+customer-facing decks the normal sign-off still applies on top.”</p>
+</blockquote>
+<h3 id="is-the-effort-worth-the-benefit-im-already-busy.">“Is the effort
+worth the benefit? I’m already busy.”</h3>
+<blockquote>
+<p><em>Reframe:</em> “That busy week that moved nothing is exactly the
+problem this solves. The first wins are small and immediate: your
+pipeline value in one prompt, a customer deck outline in minutes instead
+of an evening. Start with one card — the card of the week is exactly
+that, one use case, one habit. You don’t adopt everything; you adopt one
+thing that gives time back this week.”</p>
+</blockquote>
+<h3 id="we-already-had-an-ai-training-from-it.">“We already had an AI
+training from IT.”</h3>
+<blockquote>
+<p><em>Reframe:</em> “Good — this is the other half. IT teaches how the
+tools work. This program teaches where they fit in a sales week: the
+platform’s cards and course are organized by sales tasks and the sales
+cycle, not by tools. Nobody studies a tool for its own sake here; you
+pick a sales task, and the tool comes with it.”</p>
+</blockquote>
+<h3 id="region-and-channel-adaptation-notes">Region and channel
+adaptation notes</h3>
+<ul>
+<li><strong>Translation/localization:</strong> for international field
+teams, lean into the translation card and the localization angle in
+first contact and presentations; always have a native speaker
+sanity-check anything customer-facing.</li>
+<li><strong>Language of the platform:</strong> it is in English today,
+but nobody has to wait: Chrome translates the whole platform in one
+click, and the platform’s own language guide (the globe icon on every
+page) shows how, opening with a recognition line in Kärcher’s 12
+languages. Only the spoken audio stays English. Beyond that, the
+platform is built for full language versions — a language edition is a
+complete platform with every text and audio track in that language. If
+your market needs one, say so; languages follow demand.</li>
+<li><strong>No-CRM channels:</strong> the whole program is CRM-free by
+design (Google Sheets stands in), so colleagues without a CRM are fully
+included — say so explicitly; it lowers the barrier.</li>
+<li><strong>Local examples:</strong> keep NorthStar as the running
+example for continuity. Swap in a local account only when it genuinely
+helps, and never invent data for it — use ISS-style research on a real,
+public company instead.</li>
+<li><strong>Leadership rooms (Cluster B):</strong> expect more questions
+about team rollout and reporting than about individual deals. Steer
+toward the data cards, the leadership chapters, and the routine
+moves.</li>
+</ul>
+<hr />
+<h2 id="roll-out-checklist">8. Roll-out Checklist</h2>
+<h3 id="pre-session-prep">Pre-session prep</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" />Pre-survey sent (Google Forms) and
+at least half the responses in.</label></li>
+<li><label><input type="checkbox" />Cluster identified; content picked
+(<a href="playbook-3.html">Section 3</a>) and poured into a format (<a href="playbook-2.html">Section 2</a>).</label></li>
+<li><label><input type="checkbox" />Accounts confirmed: every
+participant can sign in to Google Workspace with Gemini, Deep Research,
+Gems, and NotebookLM — the same sign-in opens the platform.</label></li>
+<li><label><input type="checkbox" />Platform smoke test in the room: <a
+href="https://karcher-ai-sales.web.app/lessons/start.html">the
+platform</a> loads, the tour plays, one card opens.</label></li>
+<li><label><input type="checkbox" />ISS Deep Research pre-run as a
+fallback for step 2; the catalog deck at hand as the screenshot
+fallback.</label></li>
+<li><label><input type="checkbox" />Practice tracker checked (linked on
+the pipeline card) for the data exercises.</label></li>
+<li><label><input type="checkbox" />Room/tech checked: projector,
+side-panel visibility, sound for the tour and audio tracks, stable
+connection.</label></li>
+</ul>
+<h3 id="planning-the-first-country-session">Planning the first country
+session</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" />Pick a real upcoming audience and
+run the select-then-deliver habit on it.</label></li>
+<li><label><input type="checkbox" />Start with a team-meeting intro or a
+short data-cards block if you are new to delivering — it is the safest
+first run and creates demand for the full course.</label></li>
+<li><label><input type="checkbox" />Localize language and examples
+without rebuilding the structure.</label></li>
+<li><label><input type="checkbox" />Block the right time budget (Section
+2) and protect the hands-on minutes.</label></li>
+</ul>
+<h3 id="the-follow-through-mechanism">The follow-through mechanism</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" />Close every session with
+commitments: each participant names one card or step they will use this
+week, and one measurable sign it worked.</label></li>
+<li><label><input type="checkbox" />Install the routine: the link in the
+team meeting, the card of the week, one question in the meeting after
+(“what did you try, what did it save?”).</label></li>
+<li><label><input type="checkbox" />Set one checkpoint date (≈ 30 days
+out) to ask “what did you actually use?”</label></li>
+</ul>
+<h3 id="where-to-get-help">Where to get help</h3>
+<ul>
+<li><strong>The content itself:</strong> <a
+href="https://karcher-ai-sales.web.app/lessons/start.html">the
+platform</a> — the guide holds the depth, the notebook answers questions
+with citations.</li>
+<li><strong>Selection logic and the pre-survey:</strong> <a href="playbook-3.html">Section 3</a> of
+this playbook; the form comes from Sales Enablement.</li>
+<li><strong>Your own preparation:</strong> the Train-the-Trainer catalog
+deck (every screen and output as a slide) and the deck family on the
+trainer hub, read at your own pace.</li>
+<li><strong>Sales Enablement / program owner:</strong> for accounts, the
+pre-survey form, and any client-specific compliance questions, contact
+your Kärcher Sales Enablement point of contact before your first
+session.</li>
+</ul>
+<hr />
+
+    </div>
+
+    <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "base",
+      themeVariables: {
+        fontFamily: "Arial, Helvetica, sans-serif",
+        primaryColor: "#ffffff", primaryTextColor: "#1a1a1a",
+        primaryBorderColor: "#1a1a1a", lineColor: "#1a1a1a",
+        tertiaryColor: "#ffed00"
+      },
+      flowchart: { useMaxWidth: true, curve: "linear" }
+    });
+    </script>
+
+    <script>
+    (function(){
+      var key = "pb-" + location.pathname.split("/").pop();
+      var boxes = Array.prototype.slice.call(document.querySelectorAll(".art ul.task-list input[type=checkbox]"));
+      if (!boxes.length) return;
+      var saved = {};
+      try { saved = JSON.parse(localStorage.getItem(key) || "{}"); } catch (e) {}
+      var bar = document.createElement("p"); bar.className = "pbprogress";
+      var txt = document.createElement("span");
+      var reset = document.createElement("button"); reset.type = "button"; reset.textContent = "Clear all checks";
+      bar.appendChild(txt); bar.appendChild(reset);
+      var first = document.querySelector(".art ul.task-list");
+      first.parentNode.insertBefore(bar, first);
+      function paint(){
+        var n = 0;
+        boxes.forEach(function(b, i){
+          b.checked = !!saved[i]; if (b.checked) n++;
+          b.closest("li").classList.toggle("done", b.checked);
+        });
+        txt.textContent = n + " of " + boxes.length + " checked" + (n ? ", saved in this browser" : "");
+      }
+      boxes.forEach(function(b, i){
+        b.addEventListener("change", function(){
+          saved[i] = b.checked; localStorage.setItem(key, JSON.stringify(saved)); paint();
+        });
+      });
+      reset.addEventListener("click", function(){ saved = {}; localStorage.removeItem(key); paint(); });
+      paint();
+    })();
+    </script>
+
+  </div>
+</body>
+</html>
