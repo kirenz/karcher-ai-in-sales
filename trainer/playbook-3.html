@@ -4,11 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>3. Two Things Only This Program Needs — Trainer Playbook</title>
+  <title>3. Facilitation, Data Rules, and the Longer Formats — Trainer Playbook</title>
   <link rel="icon" href="../lessons/favicon.ico">
   <link rel="stylesheet" href="../lessons/styles.css">
   <style>body{visibility:hidden}</style>
   <style>
+/* Trainer-hub chrome sits lower than the platform's: a trainer arrives to do
+   something, so the first action has to be visible without scrolling, on a
+   laptop and on a phone. These rules only load on the hub's own pages — the
+   lessons stylesheet is shared and stays untouched. */
+.hero{padding:26px 28px 22px}
+.hero__title{font-size:38px;margin:0 0 10px}
+.hero__sub{font-size:16.5px}
+.tour{padding:16px 18px 0}
+@media (max-width:560px){.hero{padding:20px 18px 16px}.hero__title{font-size:29px}
+  .hero__sub{font-size:15.5px}}
+.doorgrid{padding-top:18px}
+/* the one action the home page is for */
+.firstrun{max-width:600px;margin:0 auto;padding:18px 18px 0}
+.firstrun__card{background:var(--ink,#1a1a1a);color:#fff;padding:20px 22px 22px}
+.firstrun__card h2{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;
+  letter-spacing:.02em;font-size:26px;line-height:1.05;margin:0 0 6px}
+.firstrun__card p{font-size:15px;line-height:1.5;margin:0 0 12px;color:rgba(255,255,255,.82)}
+.firstrun__steps{list-style:none;padding:0;margin:0 0 16px;counter-reset:fr}
+.firstrun__steps li{counter-increment:fr;position:relative;padding:6px 0 6px 34px;font-size:15px;
+  line-height:1.45}
+.firstrun__steps li::before{content:counter(fr);position:absolute;left:0;top:6px;width:22px;height:22px;
+  background:var(--yellow,#ffed00);color:#1a1a1a;font-family:var(--cond),Arial,sans-serif;
+  font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.firstrun__card .btn{background:var(--yellow,#ffed00);color:#1a1a1a;border-color:var(--yellow,#ffed00)}
+@media (max-width:560px){.firstrun{padding-top:12px}.firstrun__card{padding:16px 18px}
+  .firstrun__card h2{font-size:23px}.firstrun__steps li{font-size:14px;line-height:1.4}}
+.firstrun__note{font-size:13.5px;color:var(--ink-55,#666);margin:10px 0 0}
+/* text-only orientation for pages whose spoken tour was retired */
+.brief{max-width:600px;margin:0 auto;padding:16px 18px 0;display:flex;gap:14px;align-items:flex-start}
+.brief__photo{flex:none;width:64px;border:3px solid var(--ink,#1a1a1a);
+  border-bottom:7px solid var(--yellow,#ffed00);display:block}
+.brief__photo img{display:block;width:100%;height:auto}
+.brief__bubble{flex:1;background:#fff;border:1px solid var(--line,#ddd);padding:12px 14px;font-size:14.5px}
+.brief__bubble b{display:block;font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;
+  letter-spacing:.06em;font-size:12.5px;color:var(--ink-55,#666);margin-bottom:6px}
+.brief__bubble ul{margin:0;padding-left:18px}
+.brief__bubble li{line-height:1.45;margin:0 0 4px}
 .art{max-width:760px;margin:0 auto;padding:8px 0 40px}
 .art h2{font-size:1.35rem;margin:34px 0 10px;border-left:6px solid var(--yellow);padding-left:12px}
 .art h3{font-size:1.05rem;margin:22px 0 6px}
@@ -52,9 +89,7 @@
 .pbprogress{font-size:.85rem;color:var(--ink-55,#666);margin:6px 0 18px;display:flex;gap:14px;align-items:center}
 .pbprogress button{font:inherit;font-size:.8rem;border:1px solid var(--ink,#1a1a1a);background:#fff;padding:3px 8px;cursor:pointer}
 .crumb a{color:inherit}
-.langrow{display:flex;gap:8px;margin-top:auto;align-items:stretch;flex-wrap:wrap}
-.langrow .btn{align-self:auto}
-.langsel{border:1px solid var(--ink,#1a1a1a);background:#fff;font:inherit;font-size:.85rem;padding:6px 8px;max-width:130px}
+.langnote{font-size:.78rem;color:var(--ink-55,#666);line-height:1.4}
 .pptxlink{font-size:.78rem;color:var(--ink-55,#666);text-decoration:underline;margin-top:4px;display:inline-block}
 .deckalt{font-size:.82rem;font-weight:700;color:var(--ink,#1a1a1a);text-decoration:underline;
   text-underline-offset:3px;margin-top:8px;display:inline-block}
@@ -77,16 +112,27 @@
 .art tbody td:first-child{font-weight:700}
 .art tbody td:last-child{color:var(--ink-55,#666)}
 @media (max-width:700px){.art table{font-size:.86rem}}
+.art .timeline th:first-child,.art .timeline td:first-child{width:13%}
+.art .timeline th:nth-child(2),.art .timeline td:nth-child(2){width:12%}
+.art .timeline th:nth-child(3),.art .timeline td:nth-child(3){width:14%}
+@media screen and (max-width:700px){
+  .art .timeline,.art .timeline tbody{display:block;width:100%}
+  .art .timeline thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .art .timeline tbody tr{display:grid;grid-template-columns:repeat(3,1fr);padding:10px 8px;border-bottom:1px solid #ddd}
+  .art .timeline tbody td{display:block;width:auto!important;padding:4px 8px;border:0}
+  .art .timeline tbody td:last-child{grid-column:1/-1;color:var(--ink,#1a1a1a)}
+  .art .timeline tbody td::before{content:attr(data-label);display:block;font-size:.7rem;font-weight:700;text-transform:uppercase;color:#666;margin-bottom:3px}
+}
 </style>
   <script type="module" src="../lessons/gate.js"></script>
 </head>
 <body>
-  <header class="topbar"><a class="topbar__brand" href="index.html"><img class="topbar__logo" src="../lessons/img/karcher-logo.png" alt="Kärcher"><span>AI in Sales · Trainer hub</span></a><nav class="topbar__nav"><a class="topbar__item" href="index.html">Home</a><a class="topbar__item" href="present.html">Present</a><a class="topbar__item" href="selflearn.html">Learn</a><a class="topbar__item on" href="plan.html">Plan</a><a class="topbar__item" href="weeks.html">Rollout</a><a class="topbar__item" href="faq.html">FAQ</a><a class="topbar__item" href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">The platform</a></nav></header>
+  <header class="topbar"><a class="topbar__brand" href="index.html"><img class="topbar__logo" src="../lessons/img/karcher-logo.png" alt="Kärcher"><span>AI in Sales · Trainer hub</span></a><nav class="topbar__nav"><a class="topbar__item" href="index.html">Home</a><a class="topbar__item" href="first-session.html">First session</a><a class="topbar__item" href="present.html">Present</a><a class="topbar__item" href="selflearn.html">Learn</a><a class="topbar__item on" href="plan.html">Plan</a><a class="topbar__item" href="weeks.html">Rollout</a><a class="topbar__item" href="faq.html">FAQ</a><a class="topbar__item" href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">The platform</a></nav></header>
 
   <header class="hero">
     <p class="hero__eyebrow">The manual · Chapter 3 of 4</p>
-    <h1 class="hero__title">Two Things Only This Program Needs</h1>
-    <p class="hero__sub">Demoing live without losing the room, and the gate as a habit.</p>
+    <h1 class="hero__title">Facilitation, Data Rules, and the Longer Formats</h1>
+    <p class="hero__sub">Facilitation, company data guidance and the optional longer course.</p>
   </header>
 
 
@@ -94,44 +140,59 @@
 
     <div class="art">
       <p class="crumb"><a href="plan.html">← Plan your session</a> · <a href="playbook.html">Trainer Playbook</a></p>
-<nav class="chapnav"><a href="playbook.html">Overview</a><a href="playbook-1.html">1 · Select the Right Content per Group</a><a href="playbook-2.html">2 · Run Sheet for the Sprint Day</a><a href="playbook-3.html" class="on">3 · Two Things Only This Program Needs</a><a href="playbook-4.html">4 · Pre-Session Checklist</a></nav>
-<h3 id="demoing-live-without-losing-the-room">Demoing live without
-losing the room</h3>
-<p>The ISS Deep Research run is the most persuasive moment of the day
-and the slowest one. Start it live, talk through the NorthStar buying
-center while it works, then come back to the result. Read the recipe’s
+<nav class="chapnav"><a href="playbook.html">Overview</a><a href="playbook-1.html">1 · Run Your First Session</a><a href="playbook-2.html">2 · Adapt for a Specific Group</a><a href="playbook-3.html" class="on">3 · Facilitation, Data Rules, and the Longer Formats</a><a href="playbook-4.html">4 · Checks, Support and Follow-Up</a></nav>
+<h3 id="when-the-output-is-wrong-slow-down">When the output is wrong,
+slow down</h3>
+<p>A table that does not match its source rows is a useful opportunity
+to practise the check. Add the segment together out loud, name the
+difference, and ask which of the two numbers they would send to their
+manager. Do not explain why the model erred, and do not take the
+keyboard. The <a href="rehearsal.html">rehearsal sheet</a> practises
+this situation directly.</p>
+<h3 id="demoing-live">Demoing live</h3>
+<p>Confirm sign-ins before you start, not at the first prompt. Read a
 prompt aloud as you copy it, so people follow the thinking rather than
-the keystrokes. For the presentation step, work in Google Slides with
-Gemini in the side panel, not in a separate chat window.</p>
-<ul>
-<li>Keep a pre-run result or a screenshot of every demo. The
-Train-the-Trainer catalog deck carries every screen and real output as a
-slide and is the ready-made fallback.</li>
-<li>Confirm sign-ins before you start, not at the first prompt.</li>
-</ul>
-<h3 id="the-gate-as-a-habit-not-a-lecture">The gate as a habit, not a
-lecture</h3>
-<p>The quality gate is two steps, <strong>Prompt · Validate</strong>.
-Every time you prompt, narrate the green light out loud (“NorthStar is
-fictional, so I prompt freely; with a real account in an approved tool I
-would still share only the fields the task needs”). Every time AI
-returns numbers, ask the room whether they would send this to a customer
-as-is.</p>
-<ul>
-<li>The two demo cases model both sides: NorthStar is fictional (prompt
-freely), ISS is real and public (use it for live research and verify
-against the source).</li>
-<li>Every lesson recipe ends with its own check line (ground every
-number, no invented commitments, trace benefits to needs). Point at it
-instead of carrying the rules yourself.</li>
-</ul>
-<p>Prepared answers to the recurring worries (data security,
-hallucinations, “will AI replace me”, CI, effort) are on the hub’s <a
-href="https://karcher-ai-sales.web.app/trainer/faq.html">FAQ
-page</a>.</p>
+the keystrokes. Use the deck’s screenshots and written examples to
+illustrate the workflow. Compare the result of your own demonstration
+with the rows in front of you. In the sales-cycle sprint, the Deep
+Research run on ISS (issworld.com, a real public facility-services
+company) is the slowest moment: start it live, walk the room through the
+NorthStar buying center while it works, then come back to it and verify
+one claim against its source in front of everyone.</p>
+<h3 id="the-data-rules">The data rules</h3>
+<p>In approved Kärcher Workspace tools, signed in with the Kärcher
+account, teams may work with real customer data: the contract keeps it
+confidential and the tools do not learn from it. Two obligations stay
+with the user: share only what the task needs, and validate every claim
+before it reaches a customer. Formal proposals, pricing, legal and
+contract terms keep the normal sign-off. Say this in the first ten
+minutes of any session where real accounts might be opened. Nothing in
+the practice exercises requires it, because all of them run on fictional
+material.</p>
+<p>Prepared answers to the recurring worries (data security, wrong
+answers, “will AI replace me”, CI, effort) are on the hub’s <a
+href="faq.html">FAQ page</a>.</p>
+<h3 id="the-sales-cycle-sprint-optional-half-or-full-day">The
+sales-cycle sprint (optional, half or full day)</h3>
+<p>For a group that asks for the whole cycle. The deck is
+<code>ttt-9-course-sprint</code>; the content is the nine course steps
+on the platform, which carry the exact prompt, the attachment and the
+example Doc on screen. Present from the platform, and name the hand-off
+out loud, because every step hands its output to the next: lead →
+sourced briefing and Go/No-Go → buying-center map → first email → need
+profile → value argument → demo storyboard → signal read → follow-up.
+Underneath it runs the value hypothesis: it forms in research (step 2),
+feeds the first email (step 3) and the discovery questions (step 5), is
+confirmed against the real need, and becomes the substantiated value
+argument (step 6). Rough budget: opening and data rules 20 minutes, then
+15 to 30 minutes per step, with steps 2, 5 and 6 getting the depth.
+Cluster B groups replace steps 1 to 8 with the Your-data cards, step 9
+and the leadership chapters, about 30 minutes.</p>
+<p>The per-step goals, lead Gems and “don’t skip” points live with the
+steps themselves on the platform, which is where they stay current.</p>
 <hr />
 
-<div class="pbprevnext"><a href="playbook-2.html">&larr; 2. Run Sheet for the Sprint Day</a><a href="playbook-4.html">4. Pre-Session Checklist &rarr;</a></div>
+<div class="pbprevnext"><a href="playbook-2.html">&larr; 2. Adapt for a Specific Group</a><a href="playbook-4.html">4. Checks, Support and Follow-Up &rarr;</a></div>
     </div>
 
   </div>

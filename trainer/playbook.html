@@ -9,6 +9,43 @@
   <link rel="stylesheet" href="../lessons/styles.css">
   <style>body{visibility:hidden}</style>
   <style>
+/* Trainer-hub chrome sits lower than the platform's: a trainer arrives to do
+   something, so the first action has to be visible without scrolling, on a
+   laptop and on a phone. These rules only load on the hub's own pages — the
+   lessons stylesheet is shared and stays untouched. */
+.hero{padding:26px 28px 22px}
+.hero__title{font-size:38px;margin:0 0 10px}
+.hero__sub{font-size:16.5px}
+.tour{padding:16px 18px 0}
+@media (max-width:560px){.hero{padding:20px 18px 16px}.hero__title{font-size:29px}
+  .hero__sub{font-size:15.5px}}
+.doorgrid{padding-top:18px}
+/* the one action the home page is for */
+.firstrun{max-width:600px;margin:0 auto;padding:18px 18px 0}
+.firstrun__card{background:var(--ink,#1a1a1a);color:#fff;padding:20px 22px 22px}
+.firstrun__card h2{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;
+  letter-spacing:.02em;font-size:26px;line-height:1.05;margin:0 0 6px}
+.firstrun__card p{font-size:15px;line-height:1.5;margin:0 0 12px;color:rgba(255,255,255,.82)}
+.firstrun__steps{list-style:none;padding:0;margin:0 0 16px;counter-reset:fr}
+.firstrun__steps li{counter-increment:fr;position:relative;padding:6px 0 6px 34px;font-size:15px;
+  line-height:1.45}
+.firstrun__steps li::before{content:counter(fr);position:absolute;left:0;top:6px;width:22px;height:22px;
+  background:var(--yellow,#ffed00);color:#1a1a1a;font-family:var(--cond),Arial,sans-serif;
+  font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.firstrun__card .btn{background:var(--yellow,#ffed00);color:#1a1a1a;border-color:var(--yellow,#ffed00)}
+@media (max-width:560px){.firstrun{padding-top:12px}.firstrun__card{padding:16px 18px}
+  .firstrun__card h2{font-size:23px}.firstrun__steps li{font-size:14px;line-height:1.4}}
+.firstrun__note{font-size:13.5px;color:var(--ink-55,#666);margin:10px 0 0}
+/* text-only orientation for pages whose spoken tour was retired */
+.brief{max-width:600px;margin:0 auto;padding:16px 18px 0;display:flex;gap:14px;align-items:flex-start}
+.brief__photo{flex:none;width:64px;border:3px solid var(--ink,#1a1a1a);
+  border-bottom:7px solid var(--yellow,#ffed00);display:block}
+.brief__photo img{display:block;width:100%;height:auto}
+.brief__bubble{flex:1;background:#fff;border:1px solid var(--line,#ddd);padding:12px 14px;font-size:14.5px}
+.brief__bubble b{display:block;font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;
+  letter-spacing:.06em;font-size:12.5px;color:var(--ink-55,#666);margin-bottom:6px}
+.brief__bubble ul{margin:0;padding-left:18px}
+.brief__bubble li{line-height:1.45;margin:0 0 4px}
 .art{max-width:760px;margin:0 auto;padding:8px 0 40px}
 .art h2{font-size:1.35rem;margin:34px 0 10px;border-left:6px solid var(--yellow);padding-left:12px}
 .art h3{font-size:1.05rem;margin:22px 0 6px}
@@ -52,9 +89,7 @@
 .pbprogress{font-size:.85rem;color:var(--ink-55,#666);margin:6px 0 18px;display:flex;gap:14px;align-items:center}
 .pbprogress button{font:inherit;font-size:.8rem;border:1px solid var(--ink,#1a1a1a);background:#fff;padding:3px 8px;cursor:pointer}
 .crumb a{color:inherit}
-.langrow{display:flex;gap:8px;margin-top:auto;align-items:stretch;flex-wrap:wrap}
-.langrow .btn{align-self:auto}
-.langsel{border:1px solid var(--ink,#1a1a1a);background:#fff;font:inherit;font-size:.85rem;padding:6px 8px;max-width:130px}
+.langnote{font-size:.78rem;color:var(--ink-55,#666);line-height:1.4}
 .pptxlink{font-size:.78rem;color:var(--ink-55,#666);text-decoration:underline;margin-top:4px;display:inline-block}
 .deckalt{font-size:.82rem;font-weight:700;color:var(--ink,#1a1a1a);text-decoration:underline;
   text-underline-offset:3px;margin-top:8px;display:inline-block}
@@ -77,40 +112,47 @@
 .art tbody td:first-child{font-weight:700}
 .art tbody td:last-child{color:var(--ink-55,#666)}
 @media (max-width:700px){.art table{font-size:.86rem}}
+.art .timeline th:first-child,.art .timeline td:first-child{width:13%}
+.art .timeline th:nth-child(2),.art .timeline td:nth-child(2){width:12%}
+.art .timeline th:nth-child(3),.art .timeline td:nth-child(3){width:14%}
+@media screen and (max-width:700px){
+  .art .timeline,.art .timeline tbody{display:block;width:100%}
+  .art .timeline thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .art .timeline tbody tr{display:grid;grid-template-columns:repeat(3,1fr);padding:10px 8px;border-bottom:1px solid #ddd}
+  .art .timeline tbody td{display:block;width:auto!important;padding:4px 8px;border:0}
+  .art .timeline tbody td:last-child{grid-column:1/-1;color:var(--ink,#1a1a1a)}
+  .art .timeline tbody td::before{content:attr(data-label);display:block;font-size:.7rem;font-weight:700;text-transform:uppercase;color:#666;margin-bottom:3px}
+}
 </style>
   <script type="module" src="../lessons/gate.js"></script>
 </head>
 <body>
-  <header class="topbar"><a class="topbar__brand" href="index.html"><img class="topbar__logo" src="../lessons/img/karcher-logo.png" alt="Kärcher"><span>AI in Sales · Trainer hub</span></a><nav class="topbar__nav"><a class="topbar__item" href="index.html">Home</a><a class="topbar__item" href="present.html">Present</a><a class="topbar__item" href="selflearn.html">Learn</a><a class="topbar__item on" href="plan.html">Plan</a><a class="topbar__item" href="weeks.html">Rollout</a><a class="topbar__item" href="faq.html">FAQ</a><a class="topbar__item" href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">The platform</a></nav></header>
+  <header class="topbar"><a class="topbar__brand" href="index.html"><img class="topbar__logo" src="../lessons/img/karcher-logo.png" alt="Kärcher"><span>AI in Sales · Trainer hub</span></a><nav class="topbar__nav"><a class="topbar__item" href="index.html">Home</a><a class="topbar__item" href="first-session.html">First session</a><a class="topbar__item" href="present.html">Present</a><a class="topbar__item" href="selflearn.html">Learn</a><a class="topbar__item on" href="plan.html">Plan</a><a class="topbar__item" href="weeks.html">Rollout</a><a class="topbar__item" href="faq.html">FAQ</a><a class="topbar__item" href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">The platform</a></nav></header>
 
   <header class="hero">
     <p class="hero__eyebrow">The manual</p>
     <h1 class="hero__title">The Trainer Playbook</h1>
-    <p class="hero__sub">Selection logic, the sprint-day run sheet, two facilitation points, the pre-session checklist.</p>
+    <p class="hero__sub">The short companion to this hub: the first session, the run formats, rehearsal and facilitation, checks and support.</p>
   </header>
 
-  <div class="tour" id="tour">
-    <span class="tour__photo"><img src="../lessons/img/guide-w1.jpg" alt="Your guide (AI-generated portrait)"></span>
-    <div class="tour__bubble">
-      <span id="tour-text">New to the playbook? Thirty seconds.</span><br>
-      <button type="button" class="btn tour__go" id="tour-start">&#9654; Start the tour</button>
-      <button type="button" class="tour__skip" id="tour-skip" hidden>Skip the tour</button>
-    </div>
+  <div class="brief">
+    <span class="brief__photo"><img src="../lessons/img/guide-w1.jpg" alt="Your guide (AI-generated portrait)"></span>
+    <div class="brief__bubble"><b>The playbook</b><ul><li>Four short chapters that hold what exists only here.</li><li>Chapter one goes with your first session; the rest is there when you need it.</li></ul></div>
   </div>
-  <script type="application/json" id="tour-data">{"audioBase": "tour-en-playbook-", "beats": [{"text": "This is the short companion to the hub. It does not re-teach the AI content; the platform carries that, and the session decks carry the scripts."}, {"text": "Four short chapters: how to read a group and pick the content, the run sheet for a sprint day, two facilitation points, and the pre-session checklist. Chapter one is the one you will use before every session."}], "done": "Read chapter one first. The rest is there when you need it."}</script>
 
   <div class="wrap">
 
     <div class="art">
       <p class="crumb"><a href="plan.html">← Plan your session</a></p>
-      <p>The companion to the hub, in four short chapters: what exists only here. Read chapter 1 before your first session; chapter 2 when you run a sprint day. The checklist keeps its ticks in your browser.</p>
+      <p>The companion to the hub, in four short chapters: what exists only here. Chapter 1 goes with
+      your first session; the others are there when you need them. Checklists keep their ticks in your
+      browser.</p>
       <div class="pbgrid">
-<a class="pbcard" href="playbook-1.html"><span class="pbnum">Chapter 1</span><b>Select the Right Content per Group</b><span>Clusters, the four reading rules of the pre-survey, the three instruments, two worked agendas.</span><span class="pbmeta">about 3 min</span></a><a class="pbcard" href="playbook-2.html"><span class="pbnum">Chapter 2</span><b>Run Sheet for the Sprint Day</b><span>The run sheet for a sprint day: the opening, the nine steps with minutes, the leadership block.</span><span class="pbmeta">about 6 min</span></a><a class="pbcard" href="playbook-3.html"><span class="pbnum">Chapter 3</span><b>Two Things Only This Program Needs</b><span>Demoing live without losing the room, and the gate as a habit.</span><span class="pbmeta">about 2 min</span></a><a class="pbcard" href="playbook-4.html"><span class="pbnum">Chapter 4</span><b>Pre-Session Checklist</b><span>Pre-session prep as a checklist, and where to get help.</span><span class="pbmeta">about 2 min</span></a>
+<a class="pbcard" href="playbook-1.html"><span class="pbnum">Chapter 1</span><b>Run Your First Session</b><span>Preparing and running your first session.</span><span class="pbmeta">about 3 min</span></a><a class="pbcard" href="playbook-2.html"><span class="pbnum">Chapter 2</span><b>Adapt for a Specific Group</b><span>Optional adaptation: support the group while keeping the prepared task and timing.</span><span class="pbmeta">about 2 min</span></a><a class="pbcard" href="playbook-3.html"><span class="pbnum">Chapter 3</span><b>Facilitation, Data Rules, and the Longer Formats</b><span>Facilitation, company data guidance and the optional longer course.</span><span class="pbmeta">about 3 min</span></a><a class="pbcard" href="playbook-4.html"><span class="pbnum">Chapter 4</span><b>Checks, Support and Follow-Up</b><span>Preparation checks, support contacts and the seven-day follow-up.</span><span class="pbmeta">about 2 min</span></a>
       </div>
       <p class="note-sm">Prefer one long page to search or print? <a href="playbook-full.html" style="text-decoration:underline">Open the full playbook on one page</a>.</p>
     </div>
 
   </div>
-  <script src="../lessons/tour.js"></script>
 </body>
 </html>

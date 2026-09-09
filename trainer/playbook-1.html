@@ -4,11 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>1. Select the Right Content per Group — Trainer Playbook</title>
+  <title>1. Run Your First Session — Trainer Playbook</title>
   <link rel="icon" href="../lessons/favicon.ico">
   <link rel="stylesheet" href="../lessons/styles.css">
   <style>body{visibility:hidden}</style>
   <style>
+/* Trainer-hub chrome sits lower than the platform's: a trainer arrives to do
+   something, so the first action has to be visible without scrolling, on a
+   laptop and on a phone. These rules only load on the hub's own pages — the
+   lessons stylesheet is shared and stays untouched. */
+.hero{padding:26px 28px 22px}
+.hero__title{font-size:38px;margin:0 0 10px}
+.hero__sub{font-size:16.5px}
+.tour{padding:16px 18px 0}
+@media (max-width:560px){.hero{padding:20px 18px 16px}.hero__title{font-size:29px}
+  .hero__sub{font-size:15.5px}}
+.doorgrid{padding-top:18px}
+/* the one action the home page is for */
+.firstrun{max-width:600px;margin:0 auto;padding:18px 18px 0}
+.firstrun__card{background:var(--ink,#1a1a1a);color:#fff;padding:20px 22px 22px}
+.firstrun__card h2{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;
+  letter-spacing:.02em;font-size:26px;line-height:1.05;margin:0 0 6px}
+.firstrun__card p{font-size:15px;line-height:1.5;margin:0 0 12px;color:rgba(255,255,255,.82)}
+.firstrun__steps{list-style:none;padding:0;margin:0 0 16px;counter-reset:fr}
+.firstrun__steps li{counter-increment:fr;position:relative;padding:6px 0 6px 34px;font-size:15px;
+  line-height:1.45}
+.firstrun__steps li::before{content:counter(fr);position:absolute;left:0;top:6px;width:22px;height:22px;
+  background:var(--yellow,#ffed00);color:#1a1a1a;font-family:var(--cond),Arial,sans-serif;
+  font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.firstrun__card .btn{background:var(--yellow,#ffed00);color:#1a1a1a;border-color:var(--yellow,#ffed00)}
+@media (max-width:560px){.firstrun{padding-top:12px}.firstrun__card{padding:16px 18px}
+  .firstrun__card h2{font-size:23px}.firstrun__steps li{font-size:14px;line-height:1.4}}
+.firstrun__note{font-size:13.5px;color:var(--ink-55,#666);margin:10px 0 0}
+/* text-only orientation for pages whose spoken tour was retired */
+.brief{max-width:600px;margin:0 auto;padding:16px 18px 0;display:flex;gap:14px;align-items:flex-start}
+.brief__photo{flex:none;width:64px;border:3px solid var(--ink,#1a1a1a);
+  border-bottom:7px solid var(--yellow,#ffed00);display:block}
+.brief__photo img{display:block;width:100%;height:auto}
+.brief__bubble{flex:1;background:#fff;border:1px solid var(--line,#ddd);padding:12px 14px;font-size:14.5px}
+.brief__bubble b{display:block;font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;
+  letter-spacing:.06em;font-size:12.5px;color:var(--ink-55,#666);margin-bottom:6px}
+.brief__bubble ul{margin:0;padding-left:18px}
+.brief__bubble li{line-height:1.45;margin:0 0 4px}
 .art{max-width:760px;margin:0 auto;padding:8px 0 40px}
 .art h2{font-size:1.35rem;margin:34px 0 10px;border-left:6px solid var(--yellow);padding-left:12px}
 .art h3{font-size:1.05rem;margin:22px 0 6px}
@@ -52,9 +89,7 @@
 .pbprogress{font-size:.85rem;color:var(--ink-55,#666);margin:6px 0 18px;display:flex;gap:14px;align-items:center}
 .pbprogress button{font:inherit;font-size:.8rem;border:1px solid var(--ink,#1a1a1a);background:#fff;padding:3px 8px;cursor:pointer}
 .crumb a{color:inherit}
-.langrow{display:flex;gap:8px;margin-top:auto;align-items:stretch;flex-wrap:wrap}
-.langrow .btn{align-self:auto}
-.langsel{border:1px solid var(--ink,#1a1a1a);background:#fff;font:inherit;font-size:.85rem;padding:6px 8px;max-width:130px}
+.langnote{font-size:.78rem;color:var(--ink-55,#666);line-height:1.4}
 .pptxlink{font-size:.78rem;color:var(--ink-55,#666);text-decoration:underline;margin-top:4px;display:inline-block}
 .deckalt{font-size:.82rem;font-weight:700;color:var(--ink,#1a1a1a);text-decoration:underline;
   text-underline-offset:3px;margin-top:8px;display:inline-block}
@@ -77,16 +112,27 @@
 .art tbody td:first-child{font-weight:700}
 .art tbody td:last-child{color:var(--ink-55,#666)}
 @media (max-width:700px){.art table{font-size:.86rem}}
+.art .timeline th:first-child,.art .timeline td:first-child{width:13%}
+.art .timeline th:nth-child(2),.art .timeline td:nth-child(2){width:12%}
+.art .timeline th:nth-child(3),.art .timeline td:nth-child(3){width:14%}
+@media screen and (max-width:700px){
+  .art .timeline,.art .timeline tbody{display:block;width:100%}
+  .art .timeline thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .art .timeline tbody tr{display:grid;grid-template-columns:repeat(3,1fr);padding:10px 8px;border-bottom:1px solid #ddd}
+  .art .timeline tbody td{display:block;width:auto!important;padding:4px 8px;border:0}
+  .art .timeline tbody td:last-child{grid-column:1/-1;color:var(--ink,#1a1a1a)}
+  .art .timeline tbody td::before{content:attr(data-label);display:block;font-size:.7rem;font-weight:700;text-transform:uppercase;color:#666;margin-bottom:3px}
+}
 </style>
   <script type="module" src="../lessons/gate.js"></script>
 </head>
 <body>
-  <header class="topbar"><a class="topbar__brand" href="index.html"><img class="topbar__logo" src="../lessons/img/karcher-logo.png" alt="Kärcher"><span>AI in Sales · Trainer hub</span></a><nav class="topbar__nav"><a class="topbar__item" href="index.html">Home</a><a class="topbar__item" href="present.html">Present</a><a class="topbar__item" href="selflearn.html">Learn</a><a class="topbar__item on" href="plan.html">Plan</a><a class="topbar__item" href="weeks.html">Rollout</a><a class="topbar__item" href="faq.html">FAQ</a><a class="topbar__item" href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">The platform</a></nav></header>
+  <header class="topbar"><a class="topbar__brand" href="index.html"><img class="topbar__logo" src="../lessons/img/karcher-logo.png" alt="Kärcher"><span>AI in Sales · Trainer hub</span></a><nav class="topbar__nav"><a class="topbar__item" href="index.html">Home</a><a class="topbar__item" href="first-session.html">First session</a><a class="topbar__item" href="present.html">Present</a><a class="topbar__item" href="selflearn.html">Learn</a><a class="topbar__item on" href="plan.html">Plan</a><a class="topbar__item" href="weeks.html">Rollout</a><a class="topbar__item" href="faq.html">FAQ</a><a class="topbar__item" href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">The platform</a></nav></header>
 
   <header class="hero">
     <p class="hero__eyebrow">The manual · Chapter 1 of 4</p>
-    <h1 class="hero__title">Select the Right Content per Group</h1>
-    <p class="hero__sub">Clusters, the four reading rules of the pre-survey, the three instruments, two worked agendas.</p>
+    <h1 class="hero__title">Run Your First Session</h1>
+    <p class="hero__sub">Preparing and running your first session.</p>
   </header>
 
 
@@ -94,107 +140,106 @@
 
     <div class="art">
       <p class="crumb"><a href="plan.html">← Plan your session</a> · <a href="playbook.html">Trainer Playbook</a></p>
-<nav class="chapnav"><a href="playbook.html">Overview</a><a href="playbook-1.html" class="on">1 · Select the Right Content per Group</a><a href="playbook-2.html">2 · Run Sheet for the Sprint Day</a><a href="playbook-3.html">3 · Two Things Only This Program Needs</a><a href="playbook-4.html">4 · Pre-Session Checklist</a></nav>
-<p>One session cannot be optimal for a Key Account Manager and a Sales
-Director at the same time. The pre-survey sorts the room; the agenda
-follows from it.</p>
-<h3 id="the-clusters-and-their-core">The clusters and their core</h3>
-<p><strong>Cluster A — Key Account &amp; Field Sales.</strong> KAMs,
-direct reps, business development. Complex consultative selling, several
-stakeholders, individual offers. Core: the sales-cycle course on
-NorthStar, with full lesson depth (idea → recipe → example Doc) on
-research (step 2), needs analysis (step 5), and value argumentation
-(step 6).</p>
-<p><strong>Cluster B — Sales Leadership &amp; Management.</strong>
-Directors, area and national sales managers, center managers. Steering
-pipeline, coaching, strategy, reporting. Core: the Your-data cards run
-on the practice tracker, step 9 (follow-up &amp; steering), the
-leadership chapters in the guide, and the team routine they will
-install.</p>
-<p><strong>Mixed room.</strong> The course core plus whatever scores
-highest in the grid: a shared opening (tour, data-safety Basic, one
-Your-data card), then course steps for the sellers and step 9 plus the
-leadership chapters for the leaders. Assign the cluster by the work
-people describe, not by title; an Online Director lands in B.</p>
-<h3 id="the-four-reading-rules">The four reading rules</h3>
+<nav class="chapnav"><a href="playbook.html">Overview</a><a href="playbook-1.html" class="on">1 · Run Your First Session</a><a href="playbook-2.html">2 · Adapt for a Specific Group</a><a href="playbook-3.html">3 · Facilitation, Data Rules, and the Longer Formats</a><a href="playbook-4.html">4 · Checks, Support and Follow-Up</a></nav>
+<p>Everything a first session needs is already written. You pick a
+length, show a fixed set of slides, run the exercises on supplied
+practice material, and make sure the result gets checked.</p>
+<p>The <strong>practice tracker</strong> is a prepared Google Sheets
+spreadsheet with twelve fictional customer accounts. Its rows contain
+example sales stages, industries, values in euros and notes. You will
+copy it and use Gemini to summarise the values. The <a
+href="first-session.html">preparation guide</a> explains each step,
+including where to find the instructions and how to check a total.</p>
+<h3 id="the-three-steps">The three steps</h3>
+<ol type="1">
+<li><strong>Do the task yourself</strong>, about fifteen minutes: open
+<a
+href="https://karcher-ai-sales.web.app/lessons/q-sheets-overview.html">See
+your pipeline at a glance</a>, copy the practice tracker, run the
+prompt, and check one segment total by hand. You have now done exactly
+what your participants will do.</li>
+<li><strong>Read one run sheet</strong>, alongside the selected deck
+notes: <a href="session-30.html">30 minutes</a>, <a
+href="session-60.html">60 minutes</a> or <a href="session-90.html">90
+minutes</a>.</li>
+<li><strong>Rehearse ten minutes</strong> with one colleague: <a
+href="rehearsal.html">the rehearsal sheet</a>.</li>
+</ol>
+<p>No pre-survey and none of the catalog decks are needed for this. They
+are in <a href="playbook-2.html">Section 2</a>, for the session where a specific group needs something
+different.</p>
+<h3 id="the-three-lengths-and-what-they-cut">The three lengths, and what
+they cut</h3>
+<p>All three run on one deck, <strong>Getting started with Gemini in
+Sales</strong> (<code>ttt-7-basics-session</code>). You download the
+presentation file and open it in Google Slides in the browser: see the
+<a href="present.html#use-google-slides">Google Slides setup</a>, which
+also shows how to skip slides. Slide numbering counts the automatic
+title as slide 1. The 30- and 60-minute versions each skip one
+contiguous range:</p>
 <div class="tablewrap"><table>
 
 <thead>
 <tr>
-<th>What you read in the results</th>
-<th>What it decides</th>
+<th>Session</th>
+<th>Show</th>
+<th>Skip</th>
+<th>Participants leave with</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>The focus question</strong> (sell yourself, or steer a
-team)</td>
-<td>Cluster A or B, and therefore the core above</td>
+<td><strong>30 minutes</strong></td>
+<td>1–11, then 20–21</td>
+<td>12–19</td>
+<td>a pipeline table from the practice tracker, one total verified by
+hand</td>
 </tr>
 <tr>
-<td><strong>AI experience</strong> (Beginner / Basic / Intermediate /
-Advanced)</td>
-<td>How much foundations time. A Beginner/Basic majority means guided
-tour first, then the prompting and data-safety Basics</td>
+<td><strong>60 minutes</strong></td>
+<td>1–16, then 20–21</td>
+<td>17–19</td>
+<td>the same, plus a status report from the same rows and a written
+task, question and source check</td>
 </tr>
 <tr>
-<td><strong>The usefulness grid</strong> (rows 1–6 are the Quick-Help
-groups, row 7 is the course)</td>
-<td>Which doors you open; the top rows name it literally. Reference
-pattern from the original survey across 75 colleagues: data &amp;
-pipeline first, then meeting prep &amp; research, then proposals &amp;
-content</td>
-</tr>
-<tr>
-<td><strong>Expectations and concerns</strong> (free text)</td>
-<td>Your opening: quote two of the “one thing I want” answers; the
-data-safety Basic answers most of the concerns; someone who already uses
-AI can show it</td>
+<td><strong>90 minutes</strong></td>
+<td>1–21</td>
+<td>nothing</td>
+<td>the same, plus an unsent customer reply checked against the supplied
+practice facts</td>
 </tr>
 </tbody>
 </table></div>
-<p>Aim for responses from at least half the group, read them in the
-Forms summary view.</p>
-<h3 id="the-three-instruments">The three instruments</h3>
-<p><a
-href="https://docs.google.com/forms/d/1H_6NGj_kTyR38cX9Zxu0v7fDMzElwIhInTca3RgM054/copy">Make
-your own copy of the pre-survey</a> and send <strong>your
-copy’s</strong> link, so the responses land in your own Sheet. The <a
-href="https://gemini.google.com/gem/1ohX4W7tp9NqhLVb6z2vVjTUcyRZr9lBo?usp=sharing">Session-Planner
-Gem</a> drafts the plan from that Sheet; the <a
-href="https://notebooklm.google.com/notebook/18c93186-1d03-4d9f-a803-8c163c9fcf68">Trainer
-Notebook</a> answers questions about the materials with citations. To
-try the Gem before you have a group, copy an example result sheet (<a
-href="https://docs.google.com/spreadsheets/d/1f_rcMn1yuIRTWUsDuSEuil3DoB4Wk1W8AoLa-RpdJqA/copy">seller
-group</a>, <a
-href="https://docs.google.com/spreadsheets/d/172hmBiq732b80d7xWq54X1QA-ojju5jEKoVSJp5d8YA/copy">leader
-group</a>; synthetic answers, no real people) and attach it.</p>
-<h3 id="worked-example-two-groups-two-agendas">Worked example: two
-groups, two agendas</h3>
-<p><strong>Group A — twelve Key Account Managers, mostly Intermediate,
-top needs research and proposals.</strong> Multi-stakeholder
-consultative selling, so they get a course sprint:</p>
-<blockquote>
-<p>Tour (2 min) → data-safety Basic → step 2 Research (heavy, with the
-live ISS demo) → step 3 First contact → step 5 Needs analysis →
-<strong>step 6 Value argument</strong> → <strong>step 7 Presentation
-&amp; demo</strong> → step 9 Follow-up → commitments. ~4 hours. Accent:
-full lesson depth on steps 2, 5, and 6; the translation card as a side
-bite.</p>
-</blockquote>
-<p><strong>Group B — ten Area Sales Managers and Center Managers, top
-needs pipeline and reporting.</strong> They steer teams rather than run
-individual deals, so the agenda tilts to oversight and enablement:</p>
-<blockquote>
-<p>Tour (2 min) → <em>See your pipeline at a glance</em> (everyone runs
-it on the practice tracker) → <em>Turn your sheet into a short
-report</em> → step 9 Follow-up &amp; steering → the leadership chapters
-in the guide (pipeline steering, coaching) → how to run “card of the
-week” with their own teams → commitments. ~3 hours.</p>
-</blockquote>
+<p>The thirty-minute session covers the first exercise. The sixty-minute
+session adds a report, and the ninety-minute session adds a separate
+email exercise. Choose a length that fits the time available and the
+tasks your group wants to practise. Two other shapes exist around them:
+the <strong>fifteen-minute first look</strong> inside an existing team
+meeting (deck <code>ttt-8-team-meeting-intro</code>), and the
+<strong>sales-cycle sprint</strong> for a group that asks for the whole
+cycle (deck <code>ttt-9-course-sprint</code>, half or full day, Section
+3).</p>
+<h3 id="one-check-per-exercise">One check per exercise</h3>
+<p>Each exercise ends by comparing the result with the material it came
+from. In the pipeline exercise that is one segment added by hand from
+the account rows. In the report exercise it is one stage total, the
+largest open deal in the value column, and the date behind any claim
+about recent contact. In the email exercise it is the three supplied
+questions, the supplied facts, and the draft staying unsent. Allow time
+for that comparison, and for the questions it raises.</p>
+<p>The run sheets carry the wording and the timing for each of
+these.</p>
+<h3 id="nobody-needs-customer-data">Nobody needs customer data</h3>
+<p>Every exercise runs on supplied fictional material: the practice
+tracker for the data cards, a practice inquiry for the email card, and
+NorthStar Facility Services for the sales-cycle course. Explain what the
+example contains and that participants can practise without supplying
+their own customer information. The data rules themselves are in Section
+3.</p>
 <hr />
 
-<div class="pbprevnext"><a href="playbook.html">&larr; Overview</a><a href="playbook-2.html">2. Run Sheet for the Sprint Day &rarr;</a></div>
+<div class="pbprevnext"><a href="playbook.html">&larr; Overview</a><a href="playbook-2.html">2. Adapt for a Specific Group &rarr;</a></div>
     </div>
 
   </div>

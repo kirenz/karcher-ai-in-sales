@@ -9,6 +9,43 @@
   <link rel="stylesheet" href="../lessons/styles.css">
   <style>body{visibility:hidden}</style>
   <style>
+/* Trainer-hub chrome sits lower than the platform's: a trainer arrives to do
+   something, so the first action has to be visible without scrolling, on a
+   laptop and on a phone. These rules only load on the hub's own pages — the
+   lessons stylesheet is shared and stays untouched. */
+.hero{padding:26px 28px 22px}
+.hero__title{font-size:38px;margin:0 0 10px}
+.hero__sub{font-size:16.5px}
+.tour{padding:16px 18px 0}
+@media (max-width:560px){.hero{padding:20px 18px 16px}.hero__title{font-size:29px}
+  .hero__sub{font-size:15.5px}}
+.doorgrid{padding-top:18px}
+/* the one action the home page is for */
+.firstrun{max-width:600px;margin:0 auto;padding:18px 18px 0}
+.firstrun__card{background:var(--ink,#1a1a1a);color:#fff;padding:20px 22px 22px}
+.firstrun__card h2{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;
+  letter-spacing:.02em;font-size:26px;line-height:1.05;margin:0 0 6px}
+.firstrun__card p{font-size:15px;line-height:1.5;margin:0 0 12px;color:rgba(255,255,255,.82)}
+.firstrun__steps{list-style:none;padding:0;margin:0 0 16px;counter-reset:fr}
+.firstrun__steps li{counter-increment:fr;position:relative;padding:6px 0 6px 34px;font-size:15px;
+  line-height:1.45}
+.firstrun__steps li::before{content:counter(fr);position:absolute;left:0;top:6px;width:22px;height:22px;
+  background:var(--yellow,#ffed00);color:#1a1a1a;font-family:var(--cond),Arial,sans-serif;
+  font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.firstrun__card .btn{background:var(--yellow,#ffed00);color:#1a1a1a;border-color:var(--yellow,#ffed00)}
+@media (max-width:560px){.firstrun{padding-top:12px}.firstrun__card{padding:16px 18px}
+  .firstrun__card h2{font-size:23px}.firstrun__steps li{font-size:14px;line-height:1.4}}
+.firstrun__note{font-size:13.5px;color:var(--ink-55,#666);margin:10px 0 0}
+/* text-only orientation for pages whose spoken tour was retired */
+.brief{max-width:600px;margin:0 auto;padding:16px 18px 0;display:flex;gap:14px;align-items:flex-start}
+.brief__photo{flex:none;width:64px;border:3px solid var(--ink,#1a1a1a);
+  border-bottom:7px solid var(--yellow,#ffed00);display:block}
+.brief__photo img{display:block;width:100%;height:auto}
+.brief__bubble{flex:1;background:#fff;border:1px solid var(--line,#ddd);padding:12px 14px;font-size:14.5px}
+.brief__bubble b{display:block;font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;
+  letter-spacing:.06em;font-size:12.5px;color:var(--ink-55,#666);margin-bottom:6px}
+.brief__bubble ul{margin:0;padding-left:18px}
+.brief__bubble li{line-height:1.45;margin:0 0 4px}
 .art{max-width:760px;margin:0 auto;padding:8px 0 40px}
 .art h2{font-size:1.35rem;margin:34px 0 10px;border-left:6px solid var(--yellow);padding-left:12px}
 .art h3{font-size:1.05rem;margin:22px 0 6px}
@@ -52,9 +89,7 @@
 .pbprogress{font-size:.85rem;color:var(--ink-55,#666);margin:6px 0 18px;display:flex;gap:14px;align-items:center}
 .pbprogress button{font:inherit;font-size:.8rem;border:1px solid var(--ink,#1a1a1a);background:#fff;padding:3px 8px;cursor:pointer}
 .crumb a{color:inherit}
-.langrow{display:flex;gap:8px;margin-top:auto;align-items:stretch;flex-wrap:wrap}
-.langrow .btn{align-self:auto}
-.langsel{border:1px solid var(--ink,#1a1a1a);background:#fff;font:inherit;font-size:.85rem;padding:6px 8px;max-width:130px}
+.langnote{font-size:.78rem;color:var(--ink-55,#666);line-height:1.4}
 .pptxlink{font-size:.78rem;color:var(--ink-55,#666);text-decoration:underline;margin-top:4px;display:inline-block}
 .deckalt{font-size:.82rem;font-weight:700;color:var(--ink,#1a1a1a);text-decoration:underline;
   text-underline-offset:3px;margin-top:8px;display:inline-block}
@@ -77,11 +112,22 @@
 .art tbody td:first-child{font-weight:700}
 .art tbody td:last-child{color:var(--ink-55,#666)}
 @media (max-width:700px){.art table{font-size:.86rem}}
+.art .timeline th:first-child,.art .timeline td:first-child{width:13%}
+.art .timeline th:nth-child(2),.art .timeline td:nth-child(2){width:12%}
+.art .timeline th:nth-child(3),.art .timeline td:nth-child(3){width:14%}
+@media screen and (max-width:700px){
+  .art .timeline,.art .timeline tbody{display:block;width:100%}
+  .art .timeline thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .art .timeline tbody tr{display:grid;grid-template-columns:repeat(3,1fr);padding:10px 8px;border-bottom:1px solid #ddd}
+  .art .timeline tbody td{display:block;width:auto!important;padding:4px 8px;border:0}
+  .art .timeline tbody td:last-child{grid-column:1/-1;color:var(--ink,#1a1a1a)}
+  .art .timeline tbody td::before{content:attr(data-label);display:block;font-size:.7rem;font-weight:700;text-transform:uppercase;color:#666;margin-bottom:3px}
+}
 </style>
   <script type="module" src="../lessons/gate.js"></script>
 </head>
 <body>
-  <header class="topbar"><a class="topbar__brand" href="index.html"><img class="topbar__logo" src="../lessons/img/karcher-logo.png" alt="Kärcher"><span>AI in Sales · Trainer hub</span></a><nav class="topbar__nav"><a class="topbar__item" href="index.html">Home</a><a class="topbar__item" href="present.html">Present</a><a class="topbar__item" href="selflearn.html">Learn</a><a class="topbar__item" href="plan.html">Plan</a><a class="topbar__item on" href="weeks.html">Rollout</a><a class="topbar__item" href="faq.html">FAQ</a><a class="topbar__item" href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">The platform</a></nav></header>
+  <header class="topbar"><a class="topbar__brand" href="index.html"><img class="topbar__logo" src="../lessons/img/karcher-logo.png" alt="Kärcher"><span>AI in Sales · Trainer hub</span></a><nav class="topbar__nav"><a class="topbar__item" href="index.html">Home</a><a class="topbar__item" href="first-session.html">First session</a><a class="topbar__item" href="present.html">Present</a><a class="topbar__item" href="selflearn.html">Learn</a><a class="topbar__item" href="plan.html">Plan</a><a class="topbar__item on" href="weeks.html">Rollout</a><a class="topbar__item" href="faq.html">FAQ</a><a class="topbar__item" href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">The platform</a></nav></header>
 
   <header class="hero">
     <p class="hero__eyebrow">Rollout guide · 1 of 4</p>
@@ -89,15 +135,10 @@
     <p class="hero__sub">Four small moves on material that already exists. No launch event needed.</p>
   </header>
 
-  <div class="tour" id="tour">
-    <span class="tour__photo"><img src="../lessons/img/guide-w1.jpg" alt="Your guide (AI-generated portrait)"></span>
-    <div class="tour__bubble">
-      <span id="tour-text">Not sure where to start? Take the 30-second version.</span><br>
-      <button type="button" class="btn tour__go" id="tour-start">&#9654; Start the tour</button>
-      <button type="button" class="tour__skip" id="tour-skip" hidden>Skip the tour</button>
-    </div>
+  <div class="brief">
+    <span class="brief__photo"><img src="../lessons/img/guide-w1.jpg" alt="Your guide (AI-generated portrait)"></span>
+    <div class="brief__bubble"><b>The first four weeks</b><ul><li>Week one is your first session, prepared on the first-session page.</li><li>The weeks after that turn one session into a routine and a short note back.</li></ul></div>
   </div>
-  <script type="application/json" id="tour-data">{"audioBase": "tour-en-weeks-", "beats": [{"text": "You do not need a launch event. You need four small moves in four weeks, each on material that already exists."}, {"text": "Before week one, copy the pre-survey and send your own copy, so the answers belong to you. Then book two slots: fifteen minutes in an existing meeting, and one hour for a real session."}, {"text": "Week one is the first look. Week two reads the survey and plans. Week three is the real session. And week four turns it into a routine, plus one short note back to the Academy."}], "done": "Four small moves. Start by copying the survey."}</script>
 
   <div class="wrap">
 
@@ -106,49 +147,48 @@
 
       <p>You do not need a big launch. You need four small moves in four weeks, each on material that already exists. Everything linked here sits on the <a href="index.html">start page</a>.</p>
 
-      <h2>Before week one: know your room</h2>
+      <h2>Before week one: prepare one session</h2>
       <ul class="check">
-        <li><a href="https://docs.google.com/forms/d/1H_6NGj_kTyR38cX9Zxu0v7fDMzElwIhInTca3RgM054/copy" target="_blank" rel="noopener">Copy the pre-survey</a> once, then send <b>your copy's</b> link to your sales team. Five minutes for them; the answers belong to you.</li>
-        <li>Smoke-test the platform where you will show it: <a href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">karcher-ai-sales.web.app</a> loads, the tour plays, one card opens.</li>
-        <li>Book two slots now: fifteen minutes in an existing team meeting (week one), and sixty minutes for a real session (week two or three).</li>
+        <li>Walk the <a href="first-session.html">first-session path</a>: try the card yourself, read one run sheet, rehearse ten minutes with a colleague. About an hour.</li>
+        <li>Smoke-test the platform where you will show it: <a href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">karcher-ai-sales.web.app</a> loads and one card opens.</li>
+        <li>Check Workspace and Gemini access before the session, so there is time to resolve any problem. If one device does not work on the day, pair that person with a colleague.</li>
+        <li>Book the slot: 30, 60 or 90 minutes, whichever you can get.</li>
       </ul>
 
-      <h2>Week one: the fifteen-minute first look</h2>
-      <p>Do not start with a training. Start inside a meeting that already exists, with the <b>first-look deck</b>: one live card, one small exercise, done. It is the safest first run, and it creates demand for the real session.</p>
+      <h2>Week one: run your first session</h2>
+      <p>Run the run sheet you prepared, as it is written. Every participant leaves with one result they produced and checked themselves; that is the whole goal of the first session.</p>
       <ul class="check">
-        <li>Run the first-look deck (fifteen minutes, script in the notes).</li>
-        <li>Close with one commitment per person: one card they will try this week.</li>
-        <li>Put the platform link in the meeting notes; it stays there every week from now on.</li>
-      </ul>
-
-      <h2>Week two: read your survey, plan the real session</h2>
-      <p>By now the answers are in. Let them decide the content, not your taste.</p>
-      <ul class="check">
-        <li>Open your response sheet, attach it to the <a href="https://gemini.google.com/gem/1ohX4W7tp9NqhLVb6z2vVjTUcyRZr9lBo?usp=sharing" target="_blank" rel="noopener">Session-Planner Gem</a>, and tell it your session length. It drafts the plan, the opening quotes, and the skip list; you stay the judge.</li>
-        <li>Pick the size honestly: sixty minutes runs the Basics session as it is; ninety adds the group's top cards hands-on; two hours adds sales-cycle steps on the practice case.</li>
-        <li>Check accounts: every participant can sign in to Workspace with Gemini. No account, no hands-on.</li>
-      </ul>
-
-      <h2>Week three: the first real session</h2>
-      <ul class="check">
-        <li>Run the session deck for your size, script in the notes, exercises on the slides.</li>
+        <li>Follow the run sheet: slides, exercise, expected output, check, cut rule.</li>
         <li>Protect the hands-on minutes; they matter more than finishing your slides.</li>
-        <li>End every exercise with the handoff: "now run the same recipe on one of your own accounts". That minute turns a demo into a habit.</li>
-        <li>Close with commitments again: one card or step per person, and one visible sign it worked.</li>
+        <li>End with the handoff: "now run the same recipe on one of your own accounts."</li>
+        <li>Put the platform link in the meeting notes; it stays there from now on.</li>
+      </ul>
+
+      <h2>Week two: the seven-day follow-up</h2>
+      <p>A week later, ask one question in the team meeting: who used it again on their own work, and what came out? That answer is your real result, not the attendance list.</p>
+      <ul class="check">
+        <li>Ask the follow-up question and note the answers; the <a href="progress.html">progress page</a> has the wording.</li>
+        <li>Offer one short repeat for anyone who got stuck. Ten minutes, same card.</li>
+        <li>Name the card of the week: one use case, one habit.</li>
+      </ul>
+
+      <h2>Week three: the second group, or the longer format</h2>
+      <ul class="check">
+        <li>Run the same run sheet for the next group, or step up to 60 or 90 minutes with the group you already had.</li>
+        <li>Only now, if a group needs something different, reach for the <a href="plan.html">optional pre-survey and the playbook</a>.</li>
+        <li>If leadership will not give you slots, use <a href="resistance.html">the pushback moves</a>.</li>
       </ul>
 
       <h2>Week four: make it a rhythm, and say so</h2>
       <ul class="check">
-        <li>In the team meeting, ask the one question: "what did you try, what did it save?"</li>
-        <li>Name the card of the week; one use case, one habit.</li>
-        <li>Send your first <a href="progress.html">progress note to the Academy</a>: three numbers, one win, one blocker. Ten minutes.</li>
+        <li>In the team meeting, keep asking: "what did you try, what did it save?"</li>
+        <li>Log your sessions while they are fresh, and send your first <a href="progress.html">note to Sales Enablement</a>: reach, independent reuse, one win, one blocker.</li>
         <li>Set a checkpoint about thirty days out: "what did you actually use?"</li>
       </ul>
 
-      <p>If leadership will not give you the slots, that has <a href="resistance.html">its own page</a>. If energy dips after week four, that is <a href="quiet.html">normal, and fixable</a>.</p>
+      <p>If energy dips after week four, that is <a href="quiet.html">normal, and fixable</a>.</p>
     </div>
 
   </div>
-  <script src="../lessons/tour.js"></script>
 </body>
 </html>

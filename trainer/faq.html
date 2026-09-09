@@ -9,6 +9,43 @@
   <link rel="stylesheet" href="../lessons/styles.css">
   <style>body{visibility:hidden}</style>
   <style>
+/* Trainer-hub chrome sits lower than the platform's: a trainer arrives to do
+   something, so the first action has to be visible without scrolling, on a
+   laptop and on a phone. These rules only load on the hub's own pages — the
+   lessons stylesheet is shared and stays untouched. */
+.hero{padding:26px 28px 22px}
+.hero__title{font-size:38px;margin:0 0 10px}
+.hero__sub{font-size:16.5px}
+.tour{padding:16px 18px 0}
+@media (max-width:560px){.hero{padding:20px 18px 16px}.hero__title{font-size:29px}
+  .hero__sub{font-size:15.5px}}
+.doorgrid{padding-top:18px}
+/* the one action the home page is for */
+.firstrun{max-width:600px;margin:0 auto;padding:18px 18px 0}
+.firstrun__card{background:var(--ink,#1a1a1a);color:#fff;padding:20px 22px 22px}
+.firstrun__card h2{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;
+  letter-spacing:.02em;font-size:26px;line-height:1.05;margin:0 0 6px}
+.firstrun__card p{font-size:15px;line-height:1.5;margin:0 0 12px;color:rgba(255,255,255,.82)}
+.firstrun__steps{list-style:none;padding:0;margin:0 0 16px;counter-reset:fr}
+.firstrun__steps li{counter-increment:fr;position:relative;padding:6px 0 6px 34px;font-size:15px;
+  line-height:1.45}
+.firstrun__steps li::before{content:counter(fr);position:absolute;left:0;top:6px;width:22px;height:22px;
+  background:var(--yellow,#ffed00);color:#1a1a1a;font-family:var(--cond),Arial,sans-serif;
+  font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.firstrun__card .btn{background:var(--yellow,#ffed00);color:#1a1a1a;border-color:var(--yellow,#ffed00)}
+@media (max-width:560px){.firstrun{padding-top:12px}.firstrun__card{padding:16px 18px}
+  .firstrun__card h2{font-size:23px}.firstrun__steps li{font-size:14px;line-height:1.4}}
+.firstrun__note{font-size:13.5px;color:var(--ink-55,#666);margin:10px 0 0}
+/* text-only orientation for pages whose spoken tour was retired */
+.brief{max-width:600px;margin:0 auto;padding:16px 18px 0;display:flex;gap:14px;align-items:flex-start}
+.brief__photo{flex:none;width:64px;border:3px solid var(--ink,#1a1a1a);
+  border-bottom:7px solid var(--yellow,#ffed00);display:block}
+.brief__photo img{display:block;width:100%;height:auto}
+.brief__bubble{flex:1;background:#fff;border:1px solid var(--line,#ddd);padding:12px 14px;font-size:14.5px}
+.brief__bubble b{display:block;font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;
+  letter-spacing:.06em;font-size:12.5px;color:var(--ink-55,#666);margin-bottom:6px}
+.brief__bubble ul{margin:0;padding-left:18px}
+.brief__bubble li{line-height:1.45;margin:0 0 4px}
 .art{max-width:760px;margin:0 auto;padding:8px 0 40px}
 .art h2{font-size:1.35rem;margin:34px 0 10px;border-left:6px solid var(--yellow);padding-left:12px}
 .art h3{font-size:1.05rem;margin:22px 0 6px}
@@ -52,9 +89,7 @@
 .pbprogress{font-size:.85rem;color:var(--ink-55,#666);margin:6px 0 18px;display:flex;gap:14px;align-items:center}
 .pbprogress button{font:inherit;font-size:.8rem;border:1px solid var(--ink,#1a1a1a);background:#fff;padding:3px 8px;cursor:pointer}
 .crumb a{color:inherit}
-.langrow{display:flex;gap:8px;margin-top:auto;align-items:stretch;flex-wrap:wrap}
-.langrow .btn{align-self:auto}
-.langsel{border:1px solid var(--ink,#1a1a1a);background:#fff;font:inherit;font-size:.85rem;padding:6px 8px;max-width:130px}
+.langnote{font-size:.78rem;color:var(--ink-55,#666);line-height:1.4}
 .pptxlink{font-size:.78rem;color:var(--ink-55,#666);text-decoration:underline;margin-top:4px;display:inline-block}
 .deckalt{font-size:.82rem;font-weight:700;color:var(--ink,#1a1a1a);text-decoration:underline;
   text-underline-offset:3px;margin-top:8px;display:inline-block}
@@ -77,11 +112,22 @@
 .art tbody td:first-child{font-weight:700}
 .art tbody td:last-child{color:var(--ink-55,#666)}
 @media (max-width:700px){.art table{font-size:.86rem}}
+.art .timeline th:first-child,.art .timeline td:first-child{width:13%}
+.art .timeline th:nth-child(2),.art .timeline td:nth-child(2){width:12%}
+.art .timeline th:nth-child(3),.art .timeline td:nth-child(3){width:14%}
+@media screen and (max-width:700px){
+  .art .timeline,.art .timeline tbody{display:block;width:100%}
+  .art .timeline thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .art .timeline tbody tr{display:grid;grid-template-columns:repeat(3,1fr);padding:10px 8px;border-bottom:1px solid #ddd}
+  .art .timeline tbody td{display:block;width:auto!important;padding:4px 8px;border:0}
+  .art .timeline tbody td:last-child{grid-column:1/-1;color:var(--ink,#1a1a1a)}
+  .art .timeline tbody td::before{content:attr(data-label);display:block;font-size:.7rem;font-weight:700;text-transform:uppercase;color:#666;margin-bottom:3px}
+}
 </style>
   <script type="module" src="../lessons/gate.js"></script>
 </head>
 <body>
-  <header class="topbar"><a class="topbar__brand" href="index.html"><img class="topbar__logo" src="../lessons/img/karcher-logo.png" alt="Kärcher"><span>AI in Sales · Trainer hub</span></a><nav class="topbar__nav"><a class="topbar__item" href="index.html">Home</a><a class="topbar__item" href="present.html">Present</a><a class="topbar__item" href="selflearn.html">Learn</a><a class="topbar__item" href="plan.html">Plan</a><a class="topbar__item" href="weeks.html">Rollout</a><a class="topbar__item on" href="faq.html">FAQ</a><a class="topbar__item" href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">The platform</a></nav></header>
+  <header class="topbar"><a class="topbar__brand" href="index.html"><img class="topbar__logo" src="../lessons/img/karcher-logo.png" alt="Kärcher"><span>AI in Sales · Trainer hub</span></a><nav class="topbar__nav"><a class="topbar__item" href="index.html">Home</a><a class="topbar__item" href="first-session.html">First session</a><a class="topbar__item" href="present.html">Present</a><a class="topbar__item" href="selflearn.html">Learn</a><a class="topbar__item" href="plan.html">Plan</a><a class="topbar__item" href="weeks.html">Rollout</a><a class="topbar__item on" href="faq.html">FAQ</a><a class="topbar__item" href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">The platform</a></nav></header>
 
   <header class="hero">
     <p class="hero__eyebrow">FAQ · Objection handling</p>
@@ -103,10 +149,10 @@
 
     <div class="art faq" id="faq-list">
       <p class="crumb"><a href="index.html">← Trainer hub</a></p>
-      <p>The objections below are the real ones, collected from the sales survey and the first trainings, roughly in the order you will hear them. Every answer stands on the same two feet: the data rules are built in, and a person checks before anything reaches a customer.</p>
+      <p>The objections below are the real ones, collected from the sales survey and the first trainings, roughly in the order you will hear them. Every answer stands on the same two feet: the approved data rules apply, and a person checks the output before it is used.</p>
       <details open>
         <summary>“Is this safe? What about data security and compliance?”</summary>
-        <div class="a">Good news first: in our approved tools, signed in with the Kärcher account, you are allowed to work with real customer data; the Workspace contract keeps it confidential and the tools never train on it. Your part is light but real: share only the information the task actually needs, then verify the output. To rank a pipeline, AI needs stage, value, and dates, not a customer's phone number. In the sessions we practice on NorthStar, which is fictional, so everyone can prompt freely.</div>
+        <div class="a">In our approved tools, signed in with the Kärcher account, working with customer data is permitted: the Workspace agreement keeps it confidential and the content is not used to train the models. That is the company rule, and it does not remove your own responsibility. Share only the information the task actually needs, and check the output before it is used. To rank a pipeline, AI needs stage, value, and dates, not a customer's phone number. In the exercises we work on the practice tracker and on NorthStar, which are fictional, so nobody has to weigh that question while learning.</div>
       </details>
       <details>
         <summary>“Won't AI just replace me?”</summary>
@@ -114,7 +160,7 @@
       </details>
       <details>
         <summary>“How can I trust the numbers? It makes things up.”</summary>
-        <div class="a">You are right not to trust it blindly; that is the job, not a flaw in the training. So we build two reflexes: tell AI to flag missing data rather than invent it, and check every result before anything customer-facing. The platform's own example documents model this: where no date was agreed, the follow-up says “to verify” instead of inventing one. AI drafts; you verify.</div>
+        <div class="a">You are right not to trust it blindly. AI can state something wrong with full confidence, and answers built on your own documents can still be wrong or incomplete, so we build two habits instead of promising accuracy: tell AI to flag missing data rather than invent it, and check the result against the source before anything is used. The platform's example documents model this: where no date was agreed, the follow-up says “to verify” instead of inventing one. Every exercise ends with a check for that reason.</div>
       </details>
       <details>
         <summary>“I'll lose my own voice and style.”</summary>
@@ -122,7 +168,7 @@
       </details>
       <details>
         <summary>“The output isn't in Kärcher corporate identity.”</summary>
-        <div class="a">Correct, and raw output is never customer-ready. AI gets you to a strong draft fast; you then apply the Kärcher template, the approved claims, and the CI before anything goes out. For customer-facing material the normal sign-off still applies on top.</div>
+        <div class="a">Correct: raw output is a draft, not customer-ready material. AI gets you to a strong draft fast; you then apply the Kärcher template, the approved claims, and the CI before anything goes out. For customer-facing material the normal sign-off still applies on top.</div>
       </details>
       <details>
         <summary>“Is the effort worth it? I'm already busy.”</summary>
@@ -134,7 +180,7 @@
       </details>
       <details>
         <summary>“It's in English. My team won't use it.”</summary>
-        <div class="a">Nobody has to wait for a translation: Chrome translates the whole platform in one click, and the globe icon on every page opens a short guide that shows how, greeting your team in Kärcher's twelve languages. More importantly, the AI itself speaks their language: Gemini and the prepared Gems answer in whatever language they are written to, so coaching, negotiation practice, and customer emails all happen locally. Only these pages and the spoken audio stay English. Full language editions can follow demand, market by market; if your market needs one, say so in your Academy note.</div>
+        <div class="a">The written material is English, and your browser translates it: one right-click turns the platform, this hub and every session script into their language, and the globe icon on each page opens a short guide that shows how. The AI itself speaks their language too: Gemini and the prepared Gems answer in whatever language they are written to, so coaching, negotiation practice, and customer emails all happen locally. The slide files stay English; you present them in the language of the room. If your market needs a translated edition, say so in your monthly note, so the demand is on record.</div>
       </details>
       <details>
         <summary>“We don't even have a CRM here.”</summary>
@@ -142,9 +188,9 @@
       </details>
       <details>
         <summary>“My leadership sees no time for this.”</summary>
-        <div class="a">Then don't ask for time; ask for fifteen minutes inside a meeting that already exists, and bring their own team's survey answers with you. The full set of moves has its own page: When leadership pushes back.</div>
+        <div class="a">Then ask for a smaller slot: thirty minutes, or fifteen minutes inside a meeting that already exists, and bring something from their own team with you. The full set of moves has its own page: When leadership pushes back.</div>
       </details>
-      <p class="note-sm" style="margin-top:18px">Deeper background on every answer: the <a href="playbook.html">Trainer Playbook</a>, section 7.</p>
+      <p class="note-sm" style="margin-top:18px">Background on the checks and where to get help: the <a href="playbook.html">Trainer Playbook</a>.</p>
     </div>
 
   </div>

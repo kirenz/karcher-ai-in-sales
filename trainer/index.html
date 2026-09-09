@@ -9,6 +9,43 @@
   <link rel="stylesheet" href="../lessons/styles.css">
   <style>body{visibility:hidden}</style>
   <style>
+/* Trainer-hub chrome sits lower than the platform's: a trainer arrives to do
+   something, so the first action has to be visible without scrolling, on a
+   laptop and on a phone. These rules only load on the hub's own pages — the
+   lessons stylesheet is shared and stays untouched. */
+.hero{padding:26px 28px 22px}
+.hero__title{font-size:38px;margin:0 0 10px}
+.hero__sub{font-size:16.5px}
+.tour{padding:16px 18px 0}
+@media (max-width:560px){.hero{padding:20px 18px 16px}.hero__title{font-size:29px}
+  .hero__sub{font-size:15.5px}}
+.doorgrid{padding-top:18px}
+/* the one action the home page is for */
+.firstrun{max-width:600px;margin:0 auto;padding:18px 18px 0}
+.firstrun__card{background:var(--ink,#1a1a1a);color:#fff;padding:20px 22px 22px}
+.firstrun__card h2{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;
+  letter-spacing:.02em;font-size:26px;line-height:1.05;margin:0 0 6px}
+.firstrun__card p{font-size:15px;line-height:1.5;margin:0 0 12px;color:rgba(255,255,255,.82)}
+.firstrun__steps{list-style:none;padding:0;margin:0 0 16px;counter-reset:fr}
+.firstrun__steps li{counter-increment:fr;position:relative;padding:6px 0 6px 34px;font-size:15px;
+  line-height:1.45}
+.firstrun__steps li::before{content:counter(fr);position:absolute;left:0;top:6px;width:22px;height:22px;
+  background:var(--yellow,#ffed00);color:#1a1a1a;font-family:var(--cond),Arial,sans-serif;
+  font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.firstrun__card .btn{background:var(--yellow,#ffed00);color:#1a1a1a;border-color:var(--yellow,#ffed00)}
+@media (max-width:560px){.firstrun{padding-top:12px}.firstrun__card{padding:16px 18px}
+  .firstrun__card h2{font-size:23px}.firstrun__steps li{font-size:14px;line-height:1.4}}
+.firstrun__note{font-size:13.5px;color:var(--ink-55,#666);margin:10px 0 0}
+/* text-only orientation for pages whose spoken tour was retired */
+.brief{max-width:600px;margin:0 auto;padding:16px 18px 0;display:flex;gap:14px;align-items:flex-start}
+.brief__photo{flex:none;width:64px;border:3px solid var(--ink,#1a1a1a);
+  border-bottom:7px solid var(--yellow,#ffed00);display:block}
+.brief__photo img{display:block;width:100%;height:auto}
+.brief__bubble{flex:1;background:#fff;border:1px solid var(--line,#ddd);padding:12px 14px;font-size:14.5px}
+.brief__bubble b{display:block;font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;
+  letter-spacing:.06em;font-size:12.5px;color:var(--ink-55,#666);margin-bottom:6px}
+.brief__bubble ul{margin:0;padding-left:18px}
+.brief__bubble li{line-height:1.45;margin:0 0 4px}
 .art{max-width:760px;margin:0 auto;padding:8px 0 40px}
 .art h2{font-size:1.35rem;margin:34px 0 10px;border-left:6px solid var(--yellow);padding-left:12px}
 .art h3{font-size:1.05rem;margin:22px 0 6px}
@@ -52,9 +89,7 @@
 .pbprogress{font-size:.85rem;color:var(--ink-55,#666);margin:6px 0 18px;display:flex;gap:14px;align-items:center}
 .pbprogress button{font:inherit;font-size:.8rem;border:1px solid var(--ink,#1a1a1a);background:#fff;padding:3px 8px;cursor:pointer}
 .crumb a{color:inherit}
-.langrow{display:flex;gap:8px;margin-top:auto;align-items:stretch;flex-wrap:wrap}
-.langrow .btn{align-self:auto}
-.langsel{border:1px solid var(--ink,#1a1a1a);background:#fff;font:inherit;font-size:.85rem;padding:6px 8px;max-width:130px}
+.langnote{font-size:.78rem;color:var(--ink-55,#666);line-height:1.4}
 .pptxlink{font-size:.78rem;color:var(--ink-55,#666);text-decoration:underline;margin-top:4px;display:inline-block}
 .deckalt{font-size:.82rem;font-weight:700;color:var(--ink,#1a1a1a);text-decoration:underline;
   text-underline-offset:3px;margin-top:8px;display:inline-block}
@@ -77,61 +112,77 @@
 .art tbody td:first-child{font-weight:700}
 .art tbody td:last-child{color:var(--ink-55,#666)}
 @media (max-width:700px){.art table{font-size:.86rem}}
+.art .timeline th:first-child,.art .timeline td:first-child{width:13%}
+.art .timeline th:nth-child(2),.art .timeline td:nth-child(2){width:12%}
+.art .timeline th:nth-child(3),.art .timeline td:nth-child(3){width:14%}
+@media screen and (max-width:700px){
+  .art .timeline,.art .timeline tbody{display:block;width:100%}
+  .art .timeline thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .art .timeline tbody tr{display:grid;grid-template-columns:repeat(3,1fr);padding:10px 8px;border-bottom:1px solid #ddd}
+  .art .timeline tbody td{display:block;width:auto!important;padding:4px 8px;border:0}
+  .art .timeline tbody td:last-child{grid-column:1/-1;color:var(--ink,#1a1a1a)}
+  .art .timeline tbody td::before{content:attr(data-label);display:block;font-size:.7rem;font-weight:700;text-transform:uppercase;color:#666;margin-bottom:3px}
+}
 </style>
   <script type="module" src="../lessons/gate.js"></script>
 </head>
 <body>
-  <header class="topbar"><a class="topbar__brand" href="index.html"><img class="topbar__logo" src="../lessons/img/karcher-logo.png" alt="Kärcher"><span>AI in Sales · Trainer hub</span></a><nav class="topbar__nav"><a class="topbar__item on" href="index.html">Home</a><a class="topbar__item" href="present.html">Present</a><a class="topbar__item" href="selflearn.html">Learn</a><a class="topbar__item" href="plan.html">Plan</a><a class="topbar__item" href="weeks.html">Rollout</a><a class="topbar__item" href="faq.html">FAQ</a><a class="topbar__item" href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">The platform</a></nav></header>
+  <header class="topbar"><a class="topbar__brand" href="index.html"><img class="topbar__logo" src="../lessons/img/karcher-logo.png" alt="Kärcher"><span>AI in Sales · Trainer hub</span></a><nav class="topbar__nav"><a class="topbar__item on" href="index.html">Home</a><a class="topbar__item" href="first-session.html">First session</a><a class="topbar__item" href="present.html">Present</a><a class="topbar__item" href="selflearn.html">Learn</a><a class="topbar__item" href="plan.html">Plan</a><a class="topbar__item" href="weeks.html">Rollout</a><a class="topbar__item" href="faq.html">FAQ</a><a class="topbar__item" href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">The platform</a></nav></header>
 
   <header class="hero">
     <p class="hero__eyebrow">Kärcher · Train-the-Trainer</p>
-    <h1 class="hero__title">Your materials, ready to use</h1>
-    <p class="hero__sub">Everything here is finished: decks to present, decks to learn from, and the tools that plan your session. Pick a tile.</p>
+    <h1 class="hero__title">Run your first session</h1>
+    <p class="hero__sub">Start with a prepared session. Use the rest as reference when you need it.</p>
   </header>
 
-  <div class="tour" id="tour">
-    <span class="tour__photo"><img src="../lessons/img/guide-w1.jpg" alt="Your guide (AI-generated portrait)"></span>
-    <div class="tour__bubble">
-      <span id="tour-text">First time here? Get the 30-second overview.</span><br>
-      <button type="button" class="btn tour__go" id="tour-start">&#9654; Start the tour</button>
-      <button type="button" class="tour__skip" id="tour-skip" hidden>Skip the tour</button>
-    </div>
-  </div>
-  <script type="application/json" id="tour-data">{"audioBase": "tour-en-index-", "beats": [{"text": "Welcome to your trainer hub. Everything you need to run this training in your own market sits on this one page. Thirty seconds, and you will know where."}, {"target": "tile-present", "text": "Present. Three ready sessions, from a fifteen-minute first look to a full sprint. One click opens a deck as your own copy in Google Slides, with the spoken script in the notes."}, {"target": "tile-selflearn", "text": "Learn it yourself. One deck per door of the platform, so you know exactly what your teams will see before you stand in front of them."}, {"target": "tile-plan", "text": "Plan your session. Your group answers a five-minute survey, and the planning Gem turns their answers into an agenda you shape. Planning becomes selection, not creation."}, {"target": "tile-weeks", "text": "And when you are ready to roll out: four small moves in four weeks, written down, with the material for each move linked in place."}], "done": "That's the hub. Start with Present, and pick the session that fits your slot."}</script>
 
   <div class="wrap">
 
-    <a class="langchip" href="language.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.4 3.8 5.6 3.8 9s-1.3 6.6-3.8 9c-2.5-2.4-3.8-5.6-3.8-9S9.5 5.4 12 3z"/></svg><span><b>Not a native English speaker?</b> This hub and the whole platform read in your language, in your browser. And the AI answers in your language too.</span><span class="langchip__cta">Show me how &rarr;</span></a>
+    <div class="firstrun">
+      <div class="firstrun__card">
+        <h2>Prepare your first session</h2>
+        <p>Allow about an hour for preparation. Start with these three steps.</p>
+        <ol class="firstrun__steps">
+          <li>Use Gemini in Google Sheets to summarise the example customer list.</li>
+          <li>Choose a 30, 60 or 90 minute run sheet.</li>
+          <li>Rehearse with a colleague for ten minutes.</li>
+        </ol>
+        <a class="btn" href="first-session.html">Start here &rarr;</a>
+      </div>
+      <p class="firstrun__note">Already prepared? Go straight to the <a href="present.html" style="text-decoration:underline">run sheets and decks</a>.</p>
+    </div>
+  <div class="brief">
+    <span class="brief__photo"><img src="../lessons/img/guide-w1.jpg" alt="Your guide (AI-generated portrait)"></span>
+    <div class="brief__bubble"><b>First time here?</b><ul><li>Prepare one session first: try one card yourself, read one run sheet, rehearse ten minutes with a colleague.</li><li>The catalog, the planning tools and the rollout pages stay below, for when you need them.</li></ul></div>
+  </div>
 
+    <p class="section-heading" style="margin-top:30px">The material, when you need it</p>
     <div class="doorgrid">
-      <a class="door door--primary door--wide" id="tile-present" href="present.html">
+      <a class="door" id="tile-present" href="present.html">
         <h2 class="door__title">Present</h2>
-        <p class="door__sub">The session decks</p>
-        <p class="door__text">Three ready sessions for your teams, from the fifteen-minute first look to the Sales Cycle Sprint. Full scripts in the notes, exercises on the slides.</p>
-        <span class="door__cta">Open the decks →</span>
+        <p class="door__sub">Run sheets and decks</p>
+        <p class="door__text">The 30, 60 and 90 minute run sheets, the deck they share, and the two optional formats: a fifteen-minute first look and the sales-cycle sprint.</p>
+        <span class="door__cta">Open the run sheets →</span>
       </a>
 
       <a class="door" id="tile-selflearn" href="selflearn.html">
-        <h2 class="door__title">Learn it yourself</h2>
+        <h2 class="door__title">Look something up</h2>
         <p class="door__sub">The deck family</p>
-        <p class="door__text">Your own preparation: Start here, then one deck per door of the platform.</p>
-        <span class="door__cta">Start reading →</span>
+        <p class="door__text">One deck per door of the platform. Reference material: read the one your group asks about, not all of them.</p>
+        <span class="door__cta">Open the reference →</span>
       </a>
 
       <a class="door" id="tile-plan" href="plan.html">
-        <h2 class="door__title">Plan your session</h2>
-        <p class="door__sub">Method deck, survey, Gem, notebook</p>
-        <p class="door__text">One deck explains the method; then the pre-survey reads your group, the Gem drafts your agenda, the notebook and playbook answer the rest.</p>
+        <h2 class="door__title">Adapt a session</h2>
+        <p class="door__sub">Optional pre-survey and playbook</p>
+        <p class="door__text">The prepared run sheets work as they are. When a group needs something different, the optional pre-survey and the playbook help you shape it.</p>
         <span class="door__cta">Open the tools →</span>
       </a>
-    </div>
 
-    <p class="section-heading" style="margin-top:34px">Then: bring it into your market</p>
-    <div class="doorgrid">
       <a class="door" id="tile-weeks" href="weeks.html">
         <h2 class="door__title">Your first four weeks</h2>
         <p class="door__sub">The rollout plan</p>
-        <p class="door__text">From the pre-survey to your first sessions to the first progress note, week by week.</p>
+        <p class="door__text">From your first session to a routine your team keeps, week by week.</p>
         <span class="door__cta">Start the plan →</span>
       </a>
 
@@ -141,21 +192,16 @@
         <p class="door__text">Ready answers to the ten objections you will actually hear, from data safety to "we already had an AI training from IT".</p>
         <span class="door__cta">Open the answers →</span>
       </a>
+
+      <a class="door" href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">
+        <h2 class="door__title">The platform</h2>
+        <p class="door__sub">What your teams see</p>
+        <p class="door__text">The learning platform itself: the quick-help cards, the basics, and the sales-cycle course.</p>
+        <span class="door__cta">Open the platform →</span>
+      </a>
     </div>
 
-    <div class="news">
-      <h2>What changed here</h2>
-      <ul>
-        <li><b>23 Aug 2026</b> All nine decks refreshed: slide titles now say what happens on the slide, the basics session shows each click as a zoomed step image, and the exercise slides open the exact screen with the copy button. Take a fresh copy if yours is older.</li>
-        <li><b>23 Aug 2026</b> The session log and the "what is missing" form are live, so every session you run lands in one shared list.</li>
-        <li><b>8 Aug 2026</b> Every quick-help card slide now links straight to its card on the platform, so nobody has to search for it during a session.</li>
-        <li><b>8 Aug 2026</b> Every page now has a spoken guided tour, and each session deck also exists as a script page you can read and translate.</li>
-        <li><b>7 Aug 2026</b> The decks open directly in Google Slides, and the language picker shows the twelve Kärcher languages that are in preparation.</li>
-        <li><b>6 Aug 2026</b> The hub went live: session decks, the deck family, the planning tools, the four-week plan and the FAQ.</li>
-      </ul>
-      <p class="note-sm" style="margin:8px 0 0">Your Google Slides copies do not update themselves.
-      When a deck's date is newer than your copy, take a fresh one.</p>
-    </div>
+    <a class="langchip" href="language.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.4 3.8 5.6 3.8 9s-1.3 6.6-3.8 9c-2.5-2.4-3.8-5.6-3.8-9S9.5 5.4 12 3z"/></svg><span><b>Not a native English speaker?</b> This hub and the whole platform read in your language, in your browser. And the AI answers in your language too.</span><span class="langchip__cta">Show me how &rarr;</span></a>
 
     <div class="news">
       <h2>Something missing?</h2>
@@ -164,9 +210,8 @@
       <a href="https://docs.google.com/forms/d/e/1FAIpQLScoUx4VWrKslySsC5KaL0vx7lJyoz1FkWd1hvQ4l95_nMTINA/viewform" target="_blank" rel="noopener">Tell us what is missing &rarr;</a></p>
     </div>
 
-    <p class="note-sm" style="margin-top:22px">More rollout guidance, when you need it: <a href="resistance.html" style="text-decoration:underline">when leadership pushes back</a> · <a href="quiet.html" style="text-decoration:underline">when usage goes quiet</a> · <a href="progress.html" style="text-decoration:underline">show your progress</a>. And the <a href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener" style="text-decoration:underline">learning platform</a> itself, where your teams learn.</p>
+    <p class="note-sm" style="margin-top:22px">More rollout guidance, when you need it: <a href="resistance.html" style="text-decoration:underline">when leadership pushes back</a> · <a href="quiet.html" style="text-decoration:underline">when usage goes quiet</a> · <a href="progress.html" style="text-decoration:underline">show your progress</a> · the <a href="playbook.html" style="text-decoration:underline">Trainer Playbook</a>.</p>
 
   </div>
-  <script src="../lessons/tour.js"></script>
 </body>
 </html>
