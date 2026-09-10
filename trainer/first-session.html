@@ -51,6 +51,8 @@
 .art h3{font-size:1.05rem;margin:22px 0 6px}
 .art p,.art li{line-height:1.55}
 .art ul{padding-left:22px}
+.term{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
+.words dt{font-weight:700;margin-top:12px}.words dd{margin:2px 0 0;line-height:1.5}
 .say{background:var(--yellow-tint,#fdf6c9);border-left:6px solid var(--yellow);padding:12px 16px;margin:14px 0}
 .say b{display:block;margin-bottom:4px}
 .tmpl{background:#f4f4f1;border:1px solid var(--line,#ddd);padding:14px 16px;font-family:ui-monospace,Menlo,monospace;font-size:.86rem;white-space:pre-wrap;margin:12px 0}
@@ -137,15 +139,19 @@
       <p class="crumb"><a href="index.html">← Trainer Hub</a> · Jump to
       <a href="#sheets-grid" style="text-decoration:underline">run sheet and deck</a> ·
       <a href="#other-formats" style="text-decoration:underline">other formats</a> ·
-      <a href="#adapt" style="text-decoration:underline">adapt</a></p>
+      <a href="#adapt" style="text-decoration:underline">adapt</a> ·
+      <a href="#words" style="text-decoration:underline">sales words</a></p>
 
       <p>This is an example of a workshop you can run with your sales team: 60 minutes, built
       around one exercise from the <a href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">AI Sales
       Enablement platform</a>, the learning site your teams already have. In the exercise, your
       colleagues open Google Sheets, ask Gemini one question about a practice customer list, and
       check the answer by hand. We picked it because, in a survey we ran among Kärcher sales
-      colleagues before building the platform, pipeline overviews were among the tasks that cost
-      them the most time.</p>
+      colleagues before building the platform, <a class="term" href="#w-pipeline">pipeline</a>
+      overviews were among the tasks that cost them the most time.</p>
+      <p class="note-sm">Not from sales yourself? The words that come up in this workshop are
+      explained <a href="#words" style="text-decoration:underline">at the end of the page</a>;
+      dotted words link there.</p>
       <p>The platform holds more exercises, from research to proposals to customer emails. A
       workshop on any of them has the same shape: a card, a prompt, a check, then one task to take
       home. The deck and the run sheet below are built for this example; take them as the pattern.
@@ -158,22 +164,26 @@
       <a href="https://karcher-ai-sales.web.app/lessons/g6-data-safety.html" target="_blank" rel="noopener" style="text-decoration:underline">Data safety</a>,
       three minutes each.</p>
       <ol>
-        <li><strong>Open the exercise card</strong>
+        <li><strong>Open the exercise <a class="term" href="#w-card">card</a></strong>
         <a href="https://karcher-ai-sales.web.app/lessons/q-sheets-overview.html" target="_blank" rel="noopener">See your pipeline at a glance</a>.
-        It holds the instructions, the link to the example spreadsheet and the prompt to paste into Gemini.</li>
+        It holds the instructions, the link to the example spreadsheet and the
+        <a class="term" href="#w-prompt">prompt</a> to paste into Gemini.</li>
         <li><strong>Copy the <a href="https://docs.google.com/spreadsheets/d/1zsaybxnvpHXxRP7c23J2YSe5H50s_h76RZmlIi-2wUM/edit?gid=664314494#gid=664314494" target="_blank" rel="noopener">practice tracker</a></strong>
-        with <strong>File → Make a copy</strong>. Twelve fictional accounts; no customer data anywhere.</li>
-        <li><strong>In your copy, open Ask Gemini</strong>, paste the prompt unchanged, and approve the plan
-        if Gemini shows one. You get a summary table by stage and segment on a new tab called
-        <em>pipeline value</em>.</li>
-        <li><strong>Check one total.</strong> Add up one small segment in the original rows and compare
-        it with the summary. If it differs, look at which rows were included.</li>
+        with <strong>File → Make a copy</strong>. It is a made-up
+        <a class="term" href="#w-tracker">list of twelve customer accounts</a>; no real customer data anywhere.</li>
+        <li><strong>In your copy, open <a class="term" href="#w-gemini">Ask Gemini</a></strong>, paste the
+        prompt unchanged, and approve the plan if Gemini shows one. You get a summary table by
+        <a class="term" href="#w-stage">stage</a> and <a class="term" href="#w-segment">segment</a>
+        on a new tab called <em>pipeline value</em>.</li>
+        <li><strong>Check one total.</strong> Add up the values of one small segment in the original rows and
+        compare the sum with the summary. If it differs, look at which rows were included.</li>
       </ol>
       <p class="note-sm">If the answer only appears in the side panel, ask again for the table on a new
       tab. If a button is missing or the copy fails, ask for access help before your workshop.</p>
 
       <h2 id="session-materials">2 · Open the run sheet and copy the deck, about 20 minutes</h2>
-      <p>The workshop takes 60 minutes: the pipeline table and a short report, each with a check.</p>
+      <p>The workshop takes 60 minutes: the pipeline table and a short
+      <a class="term" href="#w-report">report</a>, each with a check.</p>
       <div class="matgrid" id="sheets-grid">
       <div class="mat"><b>The run sheet</b><span>Slides, minute by minute, the checks, what to do when something fails, what to cut.</span><a class="btn" href="session.html">Open the run sheet</a></div>
       <div class="mat"><b>Getting started with Gemini in Sales</b><span>The deck. English, with speaker notes on every slide.</span><span class="stamp">Updated 10 Sep 2026</span><a class="btn" href="https://docs.google.com/presentation/d/10sO4XgT1AxxNhSk4vx_2_EYwcbKn93acbAvS0arcLRg/copy" target="_blank" rel="noopener">Copy into Google Slides</a></div>
@@ -220,6 +230,39 @@
         <li><input type="checkbox"> Put the platform link in the meeting notes; it stays there from now on.</li>
         <li><input type="checkbox"> Next: the same workshop for the next group, or the same shape on another exercise.</li>
       </ul>
+
+      <h2 id="words">Sales words in this workshop</h2>
+      <p>For trainers who do not work in sales themselves. Plain meanings, as they are used here.</p>
+      <dl class="words">
+        <dt id="w-pipeline">Pipeline</dt>
+        <dd>All the deals a seller is working on right now, seen together: which customer, what they
+        might buy, how far the conversation has come, and roughly what it would be worth. A pipeline
+        overview groups those deals so a manager sees where the money sits.</dd>
+        <dt id="w-tracker">Practice tracker</dt>
+        <dd>Sales teams keep their pipeline in a list, often a spreadsheet, with one row per customer.
+        The practice tracker is such a list, made up for the exercise: twelve fictional customer
+        accounts, each with a stage, a segment, a value in euros and a note. Everyone works on their
+        own copy, and nobody needs real customer data.</dd>
+        <dt id="w-stage">Stage</dt>
+        <dd>How far a deal has come: first contact, needs understood, offer sent, decision pending,
+        won or lost. The tracker names the stage in one column.</dd>
+        <dt id="w-segment">Segment</dt>
+        <dd>The kind of customer, grouped by industry: Food &amp; Beverage, Healthcare, Logistics and
+        so on. Grouping by segment shows which industries carry the most value.</dd>
+        <dt id="w-report">Report</dt>
+        <dd>A short written pipeline update in plain sentences, the kind a sales manager reads before
+        a team meeting: the value in each stage, the biggest open deals, the customers that need
+        attention.</dd>
+        <dt id="w-card">Card</dt>
+        <dd>One page on the platform with one task: the instructions, the example data and the
+        ready-written text for Gemini. The platform's quick-help area is a set of such cards.</dd>
+        <dt id="w-prompt">Prompt</dt>
+        <dd>The text you paste into Gemini to tell it what you want. In this workshop the prompts are
+        already written on the cards; participants copy them unchanged.</dd>
+        <dt id="w-gemini">Ask Gemini</dt>
+        <dd>Gemini is Google's AI assistant. In Google Sheets it opens in a side panel called
+        <em>Ask Gemini</em>; you paste the prompt there and it works on the open spreadsheet.</dd>
+      </dl>
 
       <h2 id="other-formats">Other formats</h2>
       <p>Optional. The copy works the same way.</p>
