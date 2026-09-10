@@ -53,9 +53,6 @@
 .art ul{padding-left:22px}
 .say{background:var(--yellow-tint,#fdf6c9);border-left:6px solid var(--yellow);padding:12px 16px;margin:14px 0}
 .say b{display:block;margin-bottom:4px}
-.check{list-style:none;padding-left:0}
-.check li{padding:7px 0 7px 30px;position:relative;border-bottom:1px solid var(--line,#e5e5e0)}
-.check li::before{content:"";position:absolute;left:0;top:11px;width:14px;height:14px;border:2px solid var(--ink,#1a1a1a);background:#fff}
 .tmpl{background:#f4f4f1;border:1px solid var(--line,#ddd);padding:14px 16px;font-family:ui-monospace,Menlo,monospace;font-size:.86rem;white-space:pre-wrap;margin:12px 0}
 .matgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:12px 0 26px}
 .mat{background:#fff;border:1px solid var(--line,#ddd);padding:14px 16px;display:flex;flex-direction:column;gap:6px}
@@ -153,10 +150,10 @@
       <p>A session worked when someone ran the recipe again without you and looked at whether the
       output was right. So after a session, count the people who did that, out of the people who were
       in the room. Two out of eight is a real result you can report and improve.</p>
-      <ul class="check">
-        <li><b>Independent reuse with a check.</b> How many people ran it again on their own work and verified the output.</li>
-        <li><b>Reach.</b> Sessions held, and how many people were in them.</li>
-        <li><b>One win.</b> One artifact or one sentence, anonymized, from a participant.</li>
+      <ul class="task-list">
+        <li><input type="checkbox"> <b>Independent reuse with a check.</b> How many people ran it again on their own work and verified the output.</li>
+        <li><input type="checkbox"> <b>Reach.</b> Sessions held, and how many people were in them.</li>
+        <li><input type="checkbox"> <b>One win.</b> One artifact or one sentence, anonymized, from a participant.</li>
       </ul>
       <p class="note-sm">How people rate their own confidence is worth asking, and worth reporting as
       a side note. It is not the result: it moves with the mood in the room, and it is not the same as
@@ -198,6 +195,37 @@ Next month: [one planned move]</div>
       the program learns where trainers need backup, and it is where a "no" from
       <a href="resistance.html">a pushback situation</a> belongs.</p>
     </div>
+
+    <script>
+    (function(){
+      var key = "pb-" + location.pathname.split("/").pop();
+      var boxes = Array.prototype.slice.call(document.querySelectorAll(".art ul.task-list input[type=checkbox]"));
+      if (!boxes.length) return;
+      var saved = {};
+      try { saved = JSON.parse(localStorage.getItem(key) || "{}"); } catch (e) {}
+      var bar = document.createElement("p"); bar.className = "pbprogress";
+      var txt = document.createElement("span");
+      var reset = document.createElement("button"); reset.type = "button"; reset.textContent = "Clear all checks";
+      bar.appendChild(txt); bar.appendChild(reset);
+      var first = document.querySelector(".art ul.task-list");
+      first.parentNode.insertBefore(bar, first);
+      function paint(){
+        var n = 0;
+        boxes.forEach(function(b, i){
+          b.checked = !!saved[i]; if (b.checked) n++;
+          b.closest("li").classList.toggle("done", b.checked);
+        });
+        txt.textContent = n + " of " + boxes.length + " checked" + (n ? ", saved in this browser" : "");
+      }
+      boxes.forEach(function(b, i){
+        b.addEventListener("change", function(){
+          saved[i] = b.checked; localStorage.setItem(key, JSON.stringify(saved)); paint();
+        });
+      });
+      reset.addEventListener("click", function(){ saved = {}; localStorage.removeItem(key); paint(); });
+      paint();
+    })();
+    </script>
 
   </div>
 </body>

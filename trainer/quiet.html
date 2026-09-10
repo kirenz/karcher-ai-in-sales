@@ -53,9 +53,6 @@
 .art ul{padding-left:22px}
 .say{background:var(--yellow-tint,#fdf6c9);border-left:6px solid var(--yellow);padding:12px 16px;margin:14px 0}
 .say b{display:block;margin-bottom:4px}
-.check{list-style:none;padding-left:0}
-.check li{padding:7px 0 7px 30px;position:relative;border-bottom:1px solid var(--line,#e5e5e0)}
-.check li::before{content:"";position:absolute;left:0;top:11px;width:14px;height:14px;border:2px solid var(--ink,#1a1a1a);background:#fff}
 .tmpl{background:#f4f4f1;border:1px solid var(--line,#ddd);padding:14px 16px;font-family:ui-monospace,Menlo,monospace;font-size:.86rem;white-space:pre-wrap;margin:12px 0}
 .matgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:12px 0 26px}
 .mat{background:#fff;border:1px solid var(--line,#ddd);padding:14px 16px;display:flex;flex-direction:column;gap:6px}
@@ -154,18 +151,18 @@
 
       <h2>The routine that prevents most of it</h2>
       <p>Usage survives on rhythm, not enthusiasm. Three standing pieces, all inside the existing team meeting:</p>
-      <ul class="check">
-        <li><b>The link stays put.</b> The platform link lives in the meeting notes, every week, forever.</li>
-        <li><b>The card of the week.</b> You name one card; one use case, one habit. Rotate through the tasks your team does most.</li>
-        <li><b>The one question.</b> "What did you try, what did it save?" Thirty seconds per meeting keeps trying normal.</li>
+      <ul class="task-list">
+        <li><input type="checkbox"> <b>The link stays put.</b> The platform link lives in the meeting notes, every week, forever.</li>
+        <li><input type="checkbox"> <b>The card of the week.</b> You name one card; one use case, one habit. Rotate through the tasks your team does most.</li>
+        <li><input type="checkbox"> <b>The one question.</b> "What did you try, what did it save?" Thirty seconds per meeting keeps trying normal.</li>
       </ul>
 
       <h2>When it has already gone quiet</h2>
-      <ul class="check">
-        <li>Restart small: a fifteen-minute refresher in the team meeting, one card, live. Not a new training.</li>
-        <li>Let a colleague show a win. A peer demo beats a trainer demo; your session log tells you who produced something worth showing.</li>
-        <li>Match the card to the season: pipeline and report cards before reviews and year-end, research cards before fair season, translation cards when campaigns localize.</li>
-        <li>Ask the thirty-day question honestly: "what did you actually use?" What comes back tells you which card to push next, and what to drop.</li>
+      <ul class="task-list">
+        <li><input type="checkbox"> Restart small: a fifteen-minute refresher in the team meeting, one card, live. Not a new training.</li>
+        <li><input type="checkbox"> Let a colleague show a win. A peer demo beats a trainer demo; your session log tells you who produced something worth showing.</li>
+        <li><input type="checkbox"> Match the card to the season: pipeline and report cards before reviews and year-end, research cards before fair season, translation cards when campaigns localize.</li>
+        <li><input type="checkbox"> Ask the thirty-day question honestly: "what did you actually use?" What comes back tells you which card to push next, and what to drop.</li>
       </ul>
 
       <h2>What not to do</h2>
@@ -173,6 +170,37 @@
 
       <p>If the quiet has a name, usually a leader who deprioritized it, go back to <a href="resistance.html">the pushback moves</a>.</p>
     </div>
+
+    <script>
+    (function(){
+      var key = "pb-" + location.pathname.split("/").pop();
+      var boxes = Array.prototype.slice.call(document.querySelectorAll(".art ul.task-list input[type=checkbox]"));
+      if (!boxes.length) return;
+      var saved = {};
+      try { saved = JSON.parse(localStorage.getItem(key) || "{}"); } catch (e) {}
+      var bar = document.createElement("p"); bar.className = "pbprogress";
+      var txt = document.createElement("span");
+      var reset = document.createElement("button"); reset.type = "button"; reset.textContent = "Clear all checks";
+      bar.appendChild(txt); bar.appendChild(reset);
+      var first = document.querySelector(".art ul.task-list");
+      first.parentNode.insertBefore(bar, first);
+      function paint(){
+        var n = 0;
+        boxes.forEach(function(b, i){
+          b.checked = !!saved[i]; if (b.checked) n++;
+          b.closest("li").classList.toggle("done", b.checked);
+        });
+        txt.textContent = n + " of " + boxes.length + " checked" + (n ? ", saved in this browser" : "");
+      }
+      boxes.forEach(function(b, i){
+        b.addEventListener("change", function(){
+          saved[i] = b.checked; localStorage.setItem(key, JSON.stringify(saved)); paint();
+        });
+      });
+      reset.addEventListener("click", function(){ saved = {}; localStorage.removeItem(key); paint(); });
+      paint();
+    })();
+    </script>
 
   </div>
   <script src="../lessons/tour.js"></script>
