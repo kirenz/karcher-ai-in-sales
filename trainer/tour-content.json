@@ -4,66 +4,31 @@
   "start": "▶ Start the tour",
   "onboard": {
    "index": {
-    "title": "First time here?",
+    "title": "Where to start",
     "steps": [
-     "Prepare one session first: try one card yourself, read one run sheet, rehearse ten minutes with a colleague.",
-     "The catalog, the planning tools and the rollout pages stay below, for when you need them."
+     "Prepare your session is the whole path: the exercise, your length, the deck, the rehearsal. About an hour.",
+     "Learn, Rollout and Answers are for later: reference decks, the weeks after your first session, and what to say to objections."
     ]
    },
    "first-session": {
     "title": "How this page works",
     "steps": [
-     "Three steps, about an hour in total, and you are ready to run your first session.",
-     "Everything you need is linked here. Nothing else is required for a standard first run."
-    ]
-   },
-   "present": {
-    "title": "Three steps",
-    "steps": [
-     "Pick your length: 30, 60 or 90 minutes. Every run sheet names the slides you show.",
-     "Copy the one deck into Google Slides and skip the slides your run sheet leaves out. Then rehearse once."
+     "Three numbered steps, about an hour in total, and you are ready to run your first session.",
+     "Other formats and adaptation sit at the end of the page. Nothing there is required for a first run."
     ]
    },
    "selflearn": {
     "title": "How to use these decks",
     "steps": [
      "The five door decks are reference: look up the door your group asks about. Nobody presents them.",
-     "Further down, two optional session formats: a fifteen-minute first look and the sales-cycle sprint."
-    ]
-   },
-   "plan": {
-    "title": "Planning in short",
-    "steps": [
-     "Choose a prepared 30, 60 or 90 minute session. Its run sheet explains the slides, exercises and timing.",
-     "The tools below adapt a session to a specific group. They are optional."
+     "Read the script is the quick way in: the deck as a page, in your language."
     ]
    },
    "weeks": {
-    "title": "The first four weeks",
+    "title": "After the first session",
     "steps": [
-     "Week one is your first session, prepared on the first-session page.",
-     "The weeks after that turn one session into a routine and a short note back."
-    ]
-   },
-   "progress": {
-    "title": "What to track",
-    "steps": [
-     "Two things carry the story: how many people you reached, and how many produced a checked result on their own.",
-     "The seven-day follow-up gives you the second number."
-    ]
-   },
-   "resistance": {
-    "title": "Leadership says no time?",
-    "steps": [
-     "Make the ask small: thirty minutes, or fifteen inside a meeting that already exists.",
-     "Bring something from their own team, not from the program: what people produced, and who used it again."
-    ]
-   },
-   "playbook": {
-    "title": "The playbook",
-    "steps": [
-     "Four short chapters that hold what exists only here.",
-     "Chapter one goes with your first session; the rest is there when you need it."
+     "Your first session is prepared on the Prepare page. This page is about what comes after it.",
+     "Three habits inside the team meeting keep it alive, and there is a way back when it goes quiet."
     ]
    }
   },

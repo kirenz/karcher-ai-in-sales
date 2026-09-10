@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Prepare your first session — Trainer hub</title>
+  <title>Prepare your session — Trainer hub</title>
   <link rel="icon" href="../lessons/favicon.ico">
   <link rel="stylesheet" href="../lessons/styles.css">
   <style>body{visibility:hidden}</style>
@@ -123,28 +123,33 @@
   <script type="module" src="../lessons/gate.js"></script>
 </head>
 <body>
-  <header class="topbar"><a class="topbar__brand" href="index.html"><img class="topbar__logo" src="../lessons/img/karcher-logo.png" alt="Kärcher"><span>AI in Sales · Trainer hub</span></a><nav class="topbar__nav"><a class="topbar__item" href="index.html">Home</a><a class="topbar__item on" href="first-session.html">First session</a><a class="topbar__item" href="present.html">Present</a><a class="topbar__item" href="selflearn.html">Learn</a><a class="topbar__item" href="plan.html">Plan</a><a class="topbar__item" href="weeks.html">Rollout</a><a class="topbar__item" href="faq.html">FAQ</a><a class="topbar__item" href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">The platform</a></nav></header>
+  <header class="topbar"><a class="topbar__brand" href="index.html"><img class="topbar__logo" src="../lessons/img/karcher-logo.png" alt="Kärcher"><span>AI in Sales · Trainer hub</span></a><nav class="topbar__nav"><a class="topbar__item" href="index.html">Home</a><a class="topbar__item on" href="first-session.html">Prepare</a><a class="topbar__item" href="selflearn.html">Learn</a><a class="topbar__item" href="weeks.html">Rollout</a><a class="topbar__item" href="faq.html">Answers</a><a class="topbar__item" href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">The platform</a></nav></header>
 
   <header class="hero">
-    <p class="hero__eyebrow">Start here</p>
-    <h1 class="hero__title">Prepare your first session</h1>
-    <p class="hero__sub">A step-by-step guide to the example exercise, your session plan and a short practice with a colleague.</p>
+    <p class="hero__eyebrow">Prepare</p>
+    <h1 class="hero__title">Prepare your session</h1>
+    <p class="hero__sub">Try the exercise, pick your length, copy the deck, rehearse once. About an hour.</p>
   </header>
 
+  <div class="brief">
+    <span class="brief__photo"><img src="../lessons/img/guide-w1.jpg" alt="Your guide (AI-generated portrait)"></span>
+    <div class="brief__bubble"><b>How this page works</b><ul><li>Three numbered steps, about an hour in total, and you are ready to run your first session.</li><li>Other formats and adaptation sit at the end of the page. Nothing there is required for a first run.</li></ul></div>
+  </div>
 
   <div class="wrap">
 
     <div class="art">
       <p class="crumb"><a href="index.html">← Trainer hub</a></p>
-      <p>This page helps you prepare a short AI training for your sales colleagues. The session
-      lets them practise everyday tasks, such as summarising an account list or drafting a reply,
-      on prepared examples. You will first try the exercise yourself, then choose a session plan
-      and practise explaining the task with a colleague. The exercise instructions, example data
-      and slides are provided.</p>
-      <p>Allow about an hour for a first preparation. The times below are a guide; take longer if
-      Google Sheets or Gemini is new to you.</p>
+      <p>This page takes you from nothing to a session you can run: try the exercise yourself, pick a
+      length and copy the deck, rehearse with a colleague. Allow about an hour; take longer if Google
+      Sheets or Gemini is new to you. The exercise, the example data and the slides are provided.</p>
+      <p class="note-sm">Been here before? Jump to
+      <a href="#sheets-grid" style="text-decoration:underline">the run sheets</a> ·
+      <a href="#decks-grid" style="text-decoration:underline">the deck</a> ·
+      <a href="#other-formats" style="text-decoration:underline">other formats</a> ·
+      <a href="#adapt" style="text-decoration:underline">adapt a session</a>.</p>
 
-      <h2>1 · Try the exercise yourself, about 15 minutes</h2>
+      <h2 id="try">1 · Try the exercise yourself, about 15 minutes</h2>
       <p>You will use Gemini in Google Sheets to turn a customer list into an overview of its
       sales values. Then you will check one total against the original list. This is the same
       exercise your participants will try.</p>
@@ -185,22 +190,33 @@
       with that name. If a button is missing or you cannot copy the spreadsheet, note where you
       got stuck and ask for help with access before your session.</p>
 
-      <h2>2 · Choose and read a session plan, about 20 minutes</h2>
-      <p>A <em>run sheet</em> is your step-by-step plan for delivering the session. It tells you
-      which slides to show, what participants do, how much time to allow and how to check the
-      result. It also explains what to shorten if an activity takes longer than expected.</p>
-      <p>Choose a length that fits your team meeting. Start with 30 minutes if your group is new
-      to AI. The longer plans add practice to the same first exercise.</p>
-      <div class="matgrid">
-      <div class="mat"><b>30 minutes</b><span>Create the overview from the example customer list and check a total against the original rows.</span><a class="btn" href="session-30.html">Open the 30-minute plan</a></div>
-      <div class="mat"><b>60 minutes</b><span>Also use the same customer list to draft a short sales report, then check its figures and statements.</span><a class="btn" href="session-60.html">Open the 60-minute plan</a></div>
-      <div class="mat"><b>90 minutes</b><span>Also practise drafting a customer email using a separate example inquiry. Review the draft; do not send it.</span><a class="btn" href="session-90.html">Open the 90-minute plan</a></div>
+      <h2 id="session-materials">2 · Pick your length and copy the deck, about 20 minutes</h2>
+      <p>A <em>run sheet</em> is your step-by-step plan for the session: which slides to show, what
+      participants do, how much time to allow, how to check the result, and what to shorten if you
+      run late. Start with 30 minutes if your group is new to AI; the longer plans add practice to
+      the same first exercise.</p>
+      <div class="matgrid" id="sheets-grid">
+      <div class="mat"><b>30 minutes</b><span>The overview from the example customer list, and one total checked by hand.</span><a class="btn" href="session-30.html">Open the run sheet</a></div>
+      <div class="mat"><b>60 minutes</b><span>Adds a short written report from the same rows, and time to check it.</span><a class="btn" href="session-60.html">Open the run sheet</a></div>
+      <div class="mat"><b>90 minutes</b><span>Adds a reply to a practice inquiry, drafted and reviewed, never sent.</span><a class="btn" href="session-90.html">Open the run sheet</a></div>
       </div>
-      <div class="matgrid">
-      <div class="mat"><b>Slides for your session</b><span>All three plans use this presentation. One click makes your own copy in Google Slides. Your chosen plan lists the slide numbers to show and explains how to skip the slides you do not need. Each slide has speaker notes to help you prepare your explanation.</span><span class="stamp">Updated 6 Sep 2026</span><a class="btn" href="https://docs.google.com/presentation/d/10sO4XgT1AxxNhSk4vx_2_EYwcbKn93acbAvS0arcLRg/copy" target="_blank" rel="noopener">Copy into Google Slides</a><a class="deckalt" href="script-ttt-7-basics-session.html">Read the script</a><a class="deckalt" href="present.html#use-google-slides" style="font-weight:400">How the copy works</a><span class="langnote">English. The script page translates in your browser.</span></div>
+      <p>All three run from one deck. Your run sheet names the slides you show; every slide has
+      speaker notes.</p>
+      <div class="matgrid" id="decks-grid">
+      <div class="mat"><b>Getting started with Gemini in Sales</b><span>The one deck behind all three run sheets. English, with speaker notes on every slide.</span><span class="stamp">Updated 10 Sep 2026</span><a class="btn" href="https://docs.google.com/presentation/d/10sO4XgT1AxxNhSk4vx_2_EYwcbKn93acbAvS0arcLRg/copy" target="_blank" rel="noopener">Copy into Google Slides</a></div>
       </div>
+      <p id="use-google-slides">The button opens Google's <b>Make a copy</b> dialog. Confirm it, and
+      your own editable copy lands in your Drive. In that copy, select the slides your run sheet skips
+      in the thumbnail strip on the left, right-click and choose <b>Skip Slide</b>
+      (<a href="https://support.google.com/docs/answer/1694830?hl=en" target="_blank" rel="noopener" style="text-decoration:underline">Google help</a>).
+      The other slides keep their numbers, so the run sheet still matches.</p>
+      <p class="note-sm">Prefer to read first? The <a href="script-ttt-7-basics-session.html" style="text-decoration:underline">script page</a>
+      shows every slide with its spoken text and translates in your browser, which a deck cannot
+      (<a href="language.html" style="text-decoration:underline">how translation works here</a>).
+      Your copy does not update itself: the card shows the date of the current version, so after a
+      release make a fresh copy rather than editing the old one.</p>
 
-      <h2>3 · Practise with one colleague, about 10 minutes</h2>
+      <h2 id="rehearse">3 · Rehearse with one colleague, about 10 minutes</h2>
       <p>Ask a colleague to try a short part of the exercise while you explain the steps.
       This gives you a chance to notice unclear instructions and practise helping when a
       button or answer looks different. You can pause, use your notes and try an explanation again.</p>
@@ -213,19 +229,40 @@
       </ul>
       <p><a class="btn" href="rehearsal.html">Open the rehearsal guide</a></p>
 
-      <h2>Before participants arrive</h2>
+      <h2 id="before">Before participants arrive</h2>
       <ul class="task-list">
-        <li><input type="checkbox"> Check that participants can open Google Sheets with their Kärcher account and use
-        Ask Gemini. If someone needs to share a device, plan time for both people to try the steps.</li>
-        <li><input type="checkbox"> Keep the links to the exercise card and the example spreadsheet ready to share.</li>
-        <li><input type="checkbox"> Read the <em>If time runs short</em> section in your chosen plan, so you know which
-        activity you can shorten while leaving time for the check and the closing discussion.</li>
+        <li><input type="checkbox"> Every participant can sign in to Google Workspace with the Kärcher account and use
+        Ask Gemini in Sheets (and in Gmail for the 90-minute session). If someone needs to share
+        a device, plan time for both people to try the steps.</li>
+        <li><input type="checkbox"> The deck is prepared: the slides outside your selection are skipped.</li>
+        <li><input type="checkbox"> Links ready to paste in the chat: the exercise card, the practice tracker, and for
+        90 minutes the email card.</li>
+        <li><input type="checkbox"> Smoke test in the room: the <a href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">platform</a>
+        loads, one card opens, the practice tracker copies. Projector, side-panel visibility, sound.</li>
+        <li><input type="checkbox"> You have read <em>If time runs short</em> in your run sheet, so you know which
+        activity to shorten while leaving time for the check and the closing discussion.</li>
       </ul>
 
-      <p>For more explanation of a topic, use the <a href="selflearn.html">reference presentations</a>
-      or the <a href="playbook.html">Trainer Playbook</a>. You can look up individual questions
-      as they arise. The <a href="plan.html">optional pre-survey</a> is there if you later want
-      to adapt a session for a particular group.</p>
+      <h2 id="other-formats">Other formats</h2>
+      <p>Neither is a step on the way to a real session. Take them when they fit; the copy works
+      the same way as above.</p>
+      <div class="matgrid" id="optional-grid">
+      <div class="mat"><b>First look · 15 min</b><span>One card live inside an existing team meeting, with its own short check. A teaser, not a substitute for a session.</span><span class="stamp">Updated 6 Sep 2026</span><a class="btn" href="https://docs.google.com/presentation/d/1AzBaCMPn-IqwkliXW4ooDwUhlu6YMbDixyQl4koIkLU/copy" target="_blank" rel="noopener">Copy into Google Slides</a><a class="deckalt" href="script-ttt-8-team-meeting-intro.html">Read the script</a></div>
+      <div class="mat"><b>Sales Cycle Sprint · advanced</b><span>The nine steps hands-on on the practice case, for groups that already run sessions. Use two or three steps and skip the rest.</span><span class="stamp">Updated 23 Aug 2026</span><a class="btn" href="https://docs.google.com/presentation/d/1XiHbJBIq0ulhIkdKNPaOZkHrLWiOqaeJ46slVCiW7rg/copy" target="_blank" rel="noopener">Copy into Google Slides</a><a class="deckalt" href="script-ttt-9-course-sprint.html">Read the script</a></div>
+      </div>
+
+      <h2 id="adapt">Adapt a session, only when the prepared one does not fit</h2>
+      <p>Use these when a group has very different experience levels, a market has its own
+      priorities, or people already ran a session. Change how you explain the task, how you pair
+      people and how you discuss applying it at work; keep the task, the check and the minutes as
+      the run sheet has them.</p>
+      <div class="matgrid" id="plan-grid">
+      <div class="mat"><b>The pre-survey</b><span>Optional. Copy it once, then send your copy's link; the answers belong to you. Five minutes per participant.</span><a class="btn" href="https://docs.google.com/forms/d/1H_6NGj_kTyR38cX9Zxu0v7fDMzElwIhInTca3RgM054/copy" target="_blank" rel="noopener">Copy the form</a></div>
+      <div class="mat"><b>Example results: seller group</b><span>Nine field-sales answers, mostly beginners, research and proposals on top. See what the survey gives you back.</span><a class="btn" href="https://docs.google.com/spreadsheets/d/1f_rcMn1yuIRTWUsDuSEuil3DoB4Wk1W8AoLa-RpdJqA/copy" target="_blank" rel="noopener">Copy the sheet</a></div>
+      <div class="mat"><b>Example results: leader group</b><span>Eight sales-leadership answers, mixed experience, your data on top.</span><a class="btn" href="https://docs.google.com/spreadsheets/d/172hmBiq732b80d7xWq54X1QA-ojju5jEKoVSJp5d8YA/copy" target="_blank" rel="noopener">Copy the sheet</a></div>
+      </div>
+      <p class="note-sm">Background, facilitation and data rules, checklists for print: the
+      <a href="playbook-full.html" style="text-decoration:underline">Trainer Playbook</a>.</p>
     </div>
 
     <script>
