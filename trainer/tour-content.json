@@ -20,7 +20,7 @@
   },
   "pages": {
    "faq": {
-    "idle": "Worried about the hard questions? Thirty seconds.",
+    "idle": "The questions you will hear, and what to answer. Thirty seconds.",
     "done": "Open the one you expect to hear. The answers are yours to use as they are.",
     "beats": [
      {
