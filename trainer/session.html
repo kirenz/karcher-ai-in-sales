@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>The run sheet: for the day itself — Training Preparation Hub</title>
+  <title>The session plan: for the day itself — Training Preparation Hub</title>
   <link rel="icon" href="../lessons/favicon.ico">
   <link rel="stylesheet" href="../lessons/styles.css">
   <style>body{visibility:hidden}</style>
@@ -36,16 +36,52 @@
 @media (max-width:560px){.firstrun{padding-top:12px}.firstrun__card{padding:16px 18px}
   .firstrun__card h2{font-size:23px}.firstrun__steps li{font-size:14px;line-height:1.4}}
 .firstrun__note{font-size:13.5px;color:var(--ink-55,#666);margin:10px 0 0}
-/* text-only orientation for pages whose spoken tour was retired */
-.brief{max-width:600px;margin:0 auto;padding:16px 18px 0;display:flex;gap:14px;align-items:flex-start}
-.brief__photo{flex:none;width:64px;border:3px solid var(--ink,#1a1a1a);
-  border-bottom:7px solid var(--yellow,#ffed00);display:block}
-.brief__photo img{display:block;width:100%;height:auto}
-.brief__bubble{flex:1;background:#fff;border:1px solid var(--line,#ddd);padding:12px 14px;font-size:14.5px}
-.brief__bubble b{display:block;font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;
-  letter-spacing:.06em;font-size:12.5px;color:var(--ink-55,#666);margin-bottom:6px}
-.brief__bubble ul{margin:0;padding-left:18px}
-.brief__bubble li{line-height:1.45;margin:0 0 4px}
+/* The guide portrait only appears where there is something to listen to, and
+   large enough to read as "a voice explains this page" (Florian, 25 Sep 2026). */
+.tour__photo{width:108px}
+@media (max-width:560px){.tour__photo{width:80px}}
+/* Kärcher CI: rectangular, no rounded corners (the lessons stylesheet rounds doors) */
+.door{border-radius:0;border-top:6px solid var(--yellow,#ffed00)}
+/* "What's here for you": one short box at the top of each area */
+.intro{max-width:600px;margin:0 auto;padding:18px 18px 0}
+.art .intro{max-width:none;padding:14px 0 4px}
+.intro__box{background:var(--yellow-tint,#fdf6c9);border-left:6px solid var(--yellow,#ffed00);padding:14px 18px}
+.intro__box h2{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;letter-spacing:.05em;
+  font-size:17px;line-height:1.2;margin:0 0 8px;border:0;padding:0}
+.intro__box ul{margin:0;padding-left:18px}
+.intro__box li{font-size:14.5px;line-height:1.45;margin:0 0 5px}
+/* tools at a glance, on the home page */
+.toolbox{max-width:600px;margin:26px auto 0;padding:0 18px}
+.toolbox h2{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;letter-spacing:.05em;
+  font-size:22px;margin:0 0 4px}
+.toolbox p{font-size:14px;color:var(--ink-55,#666);margin:0 0 12px}
+.toolgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tool{background:#fff;border:1px solid var(--line,#ddd);padding:12px 14px;text-decoration:none;
+  color:var(--ink,#1a1a1a);display:flex;flex-direction:column;gap:4px}
+.tool:hover{border-color:var(--ink,#1a1a1a)}
+.tool b{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;letter-spacing:.03em;font-size:16px}
+.tool span{font-size:13.5px;color:var(--ink-70,#444);line-height:1.4}
+@media (max-width:560px){.toolgrid{grid-template-columns:1fr}}
+/* the two hub features worth seeing: language and feedback */
+.langchip--strong{border:2px solid var(--ink,#1a1a1a);border-left:8px solid var(--yellow,#ffed00);
+  padding:14px 16px;font-size:15px;margin-top:14px}
+.langchip--strong svg{width:28px;height:28px}
+.langchip__langs{display:block;font-size:13px;color:var(--ink-55,#666);margin-top:4px}
+/* contents of the playbook, readable at a glance */
+/* home: three areas side by side, so every column on the page shares one width */
+.wrap:has(.home){max-width:900px}
+.home .intro,.home .doorgrid,.home .firstrun,.home .toolbox,.home .langchip{max-width:860px}
+.home .doorgrid{grid-template-columns:repeat(3,1fr)}
+.home .door{min-height:0;padding:20px 18px}
+.home .door__title{font-size:25px}
+.home .toolgrid{grid-template-columns:repeat(3,1fr)}
+@media (max-width:760px){.home .doorgrid,.home .toolgrid{grid-template-columns:1fr}}
+.pbtoc{background:#fff;border:1px solid var(--line,#ddd);padding:14px 18px;margin:16px 0 22px}
+.pbtoc h2{margin:0 0 6px!important;border:0!important;padding:0!important;font-size:1.1rem!important}
+.pbtoc p{margin:0 0 10px;font-size:.95rem}
+.pbtoc ol{margin:0;padding-left:22px}
+.pbtoc li{font-size:1.02rem;line-height:1.6}
+.pbtoc li span{color:var(--ink-55,#666);font-size:.9rem}
 .art{max-width:760px;margin:0 auto;padding:8px 0 40px}
 .art h2{font-size:1.35rem;margin:34px 0 10px;border-left:6px solid var(--yellow);padding-left:12px}
 .art h3{font-size:1.05rem;margin:22px 0 6px}
@@ -128,7 +164,7 @@
   <header class="topbar"><a class="topbar__brand" href="index.html"><img class="topbar__logo" src="../lessons/img/karcher-logo.png" alt="Kärcher"></a><nav class="topbar__nav"><a class="topbar__item" href="index.html">Home</a><a class="topbar__item on" href="first-session.html">Workshop</a><a class="topbar__item" href="selflearn.html">Learn</a><a class="topbar__item" href="faq.html">FAQ</a><a class="topbar__item" href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">The platform</a></nav></header>
 
   <header class="hero">
-    <h1 class="hero__title">The run sheet: for the day itself</h1>
+    <h1 class="hero__title">The session plan: for the day itself</h1>
     <p class="hero__sub">For the day itself: links to paste, four time blocks, what to do when something fails.</p>
   </header>
 
@@ -136,8 +172,8 @@
   <div class="wrap">
 
     <div class="art">
-      <p class="crumb"><a href="first-session.html">← The example workshop</a> · <a href="glossary.html">Glossary</a></p>
-<nav class="chapnav"><a href="first-session.html">Example workshop</a><a href="session.html" class="on">The run sheet</a></nav>
+      <p class="crumb"><a href="first-session.html">← Workshop (example)</a> · <a href="glossary.html">Glossary</a></p>
+<nav class="chapnav"><a href="first-session.html">Workshop (example)</a><a href="session.html" class="on">The session plan</a></nav>
 <p>The <a href="script-ttt-7-basics-session.html">script page</a> is
 where you prepare. This page is the short version for the training
 itself: the links to paste, the time blocks, and what to do when
@@ -180,7 +216,7 @@ fails, that person reads along on the shared screen.</li>
 <li><strong>The research takes long.</strong> Normal; a briefing takes a
 few minutes. Show the example briefing meanwhile.</li>
 </ul>
-<p><a href="first-session.html">The example workshop</a> · <a
+<p><a href="first-session.html">Workshop (example)</a> · <a
 href="playbook-full.html">Trainer Playbook</a></p>
 
       <p class="note-sm" style="margin-top:26px">The deck for this workshop: <a href="https://docs.google.com/presentation/d/10sO4XgT1AxxNhSk4vx_2_EYwcbKn93acbAvS0arcLRg/copy" target="_blank" rel="noopener" style="text-decoration:underline">copy it into Google Slides</a> · <a href="first-session.html#use-google-slides" style="text-decoration:underline">how the copy works</a> · <a href="script-ttt-7-basics-session.html" style="text-decoration:underline">read the script</a>.

@@ -36,16 +36,52 @@
 @media (max-width:560px){.firstrun{padding-top:12px}.firstrun__card{padding:16px 18px}
   .firstrun__card h2{font-size:23px}.firstrun__steps li{font-size:14px;line-height:1.4}}
 .firstrun__note{font-size:13.5px;color:var(--ink-55,#666);margin:10px 0 0}
-/* text-only orientation for pages whose spoken tour was retired */
-.brief{max-width:600px;margin:0 auto;padding:16px 18px 0;display:flex;gap:14px;align-items:flex-start}
-.brief__photo{flex:none;width:64px;border:3px solid var(--ink,#1a1a1a);
-  border-bottom:7px solid var(--yellow,#ffed00);display:block}
-.brief__photo img{display:block;width:100%;height:auto}
-.brief__bubble{flex:1;background:#fff;border:1px solid var(--line,#ddd);padding:12px 14px;font-size:14.5px}
-.brief__bubble b{display:block;font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;
-  letter-spacing:.06em;font-size:12.5px;color:var(--ink-55,#666);margin-bottom:6px}
-.brief__bubble ul{margin:0;padding-left:18px}
-.brief__bubble li{line-height:1.45;margin:0 0 4px}
+/* The guide portrait only appears where there is something to listen to, and
+   large enough to read as "a voice explains this page" (Florian, 25 Sep 2026). */
+.tour__photo{width:108px}
+@media (max-width:560px){.tour__photo{width:80px}}
+/* Kärcher CI: rectangular, no rounded corners (the lessons stylesheet rounds doors) */
+.door{border-radius:0;border-top:6px solid var(--yellow,#ffed00)}
+/* "What's here for you": one short box at the top of each area */
+.intro{max-width:600px;margin:0 auto;padding:18px 18px 0}
+.art .intro{max-width:none;padding:14px 0 4px}
+.intro__box{background:var(--yellow-tint,#fdf6c9);border-left:6px solid var(--yellow,#ffed00);padding:14px 18px}
+.intro__box h2{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;letter-spacing:.05em;
+  font-size:17px;line-height:1.2;margin:0 0 8px;border:0;padding:0}
+.intro__box ul{margin:0;padding-left:18px}
+.intro__box li{font-size:14.5px;line-height:1.45;margin:0 0 5px}
+/* tools at a glance, on the home page */
+.toolbox{max-width:600px;margin:26px auto 0;padding:0 18px}
+.toolbox h2{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;letter-spacing:.05em;
+  font-size:22px;margin:0 0 4px}
+.toolbox p{font-size:14px;color:var(--ink-55,#666);margin:0 0 12px}
+.toolgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tool{background:#fff;border:1px solid var(--line,#ddd);padding:12px 14px;text-decoration:none;
+  color:var(--ink,#1a1a1a);display:flex;flex-direction:column;gap:4px}
+.tool:hover{border-color:var(--ink,#1a1a1a)}
+.tool b{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;letter-spacing:.03em;font-size:16px}
+.tool span{font-size:13.5px;color:var(--ink-70,#444);line-height:1.4}
+@media (max-width:560px){.toolgrid{grid-template-columns:1fr}}
+/* the two hub features worth seeing: language and feedback */
+.langchip--strong{border:2px solid var(--ink,#1a1a1a);border-left:8px solid var(--yellow,#ffed00);
+  padding:14px 16px;font-size:15px;margin-top:14px}
+.langchip--strong svg{width:28px;height:28px}
+.langchip__langs{display:block;font-size:13px;color:var(--ink-55,#666);margin-top:4px}
+/* contents of the playbook, readable at a glance */
+/* home: three areas side by side, so every column on the page shares one width */
+.wrap:has(.home){max-width:900px}
+.home .intro,.home .doorgrid,.home .firstrun,.home .toolbox,.home .langchip{max-width:860px}
+.home .doorgrid{grid-template-columns:repeat(3,1fr)}
+.home .door{min-height:0;padding:20px 18px}
+.home .door__title{font-size:25px}
+.home .toolgrid{grid-template-columns:repeat(3,1fr)}
+@media (max-width:760px){.home .doorgrid,.home .toolgrid{grid-template-columns:1fr}}
+.pbtoc{background:#fff;border:1px solid var(--line,#ddd);padding:14px 18px;margin:16px 0 22px}
+.pbtoc h2{margin:0 0 6px!important;border:0!important;padding:0!important;font-size:1.1rem!important}
+.pbtoc p{margin:0 0 10px;font-size:.95rem}
+.pbtoc ol{margin:0;padding-left:22px}
+.pbtoc li{font-size:1.02rem;line-height:1.6}
+.pbtoc li span{color:var(--ink-55,#666);font-size:.9rem}
 .art{max-width:760px;margin:0 auto;padding:8px 0 40px}
 .art h2{font-size:1.35rem;margin:34px 0 10px;border-left:6px solid var(--yellow);padding-left:12px}
 .art h3{font-size:1.05rem;margin:22px 0 6px}
@@ -136,10 +172,14 @@
   <div class="wrap">
 
     <div class="art">
-      <p class="crumb"><a href="first-session.html">← The example workshop</a> · <a href="glossary.html">Glossary</a></p>
-      <nav class="chapnav"><a href="#run-the-example-workshop">1 · Run the Example Workshop</a><a href="#adapt-for-a-specific-group">2 · Adapt for a Specific Group</a><a href="#facilitation-data-rules-and-the-longer-formats">3 · Facilitation, Data Rules, and the Longer Formats</a><a href="#checks-and-support">4 · Checks and Support</a></nav>
-      <p class="note-sm">The companion to this hub, on one page for reading, search and print.
-      Checklists keep their ticks in your browser.</p>
+      <p class="crumb"><a href="first-session.html">← Workshop (example)</a> · <a href="glossary.html">Glossary</a></p>
+      <div class="pbtoc">
+        <h2>What's in the playbook</h2>
+        <p>The big picture behind the workshop, on one page for reading, search and print. For the
+        day itself you need only the short <a href="session.html">session plan</a>. Checklists keep
+        their ticks in your browser.</p>
+        <ol><li><a href="#run-the-example-workshop">Run the Example Workshop</a> <span>· prepare and run the 60-minute workshop</span></li><li><a href="#adapt-for-a-specific-group">Adapt for a Specific Group</a> <span>· change it for a group that needs something different</span></li><li><a href="#facilitation-data-rules-and-the-longer-formats">Facilitation, Data Rules, and the Longer Formats</a> <span>· how to lead the room, what may go into Gemini, the other formats</span></li><li><a href="#checks-and-support">Checks and Support</a> <span>· checklists before and after, and where to get help</span></li></ol>
+      </div>
 <p><em>Companion document to the <a href="index.html">Training
 Preparation Hub</a>. It does not teach the AI content (the learning
 platform carries that) and it does not repeat the session decks (they
@@ -169,9 +209,9 @@ what your participants will do.</li>
 text: <a href="script-ttt-7-basics-session.html">the example
 workshop</a>, 60 minutes.</li>
 <li><strong>Read it through once</strong>, about ten minutes: the script
-page from top to bottom, then the short <a href="session.html">run
-sheet</a> for the day itself. Note the moment you want to say slowly;
-the <a href="first-session.html#read-through">Prepare page</a> has the
+page from top to bottom, then the short <a href="session.html">session
+plan</a> for the day itself. Note the moment you want to say slowly; the
+<a href="first-session.html#read-through">Prepare page</a> has the
 wording for the two situations that come up in almost every first
 session.</li>
 </ol>
@@ -197,8 +237,8 @@ it came from: one shared number, Food &amp; Beverage, added by hand from
 the account rows. The briefing is read as a starting guess from public
 sources, to be confirmed in the real conversation. Allow time for the
 comparison, and for the questions it raises.</p>
-<p>The run sheets carry the wording and the timing for each of
-these.</p>
+<p>The session plan and the deck notes carry the wording and the timing
+for each of these.</p>
 <h3 id="nobody-needs-customer-data">Nobody needs customer data</h3>
 <p>Every exercise runs on supplied fictional material: the practice
 tracker for the data cards, and NorthStar Facility Services for the
@@ -209,9 +249,8 @@ information. The data rules themselves are in <a href="#facilitation-data-rules-
 <h2 id="adapt-for-a-specific-group">2. Adapt for a Specific Group</h2>
 <p>Use this when the prepared plan does not fit: a leadership group that
 does not sell itself, a room that has already done the basics, or a
-market that asked for something specific. The starting point stays one
-of the three run sheets; you change what goes into the hands-on
-blocks.</p>
+market that asked for something specific. The starting point stays the
+session plan; you change what goes into the hands-on blocks.</p>
 <h3 id="use-the-group-information-to-support-the-same-task">Use the
 group information to support the same task</h3>
 <p>For a prepared format, keep its task, slide selection, time budget
@@ -238,10 +277,10 @@ href="https://docs.google.com/spreadsheets/d/1f_rcMn1yuIRTWUsDuSEuil3DoB4Wk1W8Ao
 group</a>, <a
 href="https://docs.google.com/spreadsheets/d/172hmBiq732b80d7xWq54X1QA-ojju5jEKoVSJp5d8YA/copy">leader
 group</a>; synthetic answers, no real people).</p>
-<p>For the plan itself, work from the run sheet for your length and the
-deck notes for the slides you show. Both are written out step by step,
-and the <a href="first-session.html#session-materials">session
-scripts</a> on the hub let you read a whole session as one page.</p>
+<p>For the plan itself, work from the session plan and the deck notes
+for the slides you show. Both are written out step by step, and the <a
+href="first-session.html#session-materials">session scripts</a> on the
+hub let you read a whole session as one page.</p>
 <h3 id="two-examples-within-the-prepared-format">Two examples within the
 prepared format</h3>
 <p><strong>A group of field sellers new to AI.</strong> Slow down on the
@@ -309,10 +348,10 @@ steps themselves on the platform, which is where they stay current.</p>
 <ul class="task-list">
 <li><label><input type="checkbox" />I have run the pipeline card myself
 on the practice tracker, including the hand check.</label></li>
-<li><label><input type="checkbox" />I have read the run sheet for the
-length I am running (<a href="#run-the-example-workshop">Section 1</a>).</label></li>
+<li><label><input type="checkbox" />I have read the session plan
+(<a href="#run-the-example-workshop">Section 1</a>).</label></li>
 <li><label><input type="checkbox" />I have read the script page from top
-to bottom and the short run sheet, and know which part I want to say
+to bottom and the short session plan, and know which part I want to say
 slowly.</label></li>
 <li><label><input type="checkbox" />My copy of the deck opens in Google
 Slides.</label></li>
@@ -336,8 +375,8 @@ connection.</label></li>
 href="https://karcher-ai-sales.web.app/lessons/start.html">the
 platform</a> — the guide holds the depth on every card and course
 step.</li>
-<li><strong>Running a session:</strong> the three run sheets and the
-session scripts on the hub (<a href="#run-the-example-workshop">Section 1</a>).</li>
+<li><strong>Running a session:</strong> the session plan and the session
+scripts on the hub (<a href="#run-the-example-workshop">Section 1</a>).</li>
 <li><strong>Adapting one:</strong> <a href="#adapt-for-a-specific-group">Section 2</a> of this playbook; the
 pre-survey comes from Sales Enablement.</li>
 <li><strong>Sales Enablement / program owner:</strong> for accounts, the

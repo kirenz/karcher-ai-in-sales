@@ -36,16 +36,52 @@
 @media (max-width:560px){.firstrun{padding-top:12px}.firstrun__card{padding:16px 18px}
   .firstrun__card h2{font-size:23px}.firstrun__steps li{font-size:14px;line-height:1.4}}
 .firstrun__note{font-size:13.5px;color:var(--ink-55,#666);margin:10px 0 0}
-/* text-only orientation for pages whose spoken tour was retired */
-.brief{max-width:600px;margin:0 auto;padding:16px 18px 0;display:flex;gap:14px;align-items:flex-start}
-.brief__photo{flex:none;width:64px;border:3px solid var(--ink,#1a1a1a);
-  border-bottom:7px solid var(--yellow,#ffed00);display:block}
-.brief__photo img{display:block;width:100%;height:auto}
-.brief__bubble{flex:1;background:#fff;border:1px solid var(--line,#ddd);padding:12px 14px;font-size:14.5px}
-.brief__bubble b{display:block;font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;
-  letter-spacing:.06em;font-size:12.5px;color:var(--ink-55,#666);margin-bottom:6px}
-.brief__bubble ul{margin:0;padding-left:18px}
-.brief__bubble li{line-height:1.45;margin:0 0 4px}
+/* The guide portrait only appears where there is something to listen to, and
+   large enough to read as "a voice explains this page" (Florian, 25 Sep 2026). */
+.tour__photo{width:108px}
+@media (max-width:560px){.tour__photo{width:80px}}
+/* Kärcher CI: rectangular, no rounded corners (the lessons stylesheet rounds doors) */
+.door{border-radius:0;border-top:6px solid var(--yellow,#ffed00)}
+/* "What's here for you": one short box at the top of each area */
+.intro{max-width:600px;margin:0 auto;padding:18px 18px 0}
+.art .intro{max-width:none;padding:14px 0 4px}
+.intro__box{background:var(--yellow-tint,#fdf6c9);border-left:6px solid var(--yellow,#ffed00);padding:14px 18px}
+.intro__box h2{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;letter-spacing:.05em;
+  font-size:17px;line-height:1.2;margin:0 0 8px;border:0;padding:0}
+.intro__box ul{margin:0;padding-left:18px}
+.intro__box li{font-size:14.5px;line-height:1.45;margin:0 0 5px}
+/* tools at a glance, on the home page */
+.toolbox{max-width:600px;margin:26px auto 0;padding:0 18px}
+.toolbox h2{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;letter-spacing:.05em;
+  font-size:22px;margin:0 0 4px}
+.toolbox p{font-size:14px;color:var(--ink-55,#666);margin:0 0 12px}
+.toolgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tool{background:#fff;border:1px solid var(--line,#ddd);padding:12px 14px;text-decoration:none;
+  color:var(--ink,#1a1a1a);display:flex;flex-direction:column;gap:4px}
+.tool:hover{border-color:var(--ink,#1a1a1a)}
+.tool b{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;letter-spacing:.03em;font-size:16px}
+.tool span{font-size:13.5px;color:var(--ink-70,#444);line-height:1.4}
+@media (max-width:560px){.toolgrid{grid-template-columns:1fr}}
+/* the two hub features worth seeing: language and feedback */
+.langchip--strong{border:2px solid var(--ink,#1a1a1a);border-left:8px solid var(--yellow,#ffed00);
+  padding:14px 16px;font-size:15px;margin-top:14px}
+.langchip--strong svg{width:28px;height:28px}
+.langchip__langs{display:block;font-size:13px;color:var(--ink-55,#666);margin-top:4px}
+/* contents of the playbook, readable at a glance */
+/* home: three areas side by side, so every column on the page shares one width */
+.wrap:has(.home){max-width:900px}
+.home .intro,.home .doorgrid,.home .firstrun,.home .toolbox,.home .langchip{max-width:860px}
+.home .doorgrid{grid-template-columns:repeat(3,1fr)}
+.home .door{min-height:0;padding:20px 18px}
+.home .door__title{font-size:25px}
+.home .toolgrid{grid-template-columns:repeat(3,1fr)}
+@media (max-width:760px){.home .doorgrid,.home .toolgrid{grid-template-columns:1fr}}
+.pbtoc{background:#fff;border:1px solid var(--line,#ddd);padding:14px 18px;margin:16px 0 22px}
+.pbtoc h2{margin:0 0 6px!important;border:0!important;padding:0!important;font-size:1.1rem!important}
+.pbtoc p{margin:0 0 10px;font-size:.95rem}
+.pbtoc ol{margin:0;padding-left:22px}
+.pbtoc li{font-size:1.02rem;line-height:1.6}
+.pbtoc li span{color:var(--ink-55,#666);font-size:.9rem}
 .art{max-width:760px;margin:0 auto;padding:8px 0 40px}
 .art h2{font-size:1.35rem;margin:34px 0 10px;border-left:6px solid var(--yellow);padding-left:12px}
 .art h3{font-size:1.05rem;margin:22px 0 6px}
@@ -136,27 +172,20 @@
 
   <div class="wrap">
 
-    <div class="firstrun">
-      <div class="firstrun__card">
-        <h2>Start here</h2>
-        <p>An example workshop, 60 minutes, built around two exercises from the platform.</p>
-        <a class="btn" href="first-session.html">Open the example workshop &rarr;</a>
-      </div>
-    </div>
-  <div class="brief">
-    <span class="brief__photo"><img src="../lessons/img/guide-w1.jpg" alt="Your guide (AI-generated portrait)"></span>
-    <div class="brief__bubble"><b>Where to start</b><ul><li>The example workshop is the whole path: the exercise, the deck, the run sheet, one read-through. About an hour.</li><li>Learn and the FAQ are for later: the decks that explain the platform, and what to say to objections.</li></ul></div>
-  </div>
+    <div class="home">
+    <div class="intro"><div class="intro__box"><h2>How this hub works</h2><ul><li><b>Three areas.</b> The <b>Workshop</b> gives you a session ready to run, <b>Learn</b> explains the platform your teams use, the <b>FAQ</b> answers the objections you will hear.</li><li><b>Every workshop comes as three things</b> that describe the same session: the <b>script page</b> to read it, the <b>deck</b> to show it, the <b>session plan</b> for the day itself.</li><li><b>The Trainer Playbook</b> is the big picture behind it: how to adapt the workshop, facilitation and data rules, checks and where to get help.</li><li>Everything is written in English and <b>reads in your language</b> in your browser. Something missing? <b>Tell us</b>, the form is below.</li></ul></div></div>
 
     <div class="doorgrid">
       <a class="door" id="tile-prepare" href="first-session.html">
-        <h2 class="door__title">Example workshop</h2>
+        <p class="door__kicker">Area 1 of 3</p>
+        <h2 class="door__title">Workshop (example)</h2>
         <p class="door__sub">Two exercises from the platform, ready to run</p>
-        <p class="door__text">A 60-minute workshop around two exercises, a Sheets card and a Sales Cycle step, with deck and run sheet. Run it as it is, or build a workshop on other exercises the same way.</p>
+        <p class="door__text">A 60-minute workshop around two exercises, a Sheets card and a Sales Cycle step, with script page, deck and session plan. Run it as it is, or build a workshop on other exercises the same way.</p>
         <span class="door__cta">Open →</span>
       </a>
 
       <a class="door" id="tile-selflearn" href="selflearn.html">
+        <p class="door__kicker">Area 2 of 3</p>
         <h2 class="door__title">Learn</h2>
         <p class="door__sub">Understand the platform</p>
         <p class="door__text">Four decks that explain the AI Sales Enablement platform, one area each, so you can answer questions in a workshop.</p>
@@ -164,6 +193,7 @@
       </a>
 
       <a class="door" id="tile-faq" href="faq.html">
+        <p class="door__kicker">Area 3 of 3</p>
         <h2 class="door__title">FAQ</h2>
         <p class="door__sub">What do I say when …</p>
         <p class="door__text">Ready answers to the objections you will hear, from data safety to "we already had an AI training from IT".</p>
@@ -171,12 +201,33 @@
       </a>
     </div>
 
-    <a class="langchip" href="language.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.4 3.8 5.6 3.8 9s-1.3 6.6-3.8 9c-2.5-2.4-3.8-5.6-3.8-9S9.5 5.4 12 3z"/></svg><span><b>Not a native English speaker?</b> This hub and the whole platform read in your language, in your browser. And the AI answers in your language too.</span><span class="langchip__cta">Show me how &rarr;</span></a>
+    <div class="firstrun">
+      <div class="firstrun__card">
+        <h2>Start here</h2>
+        <p>First time? Begin with the example workshop: read the script page once, copy the deck, keep the session plan open on the day. About an hour of preparation.</p>
+        <a class="btn" href="first-session.html">Open the example workshop &rarr;</a>
+      </div>
+    </div>
 
-    <p class="note-sm" style="margin-top:22px">Something unclear, missing or broken?
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScoUx4VWrKslySsC5KaL0vx7lJyoz1FkWd1hvQ4l95_nMTINA/viewform" target="_blank" rel="noopener" style="text-decoration:underline">Tell us</a>, and it goes on the list for the next update.
-    The learning platform your teams see: <a href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener" style="text-decoration:underline">karcher-ai-sales.web.app</a>.
-    Unfamiliar words: the <a href="glossary.html" style="text-decoration:underline">glossary</a>.</p>
+    <div class="toolbox" id="tools">
+      <h2>Your tools at a glance</h2>
+      <p>Everything the hub offers, in one place. The playbook is the big picture; the session plan is the day itself.</p>
+      <div class="toolgrid">
+      <a class="tool" href="script-ttt-7-basics-session.html"><b>Script page</b><span>The whole workshop as one web page: every slide with the words to say. Where you prepare.</span></a>
+      <a class="tool" href="https://docs.google.com/presentation/d/10sO4XgT1AxxNhSk4vx_2_EYwcbKn93acbAvS0arcLRg/copy" target="_blank" rel="noopener"><b>Workshop deck</b><span>The same slides in Google Slides, with the words in the speaker notes. Makes your own copy.</span></a>
+      <a class="tool" href="session.html"><b>Session plan</b><span>One short page for the day itself: links to paste, time blocks, what to do when something fails.</span></a>
+      <a class="tool" href="playbook-full.html"><b>Trainer Playbook</b><span>The big picture: running and adapting the workshop, facilitation and data rules, checks and support.</span></a>
+      <a class="tool" href="glossary.html"><b>Glossary</b><span>The sales and AI words of the workshop in plain terms, for trainers new to sales or to Gemini.</span></a>
+      <a class="tool" href="https://docs.google.com/forms/d/1H_6NGj_kTyR38cX9Zxu0v7fDMzElwIhInTca3RgM054/copy" target="_blank" rel="noopener"><b>Pre-survey</b><span>Optional: a short form to find out beforehand where a group stands.</span></a>
+      </div>
+    </div>
+
+    <a class="langchip langchip--strong" href="language.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.4 3.8 5.6 3.8 9s-1.3 6.6-3.8 9c-2.5-2.4-3.8-5.6-3.8-9S9.5 5.4 12 3z"/></svg><span><b>Not a native English speaker?</b> This hub and the whole platform read in your language, in your browser. And the AI answers in your language too.<span class="langchip__langs">Deutsch · Français · Español · Italiano · Português · Nederlands · Polski · Türkçe · 中文 · 日本語 · and more</span></span><span class="langchip__cta">Show me how &rarr;</span></a>
+    <a class="langchip langchip--strong" href="https://docs.google.com/forms/d/e/1FAIpQLScoUx4VWrKslySsC5KaL0vx7lJyoz1FkWd1hvQ4l95_nMTINA/viewform" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg><span><b>Something unclear, missing or broken?</b> Tell us in a short form. Every answer goes on the list for the next update of this hub.</span><span class="langchip__cta">Give feedback &rarr;</span></a>
+
+    <p class="note-sm" style="margin-top:22px">The learning platform your teams see:
+    <a href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener" style="text-decoration:underline">karcher-ai-sales.web.app</a>.</p>
+    </div>
 
   </div>
 </body>

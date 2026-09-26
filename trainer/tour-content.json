@@ -1,23 +1,7 @@
 {
- "_comment": "Guided tours for the Training Preparation Hub. Two kinds, and the difference matters: \"pages\" are spoken tours (beats highlight element ids via .tour-glow, audio tour-<lang>-<page>-<n>.mp3 in trainer/audio/, built with scripts/site/build_trainer_tour.py) and \"onboard\" entries are text-only orientation, rendered without a player. A page belongs under \"pages\" only while its recorded words still match what the page says. The 6 Sep 2026 revision rewrote home, present, learn, plan, rollout, progress, pushback and the playbook index, and added first-session, so those live in \"onboard\"; their old mp3s stay on disk untouched and are simply no longer referenced. Moving a page back into \"pages\" means a new authorized audio pass — never re-point a page at a recording of older wording, and never edit a single beat of a page that still has audio, because audio is matched by beat index. The guide figure is never given a name.",
+ "_comment": "Spoken guided tours for the Training Preparation Hub: beats highlight element ids via .tour-glow, audio tour-<lang>-<page>-<n>.mp3 in trainer/audio/, built with scripts/site/build_trainer_tour.py. A page belongs under \"pages\" only while its recorded words still match what the page says. Pages without a current recording get no strip and no guide portrait (Florian, 25 Sep 2026: the portrait marks audio only); their short orientation is an intro box written in build_trainer.py. Their old mp3s stay on disk untouched. Moving a page back into \"pages\" means a new authorized audio pass: never re-point a page at a recording of older wording, and never edit a single beat of a page that still has audio, because audio is matched by beat index. The guide figure is never given a name.",
  "en": {
   "start": "▶ Start the tour",
-  "onboard": {
-   "index": {
-    "title": "Where to start",
-    "steps": [
-     "The example workshop is the whole path: the exercise, the deck, the run sheet, one read-through. About an hour.",
-     "Learn and the FAQ are for later: the decks that explain the platform, and what to say to objections."
-    ]
-   },
-   "selflearn": {
-    "title": "How to use these decks",
-    "steps": [
-     "Four decks, one per area of the platform. Read the one your group asks about; nobody presents them.",
-     "Read the script is the quick way in: the deck as a page, in your language."
-    ]
-   }
-  },
   "pages": {
    "faq": {
     "idle": "The questions you will hear, and what to answer. Thirty seconds.",

@@ -36,16 +36,52 @@
 @media (max-width:560px){.firstrun{padding-top:12px}.firstrun__card{padding:16px 18px}
   .firstrun__card h2{font-size:23px}.firstrun__steps li{font-size:14px;line-height:1.4}}
 .firstrun__note{font-size:13.5px;color:var(--ink-55,#666);margin:10px 0 0}
-/* text-only orientation for pages whose spoken tour was retired */
-.brief{max-width:600px;margin:0 auto;padding:16px 18px 0;display:flex;gap:14px;align-items:flex-start}
-.brief__photo{flex:none;width:64px;border:3px solid var(--ink,#1a1a1a);
-  border-bottom:7px solid var(--yellow,#ffed00);display:block}
-.brief__photo img{display:block;width:100%;height:auto}
-.brief__bubble{flex:1;background:#fff;border:1px solid var(--line,#ddd);padding:12px 14px;font-size:14.5px}
-.brief__bubble b{display:block;font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;
-  letter-spacing:.06em;font-size:12.5px;color:var(--ink-55,#666);margin-bottom:6px}
-.brief__bubble ul{margin:0;padding-left:18px}
-.brief__bubble li{line-height:1.45;margin:0 0 4px}
+/* The guide portrait only appears where there is something to listen to, and
+   large enough to read as "a voice explains this page" (Florian, 25 Sep 2026). */
+.tour__photo{width:108px}
+@media (max-width:560px){.tour__photo{width:80px}}
+/* Kärcher CI: rectangular, no rounded corners (the lessons stylesheet rounds doors) */
+.door{border-radius:0;border-top:6px solid var(--yellow,#ffed00)}
+/* "What's here for you": one short box at the top of each area */
+.intro{max-width:600px;margin:0 auto;padding:18px 18px 0}
+.art .intro{max-width:none;padding:14px 0 4px}
+.intro__box{background:var(--yellow-tint,#fdf6c9);border-left:6px solid var(--yellow,#ffed00);padding:14px 18px}
+.intro__box h2{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;letter-spacing:.05em;
+  font-size:17px;line-height:1.2;margin:0 0 8px;border:0;padding:0}
+.intro__box ul{margin:0;padding-left:18px}
+.intro__box li{font-size:14.5px;line-height:1.45;margin:0 0 5px}
+/* tools at a glance, on the home page */
+.toolbox{max-width:600px;margin:26px auto 0;padding:0 18px}
+.toolbox h2{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;letter-spacing:.05em;
+  font-size:22px;margin:0 0 4px}
+.toolbox p{font-size:14px;color:var(--ink-55,#666);margin:0 0 12px}
+.toolgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tool{background:#fff;border:1px solid var(--line,#ddd);padding:12px 14px;text-decoration:none;
+  color:var(--ink,#1a1a1a);display:flex;flex-direction:column;gap:4px}
+.tool:hover{border-color:var(--ink,#1a1a1a)}
+.tool b{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;letter-spacing:.03em;font-size:16px}
+.tool span{font-size:13.5px;color:var(--ink-70,#444);line-height:1.4}
+@media (max-width:560px){.toolgrid{grid-template-columns:1fr}}
+/* the two hub features worth seeing: language and feedback */
+.langchip--strong{border:2px solid var(--ink,#1a1a1a);border-left:8px solid var(--yellow,#ffed00);
+  padding:14px 16px;font-size:15px;margin-top:14px}
+.langchip--strong svg{width:28px;height:28px}
+.langchip__langs{display:block;font-size:13px;color:var(--ink-55,#666);margin-top:4px}
+/* contents of the playbook, readable at a glance */
+/* home: three areas side by side, so every column on the page shares one width */
+.wrap:has(.home){max-width:900px}
+.home .intro,.home .doorgrid,.home .firstrun,.home .toolbox,.home .langchip{max-width:860px}
+.home .doorgrid{grid-template-columns:repeat(3,1fr)}
+.home .door{min-height:0;padding:20px 18px}
+.home .door__title{font-size:25px}
+.home .toolgrid{grid-template-columns:repeat(3,1fr)}
+@media (max-width:760px){.home .doorgrid,.home .toolgrid{grid-template-columns:1fr}}
+.pbtoc{background:#fff;border:1px solid var(--line,#ddd);padding:14px 18px;margin:16px 0 22px}
+.pbtoc h2{margin:0 0 6px!important;border:0!important;padding:0!important;font-size:1.1rem!important}
+.pbtoc p{margin:0 0 10px;font-size:.95rem}
+.pbtoc ol{margin:0;padding-left:22px}
+.pbtoc li{font-size:1.02rem;line-height:1.6}
+.pbtoc li span{color:var(--ink-55,#666);font-size:.9rem}
 .art{max-width:760px;margin:0 auto;padding:8px 0 40px}
 .art h2{font-size:1.35rem;margin:34px 0 10px;border-left:6px solid var(--yellow);padding-left:12px}
 .art h3{font-size:1.05rem;margin:22px 0 6px}
@@ -132,19 +168,12 @@
     <p class="hero__sub">Four Google Slides decks that explain the AI Sales Enablement platform, one area each.</p>
   </header>
 
-  <div class="brief">
-    <span class="brief__photo"><img src="../lessons/img/guide-w1.jpg" alt="Your guide (AI-generated portrait)"></span>
-    <div class="brief__bubble"><b>How to use these decks</b><ul><li>Four decks, one per area of the platform. Read the one your group asks about; nobody presents them.</li><li>Read the script is the quick way in: the deck as a page, in your language.</li></ul></div>
-  </div>
 
   <div class="wrap">
 
     <div class="art">
-      <p class="crumb"><a href="index.html">← Hub</a> · <a href="glossary.html">Glossary</a></p>
-      <p>These four Google Slides decks explain the
-      <a href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">AI Sales Enablement platform</a>, one
-      area each, so you understand what your sales colleagues see and can answer their questions
-      in a workshop. They are for your own reading, not for presenting.</p>
+      <p class="crumb"><a href="index.html">← Hub</a> · <a href="glossary.html">Glossary</a> · <a href="index.html#tools">All tools</a></p>
+    <div class="intro"><div class="intro__box"><h2>What's here for you</h2><ul><li><b>Four decks, one per area</b> of the <a href='https://karcher-ai-sales.web.app/lessons/start.html' target='_blank' rel='noopener'>AI Sales Enablement platform</a>: quick help, AI Basics, the Sales Cycle course, the guide and knowledge base.</li><li><b>For your own reading, not for presenting.</b> You understand what your sales colleagues see and can answer their questions in a workshop.</li><li><b>Read the script</b> is the quick way in: the deck as a page, in your language. Start with <b>Quick help</b>, that is where the workshop exercise comes from.</li></ul></div></div>
       <p class="note-sm"><b>Read the script</b> shows a deck as a page: every slide with its spoken
       text, searchable, and translated in your browser in one right-click.
       <b>Copy into Google Slides</b> gives you your own copy of the deck.</p>
@@ -154,8 +183,7 @@
       <div class="mat"><b>Sales Cycle course</b><span>The nine-step course on the NorthStar example customer, step by step.</span><span class="stamp">Updated 23 Aug 2026</span><a class="btn" href="script-ttt-4-sales-cycle.html">Read the script</a><a class="deckalt" href="https://docs.google.com/presentation/d/1v6yS8porj7fdVT6EOFqOyHCuKuG6F0J59i5DH6SnSzg/copy" target="_blank" rel="noopener">Copy into Google Slides</a></div>
       <div class="mat"><b>Guide &amp; Knowledge Base</b><span>The handbook and the knowledge base your teams can ask questions.</span><span class="stamp">Updated 6 Sep 2026</span><a class="btn" href="script-ttt-5-guide-notebook.html">Read the script</a><a class="deckalt" href="https://docs.google.com/presentation/d/1sKs1Y5fSA9CiDQXLJjg140JZcy6Cg1sX0zI3B5B-bRw/copy" target="_blank" rel="noopener">Copy into Google Slides</a></div>
       </div>
-      <p class="note-sm">Start with <b>Quick help</b>: that is where the workshop exercise comes from.
-      Prefer to explore live? Everything these decks explain is on the <a href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener" style="text-decoration:underline">platform</a> itself.</p>
+      <p class="note-sm">Prefer to explore live? Everything these decks explain is on the <a href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener" style="text-decoration:underline">platform</a> itself.</p>
     </div>
 
   </div>

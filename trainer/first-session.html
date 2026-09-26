@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>The example workshop — Training Preparation Hub</title>
+  <title>Workshop (example) — Training Preparation Hub</title>
   <link rel="icon" href="../lessons/favicon.ico">
   <link rel="stylesheet" href="../lessons/styles.css">
   <style>body{visibility:hidden}</style>
@@ -36,16 +36,52 @@
 @media (max-width:560px){.firstrun{padding-top:12px}.firstrun__card{padding:16px 18px}
   .firstrun__card h2{font-size:23px}.firstrun__steps li{font-size:14px;line-height:1.4}}
 .firstrun__note{font-size:13.5px;color:var(--ink-55,#666);margin:10px 0 0}
-/* text-only orientation for pages whose spoken tour was retired */
-.brief{max-width:600px;margin:0 auto;padding:16px 18px 0;display:flex;gap:14px;align-items:flex-start}
-.brief__photo{flex:none;width:64px;border:3px solid var(--ink,#1a1a1a);
-  border-bottom:7px solid var(--yellow,#ffed00);display:block}
-.brief__photo img{display:block;width:100%;height:auto}
-.brief__bubble{flex:1;background:#fff;border:1px solid var(--line,#ddd);padding:12px 14px;font-size:14.5px}
-.brief__bubble b{display:block;font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;
-  letter-spacing:.06em;font-size:12.5px;color:var(--ink-55,#666);margin-bottom:6px}
-.brief__bubble ul{margin:0;padding-left:18px}
-.brief__bubble li{line-height:1.45;margin:0 0 4px}
+/* The guide portrait only appears where there is something to listen to, and
+   large enough to read as "a voice explains this page" (Florian, 25 Sep 2026). */
+.tour__photo{width:108px}
+@media (max-width:560px){.tour__photo{width:80px}}
+/* Kärcher CI: rectangular, no rounded corners (the lessons stylesheet rounds doors) */
+.door{border-radius:0;border-top:6px solid var(--yellow,#ffed00)}
+/* "What's here for you": one short box at the top of each area */
+.intro{max-width:600px;margin:0 auto;padding:18px 18px 0}
+.art .intro{max-width:none;padding:14px 0 4px}
+.intro__box{background:var(--yellow-tint,#fdf6c9);border-left:6px solid var(--yellow,#ffed00);padding:14px 18px}
+.intro__box h2{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;letter-spacing:.05em;
+  font-size:17px;line-height:1.2;margin:0 0 8px;border:0;padding:0}
+.intro__box ul{margin:0;padding-left:18px}
+.intro__box li{font-size:14.5px;line-height:1.45;margin:0 0 5px}
+/* tools at a glance, on the home page */
+.toolbox{max-width:600px;margin:26px auto 0;padding:0 18px}
+.toolbox h2{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;letter-spacing:.05em;
+  font-size:22px;margin:0 0 4px}
+.toolbox p{font-size:14px;color:var(--ink-55,#666);margin:0 0 12px}
+.toolgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tool{background:#fff;border:1px solid var(--line,#ddd);padding:12px 14px;text-decoration:none;
+  color:var(--ink,#1a1a1a);display:flex;flex-direction:column;gap:4px}
+.tool:hover{border-color:var(--ink,#1a1a1a)}
+.tool b{font-family:var(--cond),Arial,sans-serif;text-transform:uppercase;letter-spacing:.03em;font-size:16px}
+.tool span{font-size:13.5px;color:var(--ink-70,#444);line-height:1.4}
+@media (max-width:560px){.toolgrid{grid-template-columns:1fr}}
+/* the two hub features worth seeing: language and feedback */
+.langchip--strong{border:2px solid var(--ink,#1a1a1a);border-left:8px solid var(--yellow,#ffed00);
+  padding:14px 16px;font-size:15px;margin-top:14px}
+.langchip--strong svg{width:28px;height:28px}
+.langchip__langs{display:block;font-size:13px;color:var(--ink-55,#666);margin-top:4px}
+/* contents of the playbook, readable at a glance */
+/* home: three areas side by side, so every column on the page shares one width */
+.wrap:has(.home){max-width:900px}
+.home .intro,.home .doorgrid,.home .firstrun,.home .toolbox,.home .langchip{max-width:860px}
+.home .doorgrid{grid-template-columns:repeat(3,1fr)}
+.home .door{min-height:0;padding:20px 18px}
+.home .door__title{font-size:25px}
+.home .toolgrid{grid-template-columns:repeat(3,1fr)}
+@media (max-width:760px){.home .doorgrid,.home .toolgrid{grid-template-columns:1fr}}
+.pbtoc{background:#fff;border:1px solid var(--line,#ddd);padding:14px 18px;margin:16px 0 22px}
+.pbtoc h2{margin:0 0 6px!important;border:0!important;padding:0!important;font-size:1.1rem!important}
+.pbtoc p{margin:0 0 10px;font-size:.95rem}
+.pbtoc ol{margin:0;padding-left:22px}
+.pbtoc li{font-size:1.02rem;line-height:1.6}
+.pbtoc li span{color:var(--ink-55,#666);font-size:.9rem}
 .art{max-width:760px;margin:0 auto;padding:8px 0 40px}
 .art h2{font-size:1.35rem;margin:34px 0 10px;border-left:6px solid var(--yellow);padding-left:12px}
 .art h3{font-size:1.05rem;margin:22px 0 6px}
@@ -128,7 +164,7 @@
   <header class="topbar"><a class="topbar__brand" href="index.html"><img class="topbar__logo" src="../lessons/img/karcher-logo.png" alt="Kärcher"></a><nav class="topbar__nav"><a class="topbar__item" href="index.html">Home</a><a class="topbar__item on" href="first-session.html">Workshop</a><a class="topbar__item" href="selflearn.html">Learn</a><a class="topbar__item" href="faq.html">FAQ</a><a class="topbar__item" href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">The platform</a></nav></header>
 
   <header class="hero">
-    <h1 class="hero__title">The example workshop</h1>
+    <h1 class="hero__title">Workshop (example)</h1>
     <p class="hero__sub">Sixty minutes, two exercises from the platform. Run it as it is, or build one on other exercises the same way.</p>
   </header>
 
@@ -140,7 +176,10 @@
       <a href="#try" style="text-decoration:underline">get ready</a> ·
       <a href="#before" style="text-decoration:underline">checklist</a> ·
       <a href="#other-formats" style="text-decoration:underline">optional</a> ·
-      <a href="glossary.html" style="text-decoration:underline">glossary</a></p>
+      <a href="glossary.html" style="text-decoration:underline">glossary</a> ·
+      <a href="index.html#tools" style="text-decoration:underline">all tools</a></p>
+    <div class="intro" id="use-google-slides"><div class="intro__box"><h2>How to use this page</h2><ul><li><b>Script page, deck and session plan describe one and the same workshop:</b> the script page to read it, the deck to show it, the session plan for the day itself.</li><li><b>Show the deck as it is.</b> The session plan follows its slide numbers.</li><li><b>Copies do not update themselves.</b> Each deck card shows its date; after an update, make a fresh copy.</li><li>Every page here <b>translates in your browser</b> (<a href='language.html'>how</a>). Dotted words link to the <a href='glossary.html'>glossary</a>.</li></ul></div></div>
+
 
       <p>A sixty-minute training with a sales team, two exercises from the
       <a href="https://karcher-ai-sales.web.app/lessons/start.html" target="_blank" rel="noopener">AI Sales Enablement platform</a>: a
@@ -151,15 +190,15 @@
       <div class="matgrid" id="sheets-grid">
       <div class="mat"><b>1 · The script page: read the workshop</b><span>The whole workshop on one web page, slide by slide: the picture of each slide and the words to say under it. Read it once and you know what happens in the hour. Translates in your browser in one right-click.</span><a class="btn" href="script-ttt-7-basics-session.html">Open the script page</a></div>
       <div class="mat"><b>2 · The deck: show the same slides</b><span>The same slides as Google Slides, with the same words in the speaker notes. This is what you present on screen. The button makes your own copy in Drive.</span><span class="stamp">Updated 14 Sep 2026</span><a class="btn" href="https://docs.google.com/presentation/d/10sO4XgT1AxxNhSk4vx_2_EYwcbKn93acbAvS0arcLRg/copy" target="_blank" rel="noopener">Copy into Google Slides</a></div>
-      <div class="mat"><b>3 · The run sheet: for the day itself</b><span>One short page for the training: the links to paste in the chat, four time blocks, and what to do when something fails. Nothing to prepare here.</span><a class="btn" href="session.html">Open the run sheet</a></div>
+      <div class="mat"><b>3 · The session plan: for the day itself</b><span>One short page for the training: the links to paste in the chat, four time blocks, and what to do when something fails. Nothing to prepare here.</span><a class="btn" href="session.html">Open the session plan</a></div>
       </div>
       <div id="decks-grid"></div>
-      <p class="note-sm" id="use-google-slides">Script page, deck and run sheet describe one and the same
-      workshop: the script page to read it, the deck to show it, the run sheet for the day itself.
-      Show the deck as it is; the run sheet follows its slide numbers. Copies do not update
-      themselves: after a release, make a fresh one. The script page translates in your browser
-      (<a href="language.html" style="text-decoration:underline">how</a>). Dotted words link to the
-      <a href="glossary.html" style="text-decoration:underline">glossary</a>.</p>
+      <div class="pbtoc">
+        <h2>Behind it: the Trainer Playbook</h2>
+        <p>The big picture for this workshop and beyond: running and adapting it, facilitation and
+        data rules, checklists and where to get help. Read it once; on the day, the session plan is enough.</p>
+        <a class="btn" href="playbook-full.html">Open the Trainer Playbook</a>
+      </div>
 
       <h2 id="try">Get ready in three steps, about an hour</h2>
       <div class="faq">
@@ -201,16 +240,16 @@
         your workshop; participants will hit the same wall.</p>
       </details>
       <details id="session-materials">
-        <summary>2 · Copy the deck and open the run sheet, about 10 minutes</summary>
-        <p>Use the buttons at the top. Your deck copy opens in Google Slides; the run sheet
+        <summary>2 · Copy the deck and open the session plan, about 10 minutes</summary>
+        <p>Use the buttons at the top. Your deck copy opens in Google Slides; the session plan
         is the short page you keep open during the training. Paste the four links into the meeting invitation or keep them ready
         for the chat: the pipeline card, the practice tracker, the Research lesson, the Account-Briefing
-        Gem. All four are on the run sheet.</p>
+        Gem. All four are on the session plan.</p>
       </details>
       <details id="read-through">
         <summary>3 · Read it through once, about 20 minutes</summary>
         <p>The <a href="script-ttt-7-basics-session.html" style="text-decoration:underline">script page</a> from top
-        to bottom, then the run sheet once. Note the one
+        to bottom, then the session plan once. Note the one
         moment you want to say slowly. Two situations come up in almost every workshop:</p>
         <p><b>The answer lands in the side panel, not on a new tab.</b></p>
         <div class="say"><b>Say</b>"Ask for the table specifically: put the result on a new tab called
@@ -245,7 +284,7 @@
         <p>The copy works the same way.</p>
         <div class="matgrid" id="optional-grid">
       <div class="mat"><b>First look · 15 min</b><span>One card live inside an existing team meeting, with its own short check. A teaser, not a workshop.</span><span class="stamp">Updated 6 Sep 2026</span><a class="btn" href="https://docs.google.com/presentation/d/1AzBaCMPn-IqwkliXW4ooDwUhlu6YMbDixyQl4koIkLU/copy" target="_blank" rel="noopener">Copy into Google Slides</a><a class="deckalt" href="script-ttt-8-team-meeting-intro.html">Read the script</a></div>
-      <div class="mat"><b>Sales Cycle Sprint · advanced</b><span>Half a day through the platform's whole sales course, for groups that want it and a trainer with sales experience.</span><span class="stamp">Updated 23 Aug 2026</span><a class="btn" href="https://docs.google.com/presentation/d/1XiHbJBIq0ulhIkdKNPaOZkHrLWiOqaeJ46slVCiW7rg/copy" target="_blank" rel="noopener">Copy into Google Slides</a><a class="deckalt" href="script-ttt-9-course-sprint.html">Read the script</a></div>
+      <div class="mat"><b>Sales Cycle Sprint · advanced</b><span>Half a day through the platform's whole sales course, for groups that want it. <b>Needs a trainer with sales experience.</b></span><span class="stamp">Updated 23 Aug 2026</span><a class="btn" href="https://docs.google.com/presentation/d/1XiHbJBIq0ulhIkdKNPaOZkHrLWiOqaeJ46slVCiW7rg/copy" target="_blank" rel="noopener">Copy into Google Slides</a><a class="deckalt" href="script-ttt-9-course-sprint.html">Read the script</a></div>
         </div>
       </details>
       <details id="adapt">
