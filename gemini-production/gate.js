@@ -12,26 +12,11 @@ if (["localhost", "127.0.0.1"].includes(location.hostname)) {
 }
 
 async function main() {
-const { initializeApp } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
-const {
-  getAuth, onAuthStateChanged, signInWithPopup, signInWithRedirect,
-  GoogleAuthProvider, signOut
-} = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js");
-/* import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import {
-  getAuth, onAuthStateChanged, signInWithPopup, signInWithRedirect,
-  GoogleAuthProvider, signOut
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"; */
-
 const ALLOWED_DOMAIN = "karcher.com";
 const ALLOWED_EMAILS = ["j.kirenz@gmail.com", "jan.kirenz@kirenz.de"];
-
-const app = initializeApp({
-  apiKey: "AIzaSyBCa35CY5s0pv3ZrOhztvu9Y7CRuOeXnjE",
-  authDomain: "karcher-ai-sales.firebaseapp.com",
-  projectId: "karcher-ai-sales"
-});
-const auth = getAuth(app);
+let auth;
+let authReady = false;
+let beginSignIn;
 
 function allowed(user) {
   const mail = (user && user.email || "").toLowerCase();
@@ -68,12 +53,37 @@ function showSignIn(message) {
     'font-size:17px;color:#1a1a1a;cursor:pointer;text-align:left">' + G_LOGO + "Google</button>" +
     '<p style="font-size:14px;color:#5f6368;margin:20px 0 0">For K&auml;rcher employees &mdash; ' +
     "sign in with your K&auml;rcher Google account.</p>");
-  document.getElementById("gate-btn").onclick = function () {
-    signInWithPopup(auth, new GoogleAuthProvider()).catch(function () {
-      signInWithRedirect(auth, new GoogleAuthProvider());
-    });
-  };
+  const button = document.getElementById("gate-btn");
+  button.disabled = !authReady;
+  if (!authReady) button.textContent = "Loading Google sign-in…";
+  button.onclick = function () { if (beginSignIn) beginSignIn(); };
 }
+
+// Show the existing sign-in experience immediately while the SDK loads.
+showSignIn("");
+try {
+const { initializeApp } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
+const {
+  getAuth, onAuthStateChanged, signInWithPopup, signInWithRedirect,
+  GoogleAuthProvider, signOut
+} = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js");
+
+
+
+
+const app = initializeApp({
+  apiKey: "AIzaSyBCa35CY5s0pv3ZrOhztvu9Y7CRuOeXnjE",
+  authDomain: "karcher-ai-sales.firebaseapp.com",
+  projectId: "karcher-ai-sales"
+});
+auth = getAuth(app);
+
+authReady = true;
+beginSignIn = function () {
+  signInWithPopup(auth, new GoogleAuthProvider()).catch(function () {
+    signInWithRedirect(auth, new GoogleAuthProvider());
+  });
+};
 
 onAuthStateChanged(auth, function (user) {
   if (!user) { showSignIn(""); return; }
@@ -86,4 +96,7 @@ onAuthStateChanged(auth, function (user) {
   if (g) g.remove();
   document.body.style.visibility = "visible";
 });
+ } catch (error) {
+  showSignIn("Google sign-in could not load. Please reload this page or try again later.");
+}
 }
