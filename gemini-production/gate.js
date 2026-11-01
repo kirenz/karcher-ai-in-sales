@@ -16,6 +16,7 @@ const ALLOWED_DOMAIN = "karcher.com";
 const ALLOWED_EMAILS = ["j.kirenz@gmail.com", "jan.kirenz@kirenz.de"];
 let auth;
 let authReady = false;
+let signingIn = false;
 let beginSignIn;
 
 function allowed(user) {
@@ -46,25 +47,57 @@ const G_LOGO = '<svg width="22" height="22" viewBox="0 0 48 48" aria-hidden="tru
   '<path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>';
 
 function showSignIn(message) {
-  overlay((message ? '<p style="font-size:15px;color:#b00020;margin:0 0 16px">' + message + "</p>" : "") +
-    '<p style="font-size:20px;color:#5f6368;margin:0 0 16px">Sign in with:</p>' +
-    '<button id="gate-btn" style="display:flex;align-items:center;gap:16px;width:100%;background:#fff;' +
+  overlay('<p id="auth-status" role="status" aria-live="polite" style="font-size:15px;margin:0 0 16px">' + (message || "Choose Google to open the sign-in window.") + '</p>' +
+    '<button id="gate-btn" type="button" style="display:flex;align-items:center;gap:16px;width:100%;background:#fff;' +
     'border:1px solid #dadce0;border-radius:8px;padding:14px 18px;font-family:Arial,sans-serif;' +
-    'font-size:17px;color:#1a1a1a;cursor:pointer;text-align:left">' + G_LOGO + "Google</button>" +
-    '<p style="font-size:14px;color:#5f6368;margin:20px 0 0">For K&auml;rcher employees &mdash; ' +
-    "sign in with your K&auml;rcher Google account.</p>");
+    'font-size:17px;color:#1a1a1a;cursor:pointer;text-align:left">' + G_LOGO + 'Continue with Google</button>' +
+    '<p style="font-size:14px;color:#5f6368;margin:20px 0 0">For K&auml;rcher employees — sign in with your K&auml;rcher Google account.</p>' +
+    '<p style="font-size:14px;margin-top:20px"><a id="auth-new-tab" target="_blank" rel="noopener">Open training in a new tab</a> if the embedded sign-in does not respond.</p>' +
+    '<p style="font-size:14px"><button id="auth-reload" type="button">Reload this training</button></p>');
   const button = document.getElementById("gate-btn");
-  button.disabled = !authReady;
+  button.disabled = !authReady || signingIn;
   if (!authReady) button.textContent = "Loading Google sign-in…";
+  else if (signingIn) button.textContent = "Opening Google sign-in…";
   button.onclick = function () { if (beginSignIn) beginSignIn(); };
+  document.getElementById("auth-new-tab").href = new URL(location.href).href;
+  document.getElementById("auth-reload").onclick = function () { location.reload(); };
 }
+
+function showAuthError(error) {
+  signingIn = false;
+  const code = /^auth\/[a-z-]+$/.test(error && error.code || "") ? error.code : "auth/unknown-error";
+  const messages = {
+    "auth/unauthorized-domain": "This page still has an old domain-check result. Use Reload this training, then try again.",
+    "auth/popup-blocked": "Your browser blocked the sign-in window. Open the training in a new tab, then choose Continue with Google.",
+    "auth/popup-closed-by-user": "The sign-in window closed before completion. Choose Continue with Google to try again.",
+    "auth/cancelled-popup-request": "Another sign-in request was started. Close the extra sign-in window and try again.",
+    "auth/web-storage-unsupported": "Browser storage is unavailable in this embed. Open the training in a new tab to sign in.",
+    "auth/network-request-failed": "Google sign-in could not finish because of a network problem. Please try again."
+  };
+  console.error("Demo sign-in failed:", code);
+  showSignIn((messages[code] || "Google sign-in could not finish. Open the training in a new tab and try again.") + " (" + code + ")");
+}
+
+function handleUser(user) {
+  if (!user) { if (!signingIn) showSignIn(""); return; }
+  signingIn = false;
+  if (!allowed(user)) {
+    signOutUser();
+    showSignIn("This account is not on the existing training allowlist. Use your approved K&auml;rcher or trainer account.");
+    return;
+  }
+  const g = document.getElementById("gate");
+  if (g) g.remove();
+  document.body.style.visibility = "visible";
+}
+let signOutUser;
 
 // Show the existing sign-in experience immediately while the SDK loads.
 showSignIn("");
 try {
 const { initializeApp } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
 const {
-  getAuth, onAuthStateChanged, signInWithPopup, signInWithRedirect,
+  getAuth, onAuthStateChanged, signInWithPopup,
   GoogleAuthProvider, signOut
 } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js");
 
@@ -79,24 +112,19 @@ const app = initializeApp({
 auth = getAuth(app);
 
 authReady = true;
+signOutUser = function () { signOut(auth).catch(showAuthError); };
 beginSignIn = function () {
-  signInWithPopup(auth, new GoogleAuthProvider()).catch(function () {
-    signInWithRedirect(auth, new GoogleAuthProvider());
-  });
+  if (signingIn) return;
+  signingIn = true;
+  showSignIn("Opening Google sign-in. Choose your account in the new window.");
+  // Keep popup creation in the click handler's user gesture. Do not silently
+  // redirect a nested Google Sites frame when the popup fails or is cancelled.
+  signInWithPopup(auth, new GoogleAuthProvider())
+    .then(function (result) { handleUser(result.user); })
+    .catch(showAuthError);
 };
-
-onAuthStateChanged(auth, function (user) {
-  if (!user) { showSignIn(""); return; }
-  if (!allowed(user)) {
-    signOut(auth);
-    showSignIn("This training is for K&auml;rcher employees. Please sign in with your K&auml;rcher account.");
-    return;
-  }
-  const g = document.getElementById("gate");
-  if (g) g.remove();
-  document.body.style.visibility = "visible";
-});
+onAuthStateChanged(auth, handleUser, showAuthError);
  } catch (error) {
-  showSignIn("Google sign-in could not load. Please reload this page or try again later.");
+  showAuthError(error);
 }
 }
