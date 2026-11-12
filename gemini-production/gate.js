@@ -1,6 +1,8 @@
 /* Stage-1 access gate: Google sign-in via Firebase Auth, Kärcher accounts only.
    Client-side gate (keeps casual visitors and crawlers out; content is not
-   confidential by design). Allowed: @karcher.com plus the maintainer accounts.
+   confidential by design). Allowed: every Kärcher company domain worldwide
+   (karcher.* / kaercher.*, e.g. karcher.com, karcher.ru, kaercher.com,
+   karcher.com.au, de.kaercher.com) plus the maintainer accounts.
    Pages load with <html data-gate> (body hidden via inline style); this script
    reveals the page after a successful check. Handbook pages load this same
    file via ../lessons/gate.js. */
@@ -12,7 +14,9 @@ if (["localhost", "127.0.0.1"].includes(location.hostname)) {
 }
 
 async function main() {
-const ALLOWED_DOMAIN = "karcher.com";
+// Kärcher subsidiaries use national domains (karcher.ru, kaercher.com, karcher.co.uk ...).
+// Match any (sub)domain whose name is karcher/kaercher, followed by one or two TLD labels.
+const ALLOWED_DOMAIN_RE = /@(?:[a-z0-9-]+\.)*k(?:a|ae)rcher\.[a-z]{2,}(?:\.[a-z]{2,})?$/;
 const ALLOWED_EMAILS = ["j.kirenz@gmail.com", "jan.kirenz@kirenz.de"];
 let auth;
 let authReady = false;
@@ -21,7 +25,7 @@ let beginSignIn;
 
 function allowed(user) {
   const mail = (user && user.email || "").toLowerCase();
-  return mail.endsWith("@" + ALLOWED_DOMAIN) || ALLOWED_EMAILS.includes(mail);
+  return ALLOWED_DOMAIN_RE.test(mail) || ALLOWED_EMAILS.includes(mail);
 }
 
 function overlay(inner) {
