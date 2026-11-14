@@ -2,7 +2,8 @@
    Client-side gate (keeps casual visitors and crawlers out; content is not
    confidential by design). Allowed: every Kärcher company domain worldwide
    (karcher.* / kaercher.*, e.g. karcher.com, karcher.ru, kaercher.com,
-   karcher.com.au, de.kaercher.com) plus the maintainer accounts.
+   karcher.com.au, de.kaercher.com), partner domains (zoi.tech) and the
+   maintainer accounts.
    Pages load with <html data-gate> (body hidden via inline style); this script
    reveals the page after a successful check. Handbook pages load this same
    file via ../lessons/gate.js. */
@@ -28,6 +29,8 @@ import {
 // Kärcher subsidiaries use national domains (karcher.ru, kaercher.com, karcher.co.uk ...).
 // Match any (sub)domain whose name is karcher/kaercher, followed by one or two TLD labels.
 const ALLOWED_DOMAIN_RE = /@(?:[a-z0-9-]+\.)*k(?:a|ae)rcher\.[a-z]{2,}(?:\.[a-z]{2,})?$/;
+// Partner companies working for Kärcher (whole domain).
+const ALLOWED_PARTNER_DOMAINS = ["zoi.tech"];
 const ALLOWED_EMAILS = ["j.kirenz@gmail.com", "jan.kirenz@kirenz.de"];
 
 const app = initializeApp({
@@ -39,7 +42,9 @@ const auth = getAuth(app);
 
 function allowed(user) {
   const mail = (user && user.email || "").toLowerCase();
-  return ALLOWED_DOMAIN_RE.test(mail) || ALLOWED_EMAILS.includes(mail);
+  return ALLOWED_DOMAIN_RE.test(mail) ||
+    ALLOWED_PARTNER_DOMAINS.some(function (d) { return mail.endsWith("@" + d); }) ||
+    ALLOWED_EMAILS.includes(mail);
 }
 
 function overlay(inner) {
